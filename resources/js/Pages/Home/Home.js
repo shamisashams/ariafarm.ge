@@ -165,7 +165,7 @@ const Home = ({seo}) => {
                 return (
                   <BlogBoxSmall
                     key={index}
-                    link={data.link}
+                    link={route('client.blog.show','blog')}
                     img={data.img}
                     title={data.title}
                     date={data.date}

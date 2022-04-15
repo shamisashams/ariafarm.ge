@@ -4007,7 +4007,7 @@ var Home = function Home(_ref) {
   }, _components_BlogObjects_BlogObjects__WEBPACK_IMPORTED_MODULE_9__.smallBoxData.map(function (data, index) {
     return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_BlogObjects_BlogObjects__WEBPACK_IMPORTED_MODULE_9__.BlogBoxSmall, {
       key: index,
-      link: data.link,
+      link: route('client.blog.show', 'blog'),
       img: data.img,
       title: data.title,
       date: data.date,
