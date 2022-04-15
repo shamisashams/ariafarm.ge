@@ -3438,6 +3438,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_SmallComps_PagePath__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../components/SmallComps/PagePath */ "./resources/js/components/SmallComps/PagePath.js");
 /* harmony import */ var _components_SmallComps_SearchInput__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../components/SmallComps/SearchInput */ "./resources/js/components/SmallComps/SearchInput.js");
 /* harmony import */ var _Blogs_css__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./Blogs.css */ "./resources/js/Pages/Blogs/Blogs.css");
+/* harmony import */ var _Layouts_Layout__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../Layouts/Layout */ "./resources/js/Layouts/Layout.js");
 
 
 
@@ -3448,7 +3449,9 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-var Blogs = function Blogs() {
+
+var Blogs = function Blogs(_ref) {
+  var seo = _ref.seo;
   var blogsList = [{
     link: "/single-blog",
     img: "/assets/images/blogs/9.png",
@@ -3478,7 +3481,9 @@ var Blogs = function Blogs() {
     paragraph: "არია ქართული ბრენდია. აღნიშნული საწარმო სამეგრელოში, სენაკის რაიონის სოფელ მენჯში 60 ჰა მიწის ფართობზეაგანლაგებული. ფერმა ყველა საერთაშორისო სტანდარტის დაცვით აშენდა, რაც ჯანსაღი და სასარგებლო პროდუქციის წარმოების გარანტია.",
     date: "02 / 10 / 2022"
   }];
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_Layouts_Layout__WEBPACK_IMPORTED_MODULE_5__["default"], {
+    seo: seo
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "blogsPage"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_SmallComps_SearchInput__WEBPACK_IMPORTED_MODULE_3__["default"], {
     color: "#ACD3C1"
@@ -3502,7 +3507,7 @@ var Blogs = function Blogs() {
       link: blog.link,
       date: blog.date
     });
-  }))));
+  })))));
 };
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Blogs);
