@@ -1,0 +1,36 @@
+.product_box {
+  text-align: center;
+  display: inline-block;
+  width: fit-content;
+  margin-right: 30px;
+  margin-bottom: 45px;
+  vertical-align: top;
+}
+.product_box img {
+  height: 270px;
+  width: auto;
+  margin-bottom: 20px;
+}
+.product_box p {
+  font-size: 20px;
+}
+
+@media screen and (max-width: 900px) {
+  .product_box img {
+    height: 190px;
+    margin-bottom: 13px;
+  }
+}
+@media screen and (max-width: 500px) {
+  .product_box img {
+    height: 142px;
+    margin-bottom: 10px;
+  }
+  .product_box p {
+    font-size: 17px;
+  }
+  .product_box {
+    margin-right: 15px;
+    margin-bottom: 38px;
+  }
+}

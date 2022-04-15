@@ -1,0 +1,20 @@
+.search_page {
+  padding: 80px 0;
+}
+.search_page .search_input {
+  position: relative;
+  margin: auto;
+  width: 300px;
+  top: auto;
+  right: auto;
+  margin-bottom: 50px;
+}
+.search_page .search_input input {
+  opacity: 1;
+}
+.search_page .content {
+  padding-top: 90px;
+}
+.search_page .content .wrapper2 {
+  padding-top: 50px;
+}

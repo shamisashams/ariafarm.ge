@@ -1,0 +1,39 @@
+.ferma_section {
+  background: url(/assets/images/other/bg1.png) no-repeat;
+  background-position: center;
+  background-size: cover;
+  height: 328px;
+  margin: 60px 0;
+}
+.ferma_section .left {
+  max-width: 55%;
+}
+.ferma_section p {
+  margin: 15px 0;
+  margin-right: 30pxS;
+}
+.ferma_section .img {
+  height: 100%;
+  width: 450px;
+  margin-top: -40px;
+}
+
+@media screen and (max-width: 800px) {
+  .ferma_section {
+    margin-top: 80px;
+    height: auto;
+    padding-bottom: 30px;
+  }
+  .ferma_section .flex {
+    flex-direction: column-reverse;
+  }
+  .ferma_section .img {
+    height: auto;
+    width: 80%;
+    margin-top: -19px;
+    margin-bottom: 20px;
+  }
+  .ferma_section .left {
+    max-width: none;
+  }
+}

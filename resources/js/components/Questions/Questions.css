@@ -1,0 +1,43 @@
+.question {
+  width: 590px;
+  margin: auto;
+  border-bottom: 1px solid #70707080;
+}
+.question .q {
+  padding: 20px 0;
+  text-transform: uppercase;
+  position: relative;
+  cursor: pointer;
+}
+.question .q::after {
+  width: 20px;
+  height: 13px;
+  right: -35px;
+  top: 20px;
+  background: url(/assets/images/icons/down.svg) no-repeat;
+  background-position: center;
+  background-size: contain;
+  transition: 0.3s;
+}
+.question .answer {
+  transition: 0.3s;
+  overflow: hidden;
+  max-height: 0;
+  opacity: 0;
+  text-align: justify;
+}
+.question.open .answer {
+  max-height: 200px;
+  opacity: 1;
+  margin-bottom: 20px;
+}
+.question.open .q::after {
+  transform: rotate(180deg);
+}
+
+@media screen and (max-width: 700px) {
+  .question {
+    width: 100%;
+    padding-right: 35px;
+  }
+}
