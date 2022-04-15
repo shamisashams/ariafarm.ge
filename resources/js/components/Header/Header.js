@@ -55,8 +55,8 @@ const Header = () => {
       name: "მაღაზიები",
     },
     {
-      href: "/gallery",
-      name: "გალერეა",
+      href: route('client.gallery.index'),
+      name: __('client.nav_gallery',sharedData),
     },
     {
       href: "/blogs",

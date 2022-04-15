@@ -109,6 +109,11 @@ Route::prefix('{locale?}')
             Route::get('special',[\App\Http\Controllers\Client\CategoryController::class,'special'])->name('client.category.special');
             Route::get('new',[\App\Http\Controllers\Client\CategoryController::class,'new'])->name('client.category.new');
 
+
+            // Product Page
+            Route::get('gallery', [\App\Http\Controllers\Client\GalleryController::class, 'index'])->name('client.gallery.index');
+
+
             //checkout
             Route::get('cart',[\App\Http\Controllers\Client\CartController::class,'index'])->name('client.cart.index');
             Route::get('checkout',[\App\Http\Controllers\Client\OrderController::class,'index'])->name('client.checkout.index');

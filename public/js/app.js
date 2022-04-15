@@ -3592,6 +3592,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_SmallComps_SearchInput__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../components/SmallComps/SearchInput */ "./resources/js/components/SmallComps/SearchInput.js");
 /* harmony import */ var _components_SmallComps_PagePath__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../components/SmallComps/PagePath */ "./resources/js/components/SmallComps/PagePath.js");
 /* harmony import */ var _Gallery_css__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./Gallery.css */ "./resources/js/Pages/Gallery/Gallery.css");
+/* harmony import */ var _Layouts_Layout__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../Layouts/Layout */ "./resources/js/Layouts/Layout.js");
 function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
 
 function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
@@ -3616,7 +3617,11 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 //import Img7 from "../../assets/images/blogs/11.png";
 //import Img8 from "../../assets/images/blogs/12.png";
 
-var Gallery = function Gallery() {
+
+
+var Gallery = function Gallery(_ref) {
+  var seo = _ref.seo;
+
   var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(0),
       _useState2 = _slicedToArray(_useState, 2),
       showModal = _useState2[0],
@@ -3671,7 +3676,9 @@ var Gallery = function Gallery() {
     img: "/assets/images/blogs/12.png",
     video: false
   }];
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_Layouts_Layout__WEBPACK_IMPORTED_MODULE_4__["default"], {
+    seo: seo
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "galleryPage"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_SmallComps_SearchInput__WEBPACK_IMPORTED_MODULE_1__["default"], {
     color: "#ACD3C1"
@@ -3717,7 +3724,7 @@ var Gallery = function Gallery() {
       return setShowModal(0);
     },
     className: showModal === 0 ? "modal_bg " : "modal_bg show"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", null, "\xD7"))));
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", null, "\xD7")))));
 };
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Gallery);
@@ -5399,8 +5406,8 @@ var Header = function Header() {
     href: "/shops",
     name: "მაღაზიები"
   }, {
-    href: "/gallery",
-    name: "გალერეა"
+    href: route('client.gallery.index'),
+    name: __('client.nav_gallery', sharedData)
   }, {
     href: "/blogs",
     name: "ბლოგი"
