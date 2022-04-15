@@ -110,8 +110,11 @@ Route::prefix('{locale?}')
             Route::get('new',[\App\Http\Controllers\Client\CategoryController::class,'new'])->name('client.category.new');
 
 
-            // Product Page
+            // Gallery Page
             Route::get('gallery', [\App\Http\Controllers\Client\GalleryController::class, 'index'])->name('client.gallery.index');
+
+            // Blogs Page
+            Route::get('blogs', [\App\Http\Controllers\Client\BlogController::class, 'index'])->name('client.blog.index');
 
 
             //checkout
