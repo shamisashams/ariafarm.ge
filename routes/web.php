@@ -114,8 +114,11 @@ Route::prefix('{locale?}')
             Route::get('gallery', [\App\Http\Controllers\Client\GalleryController::class, 'index'])->name('client.gallery.index');
 
             // Blogs Page
-            Route::get('blogs', [\App\Http\Controllers\Client\BlogController::class, 'index'])->name('client.blog.index');
+            Route::get('blog', [\App\Http\Controllers\Client\BlogController::class, 'index'])->name('client.blog.index');
             Route::get('blog/{blog}', [\App\Http\Controllers\Client\BlogController::class, 'show'])->name('client.blog.show');
+
+            // Special offer Page
+            Route::get('special-offer', [\App\Http\Controllers\Client\SpecialOfferController::class, 'index'])->name('client.special-offer.index');
 
 
             //checkout

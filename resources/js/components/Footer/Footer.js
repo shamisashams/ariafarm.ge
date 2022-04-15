@@ -28,20 +28,20 @@ const Footer = () => {
       name: "საწარმო",
     },
     {
-      link: "/",
-      name: "სპეციალური შეთავაზება",
+      link: route('client.special-offer.index'),
+      name: __('client.nav_special_offer',sharedData),
     },
     {
       link: "/",
       name: "მაღაზიები",
     },
     {
-      link: "/",
-      name: "ბლოგი",
+      link: route('client.blog.index'),
+      name: __('client.nav_blog',sharedData),
     },
     {
-      link: "/",
-      name: "გალერეა",
+      link: route('client.gallery.index'),
+      name: __('client.nav_gallery',sharedData),
     },
     {
       link: route('client.contact.index'),

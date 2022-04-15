@@ -9,13 +9,15 @@ import "swiper/swiper-bundle.min.css";
 import "swiper/swiper.min.css";
 import SwiperCore, { Navigation, Pagination, EffectFade } from "swiper";
 import { ArrowLeft2, ArrowRight2 } from "../../components/Buttons/Buttons";
-import { Link } from "react-router-dom";
+//import { Link } from "react-router-dom";
+import { Link } from "@inertiajs/inertia-react";
 import "./SpecialOffers.css";
 //import Blob from "../../assets/images/other/blob.png";
+import Layout from "../../Layouts/Layout";
 
 SwiperCore.use([Navigation, Pagination, EffectFade]);
 
-const SpecialOffers = () => {
+const SpecialOffers = ({seo}) => {
   const navigationPrevRef = useRef(null);
   const navigationNextRef = useRef(null);
 
@@ -41,75 +43,77 @@ const SpecialOffers = () => {
     },
   ];
   return (
-    <div className="specialOffers">
-      <SearchInput color="#ACD3C1" />
-      <div className="wrapper main">
-        <PagePath
-          prev="მთავარი"
-          current="სპეციალური შეთავაზება"
-          color="#949494"
-        />
-        <div className="texts">
-          <div className="title35">სპეციალური შეთავაზების დასახელება</div>
-          <p>
-            შემთხვევითად გენერირებული ტექსტი ეხმარება დიზაინერებს და
-            ტიპოგრაფიული ნაწარმის შემქმნელებს, რეალურთან მაქსიმალურად
-            მიახლოებული შაბლონი
-          </p>
-        </div>
-        <div className="special_slider">
-          <Swiper
-            modules={[Navigation, Pagination, EffectFade]}
-            effect="fade"
-            pagination={true}
-            navigation={{
-              prevEl: navigationPrevRef.current,
-              nextEl: navigationNextRef.current,
-            }}
-            onSwiper={(swiper) => {
-              // Delay execution for the refs to be defined
-              setTimeout(() => {
-                // Override prevEl & nextEl now that refs are defined
-                swiper.params.navigation.prevEl = navigationPrevRef.current;
-                swiper.params.navigation.nextEl = navigationNextRef.current;
-
-                // Re-init navigation
-                swiper.navigation.destroy();
-                swiper.navigation.init();
-                swiper.navigation.update();
-              });
-            }}
-            grabCursor
-            loop
-            slidesPerView={1}
-          >
-            {specialData.map((item, index) => {
-              return (
-                <SwiperSlide key={index}>
-                  <div className="offer_item">
-                    <div className="img">
-                      <img src={item.product} alt="" />
-                    </div>
-                    <Link to={item.link}>
-                      <button style={{ background: item.color }}>
-                        ფასი: {item.price} ₾
-                      </button>
-                    </Link>
+      <Layout seo={seo}>
+          <div className="specialOffers">
+              <SearchInput color="#ACD3C1" />
+              <div className="wrapper main">
+                  <PagePath
+                      prev="მთავარი"
+                      current="სპეციალური შეთავაზება"
+                      color="#949494"
+                  />
+                  <div className="texts">
+                      <div className="title35">სპეციალური შეთავაზების დასახელება</div>
+                      <p>
+                          შემთხვევითად გენერირებული ტექსტი ეხმარება დიზაინერებს და
+                          ტიპოგრაფიული ნაწარმის შემქმნელებს, რეალურთან მაქსიმალურად
+                          მიახლოებული შაბლონი
+                      </p>
                   </div>
-                </SwiperSlide>
-              );
-            })}
-          </Swiper>
-        </div>
-        <div ref={navigationPrevRef}>
-          <ArrowLeft2 />
-        </div>
-        <div ref={navigationNextRef}>
-          <ArrowRight2 />
-        </div>
-        <img className="blob" src="/assets/images/other/blob.png" alt="" />
-      </div>
-    </div>
+                  <div className="special_slider">
+                      <Swiper
+                          modules={[Navigation, Pagination, EffectFade]}
+                          effect="fade"
+                          pagination={true}
+                          navigation={{
+                              prevEl: navigationPrevRef.current,
+                              nextEl: navigationNextRef.current,
+                          }}
+                          onSwiper={(swiper) => {
+                              // Delay execution for the refs to be defined
+                              setTimeout(() => {
+                                  // Override prevEl & nextEl now that refs are defined
+                                  swiper.params.navigation.prevEl = navigationPrevRef.current;
+                                  swiper.params.navigation.nextEl = navigationNextRef.current;
+
+                                  // Re-init navigation
+                                  swiper.navigation.destroy();
+                                  swiper.navigation.init();
+                                  swiper.navigation.update();
+                              });
+                          }}
+                          grabCursor
+                          loop
+                          slidesPerView={1}
+                      >
+                          {specialData.map((item, index) => {
+                              return (
+                                  <SwiperSlide key={index}>
+                                      <div className="offer_item">
+                                          <div className="img">
+                                              <img src={item.product} alt="" />
+                                          </div>
+                                          <Link href={item.link}>
+                                              <button style={{ background: item.color }}>
+                                                  ფასი: {item.price} ₾
+                                              </button>
+                                          </Link>
+                                      </div>
+                                  </SwiperSlide>
+                              );
+                          })}
+                      </Swiper>
+                  </div>
+                  <div ref={navigationPrevRef}>
+                      <ArrowLeft2 />
+                  </div>
+                  <div ref={navigationNextRef}>
+                      <ArrowRight2 />
+                  </div>
+                  <img className="blob" src="/assets/images/other/blob.png" alt="" />
+              </div>
+          </div>
+      </Layout>
   );
 };
 
