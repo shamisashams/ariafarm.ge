@@ -4569,7 +4569,7 @@ var SearchPage = function SearchPage(_ref) {
   }, productsFound.map(function (product, index) {
     return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_ProductBox_ProductBox__WEBPACK_IMPORTED_MODULE_2__.ProductBox, {
       key: index,
-      link: product.link,
+      link: route('client.product.show', 'cow-milk'),
       productName: product.name,
       imgSrc: product.img
     });

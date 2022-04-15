@@ -41,7 +41,7 @@ const SearchPage = ({seo}) => {
                           return (
                               <ProductBox
                                   key={index}
-                                  link={product.link}
+                                  link={route('client.product.show','cow-milk')}
                                   productName={product.name}
                                   imgSrc={product.img}
                               />
