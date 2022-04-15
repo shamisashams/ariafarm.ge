@@ -81,7 +81,7 @@ Route::prefix('{locale?}')
                 Route::resource('attribute', \App\Http\Controllers\Admin\AttributeController::class);
                 Route::get('attribute/{attribute}/destroy', [\App\Http\Controllers\Admin\AttributeController::class, 'destroy'])->name('attribute.destroy');
 
-                Route::get('search', [\App\Http\Controllers\Client\SearchController::class, 'show'])->name('search.index');
+
 
             });
         });
@@ -120,6 +120,7 @@ Route::prefix('{locale?}')
             // Special offer Page
             Route::get('special-offer', [\App\Http\Controllers\Client\SpecialOfferController::class, 'index'])->name('client.special-offer.index');
 
+            Route::get('search', [\App\Http\Controllers\Client\SearchController::class, 'index'])->name('client.search.index');
 
             //checkout
             Route::get('cart',[\App\Http\Controllers\Client\CartController::class,'index'])->name('client.cart.index');

@@ -4525,6 +4525,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_SmallComps_SearchInput__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../components/SmallComps/SearchInput */ "./resources/js/components/SmallComps/SearchInput.js");
 /* harmony import */ var _components_ProductBox_ProductBox__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../components/ProductBox/ProductBox */ "./resources/js/components/ProductBox/ProductBox.js");
 /* harmony import */ var _SearchPage_css__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./SearchPage.css */ "./resources/js/Pages/SearchPage/SearchPage.css");
+/* harmony import */ var _Layouts_Layout__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../Layouts/Layout */ "./resources/js/Layouts/Layout.js");
 
  //import Img1 from "../../assets/images/products/1.png";
 //import Img2 from "../../assets/images/products/2.png";
@@ -4533,7 +4534,9 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-var SearchPage = function SearchPage() {
+
+var SearchPage = function SearchPage(_ref) {
+  var seo = _ref.seo;
   var productsFound = [{
     link: "/single-product",
     img: "/assets/images/products/1.png",
@@ -4551,7 +4554,9 @@ var SearchPage = function SearchPage() {
     img: "/assets/images/products/2.png",
     name: "ძროხის რძე"
   }];
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_Layouts_Layout__WEBPACK_IMPORTED_MODULE_4__["default"], {
+    seo: seo
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "search_page"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_SmallComps_SearchInput__WEBPACK_IMPORTED_MODULE_1__["default"], {
     color: "#ACD3C1"
@@ -4568,7 +4573,7 @@ var SearchPage = function SearchPage() {
       productName: product.name,
       imgSrc: product.img
     });
-  }))));
+  })))));
 };
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (SearchPage);

@@ -5,8 +5,9 @@ import SearchInput from "../../components/SmallComps/SearchInput";
 //import Img3 from "../../assets/images/products/3.png";
 import { ProductBox } from "../../components/ProductBox/ProductBox";
 import "./SearchPage.css";
+import Layout from "../../Layouts/Layout";
 
-const SearchPage = () => {
+const SearchPage = ({seo}) => {
   const productsFound = [
     {
       link: "/single-product",
@@ -30,24 +31,26 @@ const SearchPage = () => {
     },
   ];
   return (
-    <div className="search_page">
-      <SearchInput color="#ACD3C1" />
-      <div className="wrapper content">
-        <div className="op05 bpg">"საძიებო სიტყვა" ნაპოვნია 5 შედეგი</div>
-        <div className="wrapper2">
-          {productsFound.map((product, index) => {
-            return (
-              <ProductBox
-                key={index}
-                link={product.link}
-                productName={product.name}
-                imgSrc={product.img}
-              />
-            );
-          })}
-        </div>
-      </div>
-    </div>
+      <Layout seo={seo}>
+          <div className="search_page">
+              <SearchInput color="#ACD3C1" />
+              <div className="wrapper content">
+                  <div className="op05 bpg">"საძიებო სიტყვა" ნაპოვნია 5 შედეგი</div>
+                  <div className="wrapper2">
+                      {productsFound.map((product, index) => {
+                          return (
+                              <ProductBox
+                                  key={index}
+                                  link={product.link}
+                                  productName={product.name}
+                                  imgSrc={product.img}
+                              />
+                          );
+                      })}
+                  </div>
+              </div>
+          </div>
+      </Layout>
   );
 };
 
