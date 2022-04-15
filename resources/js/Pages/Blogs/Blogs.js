@@ -7,8 +7,9 @@ import SearchInput from "../../components/SmallComps/SearchInput";
 //import Img3 from "../../assets/images/blogs/11.png";
 //import Img4 from "../../assets/images/blogs/12.png";
 import "./Blogs.css";
+import Layout from "../../Layouts/Layout";
 
-const Blogs = () => {
+const Blogs = ({seo}) => {
   const blogsList = [
     {
       link: "/single-blog",
@@ -48,28 +49,30 @@ const Blogs = () => {
     },
   ];
   return (
-    <div className="blogsPage">
-      <SearchInput color="#ACD3C1" />
-      <div className="wrapper">
-        <PagePath prev="მთავარი" current="ბლოგი" color="#949494" />
-        <div className="main">
-          <div className="title50">ბლოგი</div>
-          {blogsList.map((blog, index) => {
-            return (
-              <BlogBoxLarge
-                key={index}
-                img={blog.img}
-                subject={blog.subject}
-                title={blog.title}
-                paragraph={blog.paragraph}
-                link={blog.link}
-                date={blog.date}
-              />
-            );
-          })}
-        </div>
-      </div>
-    </div>
+      <Layout seo={seo}>
+          <div className="blogsPage">
+              <SearchInput color="#ACD3C1" />
+              <div className="wrapper">
+                  <PagePath prev="მთავარი" current="ბლოგი" color="#949494" />
+                  <div className="main">
+                      <div className="title50">ბლოგი</div>
+                      {blogsList.map((blog, index) => {
+                          return (
+                              <BlogBoxLarge
+                                  key={index}
+                                  img={blog.img}
+                                  subject={blog.subject}
+                                  title={blog.title}
+                                  paragraph={blog.paragraph}
+                                  link={blog.link}
+                                  date={blog.date}
+                              />
+                          );
+                      })}
+                  </div>
+              </div>
+          </div>
+      </Layout>
   );
 };
 
