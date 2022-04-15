@@ -5363,7 +5363,9 @@ var Header = function Header() {
   var sharedData = (0,_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__.usePage)().props.localizations;
   var _usePage$props = (0,_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__.usePage)().props,
       pathname = _usePage$props.pathname,
-      currentLocale = _usePage$props.currentLocale; //console.log(usePage().props);
+      locales = _usePage$props.locales,
+      currentLocale = _usePage$props.currentLocale,
+      locale_urls = _usePage$props.locale_urls; //console.log(usePage().props);
 
   var pathname_ = getPathFromUrl(pathname);
   console.log(pathname_);
@@ -5428,13 +5430,23 @@ var Header = function Header() {
     }, nav.name);
   })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "languages"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
-    className: "on"
-  }, "\u10E5\u10E0\u10D7"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+  }, Object.keys(locales).map(function (name, index) {
+    if (locales[name] === currentLocale) {
+      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+        className: "on",
+        key: name + "locale"
+      }, name);
+    }
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "drop"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__.Link, {
-    href: "/"
-  }, "Eng")))));
+  }, Object.keys(locales).map(function (name, index) {
+    if (locales[name] !== currentLocale) {
+      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("a", {
+        href: locale_urls[name],
+        key: name + "locale"
+      }, name);
+    }
+  })))));
 };
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Header);
