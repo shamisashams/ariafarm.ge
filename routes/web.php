@@ -115,6 +115,7 @@ Route::prefix('{locale?}')
 
             // Blogs Page
             Route::get('blogs', [\App\Http\Controllers\Client\BlogController::class, 'index'])->name('client.blog.index');
+            Route::get('blog/{blog}', [\App\Http\Controllers\Client\BlogController::class, 'show'])->name('client.blog.show');
 
 
             //checkout

@@ -64,7 +64,7 @@ const Blogs = ({seo}) => {
                                   subject={blog.subject}
                                   title={blog.title}
                                   paragraph={blog.paragraph}
-                                  link={blog.link}
+                                  link={route('client.blog.show','blog')}
                                   date={blog.date}
                               />
                           );
