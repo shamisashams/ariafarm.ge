@@ -26,7 +26,7 @@ const Header = () => {
 
     const sharedData = usePage().props.localizations;
 
-    const { pathname, currentLocale } = usePage().props;
+    const { pathname, locales, currentLocale, locale_urls } = usePage().props;
     //console.log(usePage().props);
     let pathname_ = getPathFromUrl(pathname);
     console.log(pathname_);
@@ -96,9 +96,21 @@ const Header = () => {
           })}
         </div>
         <div className="languages">
-          <div className="on">ქრთ</div>
+            {Object.keys(locales).map((name, index) => {
+                if (locales[name] === currentLocale) {
+                    return <div className="on" key={name + "locale"}>{name}</div>;
+                }
+            })}
           <div className="drop">
-            <Link href="/">Eng</Link>
+              {Object.keys(locales).map((name, index) => {
+                  if (locales[name] !== currentLocale) {
+                      return (
+                          <a href={locale_urls[name]} key={name + "locale"}>
+                              {name}
+                          </a>
+                      );
+                  }
+              })}
           </div>
         </div>
       </div>
