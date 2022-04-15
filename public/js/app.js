@@ -5409,8 +5409,8 @@ var Header = function Header() {
     href: route('client.gallery.index'),
     name: __('client.nav_gallery', sharedData)
   }, {
-    href: "/blogs",
-    name: "ბლოგი"
+    href: route('client.blog.index'),
+    name: __('client.nav_blog', sharedData)
   }, {
     href: route('client.contact.index'),
     name: __('client.nav_contact', sharedData)
