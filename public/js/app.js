@@ -3965,7 +3965,7 @@ var Home = function Home(_ref) {
       display: "block"
     }
   }, "22\u20BE"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_7__.Link, {
-    href: "/"
+    href: route('client.special-offer.index')
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_Buttons_Buttons__WEBPACK_IMPORTED_MODULE_1__.MainButton, {
     text: "\u10D3\u10D4\u10E2\u10D0\u10DA\u10E3\u10E0\u10D0\u10D3"
   })))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {

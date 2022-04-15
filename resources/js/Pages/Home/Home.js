@@ -119,7 +119,7 @@ const Home = ({seo}) => {
               >
                 22₾
               </span>
-              <Link href="/">
+              <Link href={route('client.special-offer.index')}>
                 <MainButton text="დეტალურად" />
               </Link>
             </div>
