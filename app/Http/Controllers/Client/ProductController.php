@@ -207,7 +207,7 @@ class ProductController extends Controller
         /*return view('client.pages.product.show', [
             'product' => $product
         ]);*/
-        return Inertia::render('ProductDetails/ProductDetails',[
+        return Inertia::render('SingleProduct/SingleProduct',[
             'product' => $product,
             'category_path' => $path,
             'similar_products' => $similar_products,

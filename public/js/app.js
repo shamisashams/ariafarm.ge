@@ -4303,7 +4303,7 @@ var Products = function Products(_ref) {
       }, tab.categoryProducts.map(function (product, index) {
         return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_ProductBox_ProductBox__WEBPACK_IMPORTED_MODULE_1__.ProductBox, {
           key: index,
-          link: product.link,
+          link: route('client.product.show', 'cow-milk'),
           productName: product.name,
           imgSrc: product.img
         });
@@ -4570,13 +4570,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/index.js");
-/* harmony import */ var _components_SmallComps_SearchInput__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../components/SmallComps/SearchInput */ "./resources/js/components/SmallComps/SearchInput.js");
-/* harmony import */ var _SingleProduct_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./SingleProduct.css */ "./resources/js/Pages/SingleProduct/SingleProduct.css");
-/* harmony import */ var _components_Buttons_Buttons__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../components/Buttons/Buttons */ "./resources/js/components/Buttons/Buttons.js");
-/* harmony import */ var _Home_HomeSliders_CardSlider__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../Home/HomeSliders/CardSlider */ "./resources/js/Pages/Home/HomeSliders/CardSlider.js");
-/* harmony import */ var _components_FermaSection_FermaSection__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../components/FermaSection/FermaSection */ "./resources/js/components/FermaSection/FermaSection.js");
-/* harmony import */ var _components_SmallComps_Icons__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../components/SmallComps/Icons */ "./resources/js/components/SmallComps/Icons.js");
+/* harmony import */ var _inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @inertiajs/inertia-react */ "./node_modules/@inertiajs/inertia-react/dist/index.js");
+/* harmony import */ var _components_SmallComps_SearchInput__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../components/SmallComps/SearchInput */ "./resources/js/components/SmallComps/SearchInput.js");
+/* harmony import */ var _SingleProduct_css__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./SingleProduct.css */ "./resources/js/Pages/SingleProduct/SingleProduct.css");
+/* harmony import */ var _components_Buttons_Buttons__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../components/Buttons/Buttons */ "./resources/js/components/Buttons/Buttons.js");
+/* harmony import */ var _Home_HomeSliders_CardSlider__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../Home/HomeSliders/CardSlider */ "./resources/js/Pages/Home/HomeSliders/CardSlider.js");
+/* harmony import */ var _components_FermaSection_FermaSection__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../components/FermaSection/FermaSection */ "./resources/js/components/FermaSection/FermaSection.js");
+/* harmony import */ var _components_SmallComps_Icons__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../../components/SmallComps/Icons */ "./resources/js/components/SmallComps/Icons.js");
+/* harmony import */ var _Layouts_Layout__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../../Layouts/Layout */ "./resources/js/Layouts/Layout.js");
 function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
 
 function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
@@ -4589,6 +4590,7 @@ function _iterableToArrayLimit(arr, i) { var _i = arr == null ? null : typeof Sy
 
 function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
+ //import { Link } from "react-router-dom";
 
 
  //import Arrow from "../../assets/images/icons/long-arrow-alt-left.svg";
@@ -4604,7 +4606,9 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
 
-var SingleProduct = function SingleProduct() {
+
+var SingleProduct = function SingleProduct(_ref) {
+  var seo = _ref.seo;
   // productColor varies for each product
   var productColor = "#155228";
 
@@ -4617,48 +4621,50 @@ var SingleProduct = function SingleProduct() {
   var cardData = [{
     text: "არია ქართული ბრენდია. აღნიშნული საწარმო სამეგრელოში, სენაკის რაიონის სოფელ მენჯში 60 ჰა მიწის ფართობზეა განლაგებული. ფერმა ყველა საერთაშორისო სტანდარტის დაცვით აშენდა.",
     color: productColor,
-    icon: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_SmallComps_Icons__WEBPACK_IMPORTED_MODULE_6__.Cow, {
+    icon: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_SmallComps_Icons__WEBPACK_IMPORTED_MODULE_7__.Cow, {
       color: productColor
     })
   }, {
     text: "არია ქართული ბრენდია. აღნიშნული საწარმო სამეგრელოში, სენაკის რაიონის სოფელ მენჯში 60 ჰა მიწის ფართობზეა განლაგებული. ფერმა ყველა საერთაშორისო სტანდარტის დაცვით აშენდა.",
     color: productColor,
-    icon: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_SmallComps_Icons__WEBPACK_IMPORTED_MODULE_6__.Goat, {
+    icon: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_SmallComps_Icons__WEBPACK_IMPORTED_MODULE_7__.Goat, {
       color: productColor
     })
   }, {
     text: "არია ქართული ბრენდია. აღნიშნული საწარმო სამეგრელოში, სენაკის რაიონის სოფელ მენჯში 60 ჰა მიწის ფართობზეა განლაგებული. ფერმა ყველა საერთაშორისო სტანდარტის დაცვით აშენდა.",
     color: productColor,
-    icon: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_SmallComps_Icons__WEBPACK_IMPORTED_MODULE_6__.Cow, {
+    icon: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_SmallComps_Icons__WEBPACK_IMPORTED_MODULE_7__.Cow, {
       color: productColor
     })
   }, {
     text: "არია ქართული ბრენდია. აღნიშნული საწარმული საწარმო სამეგრელოში, სენაკის რაიონის სოფელ მენჯში 60 ჰა მიწის ფართობზეა გაო სამეგრელოში, სენაკის რაიონის სოფელ მენჯში 60 ჰა მიწის ფართობზეა განლაგებული. ფერმა ყველა საერთაშორისო სტანდარტის დაცვით აშენდა.",
     color: productColor,
-    icon: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_SmallComps_Icons__WEBPACK_IMPORTED_MODULE_6__.Goat, {
+    icon: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_SmallComps_Icons__WEBPACK_IMPORTED_MODULE_7__.Goat, {
       color: productColor
     })
   }, {
     text: "არია ქართული ბრენდია. აღნიშნნლაგებული. ფერმა ყველა საერთაშორისო სტანდარტის დაცვით აშენდა.",
     color: productColor,
-    icon: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_SmallComps_Icons__WEBPACK_IMPORTED_MODULE_6__.Cow, {
+    icon: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_SmallComps_Icons__WEBPACK_IMPORTED_MODULE_7__.Cow, {
       color: productColor
     })
   }, {
     text: "არია ქართული ბრენდია. აღნიშნული საწარმო სამეგრელოში, სენაკის რაიონის სოფელ მენჯში 60 ჰა მიწის ფართობზეა განლაგებული. ფერმა ყველა საერთაშორისო სტანდარტის დაცვით აშენდა.",
     color: productColor,
-    icon: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_SmallComps_Icons__WEBPACK_IMPORTED_MODULE_6__.Goat, {
+    icon: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_SmallComps_Icons__WEBPACK_IMPORTED_MODULE_7__.Goat, {
       color: productColor
     })
   }];
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_Layouts_Layout__WEBPACK_IMPORTED_MODULE_8__["default"], {
+    seo: seo
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "singleProduct"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_SmallComps_SearchInput__WEBPACK_IMPORTED_MODULE_1__["default"], {
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_SmallComps_SearchInput__WEBPACK_IMPORTED_MODULE_2__["default"], {
     color: "#ACD3C1"
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "wrapper showcase"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_7__.Link, {
-    to: "/",
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__.Link, {
+    href: route('client.product.index'),
     className: "back",
     style: {
       color: "#939393"
@@ -4668,11 +4674,11 @@ var SingleProduct = function SingleProduct() {
     alt: ""
   }), " \u10DE\u10E0\u10DD\u10D3\u10E3\u10E5\u10EA\u10D8\u10D0\u10E8\u10D8 \u10D3\u10D0\u10D1\u10E0\u10E3\u10DC\u10D4\u10D1\u10D0"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "flex main"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_7__.Link, {
-    to: "/"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_Buttons_Buttons__WEBPACK_IMPORTED_MODULE_3__.ArrowLeft, null)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_7__.Link, {
-    to: "/"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_Buttons_Buttons__WEBPACK_IMPORTED_MODULE_3__.ArrowRight, null)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__.Link, {
+    href: "/"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_Buttons_Buttons__WEBPACK_IMPORTED_MODULE_4__.ArrowLeft, null)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__.Link, {
+    href: "/"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_Buttons_Buttons__WEBPACK_IMPORTED_MODULE_4__.ArrowRight, null)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "images"
   }, images.map(function (img, index) {
     return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
@@ -4719,7 +4725,7 @@ var SingleProduct = function SingleProduct() {
     className: "text"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "title35"
-  }, "\u10E4\u10D0\u10E5\u10E2\u10D4\u10D1\u10D8 \u10D3\u10D0 ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("br", null), "\u10D9\u10DD\u10DB\u10D4\u10DC\u10E2\u10D0\u10E0\u10D4\u10D1\u10D8"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", null, "\u10E8\u10D4\u10DB\u10D7\u10EE\u10D5\u10D4\u10D5\u10D8\u10D7\u10D0\u10D3 \u10D2\u10D4\u10DC\u10D4\u10E0\u10D8\u10E0\u10D4\u10D1\u10E3\u10DA\u10D8 \u10E2\u10D4\u10E5\u10E1\u10E2\u10D8 \u10D4\u10EE\u10DB\u10D0\u10E0\u10D4\u10D1\u10D0 \u10D3\u10D8\u10D6\u10D0\u10D8\u10DC\u10D4\u10E0\u10D4\u10D1\u10E1 \u10D3\u10D0 \u10E2\u10D8\u10DE\u10DD\u10D2\u10E0\u10D0\u10E4\u10D8\u10E3\u10DA\u10D8 \u10DC\u10D0\u10EC\u10D0\u10E0\u10DB\u10D8\u10E1 \u10E8\u10D4\u10DB\u10E5\u10DB\u10DC\u10D4\u10DA\u10D4\u10D1\u10E1.")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_Home_HomeSliders_CardSlider__WEBPACK_IMPORTED_MODULE_4__["default"], {
+  }, "\u10E4\u10D0\u10E5\u10E2\u10D4\u10D1\u10D8 \u10D3\u10D0 ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("br", null), "\u10D9\u10DD\u10DB\u10D4\u10DC\u10E2\u10D0\u10E0\u10D4\u10D1\u10D8"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", null, "\u10E8\u10D4\u10DB\u10D7\u10EE\u10D5\u10D4\u10D5\u10D8\u10D7\u10D0\u10D3 \u10D2\u10D4\u10DC\u10D4\u10E0\u10D8\u10E0\u10D4\u10D1\u10E3\u10DA\u10D8 \u10E2\u10D4\u10E5\u10E1\u10E2\u10D8 \u10D4\u10EE\u10DB\u10D0\u10E0\u10D4\u10D1\u10D0 \u10D3\u10D8\u10D6\u10D0\u10D8\u10DC\u10D4\u10E0\u10D4\u10D1\u10E1 \u10D3\u10D0 \u10E2\u10D8\u10DE\u10DD\u10D2\u10E0\u10D0\u10E4\u10D8\u10E3\u10DA\u10D8 \u10DC\u10D0\u10EC\u10D0\u10E0\u10DB\u10D8\u10E1 \u10E8\u10D4\u10DB\u10E5\u10DB\u10DC\u10D4\u10DA\u10D4\u10D1\u10E1.")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_Home_HomeSliders_CardSlider__WEBPACK_IMPORTED_MODULE_5__["default"], {
     cardData: cardData
   }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "recipe wrapper2 flex"
@@ -4734,7 +4740,7 @@ var SingleProduct = function SingleProduct() {
     className: "title50 gradient-bg rtl h100"
   }, "\u10E0\u10D4\u10EA\u10D4\u10DE\u10E2\u10D8"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", {
     className: "op05"
-  }, "\u10E8\u10D4\u10DB\u10D7\u10EE\u10D5\u10D4\u10D5\u10D8\u10D7\u10D0\u10D3 \u10D2\u10D4\u10DC\u10D4\u10E0\u10D8\u10E0\u10D4\u10D1\u10E3\u10DA\u10D8 \u10E2\u10D4\u10E5\u10E1\u10E2\u10D8 \u10D4\u10EE\u10DB\u10D0\u10E0\u10D4\u10D1\u10D0 \u10D3\u10D8\u10D6\u10D0\u10D8\u10DC\u10D4\u10E0\u10D4\u10D1\u10E1 \u10D3\u10D0 \u10E2\u10D8\u10DE\u10DD\u10D2\u10E0\u10D0\u10E4\u10D8\u10E3\u10DA\u10D8 \u10DC\u10D0\u10EC\u10D0\u10E0\u10DB\u10D8\u10E1 \u10E8\u10D4\u10DB\u10E5\u10DB\u10DC\u10D4\u10DA\u10D4\u10D1\u10E1, \u10E0\u10D4\u10D0\u10DA\u10E3\u10E0\u10D7\u10D0\u10DC \u10DB\u10D0\u10E5\u10E1\u10D8\u10DB\u10D0\u10DA\u10E3\u10E0\u10D0\u10D3 \u10DB\u10D8\u10D0\u10EE\u10DA\u10DD\u10D4\u10D1\u10E3\u10DA\u10D8 \u10E8\u10D0\u10D1\u10DA\u10DD\u10DC\u10D8 \u10EC\u10D0\u10E0\u10E3\u10D3\u10D2\u10D8\u10DC\u10DD\u10DC \u10E8\u10D4\u10DB\u10E4\u10D0\u10E1\u10D4\u10D1\u10D4\u10DA\u10E1. \u10EE\u10E8\u10D8\u10E0\u10D0\u10D3\u10D0\u10D0 \u10E8\u10D4\u10DB\u10D7\u10EE\u10D5\u10D4\u10D5\u10D0, \u10E0\u10DD\u10D3\u10D4\u10E1\u10D0\u10EA \u10D3\u10D8\u10D6\u10D0\u10D8\u10DC\u10D8\u10E1 \u10E8\u10D4\u10E1\u10E0\u10E3\u10DA\u10D4\u10D1\u10D8\u10E1\u10D0\u10E1 \u10E1\u10D0\u10E9\u10D5\u10D4\u10DC\u10D4\u10D1\u10D4\u10DA\u10D8\u10D0, \u10D7\u10E3 \u10E0\u10DD\u10D2\u10DD\u10E0\u10D8 \u10D8\u10E5\u10DC\u10D4\u10D1\u10D0 \u10E2\u10D4\u10E5\u10E1\u10E2\u10D8\u10E1 \u10D1\u10DA\u10DD\u10D9\u10D8. \u10E1\u10EC\u10DD\u10E0\u10D4\u10D3 \u10D0\u10E1\u10D4\u10D7 \u10D3\u10E0\u10DD\u10E1 \u10D0\u10E0\u10D8\u10E1 \u10DB\u10DD\u10E1\u10D0\u10EE\u10D4\u10E0\u10EE\u10D4\u10D1\u10D4\u10DA\u10D8 \u10D0\u10DB \u10D2\u10D4\u10DC\u10D4\u10E0\u10D0\u10E2\u10DD\u10E0\u10D8\u10D7 \u10E8\u10D4\u10E5\u10DB\u10DC\u10D8\u10DA\u10D8 \u10E2\u10D4\u10E5\u10E1\u10E2\u10D8\u10E1 \u10D2\u10D0\u10DB\u10DD\u10E7\u10D4\u10DC\u10D4\u10D1\u10D0, \u10E0\u10D0\u10D3\u10D2\u10D0\u10DC \u10E3\u10D1\u10E0\u10D0\u10DA\u10DD\u10D3 \u201E\u10E2\u10D4\u10E5\u10E1\u10E2\u10D8 \u10E2\u10D4\u10E5\u10E1\u10E2\u10D8 \u10E2\u10D4\u10E5\u10E1\u10E2\u10D8\u201C \u10D0\u10DC \u10E1\u10EE\u10D5\u10D0 \u10D2\u10D0\u10DB\u10D4\u10DD\u10E0\u10D4\u10D1\u10D0\u10D3\u10D8 \u10E1\u10D8\u10E2\u10E7\u10D5\u10D4\u10D1\u10D8\u10E1 \u10E9\u10D0\u10E7\u10E0\u10D0, \u10EE\u10D4\u10DA\u10DD\u10D5\u10DC\u10E3\u10E0 \u10D5\u10D8\u10D6\u10E3\u10D0\u10DA\u10E3\u10E0 \u10E1\u10D8\u10DB\u10D4\u10E2\u10E0\u10D8\u10D0\u10E1 \u10E5\u10DB\u10DC\u10D8\u10E1 \u10D3\u10D0 \u10D0\u10E0\u10D0\u10D1\u10E3\u10DC\u10D4\u10D1\u10E0\u10D8\u10D5\u10D0\u10D3 \u10D2\u10D0\u10DB\u10DD\u10D8\u10E7\u10E3\u10E0\u10D4\u10D1\u10D0.", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("br", null), " ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("br", null), "\u10E8\u10D4\u10DB\u10D7\u10EE\u10D5\u10D4\u10D5\u10D8\u10D7\u10D0\u10D3 \u10D2\u10D4\u10DC\u10D4\u10E0\u10D8\u10E0\u10D4\u10D1\u10E3\u10DA\u10D8 \u10E2\u10D4\u10E5\u10E1\u10E2\u10D8 \u10D4\u10EE\u10DB\u10D0\u10E0\u10D4\u10D1\u10D0 \u10D3\u10D8\u10D6\u10D0\u10D8\u10DC\u10D4\u10E0\u10D4\u10D1\u10E1 \u10D3\u10D0 \u10E2\u10D8\u10DE\u10DD\u10D2\u10E0\u10D0\u10E4\u10D8\u10E3\u10DA\u10D8 \u10DC\u10D0\u10EC\u10D0\u10E0\u10DB\u10D8\u10E1 \u10E8\u10D4\u10DB\u10E5\u10DB\u10DC\u10D4\u10DA\u10D4\u10D1\u10E1, \u10E0\u10D4\u10D0\u10DA\u10E3\u10E0\u10D7\u10D0\u10DC \u10DB\u10D0\u10E5\u10E1\u10D8\u10DB\u10D0\u10DA\u10E3\u10E0\u10D0\u10D3 \u10DB\u10D8\u10D0\u10EE\u10DA\u10DD\u10D4\u10D1\u10E3\u10DA\u10D8 \u10E8\u10D0\u10D1\u10DA\u10DD\u10DC\u10D8 \u10EC\u10D0\u10E0\u10E3\u10D3\u10D2\u10D8\u10DC\u10DD\u10DC \u10E8\u10D4\u10DB\u10E4\u10D0\u10E1\u10D4\u10D1\u10D4\u10DA\u10E1. \u10EE\u10E8\u10D8\u10E0\u10D0\u10D3\u10D0\u10D0 \u10E8\u10D4\u10DB\u10D7\u10EE\u10D5\u10D4\u10D5\u10D0, \u10E0\u10DD\u10D3\u10D4\u10E1\u10D0\u10EA \u10D3\u10D8\u10D6\u10D0\u10D8\u10DC\u10D8\u10E1 \u10E8\u10D4\u10E1\u10E0\u10E3\u10DA\u10D4\u10D1\u10D8\u10E1\u10D0\u10E1 \u10E1\u10D0\u10E9\u10D5\u10D4\u10DC\u10D4\u10D1\u10D4\u10DA\u10D8\u10D0, \u10D7\u10E3 \u10E0\u10DD\u10D2\u10DD\u10E0\u10D8 \u10D8\u10E5\u10DC\u10D4\u10D1\u10D0 \u10E2\u10D4\u10E5\u10E1\u10E2\u10D8\u10E1 \u10D1\u10DA\u10DD\u10D9\u10D8. \u10E1\u10EC\u10DD\u10E0\u10D4\u10D3 \u10D0\u10E1\u10D4\u10D7 \u10D3\u10E0\u10DD\u10E1 \u10D0\u10E0\u10D8\u10E1 \u10DB\u10DD\u10E1\u10D0\u10EE\u10D4\u10E0\u10EE\u10D4\u10D1\u10D4\u10DA\u10D8 \u10D0\u10DB \u10D2\u10D4\u10DC\u10D4\u10E0\u10D0\u10E2\u10DD\u10E0\u10D8\u10D7 \u10E8\u10D4\u10E5\u10DB\u10DC\u10D8\u10DA\u10D8 \u10E2\u10D4\u10E5\u10E1\u10E2\u10D8\u10E1 \u10D2\u10D0\u10DB\u10DD\u10E7\u10D4\u10DC\u10D4\u10D1\u10D0, \u10E0\u10D0\u10D3\u10D2\u10D0\u10DC \u10E3\u10D1\u10E0\u10D0\u10DA\u10DD\u10D3 \u201E\u10E2\u10D4\u10E5\u10E1\u10E2\u10D8 \u10E2\u10D4\u10E5\u10E1\u10E2\u10D8 \u10E2\u10D4\u10E5\u10E1\u10E2\u10D8\u201C \u10D0\u10DC \u10E1\u10EE\u10D5\u10D0 \u10D2\u10D0\u10DB\u10D4\u10DD\u10E0\u10D4\u10D1\u10D0\u10D3\u10D8 \u10E1\u10D8\u10E2\u10E7\u10D5\u10D4\u10D1\u10D8\u10E1 \u10E9\u10D0\u10E7\u10E0\u10D0, \u10EE\u10D4\u10DA\u10DD\u10D5\u10DC\u10E3\u10E0 \u10D5\u10D8\u10D6\u10E3\u10D0\u10DA\u10E3\u10E0 \u10E1\u10D8\u10DB\u10D4\u10E2\u10E0\u10D8\u10D0\u10E1 \u10E5\u10DB\u10DC\u10D8\u10E1 \u10D3\u10D0 \u10D0\u10E0\u10D0\u10D1\u10E3\u10DC\u10D4\u10D1\u10E0\u10D8\u10D5\u10D0\u10D3 \u10D2\u10D0\u10DB\u10DD\u10D8\u10E7\u10E3\u10E0\u10D4\u10D1\u10D0.", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("br", null), " ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("br", null), "\u10E2\u10D4\u10E5\u10E1\u10E2\u10D8\u10E1 \u10D1\u10DA\u10DD\u10D9\u10D8. \u10E1\u10EC\u10DD\u10E0\u10D4\u10D3 \u10D0\u10E1\u10D4\u10D7 \u10D3\u10E0\u10DD\u10E1 \u10D0\u10E0\u10D8\u10E1 \u10DB\u10DD\u10E1\u10D0\u10EE\u10D4\u10E0\u10EE\u10D4\u10D1\u10D4\u10DA\u10D8 \u10D0\u10DB \u10D2\u10D4\u10DC\u10D4\u10E0\u10D0\u10E2\u10DD\u10E0\u10D8\u10D7 \u10E8\u10D4\u10E5\u10DB\u10DC\u10D8\u10DA\u10D8 \u10E2\u10D4\u10E5\u10E1\u10E2\u10D8\u10E1 \u10D2\u10D0\u10DB\u10DD\u10E7\u10D4\u10DC\u10D4\u10D1\u10D0, \u10E0\u10D0\u10D3\u10D2\u10D0\u10DC \u10E3\u10D1\u10E0\u10D0\u10DA\u10DD\u10D3 \u201E\u10E2\u10D4\u10E5\u10E1\u10E2\u10D8 \u10E2\u10D4\u10E5\u10E1\u10E2\u10D8 \u10E2\u10D4\u10E5\u10E1\u10E2\u10D8\u201C \u10D0\u10DC \u10E1\u10EE\u10D5\u10D0 \u10D2\u10D0\u10DB\u10D4\u10DD\u10E0\u10D4\u10D1\u10D0\u10D3\u10D8 \u10E1\u10D8\u10E2\u10E7\u10D5\u10D4\u10D1\u10D8\u10E1 \u10E9\u10D0\u10E7\u10E0\u10D0, \u10EE\u10D4\u10DA\u10DD\u10D5\u10DC\u10E3\u10E0 \u10D5\u10D8\u10D6\u10E3\u10D0\u10DA\u10E3\u10E0 \u10E1\u10D8\u10DB\u10D4\u10E2\u10E0\u10D8\u10D0\u10E1 \u10E5\u10DB\u10DC\u10D8\u10E1 \u10D3\u10D0 \u10D0\u10E0\u10D0\u10D1\u10E3\u10DC\u10D4\u10D1\u10E0\u10D8\u10D5\u10D0\u10D3 \u10D2\u10D0\u10DB\u10DD\u10D8\u10E7\u10E3\u10E0\u10D4\u10D1\u10D0."), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_7__.Link, {
+  }, "\u10E8\u10D4\u10DB\u10D7\u10EE\u10D5\u10D4\u10D5\u10D8\u10D7\u10D0\u10D3 \u10D2\u10D4\u10DC\u10D4\u10E0\u10D8\u10E0\u10D4\u10D1\u10E3\u10DA\u10D8 \u10E2\u10D4\u10E5\u10E1\u10E2\u10D8 \u10D4\u10EE\u10DB\u10D0\u10E0\u10D4\u10D1\u10D0 \u10D3\u10D8\u10D6\u10D0\u10D8\u10DC\u10D4\u10E0\u10D4\u10D1\u10E1 \u10D3\u10D0 \u10E2\u10D8\u10DE\u10DD\u10D2\u10E0\u10D0\u10E4\u10D8\u10E3\u10DA\u10D8 \u10DC\u10D0\u10EC\u10D0\u10E0\u10DB\u10D8\u10E1 \u10E8\u10D4\u10DB\u10E5\u10DB\u10DC\u10D4\u10DA\u10D4\u10D1\u10E1, \u10E0\u10D4\u10D0\u10DA\u10E3\u10E0\u10D7\u10D0\u10DC \u10DB\u10D0\u10E5\u10E1\u10D8\u10DB\u10D0\u10DA\u10E3\u10E0\u10D0\u10D3 \u10DB\u10D8\u10D0\u10EE\u10DA\u10DD\u10D4\u10D1\u10E3\u10DA\u10D8 \u10E8\u10D0\u10D1\u10DA\u10DD\u10DC\u10D8 \u10EC\u10D0\u10E0\u10E3\u10D3\u10D2\u10D8\u10DC\u10DD\u10DC \u10E8\u10D4\u10DB\u10E4\u10D0\u10E1\u10D4\u10D1\u10D4\u10DA\u10E1. \u10EE\u10E8\u10D8\u10E0\u10D0\u10D3\u10D0\u10D0 \u10E8\u10D4\u10DB\u10D7\u10EE\u10D5\u10D4\u10D5\u10D0, \u10E0\u10DD\u10D3\u10D4\u10E1\u10D0\u10EA \u10D3\u10D8\u10D6\u10D0\u10D8\u10DC\u10D8\u10E1 \u10E8\u10D4\u10E1\u10E0\u10E3\u10DA\u10D4\u10D1\u10D8\u10E1\u10D0\u10E1 \u10E1\u10D0\u10E9\u10D5\u10D4\u10DC\u10D4\u10D1\u10D4\u10DA\u10D8\u10D0, \u10D7\u10E3 \u10E0\u10DD\u10D2\u10DD\u10E0\u10D8 \u10D8\u10E5\u10DC\u10D4\u10D1\u10D0 \u10E2\u10D4\u10E5\u10E1\u10E2\u10D8\u10E1 \u10D1\u10DA\u10DD\u10D9\u10D8. \u10E1\u10EC\u10DD\u10E0\u10D4\u10D3 \u10D0\u10E1\u10D4\u10D7 \u10D3\u10E0\u10DD\u10E1 \u10D0\u10E0\u10D8\u10E1 \u10DB\u10DD\u10E1\u10D0\u10EE\u10D4\u10E0\u10EE\u10D4\u10D1\u10D4\u10DA\u10D8 \u10D0\u10DB \u10D2\u10D4\u10DC\u10D4\u10E0\u10D0\u10E2\u10DD\u10E0\u10D8\u10D7 \u10E8\u10D4\u10E5\u10DB\u10DC\u10D8\u10DA\u10D8 \u10E2\u10D4\u10E5\u10E1\u10E2\u10D8\u10E1 \u10D2\u10D0\u10DB\u10DD\u10E7\u10D4\u10DC\u10D4\u10D1\u10D0, \u10E0\u10D0\u10D3\u10D2\u10D0\u10DC \u10E3\u10D1\u10E0\u10D0\u10DA\u10DD\u10D3 \u201E\u10E2\u10D4\u10E5\u10E1\u10E2\u10D8 \u10E2\u10D4\u10E5\u10E1\u10E2\u10D8 \u10E2\u10D4\u10E5\u10E1\u10E2\u10D8\u201C \u10D0\u10DC \u10E1\u10EE\u10D5\u10D0 \u10D2\u10D0\u10DB\u10D4\u10DD\u10E0\u10D4\u10D1\u10D0\u10D3\u10D8 \u10E1\u10D8\u10E2\u10E7\u10D5\u10D4\u10D1\u10D8\u10E1 \u10E9\u10D0\u10E7\u10E0\u10D0, \u10EE\u10D4\u10DA\u10DD\u10D5\u10DC\u10E3\u10E0 \u10D5\u10D8\u10D6\u10E3\u10D0\u10DA\u10E3\u10E0 \u10E1\u10D8\u10DB\u10D4\u10E2\u10E0\u10D8\u10D0\u10E1 \u10E5\u10DB\u10DC\u10D8\u10E1 \u10D3\u10D0 \u10D0\u10E0\u10D0\u10D1\u10E3\u10DC\u10D4\u10D1\u10E0\u10D8\u10D5\u10D0\u10D3 \u10D2\u10D0\u10DB\u10DD\u10D8\u10E7\u10E3\u10E0\u10D4\u10D1\u10D0.", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("br", null), " ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("br", null), "\u10E8\u10D4\u10DB\u10D7\u10EE\u10D5\u10D4\u10D5\u10D8\u10D7\u10D0\u10D3 \u10D2\u10D4\u10DC\u10D4\u10E0\u10D8\u10E0\u10D4\u10D1\u10E3\u10DA\u10D8 \u10E2\u10D4\u10E5\u10E1\u10E2\u10D8 \u10D4\u10EE\u10DB\u10D0\u10E0\u10D4\u10D1\u10D0 \u10D3\u10D8\u10D6\u10D0\u10D8\u10DC\u10D4\u10E0\u10D4\u10D1\u10E1 \u10D3\u10D0 \u10E2\u10D8\u10DE\u10DD\u10D2\u10E0\u10D0\u10E4\u10D8\u10E3\u10DA\u10D8 \u10DC\u10D0\u10EC\u10D0\u10E0\u10DB\u10D8\u10E1 \u10E8\u10D4\u10DB\u10E5\u10DB\u10DC\u10D4\u10DA\u10D4\u10D1\u10E1, \u10E0\u10D4\u10D0\u10DA\u10E3\u10E0\u10D7\u10D0\u10DC \u10DB\u10D0\u10E5\u10E1\u10D8\u10DB\u10D0\u10DA\u10E3\u10E0\u10D0\u10D3 \u10DB\u10D8\u10D0\u10EE\u10DA\u10DD\u10D4\u10D1\u10E3\u10DA\u10D8 \u10E8\u10D0\u10D1\u10DA\u10DD\u10DC\u10D8 \u10EC\u10D0\u10E0\u10E3\u10D3\u10D2\u10D8\u10DC\u10DD\u10DC \u10E8\u10D4\u10DB\u10E4\u10D0\u10E1\u10D4\u10D1\u10D4\u10DA\u10E1. \u10EE\u10E8\u10D8\u10E0\u10D0\u10D3\u10D0\u10D0 \u10E8\u10D4\u10DB\u10D7\u10EE\u10D5\u10D4\u10D5\u10D0, \u10E0\u10DD\u10D3\u10D4\u10E1\u10D0\u10EA \u10D3\u10D8\u10D6\u10D0\u10D8\u10DC\u10D8\u10E1 \u10E8\u10D4\u10E1\u10E0\u10E3\u10DA\u10D4\u10D1\u10D8\u10E1\u10D0\u10E1 \u10E1\u10D0\u10E9\u10D5\u10D4\u10DC\u10D4\u10D1\u10D4\u10DA\u10D8\u10D0, \u10D7\u10E3 \u10E0\u10DD\u10D2\u10DD\u10E0\u10D8 \u10D8\u10E5\u10DC\u10D4\u10D1\u10D0 \u10E2\u10D4\u10E5\u10E1\u10E2\u10D8\u10E1 \u10D1\u10DA\u10DD\u10D9\u10D8. \u10E1\u10EC\u10DD\u10E0\u10D4\u10D3 \u10D0\u10E1\u10D4\u10D7 \u10D3\u10E0\u10DD\u10E1 \u10D0\u10E0\u10D8\u10E1 \u10DB\u10DD\u10E1\u10D0\u10EE\u10D4\u10E0\u10EE\u10D4\u10D1\u10D4\u10DA\u10D8 \u10D0\u10DB \u10D2\u10D4\u10DC\u10D4\u10E0\u10D0\u10E2\u10DD\u10E0\u10D8\u10D7 \u10E8\u10D4\u10E5\u10DB\u10DC\u10D8\u10DA\u10D8 \u10E2\u10D4\u10E5\u10E1\u10E2\u10D8\u10E1 \u10D2\u10D0\u10DB\u10DD\u10E7\u10D4\u10DC\u10D4\u10D1\u10D0, \u10E0\u10D0\u10D3\u10D2\u10D0\u10DC \u10E3\u10D1\u10E0\u10D0\u10DA\u10DD\u10D3 \u201E\u10E2\u10D4\u10E5\u10E1\u10E2\u10D8 \u10E2\u10D4\u10E5\u10E1\u10E2\u10D8 \u10E2\u10D4\u10E5\u10E1\u10E2\u10D8\u201C \u10D0\u10DC \u10E1\u10EE\u10D5\u10D0 \u10D2\u10D0\u10DB\u10D4\u10DD\u10E0\u10D4\u10D1\u10D0\u10D3\u10D8 \u10E1\u10D8\u10E2\u10E7\u10D5\u10D4\u10D1\u10D8\u10E1 \u10E9\u10D0\u10E7\u10E0\u10D0, \u10EE\u10D4\u10DA\u10DD\u10D5\u10DC\u10E3\u10E0 \u10D5\u10D8\u10D6\u10E3\u10D0\u10DA\u10E3\u10E0 \u10E1\u10D8\u10DB\u10D4\u10E2\u10E0\u10D8\u10D0\u10E1 \u10E5\u10DB\u10DC\u10D8\u10E1 \u10D3\u10D0 \u10D0\u10E0\u10D0\u10D1\u10E3\u10DC\u10D4\u10D1\u10E0\u10D8\u10D5\u10D0\u10D3 \u10D2\u10D0\u10DB\u10DD\u10D8\u10E7\u10E3\u10E0\u10D4\u10D1\u10D0.", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("br", null), " ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("br", null), "\u10E2\u10D4\u10E5\u10E1\u10E2\u10D8\u10E1 \u10D1\u10DA\u10DD\u10D9\u10D8. \u10E1\u10EC\u10DD\u10E0\u10D4\u10D3 \u10D0\u10E1\u10D4\u10D7 \u10D3\u10E0\u10DD\u10E1 \u10D0\u10E0\u10D8\u10E1 \u10DB\u10DD\u10E1\u10D0\u10EE\u10D4\u10E0\u10EE\u10D4\u10D1\u10D4\u10DA\u10D8 \u10D0\u10DB \u10D2\u10D4\u10DC\u10D4\u10E0\u10D0\u10E2\u10DD\u10E0\u10D8\u10D7 \u10E8\u10D4\u10E5\u10DB\u10DC\u10D8\u10DA\u10D8 \u10E2\u10D4\u10E5\u10E1\u10E2\u10D8\u10E1 \u10D2\u10D0\u10DB\u10DD\u10E7\u10D4\u10DC\u10D4\u10D1\u10D0, \u10E0\u10D0\u10D3\u10D2\u10D0\u10DC \u10E3\u10D1\u10E0\u10D0\u10DA\u10DD\u10D3 \u201E\u10E2\u10D4\u10E5\u10E1\u10E2\u10D8 \u10E2\u10D4\u10E5\u10E1\u10E2\u10D8 \u10E2\u10D4\u10E5\u10E1\u10E2\u10D8\u201C \u10D0\u10DC \u10E1\u10EE\u10D5\u10D0 \u10D2\u10D0\u10DB\u10D4\u10DD\u10E0\u10D4\u10D1\u10D0\u10D3\u10D8 \u10E1\u10D8\u10E2\u10E7\u10D5\u10D4\u10D1\u10D8\u10E1 \u10E9\u10D0\u10E7\u10E0\u10D0, \u10EE\u10D4\u10DA\u10DD\u10D5\u10DC\u10E3\u10E0 \u10D5\u10D8\u10D6\u10E3\u10D0\u10DA\u10E3\u10E0 \u10E1\u10D8\u10DB\u10D4\u10E2\u10E0\u10D8\u10D0\u10E1 \u10E5\u10DB\u10DC\u10D8\u10E1 \u10D3\u10D0 \u10D0\u10E0\u10D0\u10D1\u10E3\u10DC\u10D4\u10D1\u10E0\u10D8\u10D5\u10D0\u10D3 \u10D2\u10D0\u10DB\u10DD\u10D8\u10E7\u10E3\u10E0\u10D4\u10D1\u10D0."), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__.Link, {
     to: "/",
     className: "fb flex "
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("svg", {
@@ -4748,12 +4754,12 @@ var SingleProduct = function SingleProduct() {
     d: "M11.119,10.688l.528-3.439h-3.3V5.018A1.719,1.719,0,0,1,10.286,3.16h1.5V.232A18.292,18.292,0,0,0,9.123,0C6.406,0,4.63,1.647,4.63,4.628V7.249H1.609v3.439H4.63V19H8.347V10.688Z",
     transform: "translate(-1.609)",
     fill: "#1e69ff"
-  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", null, "\u10D2\u10D0\u10D0\u10D6\u10D8\u10D0\u10E0\u10D4")))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_FermaSection_FermaSection__WEBPACK_IMPORTED_MODULE_5__["default"], {
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", null, "\u10D2\u10D0\u10D0\u10D6\u10D8\u10D0\u10E0\u10D4")))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_FermaSection_FermaSection__WEBPACK_IMPORTED_MODULE_6__["default"], {
     imgSrc: "/assets/images/other/1.png",
     link: "/",
     title: "\u10E9\u10D5\u10D4\u10DC\u10D8 \u10E4\u10D4\u10E0\u10DB\u10D0",
     paragraph: "\u10E8\u10D4\u10DB\u10D7\u10EE\u10D5\u10D4\u10D5\u10D8\u10D7\u10D0\u10D3 \u10D2\u10D4\u10DC\u10D4\u10E0\u10D8\u10E0\u10D4\u10D1\u10E3\u10DA\u10D8 \u10E2\u10D4\u10E5\u10E1\u10E2\u10D8 \u10D4\u10EE\u10DB\u10D0\u10E0\u10D4\u10D1\u10D0 \u10D3\u10D8\u10D6\u10D0\u10D8\u10DC\u10D4\u10E0\u10D4\u10D1\u10E1 \u10D3\u10D0 \u10E2\u10D8\u10DE\u10DD\u10D2\u10E0\u10D0\u10E4\u10D8\u10E3\u10DA\u10D8 \u10DC\u10D0\u10EC\u10D0\u10E0\u10DB\u10D8\u10E1 \u10E8\u10D4\u10DB\u10E5\u10DB\u10DC\u10D4\u10DA\u10D4\u10D1\u10E1,"
-  }));
+  })));
 };
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (SingleProduct);
@@ -5114,9 +5120,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/index.js");
-/* harmony import */ var _Buttons_Buttons__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../Buttons/Buttons */ "./resources/js/components/Buttons/Buttons.js");
-/* harmony import */ var _FermaSection_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./FermaSection.css */ "./resources/js/components/FermaSection/FermaSection.css");
+/* harmony import */ var _inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @inertiajs/inertia-react */ "./node_modules/@inertiajs/inertia-react/dist/index.js");
+/* harmony import */ var _Buttons_Buttons__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../Buttons/Buttons */ "./resources/js/components/Buttons/Buttons.js");
+/* harmony import */ var _FermaSection_css__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./FermaSection.css */ "./resources/js/components/FermaSection/FermaSection.css");
+ //import { Link } from "react-router-dom";
 
 
 
@@ -5131,9 +5138,9 @@ var FermaSection = function FermaSection(props) {
     className: "left"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "title35"
-  }, props.title), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", null, props.paragraph), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_3__.Link, {
-    to: props.link
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_Buttons_Buttons__WEBPACK_IMPORTED_MODULE_1__.MainButton, {
+  }, props.title), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", null, props.paragraph), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__.Link, {
+    href: props.link
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_Buttons_Buttons__WEBPACK_IMPORTED_MODULE_2__.MainButton, {
     text: "\u10D2\u10D0\u10D8\u10D2\u10D4 \u10DB\u10D4\u10E2\u10D8"
   }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "img"

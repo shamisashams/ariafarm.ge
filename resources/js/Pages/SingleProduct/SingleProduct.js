@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+//import { Link } from "react-router-dom";
+import { Link } from "@inertiajs/inertia-react";
 import SearchInput from "../../components/SmallComps/SearchInput";
 //import Arrow from "../../assets/images/icons/long-arrow-alt-left.svg";
 //import Img1 from "../../assets/images/products/1.png";
@@ -13,7 +14,9 @@ import CardSlider from "../Home/HomeSliders/CardSlider";
 import FermaSection from "../../components/FermaSection/FermaSection";
 import { Cow, Goat } from "../../components/SmallComps/Icons";
 
-const SingleProduct = () => {
+import Layout from "../../Layouts/Layout";
+
+const SingleProduct = ({seo}) => {
   // productColor varies for each product
   let productColor = "#155228";
   const [showImg, setShowImg] = useState(0);
@@ -51,19 +54,20 @@ const SingleProduct = () => {
     },
   ];
   return (
-    <div className="singleProduct">
+      <Layout seo={seo}>
+        <div className="singleProduct">
       <SearchInput color="#ACD3C1" />
       <div className="wrapper showcase">
-        <Link to="/" className="back" style={{ color: "#939393" }}>
+        <Link href={route('client.product.index')} className="back" style={{ color: "#939393" }}>
           <img src="/assets/images/icons/long-arrow-alt-left.svg" alt="" /> პროდუქციაში დაბრუნება
         </Link>
         <div className="flex main">
           {/* this goes to the previous product page */}
-          <Link to="/">
+          <Link href="/">
             <ArrowLeft />
           </Link>
           {/* this goes to the next product page */}
-          <Link to="/">
+          <Link href="/">
             <ArrowRight />
           </Link>
           <div className="images">
@@ -191,6 +195,7 @@ const SingleProduct = () => {
         paragraph="შემთხვევითად გენერირებული ტექსტი ეხმარება დიზაინერებს და ტიპოგრაფიული ნაწარმის შემქმნელებს,"
       />
     </div>
+      </Layout>
   );
 };
 
