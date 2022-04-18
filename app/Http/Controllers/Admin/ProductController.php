@@ -253,7 +253,7 @@ class ProductController extends Controller
         $saveData['special_price_tag'] = isset($saveData['special_price_tag']) && (bool)$saveData['special_price_tag'];
 
         //dd($saveData);
-        $attributes = $saveData['attribute'];
+        $attributes = isset($saveData['attribute']) ? $saveData['attribute'] : [];
         unset($saveData['attribute']);
 
         //dd($attributes);

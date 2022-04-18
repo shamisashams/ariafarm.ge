@@ -16,24 +16,24 @@ const Footer = () => {
       name: __('client.nav_home',sharedData),
     },
     {
-      link: "/",
-      name: "ფერმა",
+      link: route('client.farm.index'),
+      name: __('client.nav_farm',sharedData),
     },
     {
       link: route('client.product.index'),
       name: __('client.nav_products',sharedData),
     },
     {
-      link: "/",
-      name: "საწარმო",
+      link: route('client.enterprise.index'),
+      name: __('client.nav_enterprise',sharedData),
     },
     {
       link: route('client.special-offer.index'),
       name: __('client.nav_special_offer',sharedData),
     },
     {
-      link: "/",
-      name: "მაღაზიები",
+      link: route('client.shop.index'),
+      name: __('client.nav_shops',sharedData),
     },
     {
       link: route('client.blog.index'),
@@ -48,8 +48,8 @@ const Footer = () => {
       name: __('client.nav_contact',sharedData),
     },
     {
-      link: "/",
-      name: "ხშირად დასმული კითხვები",
+      link: route('client.home.index'),
+      name: __('client.nav_faq',sharedData),
     },
   ];
   return (

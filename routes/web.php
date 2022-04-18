@@ -122,6 +122,10 @@ Route::prefix('{locale?}')
 
             Route::get('search', [\App\Http\Controllers\Client\SearchController::class, 'index'])->name('client.search.index');
 
+            Route::get('farm', [\App\Http\Controllers\Client\FarmController::class, 'index'])->name('client.farm.index');
+            Route::get('enterprise', [\App\Http\Controllers\Client\EnterpriseController::class, 'index'])->name('client.enterprise.index');
+            Route::get('shops', [\App\Http\Controllers\Client\ShopController::class, 'index'])->name('client.shop.index');
+
             //checkout
             Route::get('cart',[\App\Http\Controllers\Client\CartController::class,'index'])->name('client.cart.index');
             Route::get('checkout',[\App\Http\Controllers\Client\OrderController::class,'index'])->name('client.checkout.index');

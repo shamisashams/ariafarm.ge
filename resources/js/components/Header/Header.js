@@ -43,16 +43,16 @@ const Header = () => {
       name: __('client.nav_products',sharedData),
     },
     {
-      href: "/farm",
-      name: "ფერმა",
+      href: route('client.farm.index'),
+      name: __('client.nav_farm',sharedData),
     },
     {
-      href: "/enterprise",
-      name: "საწარმო",
+      href: route('client.enterprise.index'),
+      name: __('client.nav_enterprise',sharedData),
     },
     {
-      href: "/shops",
-      name: "მაღაზიები",
+      href: route('client.shop.index'),
+      name: __('client.nav_shops',sharedData),
     },
     {
       href: route('client.gallery.index'),
