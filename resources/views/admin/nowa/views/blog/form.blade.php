@@ -463,23 +463,7 @@ $traverse = function ($categories, $prefix = '-') use (&$traverse,$ids) {
     <!-- row closed -->
 
     <!-- /row -->
-    <div class="row">
-        <div class="col-lg-12 col-md-12">
-            <div class="card">
-                <div class="card-body">
-                    <div>
-                        <h6 class="card-title mb-1">@lang('admin.card_slider')</h6>
-                    </div>
-                    <div>
-                        <div class="form-group">
 
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-        </div>
-    </div>
     <!-- row -->
 
     <!-- row closed -->

@@ -90,7 +90,6 @@ class SearchController extends Controller
         //dd($products);
         return Inertia::render('SearchPage/SearchPage',[
             'products' => $products,
-            'category' => null,
             'images' => $images,
             'filter' => $this->getAttributes(),
             "seo" => [

@@ -79,6 +79,13 @@
             "i18n": "gallery",
             "icon": "g_translate",
             "slug": "gallery"
+        },
+        {
+            "url": "blog.index",
+            "name": "ბლოგი",
+            "i18n": "blog",
+            "icon": "g_translate",
+            "slug": "blog"
         }
     ],
     "_comment": [

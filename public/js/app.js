@@ -4588,6 +4588,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_ProductBox_ProductBox__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../components/ProductBox/ProductBox */ "./resources/js/components/ProductBox/ProductBox.js");
 /* harmony import */ var _SearchPage_css__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./SearchPage.css */ "./resources/js/Pages/SearchPage/SearchPage.css");
 /* harmony import */ var _Layouts_Layout__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../Layouts/Layout */ "./resources/js/Layouts/Layout.js");
+/* harmony import */ var _inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @inertiajs/inertia-react */ "./node_modules/@inertiajs/inertia-react/dist/index.js");
 
  //import Img1 from "../../assets/images/products/1.png";
 //import Img2 from "../../assets/images/products/2.png";
@@ -4597,8 +4598,11 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+
 var SearchPage = function SearchPage(_ref) {
   var seo = _ref.seo;
+  var products = (0,_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_5__.usePage)().props.products;
+  var sharedData = (0,_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_5__.usePage)().props.localizations;
   var productsFound = [{
     link: "/single-product",
     img: "/assets/images/products/1.png",
@@ -4626,14 +4630,14 @@ var SearchPage = function SearchPage(_ref) {
     className: "wrapper content"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "op05 bpg"
-  }, "\"\u10E1\u10D0\u10EB\u10D8\u10D4\u10D1\u10DD \u10E1\u10D8\u10E2\u10E7\u10D5\u10D0\" \u10DC\u10D0\u10DE\u10DD\u10D5\u10DC\u10D8\u10D0 5 \u10E8\u10D4\u10D3\u10D4\u10D2\u10D8"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+  }, "\"\u10E1\u10D0\u10EB\u10D8\u10D4\u10D1\u10DD \u10E1\u10D8\u10E2\u10E7\u10D5\u10D0\" \u10DC\u10D0\u10DE\u10DD\u10D5\u10DC\u10D8\u10D0 ", products.length, " \u10E8\u10D4\u10D3\u10D4\u10D2\u10D8"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "wrapper2"
-  }, productsFound.map(function (product, index) {
+  }, products.map(function (product, index) {
     return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_ProductBox_ProductBox__WEBPACK_IMPORTED_MODULE_2__.ProductBox, {
       key: index,
-      link: route('client.product.show', 'cow-milk'),
-      productName: product.name,
-      imgSrc: product.img
+      link: route('client.product.show', product.slug),
+      productName: product.title,
+      imgSrc: product.latest_image != null ? "/" + product.latest_image.path + "/" + product.latest_image.title : null
     });
   })))));
 };
@@ -6112,6 +6116,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var _Icons__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Icons */ "./resources/js/components/SmallComps/Icons.js");
 /* harmony import */ var _SmallComps_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./SmallComps.css */ "./resources/js/components/SmallComps/SmallComps.css");
+/* harmony import */ var _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @inertiajs/inertia */ "./node_modules/@inertiajs/inertia/dist/index.js");
+/* harmony import */ var _inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @inertiajs/inertia-react */ "./node_modules/@inertiajs/inertia-react/dist/index.js");
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); enumerableOnly && (symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; })), keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = null != arguments[i] ? arguments[i] : {}; i % 2 ? ownKeys(Object(source), !0).forEach(function (key) { _defineProperty(target, key, source[key]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)) : ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
 
 function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
@@ -6128,13 +6140,36 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
 
+
+
 var SearchInput = function SearchInput(_ref) {
   var color = _ref.color;
+  var sharedData = (0,_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_4__.usePage)().props.localizations;
 
-  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(false),
+  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)({
+    term: ""
+  }),
       _useState2 = _slicedToArray(_useState, 2),
-      openSearch = _useState2[0],
-      setOpenSearch = _useState2[1];
+      values = _useState2[0],
+      setValues = _useState2[1];
+
+  function handleSubmit(e) {
+    e.preventDefault();
+    _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_3__.Inertia.get(route("client.search.index"), values);
+  }
+
+  function handleChange(e) {
+    var key = e.target.id;
+    var value = e.target.value;
+    setValues(function (values) {
+      return _objectSpread(_objectSpread({}, values), {}, _defineProperty({}, key, value));
+    });
+  }
+
+  var _useState3 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(false),
+      _useState4 = _slicedToArray(_useState3, 2),
+      openSearch = _useState4[0],
+      setOpenSearch = _useState4[1];
 
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "wrapper",
@@ -6143,20 +6178,23 @@ var SearchInput = function SearchInput(_ref) {
     }
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: openSearch ? "search_input open" : "search_input"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("form", {
+    onSubmit: handleSubmit
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("input", {
-    onChange: function onChange() {
-      return setOpenSearch(true);
+    onChange: function onChange(e) {
+      setOpenSearch(true);
+      handleChange(e);
     },
     style: {
       border: "".concat(color, " 2px solid")
     },
     type: "text",
-    placeholder: "\u10E8\u10D4\u10D8\u10E7\u10D5\u10D0\u10DC\u10D4 \u10E1\u10D0\u10EB\u10D4\u10D1\u10DD \u10E1\u10D8\u10E2\u10E7\u10D5\u10D0",
-    name: "",
-    id: ""
+    placeholder: __('client.search_placeholder', sharedData),
+    name: "term",
+    id: "term"
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_Icons__WEBPACK_IMPORTED_MODULE_1__.Magnifier, {
     color: color
-  })));
+  }))));
 };
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (SearchInput);
