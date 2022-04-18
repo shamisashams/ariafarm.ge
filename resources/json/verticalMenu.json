@@ -74,11 +74,11 @@
             "slug": "change_password"
         },
         {
-            "url": "order.index",
-            "name": "შეკვეთები",
-            "i18n": "order",
+            "url": "gallery.index",
+            "name": "გალერეა",
+            "i18n": "gallery",
             "icon": "g_translate",
-            "slug": "orders"
+            "slug": "gallery"
         }
     ],
     "_comment": [

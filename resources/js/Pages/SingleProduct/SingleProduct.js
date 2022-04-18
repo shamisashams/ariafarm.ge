@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 //import { Link } from "react-router-dom";
-import { Link } from "@inertiajs/inertia-react";
+import {Link, usePage} from "@inertiajs/inertia-react";
 import SearchInput from "../../components/SmallComps/SearchInput";
 //import Arrow from "../../assets/images/icons/long-arrow-alt-left.svg";
 //import Img1 from "../../assets/images/products/1.png";
@@ -17,6 +17,11 @@ import { Cow, Goat } from "../../components/SmallComps/Icons";
 import Layout from "../../Layouts/Layout";
 
 const SingleProduct = ({seo}) => {
+
+    const { product, product_images, similar_products } = usePage().props;
+    const sharedData = usePage().props.localizations;
+
+    const renderHTML = (rawHTML) => React.createElement("div", { dangerouslySetInnerHTML: { __html: rawHTML } });
   // productColor varies for each product
   let productColor = "#155228";
   const [showImg, setShowImg] = useState(0);
@@ -53,57 +58,70 @@ const SingleProduct = ({seo}) => {
       icon: <Goat color={productColor} />,
     },
   ];
+  let prod_link = [];
+  if(similar_products.length > 0 && similar_products.length < 2){
+      prod_link[0] = similar_products[0]
+      prod_link[1] = similar_products[0]
+  } else if(similar_products.length > 1){
+      prod_link[0] = similar_products[0]
+      prod_link[1] = similar_products[1]
+  } else {
+      prod_link[0] = product
+      prod_link[1] = product
+  }
   return (
       <Layout seo={seo}>
         <div className="singleProduct">
       <SearchInput color="#ACD3C1" />
       <div className="wrapper showcase">
         <Link href={route('client.product.index')} className="back" style={{ color: "#939393" }}>
-          <img src="/assets/images/icons/long-arrow-alt-left.svg" alt="" /> პროდუქციაში დაბრუნება
+          <img src="/assets/images/icons/long-arrow-alt-left.svg" alt="" /> {__('client.product_back',sharedData)}
         </Link>
         <div className="flex main">
           {/* this goes to the previous product page */}
-          <Link href="/">
+          <Link href={route('client.product.show',prod_link[0].slug)}>
             <ArrowLeft />
           </Link>
           {/* this goes to the next product page */}
-          <Link href="/">
+          <Link href={route('client.product.show',prod_link[1].slug)}>
             <ArrowRight />
           </Link>
           <div className="images">
-            {images.map((img, index) => {
+            {product_images.map((img, index) => {
               return (
                 <div
                   key={index}
                   className={showImg === index ? "img large show" : "img large"}
                 >
-                  <img src={img} alt="" />
+                  <img src={"/" +
+                      img.path +
+                      "/" +
+                      img.title} alt="" />
                 </div>
               );
             })}
             <div className="flex centered">
-              {images.map((img, index) => {
+              {product_images.map((img, index) => {
                 return (
                   <div
                     key={index}
                     className="img"
                     onClick={() => setShowImg(index)}
                   >
-                    <img src={img} alt="" />
+                    <img src={"/" +
+                        img.path +
+                        "/" +
+                        img.title} alt="" />
                   </div>
                 );
               })}
             </div>
           </div>
           <div className="details">
-            <div className="title50 gradient-bg rtl h100">მოცარელა</div>
+            <div className="title50 gradient-bg rtl h100">{product.title}</div>
             <div className="green">პროდუქტის შესახებ</div>
             <p className="op05">
-              შემთხვევითად გენერირებული ტექსტი ეხმარება დიზაინერებს და
-              ტიპოგრაფიული ნაწარმის შემქმნელებს, რეალურთან მაქსიმალურად
-              მიახლოებული შაბლონი წარუდგინონ შემფასებელს. ხშირადაა შემთხვევა,
-              როდესაც დიზაინის შესრულებისას საჩვენებელია, თუ როგორი იქნება
-              ტექსტის ბლოკი. სწორედ ასეთ
+                {renderHTML(product.description)}
             </p>
             <div className="green">შემადგენლობა</div>
             <p className="op05">

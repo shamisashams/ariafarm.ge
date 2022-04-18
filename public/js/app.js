@@ -3618,6 +3618,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_SmallComps_PagePath__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../components/SmallComps/PagePath */ "./resources/js/components/SmallComps/PagePath.js");
 /* harmony import */ var _Gallery_css__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./Gallery.css */ "./resources/js/Pages/Gallery/Gallery.css");
 /* harmony import */ var _Layouts_Layout__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../Layouts/Layout */ "./resources/js/Layouts/Layout.js");
+/* harmony import */ var _inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @inertiajs/inertia-react */ "./node_modules/@inertiajs/inertia-react/dist/index.js");
 function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
 
 function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
@@ -3644,6 +3645,7 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
 
+
 var Gallery = function Gallery(_ref) {
   var seo = _ref.seo;
 
@@ -3652,6 +3654,9 @@ var Gallery = function Gallery(_ref) {
       showModal = _useState2[0],
       setShowModal = _useState2[1];
 
+  var gallery = (0,_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_5__.usePage)().props.gallery;
+  var sharedData = (0,_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_5__.usePage)().props.localizations;
+  console.log(gallery);
   var galleryImgs = [{
     img: "/assets/images/blogs/1.png",
     video: false
@@ -3715,12 +3720,13 @@ var Gallery = function Gallery(_ref) {
     color: "#949494"
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "title50"
-  }, "\u10D2\u10D0\u10DA\u10D4\u10E0\u10D4\u10D0"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+  }, __('client.gallery_header', sharedData)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "grid"
-  }, galleryImgs.map(function (img, index) {
+  }, gallery.map(function (img, index) {
+    var vid = img.video === null ? false : true;
     return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
       key: index,
-      className: img.video ? "grid_item video" : "grid_item image"
+      className: vid ? "grid_item video" : "grid_item image"
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
       onClick: function onClick() {
         return setShowModal(index + 1);
@@ -3728,14 +3734,14 @@ var Gallery = function Gallery(_ref) {
       key: index,
       className: "img"
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", {
-      src: img.img,
+      src: '/' + img.img,
       alt: ""
     })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
       className: showModal === index + 1 ? "gallery_modal show" : "gallery_modal"
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
       className: "modal_content"
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", {
-      src: img.img,
+      src: '/' + img.img,
       alt: ""
     }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("iframe", {
       src: "https://www.youtube.com/embed/".concat(img.video),
@@ -4687,7 +4693,21 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 var SingleProduct = function SingleProduct(_ref) {
   var seo = _ref.seo;
-  // productColor varies for each product
+  var _usePage$props = (0,_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__.usePage)().props,
+      product = _usePage$props.product,
+      product_images = _usePage$props.product_images,
+      similar_products = _usePage$props.similar_products;
+  var sharedData = (0,_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__.usePage)().props.localizations;
+
+  var renderHTML = function renderHTML(rawHTML) {
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+      dangerouslySetInnerHTML: {
+        __html: rawHTML
+      }
+    });
+  }; // productColor varies for each product
+
+
   var productColor = "#155228";
 
   var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(0),
@@ -4733,6 +4753,19 @@ var SingleProduct = function SingleProduct(_ref) {
       color: productColor
     })
   }];
+  var prod_link = [];
+
+  if (similar_products.length > 0 && similar_products.length < 2) {
+    prod_link[0] = similar_products[0];
+    prod_link[1] = similar_products[0];
+  } else if (similar_products.length > 1) {
+    prod_link[0] = similar_products[0];
+    prod_link[1] = similar_products[1];
+  } else {
+    prod_link[0] = product;
+    prod_link[1] = product;
+  }
+
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_Layouts_Layout__WEBPACK_IMPORTED_MODULE_8__["default"], {
     seo: seo
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
@@ -4750,25 +4783,25 @@ var SingleProduct = function SingleProduct(_ref) {
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", {
     src: "/assets/images/icons/long-arrow-alt-left.svg",
     alt: ""
-  }), " \u10DE\u10E0\u10DD\u10D3\u10E3\u10E5\u10EA\u10D8\u10D0\u10E8\u10D8 \u10D3\u10D0\u10D1\u10E0\u10E3\u10DC\u10D4\u10D1\u10D0"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+  }), " ", __('client.product_back', sharedData)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "flex main"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__.Link, {
-    href: "/"
+    href: route('client.product.show', prod_link[0].slug)
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_Buttons_Buttons__WEBPACK_IMPORTED_MODULE_4__.ArrowLeft, null)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__.Link, {
-    href: "/"
+    href: route('client.product.show', prod_link[1].slug)
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_Buttons_Buttons__WEBPACK_IMPORTED_MODULE_4__.ArrowRight, null)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "images"
-  }, images.map(function (img, index) {
+  }, product_images.map(function (img, index) {
     return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
       key: index,
       className: showImg === index ? "img large show" : "img large"
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", {
-      src: img,
+      src: "/" + img.path + "/" + img.title,
       alt: ""
     }));
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "flex centered"
-  }, images.map(function (img, index) {
+  }, product_images.map(function (img, index) {
     return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
       key: index,
       className: "img",
@@ -4776,18 +4809,18 @@ var SingleProduct = function SingleProduct(_ref) {
         return setShowImg(index);
       }
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", {
-      src: img,
+      src: "/" + img.path + "/" + img.title,
       alt: ""
     }));
   }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "details"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "title50 gradient-bg rtl h100"
-  }, "\u10DB\u10DD\u10EA\u10D0\u10E0\u10D4\u10DA\u10D0"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+  }, product.title), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "green"
   }, "\u10DE\u10E0\u10DD\u10D3\u10E3\u10E5\u10E2\u10D8\u10E1 \u10E8\u10D4\u10E1\u10D0\u10EE\u10D4\u10D1"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", {
     className: "op05"
-  }, "\u10E8\u10D4\u10DB\u10D7\u10EE\u10D5\u10D4\u10D5\u10D8\u10D7\u10D0\u10D3 \u10D2\u10D4\u10DC\u10D4\u10E0\u10D8\u10E0\u10D4\u10D1\u10E3\u10DA\u10D8 \u10E2\u10D4\u10E5\u10E1\u10E2\u10D8 \u10D4\u10EE\u10DB\u10D0\u10E0\u10D4\u10D1\u10D0 \u10D3\u10D8\u10D6\u10D0\u10D8\u10DC\u10D4\u10E0\u10D4\u10D1\u10E1 \u10D3\u10D0 \u10E2\u10D8\u10DE\u10DD\u10D2\u10E0\u10D0\u10E4\u10D8\u10E3\u10DA\u10D8 \u10DC\u10D0\u10EC\u10D0\u10E0\u10DB\u10D8\u10E1 \u10E8\u10D4\u10DB\u10E5\u10DB\u10DC\u10D4\u10DA\u10D4\u10D1\u10E1, \u10E0\u10D4\u10D0\u10DA\u10E3\u10E0\u10D7\u10D0\u10DC \u10DB\u10D0\u10E5\u10E1\u10D8\u10DB\u10D0\u10DA\u10E3\u10E0\u10D0\u10D3 \u10DB\u10D8\u10D0\u10EE\u10DA\u10DD\u10D4\u10D1\u10E3\u10DA\u10D8 \u10E8\u10D0\u10D1\u10DA\u10DD\u10DC\u10D8 \u10EC\u10D0\u10E0\u10E3\u10D3\u10D2\u10D8\u10DC\u10DD\u10DC \u10E8\u10D4\u10DB\u10E4\u10D0\u10E1\u10D4\u10D1\u10D4\u10DA\u10E1. \u10EE\u10E8\u10D8\u10E0\u10D0\u10D3\u10D0\u10D0 \u10E8\u10D4\u10DB\u10D7\u10EE\u10D5\u10D4\u10D5\u10D0, \u10E0\u10DD\u10D3\u10D4\u10E1\u10D0\u10EA \u10D3\u10D8\u10D6\u10D0\u10D8\u10DC\u10D8\u10E1 \u10E8\u10D4\u10E1\u10E0\u10E3\u10DA\u10D4\u10D1\u10D8\u10E1\u10D0\u10E1 \u10E1\u10D0\u10E9\u10D5\u10D4\u10DC\u10D4\u10D1\u10D4\u10DA\u10D8\u10D0, \u10D7\u10E3 \u10E0\u10DD\u10D2\u10DD\u10E0\u10D8 \u10D8\u10E5\u10DC\u10D4\u10D1\u10D0 \u10E2\u10D4\u10E5\u10E1\u10E2\u10D8\u10E1 \u10D1\u10DA\u10DD\u10D9\u10D8. \u10E1\u10EC\u10DD\u10E0\u10D4\u10D3 \u10D0\u10E1\u10D4\u10D7"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+  }, renderHTML(product.description)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "green"
   }, "\u10E8\u10D4\u10DB\u10D0\u10D3\u10D2\u10D4\u10DC\u10DA\u10DD\u10D1\u10D0"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", {
     className: "op05"

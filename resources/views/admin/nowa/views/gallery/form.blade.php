@@ -54,12 +54,30 @@
                             <span>{{__('admin.status')}}</span>
                         </label>
                     </div>
+                    <div class="form-group">
+                        <label class="ckbox">
+                            <input type="checkbox" name="youtube"
+                                   value="true" {{$gallery->youtube ? 'checked' : ''}}>
+                            <span>{{__('admin.video')}}</span>
+                        </label>
+                    </div>
                     <div class="input-images"></div>
                     @if ($errors->has('images'))
                         <span class="help-block">
                                             {{ $errors->first('images') }}
                                         </span>
                     @endif
+
+                    <div id="videos">
+                        <div class="main-content-label mg-b-5">
+                            @lang('admin.video_id')
+                        </div>
+                        @foreach($gallery->files as $item)
+                        <div class="form-group">
+                            <input type="text" name="youtube[]" class="form-control" value="{{$item->youtube}}">
+                        </div>
+                        @endforeach
+                    </div>
 
                     <div class="form-group">
 
@@ -151,6 +169,19 @@
             filebrowserUploadMethod: 'form'
         });
         @endforeach
+    </script>
+
+    <script>
+        /*$('[name="youtube"]').click(function (e){
+            let checked = $(this).is(':checked');
+            if(checked){
+                $('.input-images').hide()
+                $('#videos').show()
+            } else {
+                $('.input-images').show()
+                $('#videos').hide()
+            }
+        })*/
     </script>
 
 @endsection

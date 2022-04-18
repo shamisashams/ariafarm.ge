@@ -10,9 +10,11 @@
 namespace App\Repositories\Eloquent;
 
 
+use App\Models\File;
 use App\Models\Gallery;
 use App\Repositories\Eloquent\Base\BaseRepository;
 use App\Repositories\GalleryRepositoryInterface;
+use Illuminate\Database\Eloquent\Model;
 
 /**
  * Class LanguageRepository
@@ -29,7 +31,20 @@ class GalleryRepository extends BaseRepository implements GalleryRepositoryInter
     }
 
     public function getClient(){
-        return $this->model->where('status',1)->with('files')->first();
+        return $this->model->where('status',1)->with('files')->get();
+    }
+
+
+    public function saveVideos(int $id, $request): Model{
+        foreach ($request->post('youtube') as $key => $file) {
+            $this->model->files()->create([
+                'title' => null,
+                'path' => null,
+                'format' => null,
+                'type' => 1,
+                'youtube' => $file
+            ]);
+        }
     }
 
 }

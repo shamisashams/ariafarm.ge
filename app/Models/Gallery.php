@@ -23,7 +23,8 @@ class Gallery extends Model
      * @var string[]
      */
     protected $fillable = [
-        'status'
+        'status',
+        'youtube'
     ];
 
     public function getFilterScopes(): array

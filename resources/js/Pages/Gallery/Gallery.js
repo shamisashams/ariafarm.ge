@@ -11,9 +11,13 @@ import "./Gallery.css";
 //import Img7 from "../../assets/images/blogs/11.png";
 //import Img8 from "../../assets/images/blogs/12.png";
 import Layout from "../../Layouts/Layout";
+import {usePage} from "@inertiajs/inertia-react";
 
 const Gallery = ({seo}) => {
   const [showModal, setShowModal] = useState(0);
+    const { gallery } = usePage().props;
+    const sharedData = usePage().props.localizations;
+    console.log(gallery);
   const galleryImgs = [
     {
       img: "/assets/images/blogs/1.png",
@@ -86,20 +90,21 @@ const Gallery = ({seo}) => {
               <SearchInput color="#ACD3C1" />
               <div className="wrapper">
                   <PagePath prev="მთავარი" current="პროდუქცია" color="#949494" />
-                  <div className="title50">გალერეა</div>
+                  <div className="title50">{__('client.gallery_header',sharedData)}</div>
                   <div className="grid">
-                      {galleryImgs.map((img, index) => {
+                      {gallery.map((img, index) => {
+                          let vid = img.video === null ? false : true;
                           return (
                               <div
                                   key={index}
-                                  className={img.video ? "grid_item video" : "grid_item image"}
+                                  className={vid ? "grid_item video" : "grid_item image"}
                               >
                                   <div
                                       onClick={() => setShowModal(index + 1)}
                                       key={index}
                                       className="img"
                                   >
-                                      <img src={img.img} alt="" />
+                                      <img src={'/' + img.img} alt="" />
                                   </div>
                                   <div
                                       className={
@@ -109,7 +114,7 @@ const Gallery = ({seo}) => {
                                       }
                                   >
                                       <div className="modal_content">
-                                          <img src={img.img} alt="" />
+                                          <img src={'/' + img.img} alt="" />
                                           <iframe
                                               src={`https://www.youtube.com/embed/${img.video}`}
                                               title="YouTube video player"

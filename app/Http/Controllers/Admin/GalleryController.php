@@ -91,6 +91,7 @@ class GalleryController extends Controller
     {
         $saveData = Arr::except($request->except('_token'), []);
         $saveData['status'] = isset($saveData['status']) && (bool)$saveData['status'];
+        $saveData['youtube'] = isset($saveData['youtube']) && (bool)$saveData['youtube'];
 
         $gallery = $this->galleryRepository->create($saveData);
 
@@ -157,8 +158,11 @@ class GalleryController extends Controller
      */
     public function update(GalleryRequest $request, string $locale, Gallery $gallery)
     {
+
+        //dd($request->file('images'));
         $saveData = Arr::except($request->except('_token'), []);
         $saveData['status'] = isset($saveData['status']) && (bool)$saveData['status'];
+        $saveData['youtube'] = isset($saveData['youtube']) && (bool)$saveData['youtube'];
 
         $this->galleryRepository->update($gallery->id, $saveData);
 

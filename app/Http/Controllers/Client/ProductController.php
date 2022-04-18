@@ -211,12 +211,19 @@ class ProductController extends Controller
         //dd($path);
 
 
-        $similar_products = Product::where(['status' => 1, 'product_categories.category_id' => $path[0]['id']])
+        $similar_products = Product::select('products.id','products.slug')->where(['status' => 1, 'product_categories.category_id' => end($path)['id']])
             ->where('products.id','!=',$product->id)
+            ->where(function ($query)use ($product){
+                $query->where('products.id','>',$product->id)
+                    ->orWhere('products.id','<',$product->id);
+            })
+
             ->leftJoin('product_categories', 'product_categories.product_id', '=', 'products.id')
-            ->inRandomOrder()
-            ->groupBy('products.id')
-            ->with('latestImage')->get();
+            ->orderBy('products.id')
+            ->limit(2)
+            ->get();
+
+        //dd($similar_products);
 
         foreach ($similar_products as $_product){
             $product_attributes = $_product->attribute_values;

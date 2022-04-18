@@ -111,6 +111,10 @@ class Product extends Model implements Searchable
                 'hasParam' => true,
                 'scopeMethod' => 'id'
             ],
+            'slug' => [
+                'hasParam' => true,
+                'scopeMethod' => 'slug'
+            ],
             'status' => [
                 'hasParam' => true,
                 'scopeMethod' => 'status'

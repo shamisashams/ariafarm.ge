@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Category;
 use App\Models\Page;
 use App\Models\Product;
+use App\Repositories\Eloquent\GalleryRepository;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\View\View;
@@ -18,10 +19,10 @@ use Spatie\TranslationLoader\TranslationLoaders\Db;
 class GalleryController extends Controller
 {
 
-    protected $productRepository;
+    protected $galleryRepository;
 
-    public function __construct(ProductRepository $productRepository){
-        $this->productRepository = $productRepository;
+    public function __construct(GalleryRepository $galleryRepository){
+        $this->galleryRepository = $galleryRepository;
     }
 
     /**
@@ -32,9 +33,20 @@ class GalleryController extends Controller
     public function index(string $locale, Request $request)
     {
         $page = Page::where('key', 'products')->firstOrFail();
-        $products = Product::with(['files'])->whereHas('categories',function (Builder $query){
-            $query->where('status', 1);
-        })->paginate(16);
+        $gallery_images = $this->galleryRepository->getClient();
+
+        $gallery = [];
+
+        $key = 0;
+        foreach ($gallery_images as $item){
+            foreach ($item->files as $file){
+                $gallery[$key]['img'] = $file->getFileUrlAttribute();
+                $gallery[$key]['video'] = $file->youtube;
+                $key++;
+            }
+        }
+
+        //dd($_gallery);
 
         $images = [];
         foreach ($page->sections as $sections){
@@ -48,7 +60,7 @@ class GalleryController extends Controller
 
         //dd($products);
         return Inertia::render('Gallery/Gallery',[
-            'products' => $products,
+            'gallery' => $gallery,
             'images' => $images,
             'page' => $page,
             "seo" => [
