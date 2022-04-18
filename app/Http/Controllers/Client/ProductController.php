@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Category;
 use App\Models\Page;
 use App\Models\Product;
+use App\Repositories\Eloquent\CategoryRepository;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\View\View;
@@ -19,9 +20,31 @@ class ProductController extends Controller
 {
 
     protected $productRepository;
+    protected $categoryRepository;
 
-    public function __construct(ProductRepository $productRepository){
+    public function __construct(ProductRepository $productRepository,CategoryRepository $categoryRepository){
         $this->productRepository = $productRepository;
+        $this->categoryRepository = $categoryRepository;
+    }
+
+
+    private function buildTree($data){
+        $result = [];
+
+        foreach ($data as $key => $category){
+            $result[$key]['title'] = $category->title;
+            $result[$key]['id'] = $category->id;
+            $result[$key]['slug'] = $category->slug;
+            $result[$key]['status'] = $category->status;
+            $result[$key]['position'] = $category->position;
+            $result[$key]['children'] = [];
+            $result[$key]['files'] = $category->files;
+            if(count($category->children)){
+                $result[$key]['children'] = $this->buildTree($category->children);
+            }
+        }
+
+        return $result;
     }
 
     /**
@@ -32,9 +55,11 @@ class ProductController extends Controller
     public function index(string $locale, Request $request)
     {
         $page = Page::where('key', 'products')->firstOrFail();
-        $products = Product::with(['files'])->whereHas('categories',function (Builder $query){
+        $products = Product::with(['latestImage'])->whereHas('categories',function (Builder $query){
             $query->where('status', 1);
-        })->paginate(16);
+        })->get();
+
+
 
         $images = [];
         foreach ($page->sections as $sections){
@@ -46,9 +71,25 @@ class ProductController extends Controller
 
         }
 
+        $_products = [];
+
+        foreach ($products as $product){
+            $categories = $product->categories;
+            foreach ($categories as $category){
+                if($category->isLeaf()){
+                    $_products[$category->id][] = $product;
+                }
+            }
+        }
+
+        $_categories = $this->categoryRepository->getVisibleCategoryTree();
+        $categories = $this->buildTree($_categories);
+
+        //dd($_products);
         //dd($products);
         return Inertia::render('Products/Products',[
-            'products' => $products,
+            'products' => $_products,
+            'categories' => $categories,
             'images' => $images,
             'page' => $page,
             "seo" => [

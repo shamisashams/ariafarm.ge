@@ -5,9 +5,19 @@ import SearchInput from "../../components/SmallComps/SearchInput";
 import "./Products.css";
 import { showcaseData, tabsData } from "./ProductsData";
 import Layout from "../../Layouts/Layout";
+import { usePage } from "@inertiajs/inertia-react";
+import { Buffalo, Cow, Goat } from "../../components/SmallComps/Icons";
 
 const Products = ({seo}) => {
   const [productTab, setProductTab] = useState(0);
+    const { categories, products } = usePage().props;
+    const sharedData = usePage().props.localizations;
+
+    console.log(categories);
+    console.log(products);
+
+    const renderHTML = (rawHTML) => React.createElement("div", { dangerouslySetInnerHTML: { __html: rawHTML } });
+
   return (
       <Layout seo={seo}>
         <div className="productsPage">
@@ -15,13 +25,12 @@ const Products = ({seo}) => {
       <div className="wrapper">
         <PagePath prev="მთავარი" current="პროდუქცია" color="#949494" />
         <div className="product_showcase">
-          <div className="title50">პროდუქცია</div>
+          <div className="title50">{__('client.product_header',sharedData)}</div>
           <p className="op05">
-            "არია" გთავაზობთ ქართულ, მხოლოდ ჩვენს მიერ წარმოებულ, ეკოლოგიურად
-            სუფთა, 100% ნატურალ რძის პროდუქტებს.
+              {renderHTML(__('client.product_text',sharedData).newLineToBr())}
           </p>
           <div className="tab_btns">
-            {showcaseData.map((data, index) => {
+            {categories.map((data, index) => {
               return (
                 <button
                   className={
@@ -35,7 +44,19 @@ const Products = ({seo}) => {
               );
             })}
           </div>
-          {showcaseData.map((data, index) => {
+          {categories.map((data, index) => {
+              let img;
+              switch (data.slug){
+                  case 'cow':
+                      img = <Cow color="#8EAFA0" />
+                      break;
+                  case 'goat':
+                      img = <Goat color="#8EAFA0" />
+                      break;
+                  case 'buffalo':
+                      img = <Buffalo color="#8EAFA0" />
+                      break;
+              }
             return (
               <div
                 key={index}
@@ -44,13 +65,13 @@ const Products = ({seo}) => {
                 }
               >
                 <div className="bg_text">{data.title}</div>
-                <div className="icon">{data.img}</div>
+                <div className="icon">{img}</div>
               </div>
             );
           })}
         </div>
         <div className="product_tabs">
-          {tabsData.map((data, index) => {
+          {categories.map((data, index) => {
             return (
               <div
                 key={index}
@@ -58,23 +79,28 @@ const Products = ({seo}) => {
                   productTab === index ? "content_tab active" : "content_tab"
                 }
               >
-                {data.eachTab.map((tab, index) => {
+                {data.children.map((tab, index) => {
                   return (
                     <div key={index} className="category">
                       <div className="title35 gradient-bg h60">
-                        {tab.category}
+                        {tab.title}
                       </div>
                       <div className="products_in_cat">
-                        {tab.categoryProducts.map((product, index) => {
+                        {products.hasOwnProperty(tab.id) ? products[tab.id].map((product, index) => {
                           return (
                             <ProductBox
                               key={index}
-                              link={route('client.product.show','cow-milk')}
-                              productName={product.name}
-                              imgSrc={product.img}
+                              link={route('client.product.show',product.slug)}
+                              productName={product.title}
+                              imgSrc={product.latest_image != null
+                                  ? "/" +
+                                  product.latest_image.path +
+                                  "/" +
+                                  product.latest_image.title
+                                  : null}
                             />
                           );
-                        })}
+                        }) : null}
                       </div>
                     </div>
                   );

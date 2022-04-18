@@ -4253,6 +4253,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Products_css__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./Products.css */ "./resources/js/Pages/Products/Products.css");
 /* harmony import */ var _ProductsData__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./ProductsData */ "./resources/js/Pages/Products/ProductsData.js");
 /* harmony import */ var _Layouts_Layout__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../Layouts/Layout */ "./resources/js/Layouts/Layout.js");
+/* harmony import */ var _inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @inertiajs/inertia-react */ "./node_modules/@inertiajs/inertia-react/dist/index.js");
+/* harmony import */ var _components_SmallComps_Icons__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../../components/SmallComps/Icons */ "./resources/js/components/SmallComps/Icons.js");
 function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
 
 function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
@@ -4273,6 +4275,8 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
 
+
+
 var Products = function Products(_ref) {
   var seo = _ref.seo;
 
@@ -4280,6 +4284,21 @@ var Products = function Products(_ref) {
       _useState2 = _slicedToArray(_useState, 2),
       productTab = _useState2[0],
       setProductTab = _useState2[1];
+
+  var _usePage$props = (0,_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_7__.usePage)().props,
+      categories = _usePage$props.categories,
+      products = _usePage$props.products;
+  var sharedData = (0,_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_7__.usePage)().props.localizations;
+  console.log(categories);
+  console.log(products);
+
+  var renderHTML = function renderHTML(rawHTML) {
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+      dangerouslySetInnerHTML: {
+        __html: rawHTML
+      }
+    });
+  };
 
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_Layouts_Layout__WEBPACK_IMPORTED_MODULE_6__["default"], {
     seo: seo
@@ -4297,11 +4316,11 @@ var Products = function Products(_ref) {
     className: "product_showcase"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "title50"
-  }, "\u10DE\u10E0\u10DD\u10D3\u10E3\u10E5\u10EA\u10D8\u10D0"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", {
+  }, __('client.product_header', sharedData)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", {
     className: "op05"
-  }, "\"\u10D0\u10E0\u10D8\u10D0\" \u10D2\u10D7\u10D0\u10D5\u10D0\u10D6\u10DD\u10D1\u10D7 \u10E5\u10D0\u10E0\u10D7\u10E3\u10DA, \u10DB\u10EE\u10DD\u10DA\u10DD\u10D3 \u10E9\u10D5\u10D4\u10DC\u10E1 \u10DB\u10D8\u10D4\u10E0 \u10EC\u10D0\u10E0\u10DB\u10DD\u10D4\u10D1\u10E3\u10DA, \u10D4\u10D9\u10DD\u10DA\u10DD\u10D2\u10D8\u10E3\u10E0\u10D0\u10D3 \u10E1\u10E3\u10E4\u10D7\u10D0, 100% \u10DC\u10D0\u10E2\u10E3\u10E0\u10D0\u10DA \u10E0\u10EB\u10D8\u10E1 \u10DE\u10E0\u10DD\u10D3\u10E3\u10E5\u10E2\u10D4\u10D1\u10E1."), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+  }, renderHTML(__('client.product_text', sharedData).newLineToBr())), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "tab_btns"
-  }, _ProductsData__WEBPACK_IMPORTED_MODULE_5__.showcaseData.map(function (data, index) {
+  }, categories.map(function (data, index) {
     return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("button", {
       className: productTab === index ? "tab_btn active" : "tab_btn",
       key: index,
@@ -4309,7 +4328,29 @@ var Products = function Products(_ref) {
         return setProductTab(index);
       }
     }, data.title);
-  })), _ProductsData__WEBPACK_IMPORTED_MODULE_5__.showcaseData.map(function (data, index) {
+  })), categories.map(function (data, index) {
+    var img;
+
+    switch (data.slug) {
+      case 'cow':
+        img = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_SmallComps_Icons__WEBPACK_IMPORTED_MODULE_8__.Cow, {
+          color: "#8EAFA0"
+        });
+        break;
+
+      case 'goat':
+        img = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_SmallComps_Icons__WEBPACK_IMPORTED_MODULE_8__.Goat, {
+          color: "#8EAFA0"
+        });
+        break;
+
+      case 'buffalo':
+        img = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_SmallComps_Icons__WEBPACK_IMPORTED_MODULE_8__.Buffalo, {
+          color: "#8EAFA0"
+        });
+        break;
+    }
+
     return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
       key: index,
       className: productTab === index ? "showcase_icon shown" : "showcase_icon"
@@ -4317,29 +4358,29 @@ var Products = function Products(_ref) {
       className: "bg_text"
     }, data.title), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
       className: "icon"
-    }, data.img));
+    }, img));
   })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "product_tabs"
-  }, _ProductsData__WEBPACK_IMPORTED_MODULE_5__.tabsData.map(function (data, index) {
+  }, categories.map(function (data, index) {
     return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
       key: index,
       className: productTab === index ? "content_tab active" : "content_tab"
-    }, data.eachTab.map(function (tab, index) {
+    }, data.children.map(function (tab, index) {
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
         key: index,
         className: "category"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
         className: "title35 gradient-bg h60"
-      }, tab.category), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+      }, tab.title), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
         className: "products_in_cat"
-      }, tab.categoryProducts.map(function (product, index) {
+      }, products.hasOwnProperty(tab.id) ? products[tab.id].map(function (product, index) {
         return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_ProductBox_ProductBox__WEBPACK_IMPORTED_MODULE_1__.ProductBox, {
           key: index,
-          link: route('client.product.show', 'cow-milk'),
-          productName: product.name,
-          imgSrc: product.img
+          link: route('client.product.show', product.slug),
+          productName: product.title,
+          imgSrc: product.latest_image != null ? "/" + product.latest_image.path + "/" + product.latest_image.title : null
         });
-      })));
+      }) : null));
     }));
   })))));
 };

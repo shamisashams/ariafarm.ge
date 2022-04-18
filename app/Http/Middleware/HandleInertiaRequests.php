@@ -49,11 +49,11 @@ class HandleInertiaRequests extends Middleware
         $locales = config("translatable.locales");
         $currentRoute = url()->current();
 
-        $categories = $this->categoryRepository->getVisibleCategoryTree();
+        //$_categories = $this->categoryRepository->getVisibleCategoryTree();
 
 
-
-        $result = $this->buildTree($categories);
+        $categories = [];
+        //$categories = $this->buildTree($_categories);
 
         $info = Setting::with(['translation'])->get();
 
@@ -76,7 +76,7 @@ class HandleInertiaRequests extends Middleware
             "pathname" => $currentRoute,
             "locale_urls" => $locale_urls,
             'urlPrev'	=> $urlPrev,
-            'categories' => $result,
+            'categories' => $categories,
             'info' => $_result
         ]);
     }
