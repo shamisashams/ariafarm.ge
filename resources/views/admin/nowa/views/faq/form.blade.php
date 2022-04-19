@@ -26,16 +26,16 @@
     <!-- breadcrumb -->
     <div class="breadcrumb-header justify-content-between">
         <div class="left-content">
-            <span class="main-content-title mg-b-0 mg-b-lg-1">{{$blog->created_at ? __('admin.product-update') : __('admin.product-create')}}</span>
+            <span class="main-content-title mg-b-0 mg-b-lg-1">{{$faq->created_at ? __('admin.faq-update') : __('admin.faq-create')}}</span>
         </div>
         <div class="justify-content-center mt-2">
             @include('admin.nowa.views.layouts.components.breadcrump')
         </div>
     </div>
     <!-- /breadcrumb -->
-    <input name="old-images[]" id="old_images" hidden disabled value="{{$blog->files}}">
+    <input name="old-images[]" id="old_images" hidden disabled value="{{$faq->files}}">
     <!-- row -->
-    {!! Form::model($blog,['url' => $url, 'method' => $method,'files' => true]) !!}
+    {!! Form::model($faq,['url' => $url, 'method' => $method,'files' => true]) !!}
     <div class="row">
         <div class="col-lg-6 col-md-12">
             <div class="card">
@@ -64,7 +64,7 @@
                             <div class="panel-body tabs-menu-body main-content-body-right border">
                                 <div class="tab-content">
                                     <div class="main-content-label mg-b-5">
-                                    @lang('admin.productinfo')
+                                    @lang('admin.faq')
                                     </div>
                                     @foreach(config('translatable.locales') as $locale)
 
@@ -73,36 +73,13 @@
                                         if($loop->first) $active = 'active';
                                         ?>
                                         <div class="tab-pane {{$active}}" id="lang-{{$locale}}">
-                                            <div class="form-group">
-                                                <label class="form-label">@lang('admin.title')</label>
-                                                <input type="text" name="{{$locale.'[title]'}}" class="form-control" placeholder="Name" value="{{$blog->translate($locale)->title ?? ''}}">
-                                                @error($locale.'.title')
-                                                <small class="text-danger">
-                                                    <div class="error">
-                                                        {{$message}}
-                                                    </div>
-                                                </small>
-                                                @enderror
-                                            </div>
+
 
                                             <div class="form-group">
-                                                {!! Form::label($locale.'[short_description]',__('admin.short_description'),['class' => 'form-label']) !!}
-                                                {!! Form::text($locale.'[short_description]',$blog->translate($locale)->short_description ?? '',['class' => 'form-control']) !!}
-
-                                                @error($locale.'.short_description')
-                                                <small class="text-danger">
-                                                    <div class="error">
-                                                        {{$message}}
-                                                    </div>
-                                                </small>
-                                                @enderror
-                                            </div>
-
-                                            <div class="form-group">
-                                                <label class="form-label" >@lang('admin.text_top')</label>
+                                                <label class="form-label" >@lang('admin.question')</label>
                                                 <textarea class="form-control"
-                                                          name="{{$locale}}[text_top]">{!! $blog->translate($locale)->text_top ?? '' !!}</textarea>
-                                                @error($locale.'.text_top')
+                                                          name="{{$locale}}[question]">{!! $faq->translate($locale)->question ?? '' !!}</textarea>
+                                                @error($locale.'.question')
                                                 <small class="text-danger">
                                                     <div class="error">
                                                         {{$message}}
@@ -112,23 +89,10 @@
                                             </div>
 
                                             <div class="form-group">
-                                                <label class="form-label" >@lang('admin.text_medium')</label>
+                                                <label class="form-label" >@lang('admin.answer')</label>
                                                 <textarea class="form-control"
-                                                          name="{{$locale}}[text_medium]">{!! $blog->translate($locale)->text_medium ?? '' !!}</textarea>
-                                                @error($locale.'.text_medium')
-                                                <small class="text-danger">
-                                                    <div class="error">
-                                                        {{$message}}
-                                                    </div>
-                                                </small>
-                                                @enderror
-                                            </div>
-
-                                            <div class="form-group">
-                                                <label class="form-label" >@lang('admin.text_bottom')</label>
-                                                <textarea class="form-control"
-                                                          name="{{$locale}}[text_bottom]">{!! $blog->translate($locale)->text_bottom ?? '' !!}</textarea>
-                                                @error($locale.'.text_bottom')
+                                                          name="{{$locale}}[answer]">{!! $faq->translate($locale)->answer ?? '' !!}</textarea>
+                                                @error($locale.'.answer')
                                                 <small class="text-danger">
                                                     <div class="error">
                                                         {{$message}}
@@ -138,46 +102,6 @@
                                             </div>
 
 
-
-                                            <div class="main-content-label mg-b-5 text-danger">
-                                            @lang('admin.product_seo')
-                                            </div>
-                                            <div class="form-group">
-                                                {!! Form::label($locale.'[meta_title]',__('admin.meta_title'),['class' => 'form-label']) !!}
-                                                {!! Form::text($locale.'[meta_title]',$blog->translate($locale)->meta_title ?? '',['class' => 'form-control']) !!}
-
-                                                @error($locale.'.meta_title')
-                                                <small class="text-danger">
-                                                    <div class="error">
-                                                        {{$message}}
-                                                    </div>
-                                                </small>
-                                                @enderror
-                                            </div>
-                                            <div class="form-group">
-                                                {!! Form::label($locale.'[meta_description]',__('admin.meta_description'),['class' => 'form-label']) !!}
-                                                {!! Form::text($locale.'[meta_description]',$blog->translate($locale)->meta_keyword ?? '',['class' => 'form-control']) !!}
-
-                                                @error($locale.'.meta_description')
-                                                <small class="text-danger">
-                                                    <div class="error">
-                                                        {{$message}}
-                                                    </div>
-                                                </small>
-                                                @enderror
-                                            </div>
-                                            <div class="form-group">
-                                                {!! Form::label($locale.'[meta_keyword]',__('admin.meta_keyword'),['class' => 'form-label']) !!}
-                                                {!! Form::text($locale.'[meta_keyword]',$blog->translate($locale)->meta_description ?? '',['class' => 'form-control']) !!}
-
-                                                @error($locale.'.meta_keyword')
-                                                <small class="text-danger">
-                                                    <div class="error">
-                                                        {{$message}}
-                                                    </div>
-                                                </small>
-                                                @enderror
-                                            </div>
 
 
 
@@ -200,50 +124,13 @@
             <div class="card">
                 <div class="card-body">
 
-                    <div>
-                        <h6 class="card-title mb-1">@lang('admin.prodcategoriesss')</h6>
-                    </div>
 
-
-                    <div class="form-group">
-                        {!! Form::label('slug',__('admin.slug'),['class' => 'form-label']) !!}
-                        <input type="text" name="slug" class="form-control" placeholder="@lang('admin.slug')" value="{{$blog->slug ?? ''}}">
-                        @error('slug')
-                        <small class="text-danger">
-                            <div class="error">
-                                {{$message}}
-                            </div>
-                        </small>
-                        @enderror
-                    </div>
-
-
-
-
-
-
-
-
-                    {{--<div class="form-group">
-
-                        {!! Form::label('sale',__('admin.sale')) !!}
-                        {!! Form::number('sale',$product->sale ?? '',['step'=>'0.1','class' => 'form-control']) !!}
-
-                        @error('sale')
-                        <small class="text-danger">
-                            <div class="error">
-                                {{$message}}
-                            </div>
-                        </small>
-                        @enderror
-
-                    </div>--}}
 
 
 
                     <div class="form-group mb-0 mt-3 justify-content-end">
                         <div>
-                            {!! Form::submit($blog->created_at ? __('admin.update') : __('admin.create'),['class' => 'btn btn-primary']) !!}
+                            {!! Form::submit($faq->created_at ? __('admin.update') : __('admin.create'),['class' => 'btn btn-primary']) !!}
                         </div>
                     </div>
 

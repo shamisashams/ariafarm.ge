@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Models\Translations\BlogTranslation;
 use App\Models\Translations\ProductTranslation;
 use App\Traits\ScopeFilter;
 use Astrotomic\Translatable\Translatable;
@@ -22,47 +23,34 @@ use Spatie\Searchable\SearchResult;
 
 class Blog extends Model implements Searchable
 {
-    use SoftDeletes, Translatable, HasFactory, ScopeFilter;
+    use Translatable, HasFactory, ScopeFilter;
 
     /**
      * @var string
      */
-    protected $table = 'products';
+    protected $table = 'blogs';
 
     /**
      * @var string[]
      */
     protected $fillable = [
         'slug',
-        'status',
-        'popular',
-        'sale',
-        'stock',
-        'code',
-        'price',
-        'quantity',
-        'special_price',
-        'new',
-        'new_collection',
-        'bunker',
-        'day_price',
-        'day_product',
-        'special_price_tag'
+
     ];
 
     /** @var string */
-    protected $translationModel = ProductTranslation::class;
+    protected $translationModel = BlogTranslation::class;
 
     //protected $with = ['translation'];
 
     /** @var array */
     public $translatedAttributes = [
-        'title',
-        'short_description',
-        'description',
-        'meta_title',
+        'text_top',
+        'text_medium',
+        'text_bottom',
+        /*'meta_title',
         'meta_description',
-        'meta_keyword',
+        'meta_keyword',*/
     ];
 
     //protected $with = ['translation'];
@@ -105,29 +93,9 @@ class Blog extends Model implements Searchable
         );
     }
 
-    /**
-     * @return BelongsTo
-     */
-    /*public function category(): BelongsTo
-    {
-        return $this->belongsTo(Category::class, 'category_id', 'id');
-    }*/
 
-    /**
-     * The categories that belong to the product.
-     */
-    public function categories(): BelongsToMany
-    {
-        return $this->belongsToMany(Category::class, 'product_categories');
-    }
 
-    /**
-     * Get the product attribute values that owns the product.
-     */
-    public function attribute_values(): HasMany
-    {
-        return $this->hasMany(ProductAttributeValue::class);
-    }
+
 
     /**
      * @return MorphMany

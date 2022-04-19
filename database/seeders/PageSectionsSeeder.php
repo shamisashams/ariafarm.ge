@@ -22,14 +22,17 @@ class PageSectionsSeeder extends Seeder
                 'key' => 'home'
             ],
             [
-                'key' => 'about'
-            ],
-            [
                 'key' => 'contact'
             ],
             [
-                'key' => 'products'
-            ]
+                'key' => 'farm'
+            ],
+            [
+                'key' => 'enterprise'
+            ],
+            [
+                'key' => 'shop'
+            ],
 
 
         ];
@@ -48,13 +51,25 @@ class PageSectionsSeeder extends Seeder
         $key = 0;
         foreach ($pages as $item){
             switch ($item->key){
-                /*case 'home':
+                case 'home':
+                    for ($i = 0; $i < 2; $i++){
+                        $ins[$key]['page_id'] = $item->id;
+                        $key++;
+                    }
+                    break;
+                case 'farm':
                     for ($i = 0; $i < 3; $i++){
                         $ins[$key]['page_id'] = $item->id;
                         $key++;
                     }
-                    break;*/
-                case 'about':
+                    break;
+                case 'shop':
+                    for ($i = 0; $i < 3; $i++){
+                        $ins[$key]['page_id'] = $item->id;
+                        $key++;
+                    }
+                    break;
+                case 'enterprise':
                     for ($i = 0; $i < 3; $i++){
                         $ins[$key]['page_id'] = $item->id;
                         $key++;

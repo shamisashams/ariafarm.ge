@@ -13,7 +13,7 @@
     <!-- breadcrumb -->
     <div class="breadcrumb-header justify-content-between">
         <div class="left-content">
-            <span class="main-content-title mg-b-0 mg-b-lg-1">@lang('admin.products')</span>
+            <span class="main-content-title mg-b-0 mg-b-lg-1">@lang('admin.faq')</span>
         </div>
         <div class="justify-content-center mt-2">
             @include('admin.nowa.views.layouts.components.breadcrump')
@@ -27,9 +27,9 @@
             <div class="card">
                 <div class="card-header pb-0">
                     <div class="d-flex justify-content-between">
-                        <h4 class="card-title mg-b-0">@lang('admin.products')</h4>
+                        <h4 class="card-title mg-b-0">@lang('admin.faq')</h4>
                     </div>
-                    <a href="{{locale_route('blog.create')}}" class="btn ripple btn-primary" type="button">@lang('admin.createbutt')</a>
+                    <a href="{{locale_route('faq.create')}}" class="btn ripple btn-primary" type="button">@lang('admin.createbutt')</a>
                     {{--<p class="tx-12 tx-gray-500 mb-2">Example of Nowa Simple Table. <a href="">Learn more</a></p>--}}
                 </div>
                 <div class="card-body">
@@ -39,9 +39,9 @@
                                 <thead>
                                 <tr>
                                     <th>@lang('admin.id')</th>
-                                    <th>@lang('admin.slug')</th>
 
-                                    <th>@lang('admin.title')</th>
+
+                                    <th>@lang('admin.question')</th>
                                     <th>@lang('admin.actions')</th>
                                 </tr>
                                 </thead>
@@ -53,24 +53,19 @@
                                                value="{{Request::get('id')}}"
                                                class="validate {{$errors->has('id') ? '' : 'valid'}}">
                                     </th>
-                                    <th>
-                                        <input class="form-control" type="text" name="slug" onchange="this.form.submit()"
-                                               value="{{Request::get('slug')}}"
-                                               class="validate {{$errors->has('slug') ? '' : 'valid'}}">
-                                    </th>
+
 
 
                                     <th>
                                         <input class="form-control" type="text" name="title" onchange="this.form.submit()"
-                                               value="{{Request::get('title')}}"
-                                               class="validate {{$errors->has('title') ? '' : 'valid'}}">
+                                               value="{{Request::get('question')}}"
+                                               class="validate {{$errors->has('question') ? '' : 'valid'}}">
                                     </th>
 
                                 @if($data)
                                     @foreach($data as $item)
                                         <tr>
                                             <th scope="row">{{$item->id}}</th>
-                                            <th scope="row">{{$item->slug}}</th>
 
 
 
@@ -92,7 +87,7 @@
 
                                                             @foreach(config('translatable.locales') as $locale)
                                                                 <div class="tab-pane {{$loop->first?"active":""}}" id="cat-{{$locale}}-{{$item->id}}">
-                                                                    {{$item->translate($locale)->title ?? ''}}
+                                                                    {{$item->translate($locale)->question ?? ''}}
                                                                 </div>
                                                             @endforeach
 
@@ -103,11 +98,11 @@
                                             </td>
                                             <td>
 
-                                                <a href="{{locale_route('blog.edit',$item->id)}}"
+                                                <a href="{{locale_route('faq.edit',$item->id)}}"
                                                    class="pl-3">
                                                     <i class="fa fa-edit">შეცვლა</i>
                                                 </a>
-                                                <a href="{{locale_route('blog.destroy',$item->id)}}"
+                                                <a href="{{locale_route('faq.destroy',$item->id)}}"
                                                    onclick="return confirm('Are you sure?')" class="pl-3">
                                                     <i class="fa fa-edit">წაშლა</i>
                                                 </a>

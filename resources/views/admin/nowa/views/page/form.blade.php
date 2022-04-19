@@ -20,6 +20,8 @@
 
     <link rel="stylesheet" href="{{asset('uploader/image-uploader.css')}}">
 
+    <script src="{{asset('admin/assets/jscolor/jscolor.js')}}"></script>
+
 @endsection
 
 @section('content')
@@ -253,7 +255,7 @@
     </div>
 
 
-    @if($page->key == 'about')
+    @if($page->key == 'home')
 
         <div class="row">
             <div class="col-lg-12 col-md-12">
@@ -275,6 +277,73 @@
                                             {{ $errors->first('images') }}
                                         </span>
                         @endif
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div class="col-lg-12 col-md-12">
+                <div class="card">
+                    <div class="card-body">
+                        <div>
+                            <h6 class="card-title mb-1">card slider</h6>
+                        </div>
+                        <div class="form-group">
+                            <table id="options">
+                                <tr>
+                                    @foreach(config('translatable.locales') as $locale)
+
+
+                                        <th>
+                                            @lang('admin.text') - {{$locale}}
+                                        </th>
+                                    @endforeach
+                                        <th>@lang('admin.icon')</th>
+                                    <th>@lang('admin.color')</th>
+                                </tr>
+
+                                <?php
+                                $i = 1;
+                                $options = ['cow','goat','buffalo']
+                                ?>
+                                @foreach($cards as $item)
+                                    <tr>
+                                        <input type="hidden" name="options[{{$item->id}}][isNew]" value="false">
+                                        <input type="hidden" name="options[{{$item->id}}][isDelete]" value="false">
+                                        @foreach(config('translatable.locales') as $locale)
+
+
+                                            <td>
+                                                <textarea class="form-control" type="text" name="options[{{$item->id}}][{{$locale}}][text]">{{$item->translate($locale)->text}}</textarea>
+                                            </td>
+
+                                        @endforeach
+                                        <td>
+                                            <select class="form-control" name="options[{{$item->id}}][icon]">
+                                                @foreach($options as $_item)
+                                                <option value="{{$_item}}" {{$_item == $item->icon ? 'selected' : ''}}>{{$_item}}</option>
+
+                                                @endforeach
+                                            </select>
+                                        </td>
+                                        <td>
+                                            <input class="form-control" name="options[{{$item->id}}][color]" value="{{$item->color}}" data-jscolor="{}">
+                                        </td>
+
+                                        <td>
+                                            <a href="javascript:void(0);" class="del-option"><i class="fa fa-trash-alt"></i></a>
+                                        </td>
+                                    </tr>
+                                @endforeach
+
+
+                            </table>
+
+
+                        </div>
+                        <button type="button" id="add_option_btn">add card</button>
                     </div>
                 </div>
             </div>
@@ -364,6 +433,66 @@
             filebrowserUploadMethod: 'form'
         });
         @endforeach
+    </script>
+    <script>
+        let locales = @json(config('translatable.locales'));
+
+        let options = @json($options);
+
+        let ind = 1;
+
+        $('#add_option_btn').click(function (){
+            let tr = $('<tr></tr>');
+            tr.append('<input type="hidden" name="options[option_'+ ind +'][isNew]" value="true">');
+            tr.append('<input type="hidden" name="options[option_'+ ind +'][isDelete]" value="false">');
+            Object.keys(locales).map((name, index) => {
+
+
+
+                tr.append('<td> <textarea class="form-control" type="text" name="options[option_'+ ind +']['+ locales[name] +'][text]" value=""></textarea></td>');
+
+            })
+            let select = $('<select class="form-control" name="options[option_'+ ind +'][icon]"></select>');
+
+            options.forEach(function (el){
+                select.append('<option value="'+ el +'">'+ el +'</option>');
+            });
+            let td = $('<td></td>');
+            td.append(select);
+            tr.append(td);
+
+            tr.append('<td><input class="form-control" name="options[option_'+ ind +'][color]" value="#3399FF80" data-jscolor="{}"></td>')
+
+            tr.append('<td><a href="javascript:void(0);" class="del-option"><i class="fa fa-trash-alt"></i></a></td>');
+
+            $('#options').append(tr);
+
+            ind++
+            jscolor.install()
+
+        });
+
+        $(document).on('click','.del-option',function (e){
+
+            let input = $(this).parents('tr').find('input[type=hidden]');
+
+            if(input[0].value === 'true'){
+                $(this).parents('tr').remove();
+            } else {
+                $(this).parents('tr').hide();
+                input[1].value = 'true';
+            }
+        });
+
+        $('select[name=type]').change(function (e){
+            let value = $(this).val();
+
+            if(value == 'select'){
+                $('#option_row').show();
+            } else {
+                $('#option_row').hide();
+            }
+        });
     </script>
 
 @endsection

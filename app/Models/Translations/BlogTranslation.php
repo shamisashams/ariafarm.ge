@@ -20,10 +20,13 @@ class BlogTranslation extends BaseTranslationModel
      */
     protected $fillable = [
         'title',
-        'short_description',
+        /*'short_description',
         'description',
         'meta_title',
         'meta_description',
-        'meta_keyword',
+        'meta_keyword',*/
+        'text_top',
+        'text_medium',
+        'text_bottom'
     ];
 }

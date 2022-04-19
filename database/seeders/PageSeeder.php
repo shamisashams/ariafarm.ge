@@ -21,15 +21,32 @@ class PageSeeder extends Seeder
                 'key' => 'home'
             ],
             [
-                'key' => 'about'
-            ],
-            [
                 'key' => 'contact'
             ],
             [
                 'key' => 'products'
+            ],
+            [
+                'key' => 'blog'
+            ],
+            [
+                'key' => 'farm'
+            ],
+            [
+                'key' => 'enterprise'
+            ],
+            [
+                'key' => 'shop'
+            ],
+            [
+                'key' => 'gallery'
+            ],
+            [
+                'key' => 'special_offer'
+            ],
+            [
+                'key' => 'search'
             ]
-
 
         ];
 

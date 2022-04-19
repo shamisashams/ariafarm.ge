@@ -53,6 +53,8 @@ $traverse = function ($categories, $prefix = '-') use (&$traverse,$ids) {
 
     <link rel="stylesheet" href="{{asset('uploader/image-uploader.css')}}">
 
+    <script src="{{asset('admin/assets/jscolor/jscolor.js')}}"></script>
+
 @endsection
 
 @section('content')
@@ -111,6 +113,47 @@ $traverse = function ($categories, $prefix = '-') use (&$traverse,$ids) {
                                                 <label class="form-label">@lang('admin.title')</label>
                                                 <input type="text" name="{{$locale.'[title]'}}" class="form-control" placeholder="Name" value="{{$product->translate($locale)->title ?? ''}}">
                                                 @error($locale.'.title')
+                                                <small class="text-danger">
+                                                    <div class="error">
+                                                        {{$message}}
+                                                    </div>
+                                                </small>
+                                                @enderror
+                                            </div>
+
+
+
+                                            <div class="form-group">
+                                                {!! Form::label($locale.'[composition]',__('admin.composition'),['class' => 'form-label']) !!}
+                                                {!! Form::textarea($locale.'[composition]',$product->translate($locale)->composition ?? '',['class' => 'form-control']) !!}
+
+                                                @error($locale.'.composition')
+                                                <small class="text-danger">
+                                                    <div class="error">
+                                                        {{$message}}
+                                                    </div>
+                                                </small>
+                                                @enderror
+                                            </div>
+
+                                            <div class="form-group">
+                                                {!! Form::label($locale.'[recommendation]',__('admin.recommendation'),['class' => 'form-label']) !!}
+                                                {!! Form::textarea($locale.'[recommendation]',$product->translate($locale)->recommendation ?? '',['class' => 'form-control']) !!}
+
+                                                @error($locale.'.recommendation')
+                                                <small class="text-danger">
+                                                    <div class="error">
+                                                        {{$message}}
+                                                    </div>
+                                                </small>
+                                                @enderror
+                                            </div>
+
+                                            <div class="form-group">
+                                                {!! Form::label($locale.'[recipe]',__('admin.recipe'),['class' => 'form-label']) !!}
+                                                {!! Form::textarea($locale.'[recipe]',$product->translate($locale)->recipe ?? '',['class' => 'form-control']) !!}
+
+                                                @error($locale.'.recipe')
                                                 <small class="text-danger">
                                                     <div class="error">
                                                         {{$message}}
@@ -472,8 +515,48 @@ $traverse = function ($categories, $prefix = '-') use (&$traverse,$ids) {
                     </div>
                     <div>
                         <div class="form-group">
+                            <table id="options">
+                                <tr>
+                                    @foreach(config('translatable.locales') as $locale)
+
+
+                                        <th>
+                                            @lang('admin.text') - {{$locale}}
+                                        </th>
+                                    @endforeach
+                                    <th>@lang('admin.color')</th>
+                                </tr>
+
+                                <?php
+                                $i = 1;
+                                ?>
+                                @foreach($product->cards as $item)
+                                    <tr>
+                                        <input type="hidden" name="options[{{$item->id}}][isNew]" value="false">
+                                        <input type="hidden" name="options[{{$item->id}}][isDelete]" value="false">
+                                        @foreach(config('translatable.locales') as $locale)
+
+
+                                            <td>
+                                                <textarea class="form-control" type="text" name="options[{{$item->id}}][{{$locale}}][text]">{{$item->translate($locale)->text}}</textarea>
+                                            </td>
+
+                                        @endforeach
+                                        <td>
+                                            <input name="options[{{$item->id}}][color]" value="{{$item->color}}" data-jscolor="{}">
+                                        </td>
+                                        <td>
+                                            <a href="javascript:void(0);" class="del-option"><i class="fa fa-trash-alt"></i></a>
+                                        </td>
+                                    </tr>
+                                @endforeach
+
+
+                            </table>
+
 
                         </div>
+                        <button type="button" id="add_option_btn">add card</button>
                     </div>
 
                 </div>
@@ -593,6 +676,57 @@ $traverse = function ($categories, $prefix = '-') use (&$traverse,$ids) {
             if($(this).is(':checked')){
                 $(this).prev('input[type=hidden]').val(1);
             } else $(this).prev('input[type=hidden]').val(0);
+        });
+
+
+        let locales = @json(config('translatable.locales'));
+
+
+        let ind = 1;
+
+        $('#add_option_btn').click(function (){
+            let tr = $('<tr></tr>');
+            tr.append('<input type="hidden" name="options[option_'+ ind +'][isNew]" value="true">');
+            tr.append('<input type="hidden" name="options[option_'+ ind +'][isDelete]" value="false">');
+            Object.keys(locales).map((name, index) => {
+
+
+
+                tr.append('<td> <textarea class="form-control" type="text" name="options[option_'+ ind +']['+ locales[name] +'][text]" value=""></textarea></td>');
+
+            })
+
+            tr.append('<td><input name="options[option_'+ ind +'][color]" value="#3399FF80" data-jscolor="{}"></td>')
+
+            tr.append('<td><a href="javascript:void(0);" class="del-option"><i class="fa fa-trash-alt"></i></a></td>');
+
+            $('#options').append(tr);
+
+            ind++
+            jscolor.install()
+
+        });
+
+        $(document).on('click','.del-option',function (e){
+
+            let input = $(this).parents('tr').find('input[type=hidden]');
+
+            if(input[0].value === 'true'){
+                $(this).parents('tr').remove();
+            } else {
+                $(this).parents('tr').hide();
+                input[1].value = 'true';
+            }
+        });
+
+        $('select[name=type]').change(function (e){
+            let value = $(this).val();
+
+            if(value == 'select'){
+                $('#option_row').show();
+            } else {
+                $('#option_row').hide();
+            }
         });
     </script>
 

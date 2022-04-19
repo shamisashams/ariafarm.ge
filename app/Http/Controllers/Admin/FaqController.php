@@ -14,10 +14,12 @@ use App\Http\Requests\Admin\ProductRequest;
 use App\Models\Attribute;
 use App\Models\Blog;
 use App\Models\Category;
+use App\Models\Faq;
 use App\Models\Product;
 use App\Models\ProductAttributeValue;
 use App\Repositories\CategoryRepositoryInterface;
 use App\Repositories\Eloquent\BlogRepository;
+use App\Repositories\Eloquent\FaqRepository;
 use App\Repositories\Eloquent\ProductAttributeValueRepository;
 use App\Repositories\ProductRepositoryInterface;
 use Illuminate\Contracts\Foundation\Application;
@@ -32,20 +34,20 @@ use App\Repositories\Eloquent\AttributeRepository;
 use function Symfony\Component\Translation\t;
 use Illuminate\Http\Request;
 
-class BlogController extends Controller
+class FaqController extends Controller
 {
 
 
-    private $attributeRepository;
 
-    private $blogRepository;
 
-    private $categories;
+    private $faqRepository;
+
+
     public function __construct(
-        BlogRepository $blogRepository
+        FaqRepository $faqRepository
     )
     {
-        $this->blogRepository = $blogRepository;
+        $this->faqRepository = $faqRepository;
     }
 
     /**
@@ -53,14 +55,14 @@ class BlogController extends Controller
      *
      * @return Application|Factory|View
      */
-    public function index(ProductRequest $request)
+    public function index(Request $request)
     {
         /*return view('admin.pages.product.index', [
             'products' => $this->productRepository->getData($request, ['translations', 'categories'])
         ]);*/
 
-        return view('admin.nowa.views.blog.index', [
-            'data' => $this->blogRepository->getData($request, ['translations'])
+        return view('admin.nowa.views.faq.index', [
+            'data' => $this->faqRepository->getData($request, ['translations'])
         ]);
     }
 
@@ -71,13 +73,13 @@ class BlogController extends Controller
      */
     public function create()
     {
-        $blog = $this->blogRepository->model;
+        $faq = $this->faqRepository->model;
 
 
 
 
 
-        $url = locale_route('blog.store', [], false);
+        $url = locale_route('faq.store', [], false);
         $method = 'POST';
 
         /*return view('admin.pages.product.form', [
@@ -87,8 +89,8 @@ class BlogController extends Controller
             'categories' => $this->categories
         ]);*/
 
-        return view('admin.nowa.views.blog.form', [
-            'blog' => $blog,
+        return view('admin.nowa.views.faq.form', [
+            'faq' => $faq,
             'url' => $url,
             'method' => $method,
         ]);
@@ -105,7 +107,7 @@ class BlogController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'slug' => ['required', 'alpha_dash', Rule::unique('blogs', 'slug')],
+
         ]);
         //dd($request->all());
         $saveData = Arr::except($request->except('_token'), []);
@@ -113,11 +115,11 @@ class BlogController extends Controller
 
 
 
-        $product = $this->blogRepository->create($saveData);
+        $product = $this->faqRepository->create($saveData);
 
         // Save Files
         if ($request->hasFile('images')) {
-            $product = $this->blogRepository->saveFiles($product->id, $request);
+            $product = $this->faqRepository->saveFiles($product->id, $request);
         }
 
 
@@ -125,7 +127,7 @@ class BlogController extends Controller
 
 
 
-        return redirect(locale_route('blog.index', $product->id))->with('success', __('admin.create_successfully'));
+        return redirect(locale_route('faq.index', $product->id))->with('success', __('admin.create_successfully'));
 
     }
 
@@ -152,9 +154,9 @@ class BlogController extends Controller
      *
      * @return Application|Factory|View
      */
-    public function edit(string $locale, Blog $blog)
+    public function edit(string $locale, Faq $faq)
     {
-        $url = locale_route('blog.update', $blog->id, false);
+        $url = locale_route('faq.update', $faq->id, false);
         $method = 'PUT';
 
         /*return view('admin.pages.product.form', [
@@ -164,8 +166,8 @@ class BlogController extends Controller
             'categories' => $this->categories
         ]);*/
 
-        return view('admin.nowa.views.blog.form', [
-            'blog' => $blog,
+        return view('admin.nowa.views.faq.form', [
+            'faq' => $faq,
             'url' => $url,
             'method' => $method,
         ]);
@@ -180,11 +182,8 @@ class BlogController extends Controller
      * @return Application|RedirectResponse|Redirector
      * @throws ReflectionException
      */
-    public function update(Request $request, string $locale, Blog $blog)
+    public function update(Request $request, string $locale, Faq $faq)
     {
-        $request->validate([
-            'slug' => ['required', 'alpha_dash', Rule::unique('blogs', 'slug')->ignore($blog->id)],
-        ]);
         //dd($request->all());
         $saveData = Arr::except($request->except('_token'), []);
 
@@ -193,18 +192,14 @@ class BlogController extends Controller
 
         //dd($attributes);
 
-        $this->blogRepository->update($blog->id, $saveData);
-
-        $this->blogRepository->saveFiles($blog->id, $request);
+        $this->faqRepository->update($faq->id, $saveData);
 
 
 
 
 
 
-
-
-        return redirect(locale_route('blog.index', $blog->id))->with('success', __('admin.update_successfully'));
+        return redirect(locale_route('faq.index', $faq->id))->with('success', __('admin.update_successfully'));
     }
 
     /**
@@ -214,11 +209,11 @@ class BlogController extends Controller
      * @param Product $product
      * @return Application|RedirectResponse|Redirector
      */
-    public function destroy(string $locale, Blog $blog)
+    public function destroy(string $locale, Product $product)
     {
-        if (!$this->blogRepository->delete($blog->id)) {
-            return redirect(locale_route('blog.index', $blog->id))->with('danger', __('admin.not_delete_message'));
+        if (!$this->faqRepository->delete($product->id)) {
+            return redirect(locale_route('faq.index', $product->id))->with('danger', __('admin.not_delete_message'));
         }
-        return redirect(locale_route('blog.index'))->with('success', __('admin.delete_message'));
+        return redirect(locale_route('faq.index'))->with('success', __('admin.delete_message'));
     }
 }

@@ -165,6 +165,11 @@ class Product extends Model implements Searchable
         return $this->hasMany(ProductAttributeValue::class);
     }
 
+
+    public function cards(): HasMany{
+        return $this->hasMany(ProductCard::class);
+    }
+
     /**
      * @return MorphMany
      */

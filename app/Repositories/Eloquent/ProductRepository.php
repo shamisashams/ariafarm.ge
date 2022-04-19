@@ -14,6 +14,7 @@ use App\Models\Product;
 use App\Models\ProductAttributeValue;
 use App\Repositories\Eloquent\Base\BaseRepository;
 use App\Repositories\ProductRepositoryInterface;
+use Illuminate\Database\Eloquent\Model;
 
 /**
  * Class LanguageRepository
@@ -26,11 +27,13 @@ class ProductRepository extends BaseRepository implements ProductRepositoryInter
      */
 
     private $attributeRepository;
+    private $productCardRepository;
 
-    public function __construct(Product $model,AttributeRepository $attributeRepository)
+    public function __construct(Product $model,AttributeRepository $attributeRepository,ProductCardRepository $productCardRepository)
     {
         parent::__construct($model);
         $this->attributeRepository = $attributeRepository;
+        $this->productCardRepository = $productCardRepository;
     }
 
     public function getHomePageProducts(){
@@ -190,6 +193,63 @@ class ProductRepository extends BaseRepository implements ProductRepositoryInter
         return $this->model->whereTranslationLike('title', '%'.$term.'%')
             ->orWhereTranslationLike('description', '%'.$term.'%')
             ->with('latestImage')->paginate(16);
+    }
+
+
+    public function create(array $data = []): Model{
+
+        $options = isset($data['options']) ? $data['options'] : [];
+
+        unset($data['options']);
+
+        $attribute = $this->model->create($data);
+
+        if (count($options)) {
+            foreach ($options as $optionInputs) {
+                $this->productCardRepository->create(array_merge([
+                    'product_id' => $attribute->id,
+                ], $optionInputs));
+            }
+        }
+
+        return $attribute;
+    }
+
+
+    public function update(int $id, array $data = [])
+    {
+
+        //dd($data);
+
+        $attribute = $this->model->find($id);
+
+
+        $attribute->update($data);
+
+
+            if (isset($data['options'])) {
+                foreach ($data['options'] as $optionId => $optionInputs) {
+                    $isNew = $optionInputs['isNew'] == 'true' ? true : false;
+
+                    if ($isNew) {
+                        $this->productCardRepository->create(array_merge([
+                            'product_id' => $attribute->id,
+                        ], $optionInputs));
+                    } else {
+                        $isDelete = $optionInputs['isDelete'] == 'true' ? true : false;
+
+                        if ($isDelete) {
+                            $this->productCardRepository->delete($optionId);
+                        } else {
+                            $this->productCardRepository->update($optionId,$optionInputs);
+                        }
+                    }
+                }
+            }
+
+
+
+        return $attribute;
     }
 
 

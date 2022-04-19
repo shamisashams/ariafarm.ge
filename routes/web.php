@@ -58,6 +58,9 @@ Route::prefix('{locale?}')
                 Route::resource('blog', \App\Http\Controllers\Admin\BlogController::class);
                 Route::get('blog/{blog}/destroy', [\App\Http\Controllers\Admin\BlogController::class, 'destroy'])->name('blog.destroy');
 
+                Route::resource('faq', \App\Http\Controllers\Admin\FaqController::class);
+                Route::get('faq/{faq}/destroy', [\App\Http\Controllers\Admin\FaqController::class, 'destroy'])->name('faq.destroy');
+
                 // Slider
                 Route::resource('slider', SliderController::class);
                 Route::get('slider/{slider}/destroy', [SliderController::class, 'destroy'])->name('slider.destroy');

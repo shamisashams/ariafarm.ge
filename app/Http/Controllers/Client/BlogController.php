@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Client;
 
 use App\Http\Controllers\Controller;
+use App\Models\Blog;
 use App\Models\Certificate;
 use App\Models\Page;
 use App\Models\Product;
@@ -23,7 +24,7 @@ class BlogController extends Controller
 
     public function index()
     {
-        $page = Page::where('key', 'about')->firstOrFail();
+        $page = Page::where('key', 'blog')->firstOrFail();
 
         $images = [];
         foreach ($page->sections as $sections){
@@ -36,9 +37,11 @@ class BlogController extends Controller
         }
 
         $files = [];
-        if($page->images) $files = $page->files;
 
-        //dd($files);
+
+        $blogs = Blog::orderBy('created_at','desc')->with('latestImage')->get();
+        //dd($blogs);
+        //dd($blogs);
 
         return Inertia::render('Blogs/Blogs', ["page" => $page, "seo" => [
             "title"=>$page->meta_title,
@@ -48,7 +51,7 @@ class BlogController extends Controller
             "og_description"=>$page->meta_og_description,
 //            "image" => "imgg",
 //            "locale" => App::getLocale()
-        ], 'gallery_img' => $files,'images' => $images])->withViewData([
+        ], 'blogs' => $blogs,'blog_images' => $files, 'images' => $images])->withViewData([
             'meta_title' => $page->meta_title,
             'meta_description' => $page->meta_description,
             'meta_keyword' => $page->meta_keyword,

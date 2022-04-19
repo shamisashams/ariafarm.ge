@@ -86,6 +86,13 @@
             "i18n": "blog",
             "icon": "g_translate",
             "slug": "blog"
+        },
+        {
+            "url": "faq.index",
+            "name": "FAQ",
+            "i18n": "faq",
+            "icon": "g_translate",
+            "slug": "faq"
         }
     ],
     "_comment": [

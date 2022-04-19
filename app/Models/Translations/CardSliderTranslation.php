@@ -11,7 +11,7 @@ namespace App\Models\Translations;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class ProductTranslation extends BaseTranslationModel
+class CardSliderTranslation extends BaseTranslationModel
 {
     use HasFactory;
 
@@ -19,14 +19,6 @@ class ProductTranslation extends BaseTranslationModel
      * @var string[]
      */
     protected $fillable = [
-        'title',
-        'short_description',
-        'description',
-        'meta_title',
-        'meta_description',
-        'meta_keyword',
-        'composition',
-        'recommendation',
-        'recipe'
+        'text'
     ];
 }

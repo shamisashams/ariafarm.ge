@@ -141,6 +141,7 @@ class ProductController extends Controller
         $attributes = isset($saveData['attribute']) ? $saveData['attribute'] : [];
         unset($saveData['attribute']);
 
+        //dd($saveData);
         $product = $this->productRepository->create($saveData);
         $product->categories()->sync($saveData['categories']);
 
