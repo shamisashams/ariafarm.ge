@@ -4,7 +4,7 @@ import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick/lib/slider";
 //import SlideImg from "../../../assets/images/home/1.png";
 //import { Link } from "react-router-dom";
-import { Link } from "@inertiajs/inertia-react";
+import {Link, usePage} from "@inertiajs/inertia-react";
 import {
   ArrowLeft,
   ArrowRight,
@@ -13,6 +13,9 @@ import {
 import "./HeroSection.css";
 
 const HeroSection = () => {
+    const { sliders } = usePage().props;
+    const sharedData = usePage().props.localizations;
+    //console.log(sliders)
   var settings = {
     dots: false,
     infinite: true,
@@ -43,16 +46,16 @@ const HeroSection = () => {
   return (
     <div className="hero_section wrapper">
       <Slider {...settings} className="hero_slider">
-        {slidesData.map((data, index) => {
+        {sliders.map((data, index) => {
           return (
             <div key={index}>
               <div className="slide flex">
-                <img className="slide_img" src={data.img} alt="" />
+                <img className="slide_img" src={"/" + data.file.path + "/" + data.file.title} alt="" />
                 <div className="content">
                   <div className="title35">{data.title}</div>
-                  <p>{data.paragraph}</p>
-                  <Link href={data.btnLink}>
-                    <MainButton text="გაიგე მეტი" />
+                  <p>{data.description}</p>
+                  <Link href={data.youtube_url}>
+                    <MainButton text={__('client.slider_btn',sharedData)} />
                   </Link>
                 </div>
               </div>

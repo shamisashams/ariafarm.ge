@@ -4,6 +4,7 @@ import SwiperCore, { EffectCoverflow } from "swiper";
 import "swiper/swiper-bundle.min.css";
 import "swiper/swiper.min.css";
 import "./HomeSliders.css";
+import { Cow, Goat, Buffalo } from "../../../components/SmallComps/Icons";
 
 SwiperCore.use([EffectCoverflow]);
 
@@ -37,6 +38,18 @@ const CardSlider = ({ cardData }) => {
         }}
       >
         {cardData.map((card, index) => {
+            let icon;
+            switch (card.icon){
+                case 'cow':
+                    icon = <Cow color={card.color}/>
+                    break;
+                case 'goat':
+                    icon = <Goat color={card.color}/>
+                    break;
+                case 'buffalo':
+                    icon = <Buffalo color={card.color}/>
+                    break;
+            }
           return (
             <SwiperSlide
               key={index}
@@ -46,7 +59,7 @@ const CardSlider = ({ cardData }) => {
                 borderColor: card.color,
               }}
             >
-              {card.icon}
+              {icon}
               <p className="cursive">{card.text}</p>
             </SwiperSlide>
           );

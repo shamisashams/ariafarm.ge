@@ -11,7 +11,7 @@ import SocialSlider from "./HomeSliders/SocialSlider";
 //import Img3 from "../../assets/images/home/5.png";
 //import Check from "../../assets/images/icons/check.svg";
 //import { Link } from "react-router-dom";
-import { Link } from "@inertiajs/inertia-react";
+import {Link, usePage} from "@inertiajs/inertia-react";
 
 import Layout from "../../Layouts/Layout";
 
@@ -25,6 +25,8 @@ import SearchInput from "../../components/SmallComps/SearchInput";
 import { Cow, Goat } from "../../components/SmallComps/Icons";
 
 const Home = ({seo}) => {
+    const { cards, blogs, special } = usePage().props;
+    const sharedData = usePage().props.localizations;
   let green = "#86AAA8";
   let pink = "#EDC6E7";
   const checks = [
@@ -32,6 +34,7 @@ const Home = ({seo}) => {
     "ეკოლოგიურად სუფთა ბიო პროდუქტი",
     "საქართველოში წარმოებული უმაღლესი ხარისხი",
   ];
+  console.log(blogs);
   const cardData = [
     {
       text: "არია ქართული ბრენდია. აღნიშნული საწარმო სამეგრელოში, სენაკის რაიონის სოფელ მენჯში 60 ჰა მიწის ფართობზეა განლაგებული. ფერმა ყველა საერთაშორისო სტანდარტის დაცვით აშენდა.",
@@ -72,7 +75,7 @@ const Home = ({seo}) => {
           <div className="why_our_product">
             <img className="abs_img" src="/assets/images/home/2.png" alt="" />
             <div className="wrapper cards">
-              <CardSlider cardData={cardData} />
+              <CardSlider cardData={cards} />
             </div>
             <div className="wrapper">
               <div className="left_content">
@@ -101,14 +104,17 @@ const Home = ({seo}) => {
             </div>
           </div>
           <div className="white wrapper flex centered">
-            <img src="/assets/images/home/3.png" alt="" />
+            <img src={special.latest_image != null
+                ? "/" +
+                special.latest_image.path +
+                "/" +
+                special.latest_image.title
+                : null} alt="" />
             <div className="content">
               <span>სპეციალური შეთავაზება</span>
-              <div className="title35 green">თხის ყველი</div>
+              <div className="title35 green">{special.title}</div>
               <p className="op05">
-                არია ქართული ბრენდია. აღნიშნული საწარმო სამეგრელოში, სენაკის რაიონის
-                სოფელ მენჯში 60 ჰა მიწის ფართობზეაგანლაგებული. ფერმა ყველა
-                საერთაშორისო
+                  {special.short_description}
               </p>
               <span
                 style={{
@@ -117,7 +123,7 @@ const Home = ({seo}) => {
                   display: "block",
                 }}
               >
-                22₾
+                {parseFloat(special.price).toFixed(2)}₾
               </span>
               <Link href={route('client.special-offer.index')}>
                 <MainButton text="დეტალურად" />
@@ -157,19 +163,24 @@ const Home = ({seo}) => {
           <div className="blog_section wrapper">
             <div className="flex">
               <div className="title35 green">ბლოგი</div>
-              <Link href="/">ნახე სრულად</Link>
+              <Link href={route('client.blog.index')}>ნახე სრულად</Link>
             </div>
             <div className="grid boxes">
               {/* no more than 4 boxes should be allowed in this section */}
-              {smallBoxData.map((data, index) => {
+              {blogs.map((data, index) => {
                 return (
                   <BlogBoxSmall
                     key={index}
-                    link={route('client.blog.show','blog')}
-                    img={data.img}
+                    link={route('client.blog.show',data.slug)}
+                    img={data.latest_image != null
+                        ? "/" +
+                        data.latest_image.path +
+                        "/" +
+                        data.latest_image.title
+                        : null}
                     title={data.title}
-                    date={data.date}
-                    paragraph={data.paragraph}
+                    date={data.created_at}
+                    paragraph={data.short_description}
                   />
                 );
               })}

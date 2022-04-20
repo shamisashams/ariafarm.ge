@@ -13,10 +13,12 @@ import SwiperCore, { Navigation, Pagination } from "swiper";
 //import Img5 from "../../../assets/images/blogs/5.png";
 //import Img6 from "../../../assets/images/blogs/6.png";
 import { ArrowLeft, ArrowRight } from "../../../components/Buttons/Buttons";
+import {usePage} from "@inertiajs/inertia-react";
 
 SwiperCore.use([Navigation, Pagination]);
 
 const SocialSlider = () => {
+    const { social_slider } = usePage().props;
   //const navigationPrevRef = useRef(null);
   //const navigationNextRef = useRef(null);
     const navigationPrevRef = {current:null};
@@ -66,10 +68,10 @@ const SocialSlider = () => {
             },
           }}
         >
-          {socialData.map((img, index) => {
+          {social_slider.map((img, index) => {
             return (
               <SwiperSlide key={index} className="img">
-                <img src={img} alt="" />
+                <img src={ '/' + img.path + '/' + img.title } alt="" />
               </SwiperSlide>
             );
           })}

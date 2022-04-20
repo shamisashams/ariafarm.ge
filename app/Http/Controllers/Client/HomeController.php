@@ -3,8 +3,13 @@
 namespace App\Http\Controllers\Client;
 
 use App\Http\Controllers\Controller;
+use App\Models\Blog;
+use App\Models\CardSlider;
+use App\Models\Faq;
 use App\Models\Page;
+use App\Models\Product;
 use App\Models\Slider;
+use App\Repositories\Eloquent\CardSliderRepository;
 use Illuminate\Support\Facades\App;
 use Inertia\Inertia;
 use App\Repositories\Eloquent\ProductRepository;
@@ -12,6 +17,8 @@ use App\Repositories\Eloquent\ProductRepository;
 
 class HomeController extends Controller
 {
+
+
     public function index()
     {
 
@@ -27,6 +34,11 @@ class HomeController extends Controller
             }
 
         }
+
+        $files = [];
+        if($page->images) $files = $page->files;
+
+        //dd($files);
 
         $sliders = Slider::query()->where("status", 1)->with(['file', 'translations']);
 //        dd($page->file);
@@ -68,9 +80,24 @@ class HomeController extends Controller
             if($product->popular) $products['popular'][] = $product;
         }
 
-        //dd($products);
+        $cards = CardSlider::query()->with('translation')->get();
 
-        return Inertia::render('Home/Home', ["sliders" => $sliders->get(), "page" => $page, "seo" => [
+        $blogs = Blog::query()->orderBy('created_at','desc')->limit(4)->with(['translation','latestImage'])->get();
+
+        $faqs = Faq::query()->with('translation')->get();
+
+        $special = Product::query()->where('special_price_tag',1)->inRandomOrder()->with(['translation','latestImage'])->first();
+        //dd($special);
+
+        return Inertia::render('Home/Home', [
+            "sliders" => $sliders->get(),
+            "page" => $page,
+            'cards' => $cards,
+            'social_slider' => $files,
+            'blogs' => $blogs,
+            'faqs' => $faqs,
+            'special' => $special,
+            "seo" => [
             "title"=>$page->meta_title,
             "description"=>$page->meta_description,
             "keywords"=>$page->meta_keyword,

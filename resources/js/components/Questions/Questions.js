@@ -1,8 +1,12 @@
 import React, { useState } from "react";
 import "./Questions.css";
+import {usePage} from "@inertiajs/inertia-react";
 
 export const Questions = () => {
   const [revealAnswer, setRevealAnswer] = useState(0);
+    const { faqs } = usePage().props;
+
+    //console.log(faqs)
 
   const QandAData = [
     {
@@ -29,7 +33,7 @@ export const Questions = () => {
   ];
   return (
     <>
-      {QandAData.map((data, index) => {
+      {faqs.map((data, index) => {
         return (
           <div
             className={

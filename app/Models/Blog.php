@@ -48,9 +48,10 @@ class Blog extends Model implements Searchable
         'text_top',
         'text_medium',
         'text_bottom',
-        /*'meta_title',
+        'meta_title',
         'meta_description',
-        'meta_keyword',*/
+        'meta_keyword',
+        'short_description'
     ];
 
     //protected $with = ['translation'];
@@ -117,6 +118,11 @@ class Blog extends Model implements Searchable
     public function latestImage()
     {
         return $this->morphOne(File::class, 'fileable')->latestOfMany();
+    }
+
+    public function getCreatedAtAttribute($value)
+    {
+        return (new Carbon($value))->format('d / m / Y');
     }
 
 }
