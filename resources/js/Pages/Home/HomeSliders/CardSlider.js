@@ -8,7 +8,7 @@ import { Cow, Goat, Buffalo } from "../../../components/SmallComps/Icons";
 
 SwiperCore.use([EffectCoverflow]);
 
-const CardSlider = ({ cardData }) => {
+const CardSlider = ({ cardData, category }) => {
   return (
     <div className="card_slider">
       <Swiper

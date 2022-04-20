@@ -130,6 +130,9 @@ class ProductController extends Controller
 
         $product_attributes = $product->attribute_values;
 
+        $cards = $product->cards()->with('translation')->get();
+
+        //dd($cards);
         $result = [];
 
         foreach ($product_attributes as $item){
@@ -261,6 +264,7 @@ class ProductController extends Controller
             'similar_products' => $similar_products,
             'product_images' => $productImages,
             'product_attributes' => $result,
+            'cards' => $cards,
             "seo" => [
                 "title"=>$product->meta_title,
                 "description"=>$product->meta_description,
