@@ -8,8 +8,12 @@ import SearchInput from "../../components/SmallComps/SearchInput";
 //import Img4 from "../../assets/images/blogs/12.png";
 import "./Blogs.css";
 import Layout from "../../Layouts/Layout";
+import {usePage} from "@inertiajs/inertia-react";
 
 const Blogs = ({seo}) => {
+    const { blogs } = usePage().props;
+    const sharedData = usePage().props.localizations;
+    console.log(blogs)
   const blogsList = [
     {
       link: "/single-blog",
@@ -55,17 +59,22 @@ const Blogs = ({seo}) => {
               <div className="wrapper">
                   <PagePath prev="მთავარი" current="ბლოგი" color="#949494" />
                   <div className="main">
-                      <div className="title50">ბლოგი</div>
-                      {blogsList.map((blog, index) => {
+                      <div className="title50">{__('client.blog',sharedData)}</div>
+                      {blogs.map((blog, index) => {
                           return (
                               <BlogBoxLarge
                                   key={index}
-                                  img={blog.img}
-                                  subject={blog.subject}
+                                  img={blog.latest_image != null
+                                      ? "/" +
+                                      blog.latest_image.path +
+                                      "/" +
+                                      blog.latest_image.title
+                                      : null}
+                                  subject={'თემა'}
                                   title={blog.title}
-                                  paragraph={blog.paragraph}
-                                  link={route('client.blog.show','blog')}
-                                  date={blog.date}
+                                  paragraph={blog.short_description}
+                                  link={route('client.blog.show',blog.slug)}
+                                  date={blog.created_at}
                               />
                           );
                       })}

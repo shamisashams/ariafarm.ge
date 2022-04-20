@@ -51,7 +51,8 @@ class Blog extends Model implements Searchable
         'meta_title',
         'meta_description',
         'meta_keyword',
-        'short_description'
+        'short_description',
+        'title'
     ];
 
     //protected $with = ['translation'];

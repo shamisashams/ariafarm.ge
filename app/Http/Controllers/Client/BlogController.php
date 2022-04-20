@@ -39,7 +39,7 @@ class BlogController extends Controller
         $files = [];
 
 
-        $blogs = Blog::orderBy('created_at','desc')->with('latestImage')->get();
+        $blogs = Blog::orderBy('created_at','desc')->with(['translation','latestImage'])->get();
         //dd($blogs);
         //dd($blogs);
 
@@ -71,6 +71,8 @@ class BlogController extends Controller
     {
         //\Illuminate\Support\Facades\DB::enableQueryLog();
 
+        $blog = Blog::query()->where('slug',$slug)->with(['translation','files'])->firstOrFail();
+
 
         return Inertia::render('ArticlePages/SingleBlog',[
             'product' => null,
@@ -78,6 +80,7 @@ class BlogController extends Controller
             'similar_products' => null,
             'product_images' => null,
             'product_attributes' => null,
+            'blog' => $blog,
             "seo" => [
                 "title"=>null,
                 "description"=>null,
