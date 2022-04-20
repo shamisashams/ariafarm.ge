@@ -10,7 +10,7 @@ import "swiper/swiper.min.css";
 import SwiperCore, { Navigation, Pagination, EffectFade } from "swiper";
 import { ArrowLeft2, ArrowRight2 } from "../../components/Buttons/Buttons";
 //import { Link } from "react-router-dom";
-import { Link } from "@inertiajs/inertia-react";
+import {Link, usePage} from "@inertiajs/inertia-react";
 import "./SpecialOffers.css";
 //import Blob from "../../assets/images/other/blob.png";
 import Layout from "../../Layouts/Layout";
@@ -20,6 +20,9 @@ SwiperCore.use([Navigation, Pagination, EffectFade]);
 const SpecialOffers = ({seo}) => {
   const navigationPrevRef = useRef(null);
   const navigationNextRef = useRef(null);
+
+    const { products } = usePage().props;
+    const sharedData = usePage().props.localizations;
 
   //  each product has its own color
   const specialData = [
@@ -42,6 +45,8 @@ const SpecialOffers = ({seo}) => {
       color: "#F5DBA5",
     },
   ];
+  const colors = ["#F5DBA5","#726889","#3D6D48"];
+    let i = 0;
   return (
       <Layout seo={seo}>
           <div className="specialOffers">
@@ -86,16 +91,25 @@ const SpecialOffers = ({seo}) => {
                           loop
                           slidesPerView={1}
                       >
-                          {specialData.map((item, index) => {
+                          {products.map((item, index) => {
+
+                              if(i < 3){
+                                  i++
+                              } else i = 0;
                               return (
                                   <SwiperSlide key={index}>
                                       <div className="offer_item">
                                           <div className="img">
-                                              <img src={item.product} alt="" />
+                                              <img src={item.latest_image != null
+                                                  ? "/" +
+                                                  item.latest_image.path +
+                                                  "/" +
+                                                  item.latest_image.title
+                                                  : null} alt="" />
                                           </div>
-                                          <Link href={item.link}>
-                                              <button style={{ background: item.color }}>
-                                                  ფასი: {item.price} ₾
+                                          <Link href={route('client.product.show',item.slug)}>
+                                              <button style={{ background: colors[i - 1] }}>
+                                                  ფასი: {parseFloat(item.price).toFixed(2)} ₾
                                               </button>
                                           </Link>
                                       </div>

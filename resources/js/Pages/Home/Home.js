@@ -103,7 +103,7 @@ const Home = ({seo}) => {
               </div>
             </div>
           </div>
-          <div className="white wrapper flex centered">
+            {special ? <div className="white wrapper flex centered">
             <img src={special.latest_image != null
                 ? "/" +
                 special.latest_image.path +
@@ -129,7 +129,7 @@ const Home = ({seo}) => {
                 <MainButton text="დეტალურად" />
               </Link>
             </div>
-          </div>
+          </div> : null}
           <div className="our_products">
             <div className="wrapper flex">
               <div className="content">

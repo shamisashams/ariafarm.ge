@@ -3977,7 +3977,7 @@ var Home = function Home(_ref) {
     className: "social_media"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "title35"
-  }, "\u10D2\u10D5\u10D8\u10DE\u10DD\u10D5\u10D4 \u10E1\u10DD\u10EA\u10D8\u10D0\u10DA\u10E3\u10E0 \u10E5\u10E1\u10D4\u10DA\u10D4\u10D1\u10E8\u10D8"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", null, "\u10D0\u10E0\u10D8\u10D0 \u10E5\u10D0\u10E0\u10D7\u10E3\u10DA\u10D8 \u10D1\u10E0\u10D4\u10DC\u10D3\u10D8\u10D0. \u10D0\u10E6\u10DC\u10D8\u10E8\u10DC\u10E3\u10DA\u10D8 \u10E1\u10D0\u10EC\u10D0\u10E0\u10DB\u10DD \u10E1\u10D0\u10DB\u10D4\u10D2\u10E0\u10D4\u10DA\u10DD\u10E8\u10D8, \u10E1\u10D4\u10DC\u10D0\u10D9\u10D8\u10E1 \u10E0\u10D0\u10D8\u10DD\u10DC\u10D8\u10E1"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_SmallComps_SocialLinks__WEBPACK_IMPORTED_MODULE_5__.SocialLinks, null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_HomeSliders_SocialSlider__WEBPACK_IMPORTED_MODULE_6__["default"], null)))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+  }, "\u10D2\u10D5\u10D8\u10DE\u10DD\u10D5\u10D4 \u10E1\u10DD\u10EA\u10D8\u10D0\u10DA\u10E3\u10E0 \u10E5\u10E1\u10D4\u10DA\u10D4\u10D1\u10E8\u10D8"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", null, "\u10D0\u10E0\u10D8\u10D0 \u10E5\u10D0\u10E0\u10D7\u10E3\u10DA\u10D8 \u10D1\u10E0\u10D4\u10DC\u10D3\u10D8\u10D0. \u10D0\u10E6\u10DC\u10D8\u10E8\u10DC\u10E3\u10DA\u10D8 \u10E1\u10D0\u10EC\u10D0\u10E0\u10DB\u10DD \u10E1\u10D0\u10DB\u10D4\u10D2\u10E0\u10D4\u10DA\u10DD\u10E8\u10D8, \u10E1\u10D4\u10DC\u10D0\u10D9\u10D8\u10E1 \u10E0\u10D0\u10D8\u10DD\u10DC\u10D8\u10E1"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_SmallComps_SocialLinks__WEBPACK_IMPORTED_MODULE_5__.SocialLinks, null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_HomeSliders_SocialSlider__WEBPACK_IMPORTED_MODULE_6__["default"], null)))), special ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "white wrapper flex centered"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", {
     src: special.latest_image != null ? "/" + special.latest_image.path + "/" + special.latest_image.title : null,
@@ -3998,7 +3998,7 @@ var Home = function Home(_ref) {
     href: route('client.special-offer.index')
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_Buttons_Buttons__WEBPACK_IMPORTED_MODULE_1__.MainButton, {
     text: "\u10D3\u10D4\u10E2\u10D0\u10DA\u10E3\u10E0\u10D0\u10D3"
-  })))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+  })))) : null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "our_products"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "wrapper flex"
@@ -4964,7 +4964,9 @@ swiper__WEBPACK_IMPORTED_MODULE_9__["default"].use([swiper__WEBPACK_IMPORTED_MOD
 var SpecialOffers = function SpecialOffers(_ref) {
   var seo = _ref.seo;
   var navigationPrevRef = (0,react__WEBPACK_IMPORTED_MODULE_0__.useRef)(null);
-  var navigationNextRef = (0,react__WEBPACK_IMPORTED_MODULE_0__.useRef)(null); //  each product has its own color
+  var navigationNextRef = (0,react__WEBPACK_IMPORTED_MODULE_0__.useRef)(null);
+  var products = (0,_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_6__.usePage)().props.products;
+  var sharedData = (0,_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_6__.usePage)().props.localizations; //  each product has its own color
 
   var specialData = [{
     link: "/",
@@ -4982,6 +4984,8 @@ var SpecialOffers = function SpecialOffers(_ref) {
     price: "8.99",
     color: "#F5DBA5"
   }];
+  var colors = ["#F5DBA5", "#726889", "#3D6D48"];
+  var i = 0;
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_Layouts_Layout__WEBPACK_IMPORTED_MODULE_8__["default"], {
     seo: seo
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
@@ -5023,7 +5027,11 @@ var SpecialOffers = function SpecialOffers(_ref) {
     grabCursor: true,
     loop: true,
     slidesPerView: 1
-  }, specialData.map(function (item, index) {
+  }, products.map(function (item, index) {
+    if (i < 3) {
+      i++;
+    } else i = 0;
+
     return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(swiper_react__WEBPACK_IMPORTED_MODULE_14__.SwiperSlide, {
       key: index
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
@@ -5031,15 +5039,15 @@ var SpecialOffers = function SpecialOffers(_ref) {
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
       className: "img"
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", {
-      src: item.product,
+      src: item.latest_image != null ? "/" + item.latest_image.path + "/" + item.latest_image.title : null,
       alt: ""
     })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_6__.Link, {
-      href: item.link
+      href: route('client.product.show', item.slug)
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("button", {
       style: {
-        background: item.color
+        background: colors[i - 1]
       }
-    }, "\u10E4\u10D0\u10E1\u10D8: ", item.price, " \u20BE"))));
+    }, "\u10E4\u10D0\u10E1\u10D8: ", parseFloat(item.price).toFixed(2), " \u20BE"))));
   }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     ref: navigationPrevRef
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_Buttons_Buttons__WEBPACK_IMPORTED_MODULE_5__.ArrowLeft2, null)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {

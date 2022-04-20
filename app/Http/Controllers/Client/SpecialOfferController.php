@@ -46,11 +46,14 @@ class SpecialOfferController extends Controller
 
         }
 
+        $products = Product::query()->where('special_price_tag',1)->with(['translation','latestImage'])->get();
+
         //dd($products);
         return Inertia::render('SpecialOffers/SpecialOffers',[
             'products' => $products,
             'images' => $images,
             'page' => $page,
+            'products' => $products,
             "seo" => [
                 "title"=>$page->meta_title,
                 "description"=>$page->meta_description,
