@@ -137,6 +137,8 @@ Route::prefix('{locale?}')
             Route::post('checkout',[\App\Http\Controllers\Client\OrderController::class,'order'])->name('client.checkout.order');
             Route::get('order/success',[\App\Http\Controllers\Client\OrderController::class,'statusSuccess'])->name('order.success');
 
+            Route::post('subscribe',[\App\Http\Controllers\Client\SubscribeController::class,'subscribe'])->name('client.subscribe.subscribe');
+
 
         });
     });

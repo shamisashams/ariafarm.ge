@@ -9,7 +9,7 @@ import "./Footer.css";
 const Footer = () => {
     const sharedData = usePage().props.localizations;
 
-    const { pathname, currentLocale } = usePage().props;
+    const { pathname, currentLocale, info } = usePage().props;
   const links = [
     {
       link: route('client.home.index'),
@@ -81,8 +81,8 @@ const Footer = () => {
                 referrerPolicy="no-referrer-when-downgrade"
               ></iframe>
             </div>
-            <span style={{ margin: "10px 0" }}>+995 591 23 20 20</span>
-            <span>ariafarm.ge@gmail.com</span>
+            <span style={{ margin: "10px 0" }}>{info.phone}</span>
+            <span>{info.email}</span>
           </div>
         </div>
         <div className="flex bottom">

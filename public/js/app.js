@@ -3935,11 +3935,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _HomeSliders_SocialSlider__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./HomeSliders/SocialSlider */ "./resources/js/Pages/Home/HomeSliders/SocialSlider.js");
 /* harmony import */ var _inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @inertiajs/inertia-react */ "./node_modules/@inertiajs/inertia-react/dist/index.js");
 /* harmony import */ var _Layouts_Layout__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../../Layouts/Layout */ "./resources/js/Layouts/Layout.js");
-/* harmony import */ var _components_BlogObjects_BlogObjects__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../../components/BlogObjects/BlogObjects */ "./resources/js/components/BlogObjects/BlogObjects.js");
-/* harmony import */ var _components_Questions_Questions__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../../components/Questions/Questions */ "./resources/js/components/Questions/Questions.js");
-/* harmony import */ var _components_Form_Form__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../../components/Form/Form */ "./resources/js/components/Form/Form.js");
-/* harmony import */ var _components_SmallComps_SearchInput__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../../components/SmallComps/SearchInput */ "./resources/js/components/SmallComps/SearchInput.js");
-/* harmony import */ var _components_SmallComps_Icons__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ../../components/SmallComps/Icons */ "./resources/js/components/SmallComps/Icons.js");
+/* harmony import */ var _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @inertiajs/inertia */ "./node_modules/@inertiajs/inertia/dist/index.js");
+/* harmony import */ var _components_BlogObjects_BlogObjects__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../../components/BlogObjects/BlogObjects */ "./resources/js/components/BlogObjects/BlogObjects.js");
+/* harmony import */ var _components_Questions_Questions__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../../components/Questions/Questions */ "./resources/js/components/Questions/Questions.js");
+/* harmony import */ var _components_Form_Form__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../../components/Form/Form */ "./resources/js/components/Form/Form.js");
+/* harmony import */ var _components_SmallComps_SearchInput__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ../../components/SmallComps/SearchInput */ "./resources/js/components/SmallComps/SearchInput.js");
+/* harmony import */ var _components_SmallComps_Icons__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ../../components/SmallComps/Icons */ "./resources/js/components/SmallComps/Icons.js");
 
 
 
@@ -3952,6 +3953,7 @@ __webpack_require__.r(__webpack_exports__);
 //import Img3 from "../../assets/images/home/5.png";
 //import Check from "../../assets/images/icons/check.svg";
 //import { Link } from "react-router-dom";
+
 
 
 
@@ -3976,45 +3978,54 @@ var Home = function Home(_ref) {
   var cardData = [{
     text: "არია ქართული ბრენდია. აღნიშნული საწარმო სამეგრელოში, სენაკის რაიონის სოფელ მენჯში 60 ჰა მიწის ფართობზეა განლაგებული. ფერმა ყველა საერთაშორისო სტანდარტის დაცვით აშენდა.",
     color: green,
-    icon: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_SmallComps_Icons__WEBPACK_IMPORTED_MODULE_13__.Cow, {
+    icon: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_SmallComps_Icons__WEBPACK_IMPORTED_MODULE_14__.Cow, {
       color: green
     })
   }, {
     text: "არია ქართული ბრენდია. აღნიშნული საწარმო სამეგრელოში, სენაკის რაიონის სოფელ მენჯში 60 ჰა მიწის ფართობზეა განლაგებული. ფერმა ყველა საერთაშორისო სტანდარტის დაცვით აშენდა.",
     color: pink,
-    icon: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_SmallComps_Icons__WEBPACK_IMPORTED_MODULE_13__.Goat, {
+    icon: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_SmallComps_Icons__WEBPACK_IMPORTED_MODULE_14__.Goat, {
       color: pink
     })
   }, {
     text: "არია ქართული ბრენდია. აღნიშნული საწარმო სამეგრელოში, სენაკის რაიონის სოფელ მენჯში 60 ჰა მიწის ფართობზეა განლაგებული. ფერმა ყველა საერთაშორისო სტანდარტის დაცვით აშენდა.",
     color: green,
-    icon: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_SmallComps_Icons__WEBPACK_IMPORTED_MODULE_13__.Cow, {
+    icon: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_SmallComps_Icons__WEBPACK_IMPORTED_MODULE_14__.Cow, {
       color: green
     })
   }, {
     text: "არია ქართული ბრენდია. აღნიშნული საწარმული საწარმო სამეგრელოში, სენაკის რაიონის სოფელ მენჯში 60 ჰა მიწის ფართობზეა გაო სამეგრელოში, სენაკის რაიონის სოფელ მენჯში 60 ჰა მიწის ფართობზეა განლაგებული. ფერმა ყველა საერთაშორისო სტანდარტის დაცვით აშენდა.",
     color: pink,
-    icon: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_SmallComps_Icons__WEBPACK_IMPORTED_MODULE_13__.Goat, {
+    icon: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_SmallComps_Icons__WEBPACK_IMPORTED_MODULE_14__.Goat, {
       color: pink
     })
   }, {
     text: "არია ქართული ბრენდია. აღნიშნნლაგებული. ფერმა ყველა საერთაშორისო სტანდარტის დაცვით აშენდა.",
     color: green,
-    icon: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_SmallComps_Icons__WEBPACK_IMPORTED_MODULE_13__.Cow, {
+    icon: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_SmallComps_Icons__WEBPACK_IMPORTED_MODULE_14__.Cow, {
       color: green
     })
   }, {
     text: "არია ქართული ბრენდია. აღნიშნული საწარმო სამეგრელოში, სენაკის რაიონის სოფელ მენჯში 60 ჰა მიწის ფართობზეა განლაგებული. ფერმა ყველა საერთაშორისო სტანდარტის დაცვით აშენდა.",
     color: pink,
-    icon: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_SmallComps_Icons__WEBPACK_IMPORTED_MODULE_13__.Goat, {
+    icon: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_SmallComps_Icons__WEBPACK_IMPORTED_MODULE_14__.Goat, {
       color: pink
     })
   }];
+
+  function handleClick(e) {
+    var email = document.getElementById('s_email').value; //alert(email)
+
+    _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_9__.Inertia.post(route('client.subscribe.subscribe'), {
+      email: email
+    });
+  }
+
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_Layouts_Layout__WEBPACK_IMPORTED_MODULE_8__["default"], {
     seo: seo
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "homePage"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_SmallComps_SearchInput__WEBPACK_IMPORTED_MODULE_12__["default"], {
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_SmallComps_SearchInput__WEBPACK_IMPORTED_MODULE_13__["default"], {
     color: "#ACD3C1"
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_HeroSection_HeroSection__WEBPACK_IMPORTED_MODULE_2__["default"], null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "why_our_product"
@@ -4037,11 +4048,14 @@ var Home = function Home(_ref) {
   }, __('client.home_section1_text', sharedData)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "subscribe"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null, __('client.section1_header2', sharedData)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("input", {
+    name: "email",
+    id: "s_email",
     className: "bpg",
     type: "text",
     placeholder: __('client.home_enter_email_placeholder', sharedData)
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_Buttons_Buttons__WEBPACK_IMPORTED_MODULE_1__.MainButton, {
-    text: __('client.subscribe_btn', sharedData)
+    text: __('client.subscribe_btn', sharedData),
+    onClick: handleClick
   }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "social_media"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
@@ -4104,7 +4118,7 @@ var Home = function Home(_ref) {
   }, __('client.home_view_all', sharedData))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "grid boxes"
   }, blogs.map(function (data, index) {
-    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_BlogObjects_BlogObjects__WEBPACK_IMPORTED_MODULE_9__.BlogBoxSmall, {
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_BlogObjects_BlogObjects__WEBPACK_IMPORTED_MODULE_10__.BlogBoxSmall, {
       key: index,
       link: route('client.blog.show', data.slug),
       img: data.latest_image != null ? "/" + data.latest_image.path + "/" + data.latest_image.title : null,
@@ -4116,7 +4130,7 @@ var Home = function Home(_ref) {
     className: "faq wrapper"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "title35"
-  }, __('client.home_faq', sharedData)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_Questions_Questions__WEBPACK_IMPORTED_MODULE_10__.Questions, null)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+  }, __('client.home_faq', sharedData)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_Questions_Questions__WEBPACK_IMPORTED_MODULE_11__.Questions, null)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "lastsec form_section wrapper flex"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "img-holder"
@@ -4125,7 +4139,7 @@ var Home = function Home(_ref) {
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", {
     src: page.sections[1].file !== null ? "/" + page.sections[1].file.path + "/" + page.sections[1].file.title : null,
     alt: ""
-  }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_Form_Form__WEBPACK_IMPORTED_MODULE_11__.Form, null))));
+  }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_Form_Form__WEBPACK_IMPORTED_MODULE_12__.Form, null))));
 };
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Home);
@@ -5434,7 +5448,8 @@ var Footer = function Footer() {
   var sharedData = (0,_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__.usePage)().props.localizations;
   var _usePage$props = (0,_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__.usePage)().props,
       pathname = _usePage$props.pathname,
-      currentLocale = _usePage$props.currentLocale;
+      currentLocale = _usePage$props.currentLocale,
+      info = _usePage$props.info;
   var links = [{
     link: route('client.home.index'),
     name: __('client.nav_home', sharedData)
@@ -5505,7 +5520,7 @@ var Footer = function Footer() {
     style: {
       margin: "10px 0"
     }
-  }, "+995 591 23 20 20"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", null, "ariafarm.ge@gmail.com"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+  }, info.phone), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", null, info.email))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "flex bottom"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__.Link, {
     href: "/"

@@ -14,6 +14,7 @@ import SocialSlider from "./HomeSliders/SocialSlider";
 import {Link, usePage} from "@inertiajs/inertia-react";
 
 import Layout from "../../Layouts/Layout";
+import { Inertia } from '@inertiajs/inertia'
 
 import {
   BlogBoxSmall,
@@ -67,6 +68,14 @@ const Home = ({seo, page}) => {
       icon: <Goat color={pink} />,
     },
   ];
+
+  function handleClick(e){
+      let email = document.getElementById('s_email').value;
+      //alert(email)
+        Inertia.post(route('client.subscribe.subscribe'),{ email: email })
+
+  }
+
   return (
       <Layout seo={seo}>
         <div className="homePage">
@@ -85,8 +94,8 @@ const Home = ({seo, page}) => {
                 </p>
                 <div className="subscribe">
                   <div>{__('client.section1_header2',sharedData)}</div>
-                  <input className="bpg" type="text" placeholder={__('client.home_enter_email_placeholder',sharedData)} />
-                  <MainButton text={__('client.subscribe_btn',sharedData)} />
+                  <input name="email" id="s_email" className="bpg" type="text" placeholder={__('client.home_enter_email_placeholder',sharedData)} />
+                  <MainButton text={__('client.subscribe_btn',sharedData)} onClick={handleClick} />
                 </div>
               </div>
               <div className="social_media">
