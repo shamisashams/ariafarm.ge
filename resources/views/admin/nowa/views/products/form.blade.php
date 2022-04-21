@@ -543,7 +543,7 @@ $traverse = function ($categories, $prefix = '-') use (&$traverse,$ids) {
 
                                         @endforeach
                                         <td>
-                                            <input name="options[{{$item->id}}][color]" value="{{$item->color}}" data-jscolor="{}">
+                                            <input class="form-control" name="options[{{$item->id}}][color]" value="{{$item->color}}" data-jscolor="{}">
                                         </td>
                                         <td>
                                             <a href="javascript:void(0);" class="del-option"><i class="fa fa-trash-alt"></i></a>
@@ -696,7 +696,7 @@ $traverse = function ($categories, $prefix = '-') use (&$traverse,$ids) {
 
             })
 
-            tr.append('<td><input name="options[option_'+ ind +'][color]" value="#3399FF80" data-jscolor="{}"></td>')
+            tr.append('<td><input class="form-control" name="options[option_'+ ind +'][color]" value="#3399FF80" data-jscolor="{}"></td>')
 
             tr.append('<td><a href="javascript:void(0);" class="del-option"><i class="fa fa-trash-alt"></i></a></td>');
 
