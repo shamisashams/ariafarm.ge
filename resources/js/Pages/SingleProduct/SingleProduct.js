@@ -21,7 +21,7 @@ const SingleProduct = ({seo}) => {
     const { product, product_images, similar_products, cards } = usePage().props;
     const sharedData = usePage().props.localizations;
 
-    const renderHTML = (rawHTML) => React.createElement("div", { dangerouslySetInnerHTML: { __html: rawHTML } });
+    const renderHTML = (rawHTML) => React.createElement("p", { dangerouslySetInnerHTML: { __html: rawHTML } });
   // productColor varies for each product
   let productColor = "#155228";
   const [showImg, setShowImg] = useState(0);

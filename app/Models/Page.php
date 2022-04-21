@@ -38,6 +38,9 @@ class Page extends Model
         "meta_keyword",
         "meta_og_title",
         "meta_og_description",
+        "text_top",
+        "text_medium",
+        "text_bottom"
     ];
 
 

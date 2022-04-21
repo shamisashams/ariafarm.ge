@@ -29,7 +29,7 @@
     <!-- breadcrumb -->
     <div class="breadcrumb-header justify-content-between">
         <div class="left-content">
-            <span class="main-content-title mg-b-0 mg-b-lg-1">{{ __('admin.page-update')}}</span>
+            <span class="main-content-title mg-b-0 mg-b-lg-1">{{ __('admin.page-update')}} - {{$page->key}}</span>
         </div>
         <div class="justify-content-center mt-2">
             @include('admin.nowa.views.layouts.components.breadcrump')
@@ -44,7 +44,7 @@
             <div class="card">
                 <div class="card-body">
                     <div>
-                        <h6 class="card-title mb-1">@lang('admin.editpage')</h6>
+                        <h6 class="card-title mb-1">@lang('admin.editpage') </h6>
                     </div>
 
                     <div class="mb-4">
@@ -132,6 +132,49 @@
                                                 </small>
                                                 @enderror
                                             </div>
+
+                                            @if($page->key == 'farm' || $page->key == 'enterprise' || $page->key == 'shop')
+
+                                                <div class="form-group">
+                                                    <label class="form-label" for="text_top">@lang('admin.text_top')</label>
+                                                    <textarea class="form-control" id="text_top-{{$locale}}"
+                                                              name="{{$locale}}[text_top]'">{!! $page->translate($locale)->text_top ?? '' !!}</textarea>
+                                                    @error($locale.'.text_top')
+                                                    <small class="text-danger">
+                                                        <div class="error">
+                                                            {{$message}}
+                                                        </div>
+                                                    </small>
+                                                    @enderror
+                                                </div>
+
+                                                <div class="form-group">
+                                                    <label class="form-label" for="text_medium">@lang('admin.text_medium')</label>
+                                                    <textarea class="form-control" id="text_top-{{$locale}}"
+                                                              name="{{$locale}}[text_medium]'">{!! $page->translate($locale)->text_medium ?? '' !!}</textarea>
+                                                    @error($locale.'.text_medium')
+                                                    <small class="text-danger">
+                                                        <div class="error">
+                                                            {{$message}}
+                                                        </div>
+                                                    </small>
+                                                    @enderror
+                                                </div>
+
+                                                <div class="form-group">
+                                                    <label class="form-label" for="text_bottom">@lang('admin.text_bottom')</label>
+                                                    <textarea class="form-control" id="text_bottom-{{$locale}}"
+                                                              name="{{$locale}}[text_bottom]'">{!! $page->translate($locale)->text_bottom ?? '' !!}</textarea>
+                                                    @error($locale.'.text_top')
+                                                    <small class="text-danger">
+                                                        <div class="error">
+                                                            {{$message}}
+                                                        </div>
+                                                    </small>
+                                                    @enderror
+                                                </div>
+
+                                            @endif
 
                                             <div class="main-content-label mg-b-5 text-danger">
                                                 @lang('admin.page_seo')
@@ -437,7 +480,7 @@
     <script>
         let locales = @json(config('translatable.locales'));
 
-        let options = @json($options);
+        let options = @json(isset($options) ? $options : []);
 
         let ind = 1;
 
