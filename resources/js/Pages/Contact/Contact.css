@@ -3,7 +3,7 @@
   padding-bottom: 150px;
 }
 .contactPage .contact_showcase {
-  background: url(/assets/images/other/bg2.png) no-repeat;
+    background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
   background-attachment: fixed;

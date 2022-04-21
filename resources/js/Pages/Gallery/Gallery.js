@@ -89,7 +89,7 @@ const Gallery = ({seo}) => {
           <div className="galleryPage">
               <SearchInput color="#ACD3C1" />
               <div className="wrapper">
-                  <PagePath prev="მთავარი" current="პროდუქცია" color="#949494" />
+                  <PagePath prev={__('client.nav_home',sharedData)} current={__('client.nav_gallery',sharedData)} color="#949494" />
                   <div className="title50">{__('client.gallery_header',sharedData)}</div>
                   <div className="grid">
                       {gallery.map((img, index) => {

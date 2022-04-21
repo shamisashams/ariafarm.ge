@@ -120,6 +120,7 @@ class ProductController extends Controller
     public function show(string $locale, string $slug)
     {
         //\Illuminate\Support\Facades\DB::enableQueryLog();
+        $page = Page::where('key', 'products')->with('sections.file')->firstOrFail();
 
         $product = Product::where(['status' => true, 'slug' => $slug])->whereHas('categories', function (Builder $query) {
             $query->where('status', 1);
@@ -259,6 +260,7 @@ class ProductController extends Controller
             'product' => $product
         ]);*/
         return Inertia::render('SingleProduct/SingleProduct',[
+            'page' => $page,
             'product' => $product,
             'category_path' => $path,
             'similar_products' => $similar_products,

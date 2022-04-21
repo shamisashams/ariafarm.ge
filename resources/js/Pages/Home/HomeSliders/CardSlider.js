@@ -9,6 +9,7 @@ import { Cow, Goat, Buffalo } from "../../../components/SmallComps/Icons";
 SwiperCore.use([EffectCoverflow]);
 
 const CardSlider = ({ cardData, category }) => {
+    //console.log(category)
   return (
     <div className="card_slider">
       <Swiper
@@ -39,7 +40,8 @@ const CardSlider = ({ cardData, category }) => {
       >
         {cardData.map((card, index) => {
             let icon;
-            switch (card.icon){
+            //console.log(card.icon !== undefined ? card.icon : category)
+            switch (card.icon !== undefined ? card.icon : category[0].slug){
                 case 'cow':
                     icon = <Cow color={card.color}/>
                     break;

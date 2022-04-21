@@ -14,7 +14,7 @@ class ShopController extends Controller
 {
     public function index()
     {
-        $page = Page::where('key', 'contact')->firstOrFail();
+        $page = Page::where('key', 'shop')->firstOrFail();
 
         $images = [];
         foreach ($page->sections as $sections){

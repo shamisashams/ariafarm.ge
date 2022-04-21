@@ -14,17 +14,17 @@ class ContactController extends Controller
 {
     public function index()
     {
-        $page = Page::where('key', 'contact')->firstOrFail();
+        $page = Page::where('key', 'contact')->with('sections.file')->firstOrFail();
 
         $images = [];
-        foreach ($page->sections as $sections){
+        /*foreach ($page->sections as $sections){
             if($sections->file){
                 $images[] = asset($sections->file->getFileUrlAttribute());
             } else {
                 $images[] = null;
             }
 
-        }
+        }*/
 
 
         return Inertia::render('Contact/Contact', ["page" => $page, "seo" => [
@@ -53,7 +53,8 @@ class ContactController extends Controller
 
             //dd($request->all());
             $request->validate([
-                'name' => 'required|string|max:55',
+                'first_name' => 'required|string|max:55',
+                'last_name' => 'required|string|max:55',
                 'email' => 'required|email',
                 'phone' => 'required',
                 'message' => 'required|max:1024'
@@ -62,7 +63,7 @@ class ContactController extends Controller
             //dd($request->all());
 
             $data = [
-                'name' => $request->name,
+                'name' => $request->first_name .' '.$request->last_name,
                 'mail' => $request->email,
                 'phone' => $request->phone,
                 "subject" => "subject",

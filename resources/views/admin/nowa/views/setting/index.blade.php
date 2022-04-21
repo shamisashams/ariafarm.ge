@@ -74,7 +74,7 @@
                                         <tr>
                                             <td>{{$setting->id}}</td>
                                             <td>
-                                                @if($setting->key == 'instagram' || $setting->key == 'facebook')
+                                                @if($setting->key == 'instagram' || $setting->key == 'facebook' || $setting->key == 'youtube')
                                                 <div class="checkbox">
                                                     <div class="custom-checkbox custom-control">
                                                         <input type="checkbox" data-setting="{{$setting->id}}" name="status" class="custom-control-input" id="checkbox-{{$setting->id}}" {{$setting->active ? 'checked' : ''}}>

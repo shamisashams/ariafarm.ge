@@ -16,9 +16,10 @@ import { Cow, Goat } from "../../components/SmallComps/Icons";
 
 import Layout from "../../Layouts/Layout";
 
-const SingleProduct = ({seo}) => {
+const SingleProduct = ({seo, page}) => {
 
-    const { product, product_images, similar_products, cards } = usePage().props;
+    console.log(page)
+    const { product, product_images, similar_products, cards, category_path } = usePage().props;
     const sharedData = usePage().props.localizations;
 
     const renderHTML = (rawHTML) => React.createElement("p", { dangerouslySetInnerHTML: { __html: rawHTML } });
@@ -119,15 +120,15 @@ const SingleProduct = ({seo}) => {
           </div>
           <div className="details">
             <div className="title50 gradient-bg rtl h100">{product.title}</div>
-            <div className="green">პროდუქტის შესახებ</div>
+            <div className="green">{__('client.product_about_head',sharedData)}</div>
             <p className="op05">
                 {renderHTML(product.description)}
             </p>
-            <div className="green">შემადგენლობა</div>
+            <div className="green">{__('client.product_composition_head',sharedData)}</div>
             <p className="op05">
                 {renderHTML(product.composition !== null ? product.composition.newLineToBr() : null)}
             </p>
-            <div className="green">რეკომენდაცია</div>
+            <div className="green">{__('client.product_recommend_head',sharedData)}</div>
             <p className="op05">
                 {renderHTML(product.recommendation !== null ? product.recommendation.newLineToBr() : null)}
             </p>
@@ -138,23 +139,25 @@ const SingleProduct = ({seo}) => {
         <div className="wrapper">
           <div className="text">
             <div className="title35">
-              ფაქტები და <br />
-              კომენტარები
+                {renderHTML(__('client.product_cards_head',sharedData).newLineToBr())}
             </div>
             <p>
-              შემთხვევითად გენერირებული ტექსტი ეხმარება დიზაინერებს და
-              ტიპოგრაფიული ნაწარმის შემქმნელებს.
+                {renderHTML(__('client.product_cards_text',sharedData).newLineToBr())}
             </p>
           </div>
-          <CardSlider cardData={cards} />
+          <CardSlider cardData={cards} category={category_path} />
         </div>
       </div>
       <div className="recipe wrapper2 flex">
         <div className="img">
-          <img src="/assets/images/home/5.png" alt="" />
+          <img src={page.sections[0].file !== null ? "/" +
+              page.sections[0].file.path +
+              "/" +
+              page.sections[0].file.title
+              : null} alt="" />
         </div>
         <div className="context">
-          <div className="title50 gradient-bg rtl h100">რეცეპტი</div>
+          <div className="title50 gradient-bg rtl h100">{__('client.product_recipe',sharedData)}</div>
           <p className="op05">
               {renderHTML(product.recipe ? product.recipe.newLineToBr() : null)}
           </p>
@@ -173,15 +176,19 @@ const SingleProduct = ({seo}) => {
                 fill="#1e69ff"
               />
             </svg>
-            <span>გააზიარე</span>
+            <span>{__('client.product_share',sharedData)}</span>
           </Link>
         </div>
       </div>
       <FermaSection
-        imgSrc="/assets/images/other/1.png"
+        imgSrc={page.sections[1].file !== null ? "/" +
+            page.sections[1].file.path +
+            "/" +
+            page.sections[1].file.title
+            : null}
         link="/"
-        title="ჩვენი ფერმა"
-        paragraph="შემთხვევითად გენერირებული ტექსტი ეხმარება დიზაინერებს და ტიპოგრაფიული ნაწარმის შემქმნელებს,"
+        title={__('client.product_section_title',sharedData)}
+        paragraph={__('client.product_section_text',sharedData)}
       />
     </div>
       </Layout>

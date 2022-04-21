@@ -13,7 +13,8 @@ import {usePage} from "@inertiajs/inertia-react";
 
 const SingleBlog = ({seo}) => {
     const { blog } = usePage().props;
-    console.log(blog)
+    const sharedData = usePage().props.localizations;
+    //console.log(blog)
     const renderHTML = (rawHTML) => React.createElement("p", { dangerouslySetInnerHTML: { __html: rawHTML } });
   return (
       <Layout seo={seo}>
@@ -21,16 +22,16 @@ const SingleBlog = ({seo}) => {
               <img className="abs_img abs_1" src="/assets/images/blogs/bg1.png" alt="" />
               <img className="abs_img abs_2" src="/assets/images/blogs/bg2.png" alt="" />
               <SearchInput color="#fff" />
-              <div className="article_showcase" style={{ background: "url('/"+ blog.files[0].path +
+              <div className="article_showcase" style={{ background: "url('/"+ (blog.files[0].path +
                       "/" +
-                      blog.files[0].title +"'})" }}>
+                      blog.files[0].title) +"')" }}>
                   <div className="wrapper">
-                      <PagePath prev="მთავარი" current="ბლოგი" color="#fff" />
+                      <PagePath prev={__('client.nav_home',sharedData)} current={__('client.nav_blog',sharedData)} color="#fff" />
                   </div>
               </div>
               <div className="wrapper2 content">
                   <div className="title50">{blog.title}</div>
-                  <div className="subject bpg green ">თემა</div>
+                  <div className="subject bpg green ">{blog.subject}</div>
                   <div className="date">
                       <img src="/assets/images/icons/calendar.svg" alt="" />
                       {blog.created_at}

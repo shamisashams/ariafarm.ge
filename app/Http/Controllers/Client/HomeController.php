@@ -23,17 +23,17 @@ class HomeController extends Controller
     {
 
 
-        $page = Page::where('key', 'home')->firstOrFail();
+        $page = Page::where('key', 'home')->with('sections.file')->firstOrFail();
 
         $images = [];
-        foreach ($page->sections as $sections){
+        /*foreach ($page->sections as $sections){
             if($sections->file){
                 $images[] = asset($sections->file->getFileUrlAttribute());
             } else {
                 $images[] = null;
             }
 
-        }
+        }*/
 
         $files = [];
         if($page->images) $files = $page->files;

@@ -20,6 +20,7 @@ SwiperCore.use([Navigation, Pagination, EffectFade]);
 const SpecialOffers = ({seo}) => {
   const navigationPrevRef = useRef(null);
   const navigationNextRef = useRef(null);
+    const renderHTML = (rawHTML) => React.createElement("div", { dangerouslySetInnerHTML: { __html: rawHTML } });
 
     const { products } = usePage().props;
     const sharedData = usePage().props.localizations;
@@ -53,16 +54,14 @@ const SpecialOffers = ({seo}) => {
               <SearchInput color="#ACD3C1" />
               <div className="wrapper main">
                   <PagePath
-                      prev="მთავარი"
-                      current="სპეციალური შეთავაზება"
+                      prev={__('client.nav_home',sharedData)}
+                      current={__('client.nav_special_offer',sharedData)}
                       color="#949494"
                   />
                   <div className="texts">
-                      <div className="title35">სპეციალური შეთავაზების დასახელება</div>
+                      <div className="title35">{renderHTML(__('client.special_offer_title',sharedData).newLineToBr())}</div>
                       <p>
-                          შემთხვევითად გენერირებული ტექსტი ეხმარება დიზაინერებს და
-                          ტიპოგრაფიული ნაწარმის შემქმნელებს, რეალურთან მაქსიმალურად
-                          მიახლოებული შაბლონი
+                          {renderHTML(__('client.special_offer_text',sharedData).newLineToBr())}
                       </p>
                   </div>
                   <div className="special_slider">
@@ -109,7 +108,7 @@ const SpecialOffers = ({seo}) => {
                                           </div>
                                           <Link href={route('client.product.show',item.slug)}>
                                               <button style={{ background: colors[i - 1] }}>
-                                                  ფასი: {parseFloat(item.price).toFixed(2)} ₾
+                                                  {__('client.special_offer_price',sharedData)}: {parseFloat(item.price).toFixed(2)} ₾
                                               </button>
                                           </Link>
                                       </div>

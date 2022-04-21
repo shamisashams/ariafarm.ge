@@ -24,15 +24,15 @@ import { Form } from "../../components/Form/Form";
 import SearchInput from "../../components/SmallComps/SearchInput";
 import { Cow, Goat } from "../../components/SmallComps/Icons";
 
-const Home = ({seo}) => {
+const Home = ({seo, page}) => {
     const { cards, blogs, special } = usePage().props;
     const sharedData = usePage().props.localizations;
   let green = "#86AAA8";
   let pink = "#EDC6E7";
   const checks = [
-    "100% ნატურალური",
-    "ეკოლოგიურად სუფთა ბიო პროდუქტი",
-    "საქართველოში წარმოებული უმაღლესი ხარისხი",
+      __('client.section2_check1',sharedData),
+      __('client.section2_check2',sharedData),
+      __('client.section2_check3',sharedData),
   ];
   console.log(blogs);
   const cardData = [
@@ -79,24 +79,20 @@ const Home = ({seo}) => {
             </div>
             <div className="wrapper">
               <div className="left_content">
-                <div className="title35">რატომ ჩვენი პროდუქტი?</div>
+                <div className="title35">{__('client.home_section1_header',sharedData)}</div>
                 <p className="op05">
-                  არია ქართული ბრენდია. აღნიშნული საწარმო სამეგრელოში, სენაკის
-                  რაიონის სოფელ მენჯში 60 ჰა მიწის ფართობზეაგანლაგებული. ფერმა ყველა
-                  საერთაშორისო სტანდარტის დაცვით აშენდა, რაც ჯანსაღი და სასარგებლო
-                  პროდუქციის წარმოების გარანტია.
+                    {__('client.home_section1_text',sharedData)}
                 </p>
                 <div className="subscribe">
-                  <div>გამოიწერე სიახლეები და იყავი მუდამ ინფორმირებული</div>
-                  <input className="bpg" type="text" placeholder="შეიყვანე მეილი" />
-                  <MainButton text="გამოწერა" />
+                  <div>{__('client.section1_header2',sharedData)}</div>
+                  <input className="bpg" type="text" placeholder={__('client.home_enter_email_placeholder',sharedData)} />
+                  <MainButton text={__('client.subscribe_btn',sharedData)} />
                 </div>
               </div>
               <div className="social_media">
-                <div className="title35">გვიპოვე სოციალურ ქსელებში</div>
+                <div className="title35">{__('client.home_section_social_header',sharedData)}</div>
                 <p>
-                  არია ქართული ბრენდია. აღნიშნული საწარმო სამეგრელოში, სენაკის
-                  რაიონის
+                    {__('client.section_social_text',sharedData)}
                 </p>
                 <SocialLinks />
                 <SocialSlider />
@@ -111,7 +107,7 @@ const Home = ({seo}) => {
                 special.latest_image.title
                 : null} alt="" />
             <div className="content">
-              <span>სპეციალური შეთავაზება</span>
+              <span>{__('client.home_section_special_header',sharedData)}</span>
               <div className="title35 green">{special.title}</div>
               <p className="op05">
                   {special.short_description}
@@ -126,20 +122,17 @@ const Home = ({seo}) => {
                 {parseFloat(special.price).toFixed(2)}₾
               </span>
               <Link href={route('client.special-offer.index')}>
-                <MainButton text="დეტალურად" />
+                <MainButton text={__('client.home_btn_special_txt',sharedData)} />
               </Link>
             </div>
           </div> : null}
           <div className="our_products">
             <div className="wrapper flex">
               <div className="content">
-                <span>ჩვენი პროდუქცია</span>
-                <div className="title35 green">ვქმნით საუკეთსო ხარისხს</div>
+                <span>{__('client.section2_title',sharedData)}</span>
+                <div className="title35 green">{__('client.home_section2_title2',sharedData)}</div>
                 <p className="op05">
-                  არია ქართული ბრენდია. აღნიშნული საწარმო სამეგრელოში, სენაკის
-                  რაიონის სოფელ მენჯში 60 ჰა მიწის ფართობზეაგანლაგებული. ფერმა ყველა
-                  საერთაშორისო სტანდარტის დაცვით აშენდა, რაც ჯანსაღი და სასარგებლო
-                  პროდუქციის წარმოების
+                    {__('client.section2_text',sharedData)}
                 </p>
                 <ul>
                   {checks.map((item, index) => {
@@ -152,18 +145,22 @@ const Home = ({seo}) => {
                   })}
                 </ul>
                 <Link href="/">
-                  <MainButton text="გაიგე მეტი" />
+                  <MainButton text={__('client.home_learn_more_btn',sharedData)} />
                 </Link>
               </div>
               <div className="img">
-                <img src="/assets/images/home/4.png" alt="" />
+                <img src={page.sections[0].file !== null ? "/" +
+                    page.sections[0].file.path +
+                    "/" +
+                    page.sections[0].file.title
+                    : null} alt="" />
               </div>
             </div>
           </div>
           <div className="blog_section wrapper">
             <div className="flex">
-              <div className="title35 green">ბლოგი</div>
-              <Link href={route('client.blog.index')}>ნახე სრულად</Link>
+              <div className="title35 green">{__('client.blog',sharedData)}</div>
+              <Link href={route('client.blog.index')}>{__('client.home_view_all',sharedData)}</Link>
             </div>
             <div className="grid boxes">
               {/* no more than 4 boxes should be allowed in this section */}
@@ -187,13 +184,17 @@ const Home = ({seo}) => {
             </div>
           </div>
           <div className="faq wrapper">
-            <div className="title35">ხშირად დასმული კითხვები</div>
+            <div className="title35">{__('client.home_faq',sharedData)}</div>
             <Questions />
           </div>
           <div className="lastsec form_section wrapper flex">
             <div className="img-holder">
               <div className="img">
-                <img src="/assets/images/home/5.png" alt="" />
+                <img src={page.sections[1].file !== null ? "/" +
+                    page.sections[1].file.path +
+                    "/" +
+                    page.sections[1].file.title
+                    : null} alt="" />
               </div>
             </div>
             <Form />

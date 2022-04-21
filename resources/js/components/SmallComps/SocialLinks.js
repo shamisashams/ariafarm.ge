@@ -1,6 +1,5 @@
 import React from "react";
 //import { Link } from "react-router-dom";
-import { Link } from "@inertiajs/inertia-react";
 //import fb from "../../assets/images/icons/sm/fb.svg";
 //import ig from "../../assets/images/icons/sm/ig.svg";
 //import yt from "../../assets/images/icons/sm/yt.svg";
@@ -9,19 +8,22 @@ import { Link } from "@inertiajs/inertia-react";
 //import fb2 from "../../assets/images/icons/sm/fb2.svg";
 //import tw from "../../assets/images/icons/sm/twitter.svg";
 //import ln from "../../assets/images/icons/sm/in.svg";
+import {Link, usePage} from "@inertiajs/inertia-react";
 
 export const SocialLinks = () => {
+    const { info } = usePage().props;
+    //console.log(info)
   return (
     <div className="flex centered">
-      <Link href="/">
+        {info.active.facebook === 1 ? <Link href={info.facebook}>
         <img src="/assets/images/icons/sm/fb.svg" alt="" />
-      </Link>
-      <Link href="/" style={{ margin: "0 45px" }}>
+      </Link> : null}
+        {info.active.instagram === 1 ? <Link href={info.instagram} style={{ margin: "0 45px" }}>
         <img src="/assets/images/icons/sm/ig.svg" alt="" />
-      </Link>
-      <Link href="/">
+      </Link> : null}
+        {info.active.youtube === 1 ? <Link href={info.youtube}>
         <img src="/assets/images/icons/sm/yt.svg" alt="" />
-      </Link>
+      </Link> : null}
     </div>
   );
 };

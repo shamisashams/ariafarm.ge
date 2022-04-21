@@ -57,7 +57,7 @@ const Blogs = ({seo}) => {
           <div className="blogsPage">
               <SearchInput color="#ACD3C1" />
               <div className="wrapper">
-                  <PagePath prev="მთავარი" current="ბლოგი" color="#949494" />
+                  <PagePath prev={__('client.nav_home',sharedData)} current={__('client.nav_blog',sharedData)} color="#949494" />
                   <div className="main">
                       <div className="title50">{__('client.blog',sharedData)}</div>
                       {blogs.map((blog, index) => {
@@ -70,7 +70,7 @@ const Blogs = ({seo}) => {
                                       "/" +
                                       blog.latest_image.title
                                       : null}
-                                  subject={'თემა'}
+                                  subject={blog.subject}
                                   title={blog.title}
                                   paragraph={blog.short_description}
                                   link={route('client.blog.show',blog.slug)}

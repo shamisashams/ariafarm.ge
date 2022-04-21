@@ -1,6 +1,6 @@
 import React from "react";
 //import { Link } from "react-router-dom";
-import { Link } from "@inertiajs/inertia-react";
+import {Link, usePage} from "@inertiajs/inertia-react";
 import { MainButton } from "../Buttons/Buttons";
 //import Calendar from "../../assets/images/icons/calendar.svg";
 import "./BlogObjects.css";
@@ -13,6 +13,7 @@ import "./BlogObjects.css";
 import { SocialLinks2 } from "../SmallComps/SocialLinks";
 
 export const BlogBoxSmall = (props) => {
+    const sharedData = usePage().props.localizations;
   return (
     <div className="blogbox blogbox_small">
       <div className="img">
@@ -25,13 +26,14 @@ export const BlogBoxSmall = (props) => {
       <div className="title">{props.title}</div>
       <p>{props.paragraph}</p>
       <Link href={props.link}>
-        <MainButton text="გაიგე მეტი" />
+        <MainButton text={__('client.blog_learn_more',sharedData)} />
       </Link>
     </div>
   );
 };
 
 export const BlogBoxLarge = (props) => {
+    const sharedData = usePage().props.localizations;
   return (
     <div className="blogbox blogbox_large">
       <div className="img">
@@ -42,7 +44,7 @@ export const BlogBoxLarge = (props) => {
         <div className="title">{props.title}</div>
         <p>{props.paragraph}</p>
         <Link href={props.link}>
-          <MainButton text="გაიგე მეტი" />
+          <MainButton text={__('client.blog_learn_more',sharedData)} />
         </Link>
         <div className="bottom flex">
           <div className="date">

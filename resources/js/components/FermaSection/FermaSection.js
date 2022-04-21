@@ -1,10 +1,11 @@
 import React from "react";
 //import { Link } from "react-router-dom";
-import { Link } from "@inertiajs/inertia-react";
+import {Link, usePage} from "@inertiajs/inertia-react";
 import { MainButton } from "../Buttons/Buttons";
 import "./FermaSection.css";
 
 const FermaSection = (props) => {
+    const sharedData = usePage().props.localizations;
   return (
     <div className="ferma_section">
       <div className="wrapper2 flex">
@@ -12,7 +13,7 @@ const FermaSection = (props) => {
           <div className="title35">{props.title}</div>
           <p>{props.paragraph}</p>
           <Link href={props.link}>
-            <MainButton text="გაიგე მეტი" />
+            <MainButton text={__('client.btn_learn_more',sharedData)} />
           </Link>
         </div>
         <div className="img">

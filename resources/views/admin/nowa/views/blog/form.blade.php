@@ -86,6 +86,18 @@
                                             </div>
 
                                             <div class="form-group">
+                                                <label class="form-label">@lang('admin.subject')</label>
+                                                <input type="text" name="{{$locale.'[subject]'}}" class="form-control" placeholder="Subject" value="{{$blog->translate($locale)->subject ?? ''}}">
+                                                @error($locale.'.subject')
+                                                <small class="text-danger">
+                                                    <div class="error">
+                                                        {{$message}}
+                                                    </div>
+                                                </small>
+                                                @enderror
+                                            </div>
+
+                                            <div class="form-group">
                                                 {!! Form::label($locale.'[short_description]',__('admin.short_description'),['class' => 'form-label']) !!}
                                                 {!! Form::text($locale.'[short_description]',$blog->translate($locale)->short_description ?? '',['class' => 'form-control']) !!}
 

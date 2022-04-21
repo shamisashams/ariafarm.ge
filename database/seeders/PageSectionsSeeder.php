@@ -33,6 +33,9 @@ class PageSectionsSeeder extends Seeder
             [
                 'key' => 'shop'
             ],
+            [
+                'key' => 'products'
+            ],
 
 
         ];
@@ -58,19 +61,25 @@ class PageSectionsSeeder extends Seeder
                     }
                     break;
                 case 'farm':
-                    for ($i = 0; $i < 3; $i++){
+                    for ($i = 0; $i < 4; $i++){
                         $ins[$key]['page_id'] = $item->id;
                         $key++;
                     }
                     break;
                 case 'shop':
-                    for ($i = 0; $i < 3; $i++){
+                    for ($i = 0; $i < 4; $i++){
                         $ins[$key]['page_id'] = $item->id;
                         $key++;
                     }
                     break;
                 case 'enterprise':
-                    for ($i = 0; $i < 3; $i++){
+                    for ($i = 0; $i < 4; $i++){
+                        $ins[$key]['page_id'] = $item->id;
+                        $key++;
+                    }
+                    break;
+                case 'products':
+                    for ($i = 0; $i < 2; $i++){
                         $ins[$key]['page_id'] = $item->id;
                         $key++;
                     }

@@ -26,6 +26,7 @@ class BlogTranslation extends BaseTranslationModel
         'meta_keyword',
         'text_top',
         'text_medium',
-        'text_bottom'
+        'text_bottom',
+        'subject'
     ];
 }

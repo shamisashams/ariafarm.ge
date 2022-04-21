@@ -23,7 +23,7 @@ const Products = ({seo}) => {
         <div className="productsPage">
       <SearchInput color="#ACD3C1" />
       <div className="wrapper">
-        <PagePath prev="მთავარი" current="პროდუქცია" color="#949494" />
+        <PagePath prev={__('client.nav_home',sharedData)} current={__('client.nav_products',sharedData)} color="#949494" />
         <div className="product_showcase">
           <div className="title50">{__('client.product_header',sharedData)}</div>
           <p className="op05">
