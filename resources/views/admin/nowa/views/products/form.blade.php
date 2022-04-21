@@ -471,6 +471,18 @@ $traverse = function ($categories, $prefix = '-') use (&$traverse,$ids) {
 
                     @endforeach
 
+                    <div class="form-group">
+                        <div class="main-content-label mg-b-5">
+                            @lang('admin.product_recipe_img')
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+
+                        <input type="file" class="dropify" name="recipe_image" data-default-file="{{($product->recipe_img) ? asset($product->recipe_img) : ''}}" data-height="200"  />
+
+                    </div>
+
                     <div class="form-group mb-0 mt-3 justify-content-end">
                         <div>
                             {!! Form::submit($product->created_at ? __('admin.update') : __('admin.create'),['class' => 'btn btn-primary']) !!}

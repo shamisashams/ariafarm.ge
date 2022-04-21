@@ -83,7 +83,8 @@ class Product extends Model implements Searchable
         'bunker',
         'day_price',
         'day_product',
-        'special_price_tag'
+        'special_price_tag',
+        'recipe_img'
     ];
 
     /** @var string */

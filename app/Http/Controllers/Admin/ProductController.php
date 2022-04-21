@@ -152,6 +152,11 @@ class ProductController extends Controller
             $product = $this->productRepository->saveFiles($product->id, $request);
         }
 
+        if ($request->hasFile('recipe_image')) {
+
+            $product = $this->productRepository->saveRecipeImage($product->id, $request);
+        }
+
 
         //save product attributes
         $attr = [];
@@ -264,6 +269,11 @@ class ProductController extends Controller
         $this->productRepository->update($product->id, $saveData);
 
         $this->productRepository->saveFiles($product->id, $request);
+
+        if ($request->hasFile('recipe_image')) {
+
+            $product = $this->productRepository->saveRecipeImage($product->id, $request);
+        }
 
         $product->categories()->sync($saveData['categories'] ?? []);
 

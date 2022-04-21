@@ -10,11 +10,14 @@
 namespace App\Repositories\Eloquent;
 
 
+use App\Models\File;
 use App\Models\Product;
 use App\Models\ProductAttributeValue;
 use App\Repositories\Eloquent\Base\BaseRepository;
 use App\Repositories\ProductRepositoryInterface;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\Storage;
+use ReflectionClass;
 
 /**
  * Class LanguageRepository
@@ -51,18 +54,7 @@ class ProductRepository extends BaseRepository implements ProductRepositoryInter
         return $products;
     }
 
-    private function checkSortAttributeAndGenerateQuery($query, $sort, $direction)
-    {
 
-            if ($sort === 'price') {
-                $query->orderBy('price', $direction);
-            } else {
-                $query->orderBy($attribute->code, $direction);
-            }
-
-
-        return $query;
-    }
 
 
     public function getAll($categoryId = null, $popular = null, $special = null, $new = null){
@@ -250,6 +242,32 @@ class ProductRepository extends BaseRepository implements ProductRepositoryInter
 
 
         return $attribute;
+    }
+
+    public function saveRecipeImage(int $id, $request){
+        $this->model = $this->findOrFail($id);
+
+        Storage::delete($this->model->recipe_img);
+
+
+
+            // Get Name Of model
+            $reflection = new ReflectionClass(get_class($this->model));
+            $modelName = $reflection->getShortName();
+
+
+
+                $imagename = date('Ymhs') . str_replace(' ', '', $request->file('recipe_image')->getClientOriginalName());
+                $destination = $modelName . '/' . $this->model->id . '/recipe';
+                $path = $request->file('recipe_image')->storeAs($destination, $imagename);
+                $this->model->where('id',$id)->update([
+                    'recipe_img' => 'storage/'.$path,
+
+                ]);
+
+
+
+        return $this->model;
     }
 
 
