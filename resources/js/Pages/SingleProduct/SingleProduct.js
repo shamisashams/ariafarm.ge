@@ -150,11 +150,7 @@ const SingleProduct = ({seo, page}) => {
       </div>
       <div className="recipe wrapper2 flex">
         <div className="img">
-          <img src={page.sections[0].file !== null ? "/" +
-              page.sections[0].file.path +
-              "/" +
-              page.sections[0].file.title
-              : null} alt="" />
+          <img src={'/' + product.recipe_img} alt="" />
         </div>
         <div className="context">
           <div className="title50 gradient-bg rtl h100">{__('client.product_recipe',sharedData)}</div>

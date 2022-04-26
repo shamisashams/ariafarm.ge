@@ -4973,7 +4973,7 @@ var SingleProduct = function SingleProduct(_ref) {
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "img"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", {
-    src: page.sections[0].file !== null ? "/" + page.sections[0].file.path + "/" + page.sections[0].file.title : null,
+    src: '/' + product.recipe_img,
     alt: ""
   })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "context"
