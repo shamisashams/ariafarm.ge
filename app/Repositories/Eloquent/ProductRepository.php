@@ -18,6 +18,7 @@ use App\Repositories\ProductRepositoryInterface;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Storage;
 use ReflectionClass;
+use Illuminate\Support\Facades\File as dFile;
 
 /**
  * Class LanguageRepository
@@ -247,9 +248,16 @@ class ProductRepository extends BaseRepository implements ProductRepositoryInter
     public function saveRecipeImage(int $id, $request){
         $this->model = $this->findOrFail($id);
 
-        Storage::delete($this->model->recipe_img);
+
+        $path = explode('/',$this->model->recipe_img);
+
+        array_shift($path);
+
+        dFile::delete(storage_path('app/public/' . implode('/',$path)));
+        //dd(storage_path('app/public/' . implode('/',$path)));
 
 
+        //dd($this->model->recipe_img);
 
             // Get Name Of model
             $reflection = new ReflectionClass(get_class($this->model));
@@ -258,10 +266,10 @@ class ProductRepository extends BaseRepository implements ProductRepositoryInter
 
 
                 $imagename = date('Ymhs') . str_replace(' ', '', $request->file('recipe_image')->getClientOriginalName());
-                $destination = $modelName . '/' . $this->model->id . '/recipe';
+                $destination = 'public/'. $modelName . '/' . $this->model->id . '/recipe';
                 $path = $request->file('recipe_image')->storeAs($destination, $imagename);
                 $this->model->where('id',$id)->update([
-                    'recipe_img' => 'storage/'.$path,
+                    'recipe_img' => 'storage/'.$modelName . '/' . $this->model->id . '/recipe/'.$imagename,
 
                 ]);
 
