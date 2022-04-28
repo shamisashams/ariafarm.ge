@@ -20,6 +20,7 @@ SwiperCore.use([Navigation, Pagination]);
 const SocialSlider = () => {
     const { social_slider } = usePage().props;
   //const navigationPrevRef = useRef(null);
+    console.log(social_slider)
   //const navigationNextRef = useRef(null);
     const navigationPrevRef = {current:null};
     const navigationNextRef = {current:null};
