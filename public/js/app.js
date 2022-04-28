@@ -3974,7 +3974,7 @@ var Home = function Home(_ref) {
   var green = "#86AAA8";
   var pink = "#EDC6E7";
   var checks = [__('client.section2_check1', sharedData), __('client.section2_check2', sharedData), __('client.section2_check3', sharedData)];
-  console.log(blogs);
+  console.log(page.sections);
   var cardData = [{
     text: "არია ქართული ბრენდია. აღნიშნული საწარმო სამეგრელოში, სენაკის რაიონის სოფელ მენჯში 60 ჰა მიწის ფართობზეა განლაგებული. ფერმა ყველა საერთაშორისო სტანდარტის დაცვით აშენდა.",
     color: green,
