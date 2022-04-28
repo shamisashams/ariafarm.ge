@@ -4289,7 +4289,8 @@ swiper__WEBPACK_IMPORTED_MODULE_6__["default"].use([swiper__WEBPACK_IMPORTED_MOD
 
 var SocialSlider = function SocialSlider() {
   var social_slider = (0,_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_5__.usePage)().props.social_slider; //const navigationPrevRef = useRef(null);
-  //const navigationNextRef = useRef(null);
+
+  console.log(social_slider); //const navigationNextRef = useRef(null);
 
   var navigationPrevRef = {
     current: null
