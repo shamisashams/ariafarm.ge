@@ -87,7 +87,7 @@ class HomeController extends Controller
         $faqs = Faq::query()->with('translation')->get();
 
         $special = Product::query()->where('special_price_tag',1)->inRandomOrder()->with(['translation','latestImage'])->first();
-        //dd($special);
+        dd($files);
 
         return Inertia::render('Home/Home', [
             "sliders" => $sliders->get(),
