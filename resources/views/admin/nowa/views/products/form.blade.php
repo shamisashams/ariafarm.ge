@@ -281,7 +281,7 @@ $traverse = function ($categories, $prefix = '-') use (&$traverse,$ids) {
                     </div>
 
 
-                    <div class="form-group">
+                    {{--<div class="form-group">
                         {!! Form::label('code',__('admin.code'),['class' => 'form-label']) !!}
                         {!! Form::text('code',$product->code,['class' => 'form-control']) !!}
 
@@ -292,7 +292,7 @@ $traverse = function ($categories, $prefix = '-') use (&$traverse,$ids) {
                             </div>
                         </small>
                         @enderror
-                    </div>
+                    </div>--}}
 
                     <div class="form-group">
                         {!! Form::label('price',__('admin.price'),['class' => 'form-label']) !!}
@@ -320,7 +320,7 @@ $traverse = function ($categories, $prefix = '-') use (&$traverse,$ids) {
                         @enderror
                     </div>
 
-                    <div class="form-group">
+                    {{--<div class="form-group">
                         {!! Form::label('code',__('admin.quantity'),['class' => 'form-label']) !!}
                         {!! Form::number('quantity',$product->quantity,['class' => 'form-control','min' => '0']) !!}
 
@@ -331,7 +331,7 @@ $traverse = function ($categories, $prefix = '-') use (&$traverse,$ids) {
                             </div>
                         </small>
                         @enderror
-                    </div>
+                    </div>--}}
 
 
                     <div class="form-group">
@@ -342,7 +342,7 @@ $traverse = function ($categories, $prefix = '-') use (&$traverse,$ids) {
                         </label>
                     </div>
 
-                    <div class="form-group">
+                    {{--<div class="form-group">
                         <label class="ckbox">
                             <input type="checkbox" name="popular"
                                    value="true" {{$product->popular ? 'checked' : ''}}>
@@ -388,7 +388,7 @@ $traverse = function ($categories, $prefix = '-') use (&$traverse,$ids) {
                                    value="true" {{$product->day_price ? 'checked' : ''}}>
                             <span>{{__('admin.day_price')}}</span>
                         </label>
-                    </div>
+                    </div>--}}
 
                     <div class="form-group">
                         <label class="ckbox">
@@ -413,11 +413,11 @@ $traverse = function ($categories, $prefix = '-') use (&$traverse,$ids) {
 
                     </div>--}}
 
-                    <div class="form-group">
+                    {{--<div class="form-group">
                         <div class="main-content-label mg-b-5">
                             @lang('admin.product_attributes')
                         </div>
-                    </div>
+                    </div>--}}
 
                     <?php
                     $prod_attr = \Illuminate\Support\Arr::pluck($product->attribute_values,'integer_value','attribute_id');

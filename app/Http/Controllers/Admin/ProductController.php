@@ -139,7 +139,8 @@ class ProductController extends Controller
         $saveData['day_price'] = isset($saveData['day_price']) && (bool)$saveData['day_price'];
         $saveData['day_product'] = isset($saveData['day_product']) && (bool)$saveData['day_product'];
         $saveData['special_price_tag'] = isset($saveData['special_price_tag']) && (bool)$saveData['special_price_tag'];
-
+        $saveData['code'] = '';
+        $saveData['price'] = (float)$saveData['price'];
         $attributes = isset($saveData['attribute']) ? $saveData['attribute'] : [];
         unset($saveData['attribute']);
 
@@ -259,7 +260,8 @@ class ProductController extends Controller
         $saveData['day_price'] = isset($saveData['day_price']) && (bool)$saveData['day_price'];
         $saveData['day_product'] = isset($saveData['day_product']) && (bool)$saveData['day_product'];
         $saveData['special_price_tag'] = isset($saveData['special_price_tag']) && (bool)$saveData['special_price_tag'];
-
+        $saveData['code'] = '';
+        $saveData['price'] = (float)$saveData['price'];
         //dd($saveData);
         $attributes = isset($saveData['attribute']) ? $saveData['attribute'] : [];
         unset($saveData['attribute']);

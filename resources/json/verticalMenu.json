@@ -25,13 +25,6 @@
             ]
         },
         {
-            "url": "attribute.index",
-            "name": "attributes",
-            "i18n": "attributes",
-            "icon": "language",
-            "slug": "attribute"
-        },
-        {
             "url": "page.index",
             "name": "გვერდები",
             "i18n": "page",

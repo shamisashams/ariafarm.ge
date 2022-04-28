@@ -26,7 +26,7 @@
     <!-- breadcrumb -->
     <div class="breadcrumb-header justify-content-between">
         <div class="left-content">
-            <span class="main-content-title mg-b-0 mg-b-lg-1">{{$blog->created_at ? __('admin.product-update') : __('admin.product-create')}}</span>
+            <span class="main-content-title mg-b-0 mg-b-lg-1">{{$blog->created_at ? __('admin.blog-update') : __('admin.blog-create')}}</span>
         </div>
         <div class="justify-content-center mt-2">
             @include('admin.nowa.views.layouts.components.breadcrump')
@@ -64,7 +64,7 @@
                             <div class="panel-body tabs-menu-body main-content-body-right border">
                                 <div class="tab-content">
                                     <div class="main-content-label mg-b-5">
-                                    @lang('admin.productinfo')
+                                    @lang('admin.blog_info')
                                     </div>
                                     @foreach(config('translatable.locales') as $locale)
 
@@ -213,7 +213,7 @@
                 <div class="card-body">
 
                     <div>
-                        <h6 class="card-title mb-1">@lang('admin.prodcategoriesss')</h6>
+                        <h6 class="card-title mb-1"></h6>
                     </div>
 
 
