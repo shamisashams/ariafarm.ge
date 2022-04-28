@@ -36,7 +36,7 @@ class HomeController extends Controller
         }*/
 
         $files = [];
-        if($page->files) $files = $page->files;
+        if($page->images) $files = $page->files;
 
         //dd($files);
 
@@ -87,7 +87,7 @@ class HomeController extends Controller
         $faqs = Faq::query()->with('translation')->get();
 
         $special = Product::query()->where('special_price_tag',1)->inRandomOrder()->with(['translation','latestImage'])->first();
-        dd($files);
+        //dd($special);
 
         return Inertia::render('Home/Home', [
             "sliders" => $sliders->get(),
