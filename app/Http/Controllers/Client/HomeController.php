@@ -36,7 +36,7 @@ class HomeController extends Controller
         }*/
 
         $files = [];
-        if($page->images) $files = $page->files;
+        if($page->files) $files = $page->files;
 
         //dd($files);
 
