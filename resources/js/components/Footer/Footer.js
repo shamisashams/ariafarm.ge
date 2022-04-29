@@ -86,7 +86,7 @@ const Footer = () => {
           </div>
         </div>
         <div className="flex bottom">
-          <Link href="/">
+          <Link href="https://insite.ge" target="_blank">
             Designed by <img src="/assets/images/logo/insite.png" alt="" />
           </Link>
           <SocialLinks />

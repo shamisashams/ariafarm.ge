@@ -5524,7 +5524,7 @@ var Footer = function Footer() {
   }, info.phone), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", null, info.email))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "flex bottom"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__.Link, {
-    href: "/"
+    href: "https://insite.ge"
   }, "Designed by ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", {
     src: "/assets/images/logo/insite.png",
     alt: ""
