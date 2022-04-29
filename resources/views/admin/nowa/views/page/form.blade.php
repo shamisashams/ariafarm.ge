@@ -275,28 +275,68 @@
 
     <!-- /row -->
     <!-- row -->
+    <?php
+    $sections = [
+        'home' => [
+            trans('admin.section2_title'),
+            trans('admin.form_header'),
+        ],
+        'farm' => [
+            trans('admin.cover_image'),
+            trans('admin.middle'),
+            trans('admin.link_image'),
+            trans('admin.bottom_image'),
+        ],
+        'shop' => [
+            trans('admin.cover'),
+            trans('admin.middle'),
+            trans('admin.link_image'),
+            trans('admin.bottom_image'),
+        ],
+        'enterprise' => [
+            trans('admin.cover'),
+            trans('admin.middle'),
+            trans('admin.link_image'),
+            trans('admin.bottom_image'),
+        ],
+        'contact' => [
+            trans('admin.cover_image'),
+            trans('admin.middle'),
+            trans('admin.link_image'),
+            trans('admin.bottom_image'),
+        ],
+        'products' => [
+            trans('admin.product_section_title'),
+            trans('admin.middle'),
+            trans('admin.link_image'),
+            trans('admin.bottom_image'),
+        ]
+
+    ]
+    ?>
 
 
 
+    @foreach($page->sections as $key => $item)
     <div class="row">
         <div class="col-lg-12 col-md-12">
             <div class="card">
                 <div class="card-body">
                     <div>
-                        <h6 class="card-title mb-1">@lang('admin.sectionimages')</h6>
+                        <h6 class="card-title mb-1">@lang('admin.section_image') -> {{$sections[$page->key][$key]}}</h6>
                     </div>
-                    @foreach($page->sections as $item)
+
                         <div class="form-group">
 
                             <input type="file" class="dropify" name="image[{{$item->id}}]" data-default-file="{{($item->file) ? asset($item->file->getFileUrlAttribute()) : ''}}" data-height="200"  />
 
                         </div>
-                    @endforeach
+
                 </div>
             </div>
         </div>
     </div>
-
+    @endforeach
 
     @if($page->key == 'home')
 
