@@ -3459,7 +3459,7 @@ var SingleBlog = function SingleBlog(_ref) {
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "article_showcase",
     style: {
-      background: "url('/" + (0 in blog ? blog.files[0].path + "/" + blog.files[0].title : null) + "')"
+      background: "url('/" + (blog.files[0] !== undefined ? blog.files[0].path + "/" + blog.files[0].title : null) + "')"
     }
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "wrapper"
@@ -3481,12 +3481,12 @@ var SingleBlog = function SingleBlog(_ref) {
   }), blog.created_at), renderHTML(blog.text_top !== null ? blog.text_top.newLineToBr() : null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "art_img img"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", {
-    src: '/' + (1 in blog ? blog.files[1].path + "/" + blog.files[1].title : null),
+    src: '/' + (blog.files[1] !== undefined ? blog.files[1].path + "/" + blog.files[1].title : null),
     alt: ""
   })), renderHTML(blog.text_medium !== null ? blog.text_medium.newLineToBr() : null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "art_img img"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", {
-    src: '/' + (2 in blog ? blog.files[2].path + "/" + blog.files[2].title : null),
+    src: '/' + (blog.files[2] !== undefined ? blog.files[2].path + "/" + blog.files[2].title : null),
     alt: ""
   })), renderHTML(blog.text_bottom !== null ? blog.text_bottom.newLineToBr() : null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_SmallComps_SocialLinks__WEBPACK_IMPORTED_MODULE_4__.SocialLinks2, null))));
 };

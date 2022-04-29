@@ -22,7 +22,7 @@ const SingleBlog = ({seo}) => {
               <img className="abs_img abs_1" src="/assets/images/blogs/bg1.png" alt="" />
               <img className="abs_img abs_2" src="/assets/images/blogs/bg2.png" alt="" />
               <SearchInput color="#fff" />
-              <div className="article_showcase" style={{ background: "url('/"+ ( 0 in blog ? blog.files[0].path +
+              <div className="article_showcase" style={{ background: "url('/"+ ( blog.files[0] !== undefined ? blog.files[0].path +
                       "/" +
                       blog.files[0].title : null) +"')" }}>
                   <div className="wrapper">
@@ -41,13 +41,13 @@ const SingleBlog = ({seo}) => {
 
 
                   <div className="art_img img">
-                      <img src={'/' + (1 in blog ? blog.files[1].path +
+                      <img src={'/' + (blog.files[1] !== undefined ? blog.files[1].path +
                           "/" +
                           blog.files[1].title : null)} alt="" />
                   </div>
                   {renderHTML(blog.text_medium !== null ? blog.text_medium.newLineToBr() : null)}
                   <div className="art_img img">
-                      <img src={'/' + (2 in blog ? blog.files[2].path +
+                      <img src={'/' + (blog.files[2] !== undefined ? blog.files[2].path +
                           "/" +
                           blog.files[2].title : null)} alt="" />
                   </div>
