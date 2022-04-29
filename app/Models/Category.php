@@ -123,6 +123,10 @@ class Category extends Model
             'title' => [
                 'hasParam' => true,
                 'scopeMethod' => 'titleTranslation'
+            ],
+            'slug' => [
+                'hasParam' => true,
+                'scopeMethod' => 'slug'
             ]
         ];
     }

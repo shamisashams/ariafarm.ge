@@ -54,13 +54,13 @@
                             <span>{{__('admin.status')}}</span>
                         </label>
                     </div>
-                    <div class="form-group">
+                    {{--<div class="form-group">
                         <label class="ckbox">
                             <input type="checkbox" name="youtube"
                                    value="true" {{$gallery->youtube ? 'checked' : ''}}>
                             <span>{{__('admin.video')}}</span>
                         </label>
-                    </div>
+                    </div>--}}
                     <div class="input-images"></div>
                     @if ($errors->has('images'))
                         <span class="help-block">
@@ -68,13 +68,14 @@
                                         </span>
                     @endif
 
-                    <div id="videos">
+                    <div style="margin-top: 15px" id="videos">
                         <div class="main-content-label mg-b-5">
-                            @lang('admin.video_id')
+                            @lang('admin.youtube_video_id')
                         </div>
+                        <?php $n = 1 ;?>
                         @foreach($gallery->files as $item)
                         <div class="form-group">
-                            <input type="text" name="youtube[]" class="form-control" value="{{$item->youtube}}">
+                            <input type="text" name="youtube[]" class="form-control" value="{{$item->youtube}}" placeholder="<?=$n++;?> - @lang('admin.youtube_video_id')">
                         </div>
                         @endforeach
                     </div>

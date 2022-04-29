@@ -146,7 +146,7 @@ $traverse = function ($categories, $prefix = '-') use (&$traverse,$category) {
                     </div>
                     <div class="form-group">
                         <label class="form-label">@lang('admin.slug')</label>
-                        <input type="text" name="slug" class="form-control" placeholder="@lang('admin.slug')" value="{{$category->slug ?? ''}}">
+                        <input {{$category->isRoot() ? 'disabled' : ''}} type="text" name="slug" class="form-control" placeholder="@lang('admin.slug')" value="{{$category->slug ?? ''}}">
                     </div>
                     @error('slug')
                     <small class="text-danger">

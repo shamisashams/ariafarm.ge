@@ -40,6 +40,7 @@
                                 <thead>
                                 <tr>
                                     <th>@lang('admin.id')</th>
+                                    <th>@lang('admin.slug')</th>
                                     <th>@lang('admin.status')</th>
                                     <th>@lang('admin.title')</th>
                                     <th>@lang('admin.actions')</th>
@@ -52,6 +53,11 @@
                                         <input class="form-control" type="number" name="id" onchange="this.form.submit()"
                                                value="{{Request::get('id')}}"
                                                class="validate {{$errors->has('id') ? '' : 'valid'}}">
+                                    </th>
+                                    <th>
+                                        <input class="form-control" type="text" name="slug" onchange="this.form.submit()"
+                                               value="{{Request::get('slug')}}"
+                                               class="validate {{$errors->has('slug') ? '' : 'valid'}}">
                                     </th>
                                     <th>
                                         <select class="form-control" name="status" onchange="this.form.submit()">
@@ -73,6 +79,7 @@
                                     @foreach($data as $item)
                                         <tr>
                                             <th scope="row">{{$item->id}}</th>
+                                            <th scope="row">{{$item->slug}}</th>
                                             <td>
                                                 @if($item->status)
                                                     <span class="green-text">@lang('admin.active')</span>
@@ -115,10 +122,12 @@
                                                     <i class="fa fa-edit">შეცვლა</i>
                                                 </a>
 
+                                                @if(!$item->isRoot())
                                                 <a href="{{locale_route('category.destroy',$item->id)}}"
                                                    onclick="return confirm('Are you sure?')" class="pl-3">
                                                     <i class="fa fa-edit">წაშლა</i>
                                                 </a>
+                                                @endif
                                             </td>
                                         </tr>
                                     @endforeach
