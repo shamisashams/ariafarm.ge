@@ -79,7 +79,7 @@ class PageSectionsSeeder extends Seeder
                     }
                     break;
                 case 'products':
-                    for ($i = 0; $i < 2; $i++){
+                    for ($i = 0; $i < 1; $i++){
                         $ins[$key]['page_id'] = $item->id;
                         $key++;
                     }
