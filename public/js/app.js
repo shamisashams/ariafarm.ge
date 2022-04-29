@@ -4997,7 +4997,7 @@ var SingleProduct = function SingleProduct(_ref) {
     transform: "translate(-1.609)",
     fill: "#1e69ff"
   })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", null, __('client.product_share', sharedData))))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_FermaSection_FermaSection__WEBPACK_IMPORTED_MODULE_6__["default"], {
-    imgSrc: page.sections[1].file !== null ? "/" + page.sections[1].file.path + "/" + page.sections[1].file.title : null,
+    imgSrc: page.sections[0].file !== null ? "/" + page.sections[0].file.path + "/" + page.sections[0].file.title : null,
     link: "/",
     title: __('client.product_section_title', sharedData),
     paragraph: __('client.product_section_text', sharedData)
@@ -5489,7 +5489,7 @@ var Footer = function Footer() {
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "flex main"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__.Link, {
-    href: "/"
+    href: route('client.home.index')
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", {
     src: "/assets/images/logo/2.png",
     alt: ""
@@ -5523,7 +5523,7 @@ var Footer = function Footer() {
     }
   }, info.phone), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", null, info.email))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "flex bottom"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__.Link, {
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("a", {
     href: "https://insite.ge",
     target: "_blank"
   }, "Designed by ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", {

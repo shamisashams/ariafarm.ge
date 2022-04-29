@@ -56,7 +56,7 @@ const Footer = () => {
     <div className="footer">
       <div className="wrapper">
         <div className="flex main">
-          <Link href="/">
+          <Link href={route('client.home.index')}>
             <img src="/assets/images/logo/2.png" alt="" />
           </Link>
           <div className="grid">
@@ -86,9 +86,9 @@ const Footer = () => {
           </div>
         </div>
         <div className="flex bottom">
-          <Link href="https://insite.ge" target="_blank">
+          <a href="https://insite.ge" target="_blank">
             Designed by <img src="/assets/images/logo/insite.png" alt="" />
-          </Link>
+          </a>
           <SocialLinks />
         </div>
       </div>

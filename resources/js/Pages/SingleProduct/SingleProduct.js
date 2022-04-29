@@ -177,10 +177,10 @@ const SingleProduct = ({seo, page}) => {
         </div>
       </div>
       <FermaSection
-        imgSrc={page.sections[1].file !== null ? "/" +
-            page.sections[1].file.path +
+        imgSrc={page.sections[0].file !== null ? "/" +
+            page.sections[0].file.path +
             "/" +
-            page.sections[1].file.title
+            page.sections[0].file.title
             : null}
         link="/"
         title={__('client.product_section_title',sharedData)}

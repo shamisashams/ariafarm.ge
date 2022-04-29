@@ -82,21 +82,21 @@ class BlogController extends Controller
             'product_attributes' => null,
             'blog' => $blog,
             "seo" => [
-                "title"=>null,
-                "description"=>null,
-                "keywords"=>null,
-                "og_title"=>null,
-                "og_description"=>null,
+                "title"=>$blog->meta_title,
+                "description"=>$blog->meta_description,
+                "keywords"=>$blog->meta_keyword,
+                "og_title"=>$blog->meta_title,
+                "og_description"=>$blog->meta_description,
 //            "image" => "imgg",
 //            "locale" => App::getLocale()
             ]
         ])->withViewData([
-            'meta_title' => null,
-            'meta_description' => null,
-            'meta_keyword' => null,
+            'meta_title' => $blog->meta_title,
+            'meta_description' => $blog->meta_description,
+            'meta_keyword' => $blog->meta_keyword,
             "image" => null,
-            'og_title' => null,
-            'og_description' => null
+            'og_title' => $blog->meta_title,
+            'og_description' => $blog->meta_description,
         ]);
     }
 }
