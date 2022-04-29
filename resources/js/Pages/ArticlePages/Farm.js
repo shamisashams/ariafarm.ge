@@ -45,7 +45,7 @@ const Farm = ({seo, page}) => {
                       "/" +
                       page.sections[2].file.title
                       : null}
-                  link="/"
+                  link={route('client.enterprise.index')}
                   title={__('client.farm_section_title',sharedData)}
                   paragraph={__('client.farm_section_text',sharedData)}
               />

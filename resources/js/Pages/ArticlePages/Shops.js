@@ -44,7 +44,7 @@ const Shops = ({seo, page}) => {
                       "/" +
                       page.sections[2].file.title
                       : null}
-                  link="/"
+                  link={route('client.farm.index')}
                   title={__('client.shop_section_title',sharedData)}
                   paragraph={__('client.shop_section_text',sharedData)}
               />

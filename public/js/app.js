@@ -3202,7 +3202,7 @@ var Enterprise = function Enterprise(_ref) {
     alt: ""
   })), renderHTML(page.text_medium !== null ? page.text_medium.newLineToBr() : null)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_FermaSection_FermaSection__WEBPACK_IMPORTED_MODULE_5__["default"], {
     imgSrc: page.sections[2].file !== null ? "/" + page.sections[2].file.path + "/" + page.sections[2].file.title : null,
-    link: "/",
+    link: route('client.shop.index'),
     title: __('client.enterprise_section_title', sharedData),
     paragraph: __('client.enterprise_section_text', sharedData)
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
@@ -3292,7 +3292,7 @@ var Farm = function Farm(_ref) {
     alt: ""
   })), renderHTML(page.text_medium !== null ? page.text_medium.newLineToBr() : null)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_FermaSection_FermaSection__WEBPACK_IMPORTED_MODULE_5__["default"], {
     imgSrc: page.sections[2].file !== null ? "/" + page.sections[2].file.path + "/" + page.sections[2].file.title : null,
-    link: "/",
+    link: route('client.enterprise.index'),
     title: __('client.farm_section_title', sharedData),
     paragraph: __('client.farm_section_text', sharedData)
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
@@ -3381,7 +3381,7 @@ var Shops = function Shops(_ref) {
     alt: ""
   })), renderHTML(page.text_medium !== null ? page.text_medium.newLineToBr() : null)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_FermaSection_FermaSection__WEBPACK_IMPORTED_MODULE_5__["default"], {
     imgSrc: page.sections[2].file !== null ? "/" + page.sections[2].file.path + "/" + page.sections[2].file.title : null,
-    link: "/",
+    link: route('client.farm.index'),
     title: __('client.shop_section_title', sharedData),
     paragraph: __('client.shop_section_text', sharedData)
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
