@@ -4998,7 +4998,7 @@ var SingleProduct = function SingleProduct(_ref) {
     fill: "#1e69ff"
   })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", null, __('client.product_share', sharedData))))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_FermaSection_FermaSection__WEBPACK_IMPORTED_MODULE_6__["default"], {
     imgSrc: page.sections[0].file !== null ? "/" + page.sections[0].file.path + "/" + page.sections[0].file.title : null,
-    link: "/",
+    link: route('client.farm.index'),
     title: __('client.product_section_title', sharedData),
     paragraph: __('client.product_section_text', sharedData)
   })));

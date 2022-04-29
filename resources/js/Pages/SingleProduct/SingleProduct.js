@@ -182,7 +182,7 @@ const SingleProduct = ({seo, page}) => {
             "/" +
             page.sections[0].file.title
             : null}
-        link="/"
+        link={route('client.farm.index')}
         title={__('client.product_section_title',sharedData)}
         paragraph={__('client.product_section_text',sharedData)}
       />
