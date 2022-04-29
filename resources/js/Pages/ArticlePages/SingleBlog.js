@@ -41,15 +41,15 @@ const SingleBlog = ({seo}) => {
 
 
                   <div className="art_img img">
-                      <img src={'/' + (blog.files[1] !== undefined ? blog.files[1].path +
+                      {blog.files[1] !== undefined ? <img src={'/' + (blog.files[1] !== undefined ? blog.files[1].path +
                           "/" +
-                          blog.files[1].title : null)} alt="" />
+                          blog.files[1].title : null)} alt="" /> : null}
                   </div>
                   {renderHTML(blog.text_medium !== null ? blog.text_medium.newLineToBr() : null)}
                   <div className="art_img img">
-                      <img src={'/' + (blog.files[2] !== undefined ? blog.files[2].path +
+                      {blog.files[2] !== undefined ? <img src={'/' + (blog.files[2] !== undefined ? blog.files[2].path +
                           "/" +
-                          blog.files[2].title : null)} alt="" />
+                          blog.files[2].title : null)} alt="" /> : null}
                   </div>
                   {renderHTML(blog.text_bottom !== null ? blog.text_bottom.newLineToBr() : null)}
                   <SocialLinks2 />

@@ -3480,15 +3480,15 @@ var SingleBlog = function SingleBlog(_ref) {
     alt: ""
   }), blog.created_at), renderHTML(blog.text_top !== null ? blog.text_top.newLineToBr() : null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "art_img img"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", {
+  }, blog.files[1] !== undefined ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", {
     src: '/' + (blog.files[1] !== undefined ? blog.files[1].path + "/" + blog.files[1].title : null),
     alt: ""
-  })), renderHTML(blog.text_medium !== null ? blog.text_medium.newLineToBr() : null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+  }) : null), renderHTML(blog.text_medium !== null ? blog.text_medium.newLineToBr() : null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "art_img img"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", {
+  }, blog.files[2] !== undefined ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", {
     src: '/' + (blog.files[2] !== undefined ? blog.files[2].path + "/" + blog.files[2].title : null),
     alt: ""
-  })), renderHTML(blog.text_bottom !== null ? blog.text_bottom.newLineToBr() : null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_SmallComps_SocialLinks__WEBPACK_IMPORTED_MODULE_4__.SocialLinks2, null))));
+  }) : null), renderHTML(blog.text_bottom !== null ? blog.text_bottom.newLineToBr() : null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_SmallComps_SocialLinks__WEBPACK_IMPORTED_MODULE_4__.SocialLinks2, null))));
 };
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (SingleBlog);
