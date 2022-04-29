@@ -117,6 +117,11 @@ class Blog extends Model implements Searchable
     }
 
 
+    public function oldestImage()
+    {
+        return $this->morphOne(File::class, 'fileable')->oldestOfMany();
+    }
+
     public function latestImage()
     {
         return $this->morphOne(File::class, 'fileable')->latestOfMany();

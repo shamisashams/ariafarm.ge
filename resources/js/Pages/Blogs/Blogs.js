@@ -64,11 +64,11 @@ const Blogs = ({seo}) => {
                           return (
                               <BlogBoxLarge
                                   key={index}
-                                  img={blog.latest_image != null
+                                  img={blog.oldest_image != null
                                       ? "/" +
-                                      blog.latest_image.path +
+                                      blog.oldest_image.path +
                                       "/" +
-                                      blog.latest_image.title
+                                      blog.oldest_image.title
                                       : null}
                                   subject={blog.subject}
                                   title={blog.title}

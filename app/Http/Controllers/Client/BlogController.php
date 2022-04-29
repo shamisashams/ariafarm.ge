@@ -39,7 +39,7 @@ class BlogController extends Controller
         $files = [];
 
 
-        $blogs = Blog::orderBy('created_at','desc')->with(['translation','latestImage'])->get();
+        $blogs = Blog::orderBy('created_at','desc')->with(['translation','oldestImage'])->get();
         //dd($blogs);
         //dd($blogs);
 

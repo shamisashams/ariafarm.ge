@@ -3578,7 +3578,7 @@ var Blogs = function Blogs(_ref) {
   }, __('client.blog', sharedData)), blogs.map(function (blog, index) {
     return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_BlogObjects_BlogObjects__WEBPACK_IMPORTED_MODULE_1__.BlogBoxLarge, {
       key: index,
-      img: blog.latest_image != null ? "/" + blog.latest_image.path + "/" + blog.latest_image.title : null,
+      img: blog.oldest_image != null ? "/" + blog.oldest_image.path + "/" + blog.oldest_image.title : null,
       subject: blog.subject,
       title: blog.title,
       paragraph: blog.short_description,
