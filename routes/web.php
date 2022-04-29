@@ -75,6 +75,8 @@ Route::prefix('{locale?}')
                 Route::resource('setting', SettingController::class);
                 Route::get('setting/{setting}/destroy', [SettingController::class, 'destroy'])->name('setting.destroy');
 
+                Route::get('subscribers', [\App\Http\Controllers\Admin\SubscriberController::class,'index'])->name('subscriber.index');;
+
 
                 Route::resource('order', \App\Http\Controllers\Admin\OrderController::class);
                 //Route::get('order/{order}/destroy', [\App\Http\Controllers\Admin\OrderController::class, 'destroy'])->name('order.destroy');

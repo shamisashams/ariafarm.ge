@@ -31,14 +31,11 @@ class Subscriber extends Model
                 'hasParam' => true,
                 'scopeMethod' => 'id'
             ],
-            'key' => [
+            'email' => [
                 'hasParam' => true,
-                'scopeMethod' => 'key'
+                'scopeMethod' => 'email'
             ],
-            'value' => [
-                'hasParam' => true,
-                'scopeMethod' => 'valueTranslation'
-            ]
+
         ];
     }
 

@@ -86,6 +86,13 @@
             "i18n": "faq",
             "icon": "g_translate",
             "slug": "faq"
+        },
+        {
+            "url": "subscriber.index",
+            "name": "Subscribers",
+            "i18n": "subs",
+            "icon": "g_subs",
+            "slug": "subscribers"
         }
     ],
     "_comment": [
