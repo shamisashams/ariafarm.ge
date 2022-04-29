@@ -3459,7 +3459,7 @@ var SingleBlog = function SingleBlog(_ref) {
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "article_showcase",
     style: {
-      background: "url('/" + (blog.files[0].path + "/" + blog.files[0].title) + "')"
+      background: "url('/" + (0 in blog ? blog.files[0].path + "/" + blog.files[0].title : null) + "')"
     }
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "wrapper"
@@ -3481,12 +3481,12 @@ var SingleBlog = function SingleBlog(_ref) {
   }), blog.created_at), renderHTML(blog.text_top !== null ? blog.text_top.newLineToBr() : null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "art_img img"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", {
-    src: '/' + blog.files[1].path + "/" + blog.files[1].title,
+    src: '/' + (1 in blog ? blog.files[1].path + "/" + blog.files[1].title : null),
     alt: ""
   })), renderHTML(blog.text_medium !== null ? blog.text_medium.newLineToBr() : null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "art_img img"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", {
-    src: '/' + blog.files[2].path + "/" + blog.files[2].title,
+    src: '/' + (2 in blog ? blog.files[2].path + "/" + blog.files[2].title : null),
     alt: ""
   })), renderHTML(blog.text_bottom !== null ? blog.text_bottom.newLineToBr() : null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_SmallComps_SocialLinks__WEBPACK_IMPORTED_MODULE_4__.SocialLinks2, null))));
 };
@@ -5524,7 +5524,8 @@ var Footer = function Footer() {
   }, info.phone), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", null, info.email))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "flex bottom"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__.Link, {
-    href: "https://insite.ge"
+    href: "https://insite.ge",
+    target: "_blank"
   }, "Designed by ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", {
     src: "/assets/images/logo/insite.png",
     alt: ""
