@@ -22,9 +22,9 @@ const SingleBlog = ({seo}) => {
               <img className="abs_img abs_1" src="/assets/images/blogs/bg1.png" alt="" />
               <img className="abs_img abs_2" src="/assets/images/blogs/bg2.png" alt="" />
               <SearchInput color="#fff" />
-              <div className="article_showcase" style={{ background: "url('/"+ (blog.files[0].path +
+              <div className="article_showcase" style={{ background: "url('/"+ ( 0 in blog ? blog.files[0].path +
                       "/" +
-                      blog.files[0].title) +"')" }}>
+                      blog.files[0].title : null) +"')" }}>
                   <div className="wrapper">
                       <PagePath prev={__('client.nav_home',sharedData)} current={__('client.nav_blog',sharedData)} color="#fff" />
                   </div>
@@ -41,15 +41,15 @@ const SingleBlog = ({seo}) => {
 
 
                   <div className="art_img img">
-                      <img src={'/' + blog.files[1].path +
+                      <img src={'/' + (1 in blog ? blog.files[1].path +
                           "/" +
-                          blog.files[1].title} alt="" />
+                          blog.files[1].title : null)} alt="" />
                   </div>
                   {renderHTML(blog.text_medium !== null ? blog.text_medium.newLineToBr() : null)}
                   <div className="art_img img">
-                      <img src={'/' + blog.files[2].path +
+                      <img src={'/' + (2 in blog ? blog.files[2].path +
                           "/" +
-                          blog.files[2].title} alt="" />
+                          blog.files[2].title : null)} alt="" />
                   </div>
                   {renderHTML(blog.text_bottom !== null ? blog.text_bottom.newLineToBr() : null)}
                   <SocialLinks2 />
