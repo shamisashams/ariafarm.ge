@@ -5600,6 +5600,7 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 var Form = function Form() {
   var sharedData = (0,_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_3__.usePage)().props.localizations;
+  var errors = (0,_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_3__.usePage)().props.errors;
 
   var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)({
     first_name: "",

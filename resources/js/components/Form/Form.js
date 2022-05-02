@@ -7,6 +7,7 @@ import { Inertia } from "@inertiajs/inertia";
 
 export const Form = () => {
     const sharedData = usePage().props.localizations;
+    const { errors } = usePage().props;
 
     const [values, setValues] = useState({
         first_name: "",
