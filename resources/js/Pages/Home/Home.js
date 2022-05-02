@@ -76,6 +76,10 @@ const Home = ({seo, page}) => {
 
   }
 
+    const { errors } = usePage().props
+
+
+
   return (
       <Layout seo={seo}>
         <div className="homePage">
@@ -95,6 +99,7 @@ const Home = ({seo, page}) => {
                 <div className="subscribe">
                   <div>{__('client.section1_header2',sharedData)}</div>
                   <input name="email" id="s_email" className="bpg" type="text" placeholder={__('client.home_enter_email_placeholder',sharedData)} />
+                    {errors.first_name && <div className="error">{errors.first_name}</div>}
                   <MainButton text={__('client.subscribe_btn',sharedData)} onClick={handleClick} />
                 </div>
               </div>
