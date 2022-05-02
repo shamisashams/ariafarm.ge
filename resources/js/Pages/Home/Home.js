@@ -78,7 +78,7 @@ const Home = ({seo, page}) => {
 
     const { errors } = usePage().props
 
-
+console.log(errors);
 
   return (
       <Layout seo={seo}>
