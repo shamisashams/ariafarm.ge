@@ -4,10 +4,10 @@ import { Link } from "@inertiajs/inertia-react";
 import "./ProductBox.css";
 
 export const ProductBox = ({ imgSrc, productName, link }) => {
-  return (
-    <Link href={link} className="product_box">
-      <img src={imgSrc} alt="" />
-      <p>{productName}</p>
-    </Link>
-  );
+    return (
+        <Link href={link} className="product_box" data-aos="zoom-in">
+            <img src={imgSrc} alt="" />
+            <p>{productName}</p>
+        </Link>
+    );
 };
