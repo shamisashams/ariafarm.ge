@@ -4055,9 +4055,9 @@ var Home = function Home(_ref) {
     className: "bpg",
     type: "text",
     placeholder: __('client.home_enter_email_placeholder', sharedData)
-  }), errors.first_name && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+  }), errors.email && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "error"
-  }, errors.first_name), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_Buttons_Buttons__WEBPACK_IMPORTED_MODULE_1__.MainButton, {
+  }, errors.email), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_Buttons_Buttons__WEBPACK_IMPORTED_MODULE_1__.MainButton, {
     text: __('client.subscribe_btn', sharedData),
     onClick: handleClick
   }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {

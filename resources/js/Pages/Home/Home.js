@@ -99,7 +99,7 @@ console.log(errors);
                 <div className="subscribe">
                   <div>{__('client.section1_header2',sharedData)}</div>
                   <input name="email" id="s_email" className="bpg" type="text" placeholder={__('client.home_enter_email_placeholder',sharedData)} />
-                    {errors.first_name && <div className="error">{errors.first_name}</div>}
+                    {errors.email && <div className="error">{errors.email}</div>}
                   <MainButton text={__('client.subscribe_btn',sharedData)} onClick={handleClick} />
                 </div>
               </div>
