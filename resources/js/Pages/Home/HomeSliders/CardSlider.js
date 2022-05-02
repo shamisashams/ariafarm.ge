@@ -18,6 +18,8 @@ const CardSlider = ({ cardData, category }) => {
                 effect="coverflow"
                 observer
                 observeParents
+                watchSlidesVisibility
+                watchSlidesProgress
                 coverflowEffect={{
                     rotate: 0,
                     stretch: 0,

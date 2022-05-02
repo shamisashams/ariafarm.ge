@@ -4201,6 +4201,8 @@ var CardSlider = function CardSlider(_ref) {
     effect: "coverflow",
     observer: true,
     observeParents: true,
+    watchSlidesVisibility: true,
+    watchSlidesProgress: true,
     coverflowEffect: {
       rotate: 0,
       stretch: 0,
