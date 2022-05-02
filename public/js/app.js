@@ -5581,6 +5581,7 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 var Form = function Form() {
   var sharedData = (0,_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_3__.usePage)().props.localizations;
+  var errors = (0,_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_3__.usePage)().props.errors;
 
   var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)({
     first_name: "",
@@ -5644,6 +5645,10 @@ var Form = function Form() {
     id: 'message',
     placeholder: __('client.form_message', sharedData),
     onChange: handleChange
+  }), Object.keys(errors).map(function (item, i) {
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+      className: "error"
+    }, item, " : ", errors[item]);
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_Buttons_Buttons__WEBPACK_IMPORTED_MODULE_1__.MainButton, {
     text: __('client.form_send_btn', sharedData),
     onClick: handleClick

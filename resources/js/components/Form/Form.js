@@ -8,6 +8,7 @@ import { Inertia } from '@inertiajs/inertia'
 
 export const Form = () => {
     const sharedData = usePage().props.localizations;
+    const { errors } = usePage().props
 
     const [values, setValues] = useState({
         first_name: "",
@@ -69,6 +70,9 @@ export const Form = () => {
         );
       })}
       <textarea id={'message'} placeholder={__('client.form_message',sharedData)} onChange={handleChange}></textarea>
+        {Object.keys(errors).map((item,i) => {
+            return (<div className="error">{item} : {errors[item]}</div>)
+        })}
       <MainButton text={__('client.form_send_btn',sharedData)} onClick={handleClick} />
     </div>
   );
