@@ -158,7 +158,7 @@ console.log(errors);
                     );
                   })}
                 </ul>
-                <Link href={route('client.farm.index')}>
+                <Link href="/">
                   <MainButton text={__('client.home_learn_more_btn',sharedData)} />
                 </Link>
               </div>
