@@ -11,6 +11,9 @@
 .header .wrapper {
     position: relative;
 }
+.languages.mobile {
+    display: none;
+}
 .mobile_logo_text {
     position: absolute;
     left: 0;
@@ -123,6 +126,7 @@
     .header {
         height: 60px;
     }
+
     .header .logo {
         display: none;
     }
@@ -196,11 +200,19 @@
         margin: -3px 0;
     }
     .header .languages {
+        display: none;
+    }
+    .languages.mobile {
+        display: block;
         position: relative;
         top: auto;
-        right: auto;
         transform: none;
-        margin-right: 30px;
+        right: auto;
+        margin-left: 50px;
+        padding-top: 20px;
+    }
+    .languages.mobile .on {
+        width: fit-content;
     }
 }
 @media screen and (max-width: 600px) {

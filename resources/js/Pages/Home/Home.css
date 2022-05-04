@@ -1,215 +1,232 @@
 .why_our_product {
-  position: relative;
-  padding: 100px 0;
+    position: relative;
+    padding: 80px 0;
 }
 .why_our_product::before {
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: #fefbec;
-  z-index: -1;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #fefbec;
+    z-index: -1;
 }
 .why_our_product .abs_img {
-  position: absolute;
-  top: -330px;
-  right: 0;
-  z-index: -1;
+    position: absolute;
+    top: -330px;
+    right: 0;
+    z-index: -1;
 }
 .why_our_product .left_content {
-  max-width: 450px;
-  margin-top: -400px;
+    max-width: 450px;
+    margin-top: -400px;
 }
 .why_our_product .left_content .subscribe {
-  margin-top: 45px;
+    margin-top: 45px;
 }
 .why_our_product .left_content .subscribe input {
-  border: 2px solid #acd3c1;
-  border-radius: 15px;
-  background-color: #fff;
-  margin: 15px 0;
-  padding-left: 15px;
-  width: 352px;
-  height: 58px;
-  display: block;
+    border: 2px solid #acd3c1;
+    border-radius: 15px;
+    background-color: #fff;
+    margin: 15px auto;
+    padding-left: 15px;
+    width: 352px;
+    height: 58px;
+    display: block;
 }
 
 .homePage .social_media {
-  margin-top: 150px;
-  text-align: center;
+    margin-top: 200px;
+    text-align: center;
 }
 .homePage .social_media p {
-  margin-top: 18px;
-  margin-bottom: 40px;
+    margin-top: 18px;
+    margin-bottom: 40px;
 }
 
 .homePage .white {
-  padding: 50px 0;
+    padding: 50px 0;
 }
 .homePage .white .content {
-  max-width: 550px;
-  margin-left: 60px;
+    max-width: 550px;
+    margin-left: 60px;
 }
 .homePage .content .title35 {
-  margin: 20px 0;
+    margin: 20px 0;
 }
 
 .homePage .our_products {
-  background-color: #fefbec;
-  padding: 85px 0;
+    background-color: #fefbec;
+    padding: 85px 0;
 }
 .homePage .our_products .content {
-  max-width: 450px;
+    max-width: 450px;
 }
 .homePage .our_products ul {
-  margin: 30px 0;
+    margin: 30px 0;
 }
 .homePage .our_products li {
-  margin-bottom: 20px;
+    margin-bottom: 20px;
 }
 .homePage .our_products li img {
-  margin-right: 15px;
+    margin-right: 15px;
 }
 .homePage .our_products .img {
-  border-radius: 15px;
-  height: 440px;
-  width: 50%;
-  overflow: hidden;
+    border-radius: 15px;
+    height: 440px;
+    width: 50%;
+    overflow: hidden;
 }
 .homePage .blog_section {
-  padding-top: 22px;
-  padding-bottom: 100px;
+    padding-top: 22px;
+    padding-bottom: 100px;
 }
 .homePage .blog_section .grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-gap: 45px;
-  margin-top: 20px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 45px;
+    margin-top: 20px;
 }
 .homePage .faq {
-  text-align: center;
-  margin-bottom: 120px;
+    text-align: center;
+    margin-bottom: 120px;
 }
 .homePage .form_section {
-  margin-bottom: 100px;
+    margin-bottom: 100px;
+    padding-top: 40px;
 }
 .homePage .form_section .form {
-  margin-left: 30px;
+    margin-left: 30px;
 }
 .homePage .form_section .img {
-  border-radius: 50%;
-  width: 549px;
-  height: 549px;
-  border: 5px solid #fff;
-  box-shadow: 0 10px 25px #19191d1f;
+    border-radius: 50%;
+    width: 549px;
+    height: 549px;
+    border: 5px solid #fff;
+    box-shadow: 0 10px 25px #19191d1f;
 }
 .homePage .form_section .img-holder {
-  position: relative;
+    position: relative;
 }
 .homePage .form_section .img-holder::before {
-  height: 100px;
-  width: 100%;
-  right: 50%;
-  top: 30%;
-  background: linear-gradient(to left, #5ec094, transparent);
-  z-index: -1;
+    height: 100px;
+    width: 100%;
+    right: 50%;
+    top: 30%;
+    background: linear-gradient(to left, #5ec094, transparent);
+    z-index: -1;
 }
 .homePage .form_section .img-holder::after {
-  height: 100px;
-  width: 100%;
-  left: 50%;
-  bottom: 30%;
-  background: linear-gradient(to right, #5ec094, transparent);
-  z-index: -1;
+    height: 100px;
+    width: 100%;
+    left: 50%;
+    bottom: 30%;
+    background: linear-gradient(to right, #5ec094, transparent);
+    z-index: -1;
 }
 
 @media screen and (max-width: 1330px) {
-  .why_our_product .left_content {
-    max-width: 390px;
-  }
-  .homePage .blog_section .grid {
-    grid-gap: 15px;
-  }
+    .why_our_product .left_content {
+        max-width: 390px;
+    }
+    .homePage .blog_section .grid {
+        grid-gap: 15px;
+    }
 }
 @media screen and (max-width: 1260px) {
-  .why_our_product .left_content {
-    margin-top: 59px;
-    max-width: none;
-  }
-  .why_our_product .left_content .subscribe {
-    margin-top: 26px;
-  }
-  .homePage .white .content {
-    margin-left: 13px;
-  }
+    .why_our_product .left_content {
+        margin-top: 0;
+        padding-bottom: 60px;
+        max-width: none;
+    }
+    .why_our_product .left_content .subscribe {
+        margin-top: 26px;
+    }
+    .homePage .white .content {
+        margin-left: 13px;
+    }
+    .why_our_product .left_content {
+        text-align: center;
+        transform: translateY(-725px);
+    }
+    .homePage .card_slider {
+        margin-top: 271px;
+    }
+    .homePage .social_media {
+        margin-top: -184px;
+    }
 }
 @media screen and (max-width: 1000px) {
-  .homePage .blog_section .grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-  .homePage .form_section .img {
-    width: 333px;
-    height: 333px;
-  }
-  .homePage .form_section {
-    align-items: flex-start;
-  }
+    .homePage .blog_section .grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .homePage .form_section .img {
+        width: 333px;
+        height: 333px;
+    }
+    .homePage .form_section {
+        align-items: flex-start;
+    }
 }
 @media screen and (max-width: 900px) {
-  .homePage .white {
-    padding: 50px 0;
-    flex-direction: column-reverse;
-  }
-  .homePage .white .content {
-    max-width: none;
-    margin-left: 0;
-    margin-bottom: 20px;
-  }
-  .homePage .our_products .wrapper {
-    flex-direction: column;
-  }
-  .homePage .our_products .content {
-    max-width: none;
-    margin-bottom: 30px;
-  }
-  .homePage .our_products .img {
-    height: auto;
-    width: auto;
-  }
-  .homePage .our_products {
-    padding: 40px 0;
-  }
+    .homePage .white {
+        padding: 50px 0;
+        flex-direction: column-reverse;
+    }
+    .homePage .white .content {
+        max-width: none;
+        margin-left: 0;
+        margin-bottom: 20px;
+    }
+    .homePage .our_products .wrapper {
+        flex-direction: column;
+    }
+    .homePage .our_products .content {
+        max-width: none;
+        margin-bottom: 30px;
+    }
+    .homePage .our_products .img {
+        height: auto;
+        width: auto;
+    }
+    .homePage .our_products {
+        padding: 40px 0;
+    }
 }
 @media screen and (max-width: 700px) {
-  .homePage .form_section {
-    align-items: center;
-    flex-direction: column;
-  }
-  .homePage .form_section .form {
-    margin-left: 0;
-    margin-top: 40px;
-  }
+    .homePage .form_section {
+        align-items: center;
+        flex-direction: column-reverse;
+    }
+    .homePage .form_section .form {
+        margin-left: 0;
+        margin-bottom: 40px;
+    }
 }
 @media screen and (max-width: 500px) {
-  .homePage .blog_section .grid {
-    grid-template-columns: repeat(1, 1fr);
-  }
+    .homePage .blog_section .grid {
+        grid-template-columns: repeat(1, 1fr);
+    }
+    .homePage .blog_section,
+    .homePage .faq,
+    .special_products_sec {
+        display: none;
+    }
 }
 @media screen and (max-width: 400px) {
-  .why_our_product .left_content .subscribe input {
-    width: 100%;
-  }
-  .homePage .content .title35 {
-    margin: 10px 0;
-  }
-  .homePage .our_products li {
-    margin-bottom: 11px;
-  }
-  .homePage .our_products ul {
-    margin: 20px 0;
-  }
-  .homePage .form_section .img {
-    width: 293px;
-    height: 293px;
-  }
+    .why_our_product .left_content .subscribe input {
+        width: 100%;
+    }
+    .homePage .content .title35 {
+        margin: 10px 0;
+    }
+    .homePage .our_products li {
+        margin-bottom: 11px;
+    }
+    .homePage .our_products ul {
+        margin: 20px 0;
+    }
+    .homePage .form_section .img {
+        width: 293px;
+        height: 293px;
+    }
 }

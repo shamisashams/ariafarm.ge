@@ -110,6 +110,31 @@ const Header = () => {
                             </Link>
                         );
                     })}
+                    <div className="languages mobile">
+                        {Object.keys(locales).map((name, index) => {
+                            if (locales[name] === currentLocale) {
+                                return (
+                                    <div className="on" key={name + "locale"}>
+                                        {name}
+                                    </div>
+                                );
+                            }
+                        })}
+                        <div className="drop">
+                            {Object.keys(locales).map((name, index) => {
+                                if (locales[name] !== currentLocale) {
+                                    return (
+                                        <a
+                                            href={locale_urls[name]}
+                                            key={name + "locale"}
+                                        >
+                                            {name}
+                                        </a>
+                                    );
+                                }
+                            })}
+                        </div>
+                    </div>
                 </div>
                 <div className="languages">
                     {Object.keys(locales).map((name, index) => {

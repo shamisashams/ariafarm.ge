@@ -1,5 +1,5 @@
 .hero_section .slide_img {
-    width: 60%;
+    width: auto;
     transition: 1s;
     transition-delay: 0.2s;
     transform: translateY(100%);
@@ -34,9 +34,6 @@
 }
 
 @media screen and (max-width: 1200px) {
-    .hero_section .slide_img {
-        width: 50%;
-    }
     .hero_section {
         align-items: flex-end;
     }
@@ -62,9 +59,6 @@
         text-align: center;
         padding-right: 0;
     }
-    .hero_section .slide_img {
-        width: 70%;
-    }
     .hero_section .arrow_button {
         top: auto;
         transform: translateY(50%);
@@ -75,6 +69,12 @@
     }
     .hero_section .arrow_button.arr_left {
         left: -12px;
+    }
+    .hero_section .slick-prev,
+    .hero_section .slick-next {
+        top: auto;
+        transform: translateY(50%);
+        bottom: 50%;
     }
 }
 

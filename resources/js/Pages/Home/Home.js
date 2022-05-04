@@ -127,6 +127,7 @@ const Home = ({ seo, page }) => {
                                 />
                             </div>
                         </div>
+
                         <div className="social_media">
                             <div className="title35">
                                 {__(
@@ -142,8 +143,8 @@ const Home = ({ seo, page }) => {
                         </div>
                     </div>
                 </div>
-                {/* {special ? (
-                    <div className="white wrapper flex centered">
+                {special ? (
+                    <div className="white wrapper flex centered special_products_sec">
                         <img
                             src={
                                 special.latest_image != null
@@ -183,7 +184,7 @@ const Home = ({ seo, page }) => {
                             </Link>
                         </div>
                     </div>
-                ) : null} */}
+                ) : null}
                 <div className="our_products">
                     <div className="wrapper flex">
                         <div className="content">
@@ -233,35 +234,43 @@ const Home = ({ seo, page }) => {
                         </div>
                     </div>
                 </div>
-                {/* <div className="blog_section wrapper">
-            <div className="flex">
-              <div className="title35 green">{__('client.blog',sharedData)}</div>
-              <Link href={route('client.blog.index')}>{__('client.home_view_all',sharedData)}</Link>
-            </div>
-            <div className="grid boxes">
-              {blogs.map((data, index) => {
-                return (
-                  <BlogBoxSmall
-                    key={index}
-                    link={route('client.blog.show',data.slug)}
-                    img={data.latest_image != null
-                        ? "/" +
-                        data.latest_image.path +
-                        "/" +
-                        data.latest_image.title
-                        : null}
-                    title={data.title}
-                    date={data.created_at}
-                    paragraph={data.short_description}
-                  />
-                );
-              })}
-            </div>
-          </div> */}
-                {/* <div className="faq wrapper">
-            <div className="title35">{__('client.home_faq',sharedData)}</div>
-            <Questions />
-          </div> */}
+                <div className="blog_section wrapper">
+                    <div className="flex">
+                        <div className="title35 green">
+                            {__("client.blog", sharedData)}
+                        </div>
+                        <Link href={route("client.blog.index")}>
+                            {__("client.home_view_all", sharedData)}
+                        </Link>
+                    </div>
+                    <div className="grid boxes">
+                        {blogs.map((data, index) => {
+                            return (
+                                <BlogBoxSmall
+                                    key={index}
+                                    link={route("client.blog.show", data.slug)}
+                                    img={
+                                        data.latest_image != null
+                                            ? "/" +
+                                              data.latest_image.path +
+                                              "/" +
+                                              data.latest_image.title
+                                            : null
+                                    }
+                                    title={data.title}
+                                    date={data.created_at}
+                                    paragraph={data.short_description}
+                                />
+                            );
+                        })}
+                    </div>
+                </div>
+                <div className="faq wrapper">
+                    <div className="title35">
+                        {__("client.home_faq", sharedData)}
+                    </div>
+                    <Questions />
+                </div>
                 <div className="lastsec form_section wrapper flex">
                     <div className="img-holder">
                         <div className="img">
