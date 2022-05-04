@@ -75,7 +75,7 @@ const Header = () => {
                     className="mobile_logo_text cursive"
                     href={route("client.home.index")}
                 >
-                    არია-ARIA
+                    {__('client.logo_text',sharedData)}
                 </Link>
                 <button
                     onClick={() => toggleMenu()}

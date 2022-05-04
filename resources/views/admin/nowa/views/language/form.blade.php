@@ -59,8 +59,14 @@
                     </div>
                     <div class="form-group">
                         {!! Form::label('locale',__('admin.locale'),['class' => 'form-label']) !!}
-                            {!! Form::text('locale',$language->locale,['class' => 'form-control']) !!}
 
+                        @if($language->default)
+
+                            {!! Form::text('locale',$language->locale,['class' => 'form-control','disabled' => 'disabled']) !!}
+                            <input type="hidden" name="locale" value="{{$language->locale}}">
+                        @else
+                            {!! Form::text('locale',$language->locale,['class' => 'form-control']) !!}
+                        @endif
                             @error('locale')
                             <small class="text-danger">
                                 <div class="error">
