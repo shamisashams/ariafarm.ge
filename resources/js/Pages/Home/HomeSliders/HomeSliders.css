@@ -1,63 +1,68 @@
 .card_slider {
-  max-width: 800px;
-  margin: auto;
-  margin-right: 0;
+    max-width: 800px;
+    margin: auto;
+    margin-right: 0;
 }
 .card_slider .card {
-  background-color: #fff;
-  border-radius: 15px;
-  padding: 25px 18px;
-  text-align: center;
-  border: 1px solid;
-  overflow: hidden;
-  transition: all 0.3s;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+    background-color: #fff;
+    border-radius: 15px;
+    padding: 25px 18px;
+    text-align: center;
+    border: 1px solid;
+    overflow: hidden;
+    transition: all 0.3s;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
 }
 .card_slider .card svg {
-  height: 56px;
-  width: auto;
+    height: 56px;
+    width: auto;
 }
 .card_slider .card p {
-  text-align: left;
-  line-height: 1.9;
+    text-align: left;
+    line-height: 1.9;
 }
 .card_slider .swiper-slide-active {
-  border: 5px solid;
+    border: 5px solid;
 }
 .card_slider .swiper-slide-prev,
 .card_slider .swiper-slide-next {
-  border: 3px solid;
+    border: 3px solid;
 }
 
 .social_slider {
-  width: 1100px;
-  margin: 60px auto;
-  position: relative;
+    width: 1100px;
+    margin: 60px auto;
+    position: relative;
 }
 .social_slider .img {
-  width: 220px;
-  height: 220px;
+    width: 220px;
+    height: 220px;
 }
 
 @media screen and (max-width: 1360px) {
-  .social_slider {
-    width: 80%;
-  }
+    .social_slider {
+        width: 80%;
+    }
 }
 @media screen and (max-width: 1260px) {
-  .card_slider {
-    margin-right: auto;
-  }
+    .card_slider {
+        margin-right: auto;
+    }
 }
 @media screen and (max-width: 860px) {
-  .card_slider {
-    max-width: none;
-    width: 100%;
-  }
-  .social_media .arrow_button {
-    bottom: -92px;
-  }
-  .social_slider {
-    width: 100%;
-  }
+    .card_slider {
+        max-width: none;
+        width: 100%;
+    }
+    .social_media .arrow_button {
+        bottom: -92px;
+    }
+    .social_slider {
+        width: 100%;
+    }
+}
+@media screen and (max-width: 500px) {
+    .card_slider .swiper-container {
+        height: 250px !important;
+    }
 }

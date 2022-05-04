@@ -72,9 +72,9 @@
     }
     .hero_section .slick-prev,
     .hero_section .slick-next {
-        top: auto;
-        transform: translateY(50%);
-        bottom: 50%;
+        top: auto !important;
+        transform: translateY(50%) !important;
+        bottom: 50% !important;
     }
 }
 

@@ -211,6 +211,12 @@
     .special_products_sec {
         display: none;
     }
+    .why_our_product .left_content {
+        transform: translateY(-632px);
+    }
+    .homePage .social_media {
+        margin-top: -253px;
+    }
 }
 @media screen and (max-width: 400px) {
     .why_our_product .left_content .subscribe input {

@@ -34,11 +34,8 @@ const CardSlider = ({ cardData, category }) => {
                     700: {
                         slidesPerView: 3,
                     },
-                    500: {
-                        slidesPerView: 2,
-                    },
                     250: {
-                        slidesPerView: 1,
+                        slidesPerView: 2,
                     },
                 }}
             >
