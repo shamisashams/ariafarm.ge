@@ -63,6 +63,7 @@
                         @if($language->default)
 
                             {!! Form::text('locale',$language->locale,['class' => 'form-control','disabled' => 'disabled']) !!}
+                            <input type="hidden" name="locale" value="{{$language->locale}}">
                         @else
                             {!! Form::text('locale',$language->locale,['class' => 'form-control']) !!}
                         @endif
