@@ -23,11 +23,9 @@ export default function Layout({ children, seo = null }) {
     console.log(usePage().props);
     const { currentLocale } = usePage().props;
 
-    // if (currentLocale == "ge") {
-    //     import("./AppGeo.css");
-    // } else if (currentLocale == "ru") {
-    //     import("./AppRus.css");
-    // }
+     if (currentLocale == "en") {
+         import("./AppEng.css");
+     }
 
     return (
         <>
