@@ -1,0 +1,7 @@
+@font-face {
+    font-family: "brushsci";
+    src: url(/assets/fonts/BRUSHSCI.ttf);
+}
+.cursive {
+    font-family: "brushsci";
+}

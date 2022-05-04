@@ -70,15 +70,16 @@
     transform: rotate(180deg);
 }
 .header .navbar {
-    margin-left: -146px;
+    margin-left: -153px;
 }
 .header .nav_link {
     margin: 0 35px;
     position: relative;
 }
-.header .navbar .nav_link:nth-child(4) {
-    margin-right: 190px;
+.header .navbar .nav_link:nth-child(5) {
+    margin-right: 200px;
 }
+
 .header .nav_link::after {
     left: 50%;
     bottom: -10px;
@@ -102,7 +103,7 @@
     .header .nav_link {
         margin: 0 17px;
     }
-    .header .navbar .nav_link:nth-child(4) {
+    .header .navbar .nav_link:nth-child(5) {
         margin-right: 153px;
     }
     .header .logo {
@@ -165,7 +166,7 @@
         background-color: #fefbec;
         color: #acd3c1;
     }
-    .header .navbar .nav_link:nth-child(4) {
+    .header .navbar .nav_link:nth-child(5) {
         margin: 0;
     }
     .header .wrapper {
