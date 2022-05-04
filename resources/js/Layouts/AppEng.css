@@ -3,5 +3,5 @@
     src: url(/assets/fonts/BRUSHSCI.ttf);
 }
 .cursive {
-    font-family: "brushsci";
+    font-family: "brushsci"!important;
 }
