@@ -37,6 +37,9 @@ const CardSlider = ({ cardData, category }) => {
                     500: {
                         slidesPerView: 2,
                     },
+                    250: {
+                        slidesPerView: 1,
+                    },
                 }}
             >
                 {cardData.map((card, index) => {
