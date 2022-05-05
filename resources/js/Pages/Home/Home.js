@@ -157,48 +157,54 @@ const Home = ({ seo, page }) => {
                         </div>
                     </div>
                 </div>
-                {special ? (
-                    <div className="white wrapper flex centered special_products_sec">
-                        <img
-                            src={
-                                special.latest_image != null
-                                    ? "/" +
-                                      special.latest_image.path +
-                                      "/" +
-                                      special.latest_image.title
-                                    : null
-                            }
-                            alt=""
-                        />
-                        <div className="content">
-                            <span>
-                                {__(
-                                    "client.home_section_special_header",
-                                    sharedData
-                                )}
-                            </span>
-                            <div className="title35 ">{special.title}</div>
-                            <p className="op05">{special.short_description}</p>
-                            <span
-                                style={{
-                                    textDecoration: "line-through",
-                                    margin: "18px 0",
-                                    display: "block",
-                                }}
-                            >
-                                {parseFloat(special.price).toFixed(2)}₾
-                            </span>
-                            <Link href={route("client.special-offer.index")}>
-                                <MainButton
-                                    text={__(
-                                        "client.home_btn_special_txt",
+                <div className="special_products_sec">
+                    {special ? (
+                        <div className="white wrapper flex centered ">
+                            <img
+                                src={
+                                    special.latest_image != null
+                                        ? "/" +
+                                          special.latest_image.path +
+                                          "/" +
+                                          special.latest_image.title
+                                        : null
+                                }
+                                alt=""
+                            />
+                            <div className="content">
+                                <span>
+                                    {__(
+                                        "client.home_section_special_header",
                                         sharedData
                                     )}
-                                />
-                            </Link>
+                                </span>
+                                <div className="title35 ">{special.title}</div>
+                                <p className="op05">
+                                    {special.short_description}
+                                </p>
+                                <span
+                                    style={{
+                                        textDecoration: "line-through",
+                                        margin: "18px 0",
+                                        display: "block",
+                                    }}
+                                >
+                                    {parseFloat(special.price).toFixed(2)}₾
+                                </span>
+                                <Link
+                                    href={route("client.special-offer.index")}
+                                >
+                                    <MainButton
+                                        text={__(
+                                            "client.home_btn_special_txt",
+                                            sharedData
+                                        )}
+                                    />
+                                </Link>
+                            </div>
                         </div>
-                    </div>
-                ) : null}
+                    ) : null}
+                </div>
                 <div className="our_products">
                     <div className="wrapper flex">
                         <div className="content">
