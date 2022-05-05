@@ -1,6 +1,6 @@
 .main_button {
     color: #fff;
-    background-color: #acd3c1;
+    background-color: #bf7e2f;
     border-radius: 26px;
     height: 52px;
     padding: 0 30px;
@@ -11,7 +11,7 @@
     transition: 0.3s;
 }
 .main_button:hover {
-    background-color: #99c5b1;
+    background-color: #b6772b;
 
     transform: scale(0.95);
 }

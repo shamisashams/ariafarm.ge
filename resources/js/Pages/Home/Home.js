@@ -82,7 +82,7 @@ const Home = ({ seo, page }) => {
     return (
         <Layout seo={seo}>
             <div className="homePage">
-                <SearchInput color="#ACD3C1" />
+                <SearchInput color="#000" />
                 <HeroSection />
                 <div className="why_our_product">
                     <img
@@ -90,44 +90,58 @@ const Home = ({ seo, page }) => {
                         src="/assets/images/home/2.png"
                         alt=""
                     />
-                    <div className="wrapper cards">
-                        <CardSlider cardData={cards} />
-                    </div>
-                    <div className="wrapper">
-                        <div className="left_content">
-                            <div className="title35">
-                                {__("client.home_section1_header", sharedData)}
-                            </div>
-                            <p className="op05">
-                                {__("client.home_section1_text", sharedData)}
-                            </p>
-                            <div className="subscribe">
-                                <div>
-                                    {__("client.section1_header2", sharedData)}
+                    <div className="cards_subscribe_sec">
+                        <div className="wrapper cards">
+                            <CardSlider cardData={cards} />
+                        </div>
+                        <div className="wrapper">
+                            <div className="left_content">
+                                <div className="title35">
+                                    {__(
+                                        "client.home_section1_header",
+                                        sharedData
+                                    )}
                                 </div>
-                                <input
-                                    name="email"
-                                    id="s_email"
-                                    className="bpg"
-                                    type="text"
-                                    placeholder={__(
-                                        "client.home_enter_email_placeholder",
+                                <p className="op05">
+                                    {__(
+                                        "client.home_section1_text",
                                         sharedData
                                     )}
-                                />
-                                {errors.email && (
-                                    <div className="error">{errors.email}</div>
-                                )}
-                                <MainButton
-                                    text={__(
-                                        "client.subscribe_btn",
-                                        sharedData
+                                </p>
+                                <div className="subscribe">
+                                    <div>
+                                        {__(
+                                            "client.section1_header2",
+                                            sharedData
+                                        )}
+                                    </div>
+                                    <input
+                                        name="email"
+                                        id="s_email"
+                                        className="bpg"
+                                        type="text"
+                                        placeholder={__(
+                                            "client.home_enter_email_placeholder",
+                                            sharedData
+                                        )}
+                                    />
+                                    {errors.email && (
+                                        <div className="error">
+                                            {errors.email}
+                                        </div>
                                     )}
-                                    onClick={handleClick}
-                                />
+                                    <MainButton
+                                        text={__(
+                                            "client.subscribe_btn",
+                                            sharedData
+                                        )}
+                                        onClick={handleClick}
+                                    />
+                                </div>
                             </div>
                         </div>
-
+                    </div>
+                    <div className="wrapper">
                         <div className="social_media">
                             <div className="title35">
                                 {__(
@@ -163,7 +177,7 @@ const Home = ({ seo, page }) => {
                                     sharedData
                                 )}
                             </span>
-                            <div className="title35 green">{special.title}</div>
+                            <div className="title35 ">{special.title}</div>
                             <p className="op05">{special.short_description}</p>
                             <span
                                 style={{
@@ -236,7 +250,7 @@ const Home = ({ seo, page }) => {
                 </div>
                 <div className="blog_section wrapper">
                     <div className="flex">
-                        <div className="title35 green">
+                        <div className="title35 ">
                             {__("client.blog", sharedData)}
                         </div>
                         <Link href={route("client.blog.index")}>

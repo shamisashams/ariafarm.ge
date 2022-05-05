@@ -1,12 +1,12 @@
 .header {
-    background-color: #acd3c1;
+    background-color: #7cbc9f;
     color: #fff;
     position: fixed;
     width: 100%;
     height: 90px;
     top: 0;
     left: 0;
-    z-index: 2000;
+    z-index: 2200;
 }
 .header .wrapper {
     position: relative;
@@ -125,6 +125,7 @@
 @media screen and (max-width: 900px) {
     .header {
         height: 60px;
+        box-shadow: 0 5px 15px #0c1b2e21;
     }
 
     .header .logo {
@@ -142,9 +143,9 @@
     .header .navbar {
         position: absolute;
         left: 54px;
-        top: 100%;
+        top: 0;
         height: 100vh;
-        background-color: #acd3c1;
+        background-color: #444444;
         color: #fff;
         display: flex;
         flex-direction: column;
@@ -159,7 +160,7 @@
         margin: 0px;
         padding: 16px 10px;
         padding-left: 50px;
-        width: 250px;
+        width: 330px;
         transition: 0.2s;
     }
     .header .nav_link::after {
@@ -167,8 +168,7 @@
     }
     .header .nav_link:hover,
     .header .nav_link.active {
-        background-color: #fefbec;
-        color: #acd3c1;
+        background-color: #bf7e2f;
     }
     .header .navbar .nav_link:nth-child(5) {
         margin: 0;
@@ -181,29 +181,33 @@
         display: inline-block;
     }
     .menu_btn .span {
-        height: 3px;
+        height: 2px;
         width: 30px;
         background-color: #fff;
         margin: 4px 0;
         transition: 0.2s;
     }
-    .menu_btn .span:first-child {
-        width: 24px;
-    }
-    .menu_btn.clicked .span:first-child {
+    .menu_btn.clicked .span:nth-child(1) {
         transform: rotate(45deg);
-        margin: -3px 0;
+        margin: -6px 0;
         width: 30px;
     }
-    .menu_btn.clicked .span:last-child {
+    .menu_btn.clicked .span:nth-child(2) {
+        transform: scale(0);
+    }
+    .menu_btn.clicked .span:nth-child(3) {
         transform: rotate(-45deg);
-        margin: -3px 0;
+        margin: -6px 0;
+    }
+    .menu_btn.clicked {
+        margin-bottom: -9px;
     }
     .header .languages {
         display: none;
     }
     .languages.mobile {
-        display: block;
+        display: flex;
+        justify-content: flex-start;
         position: relative;
         top: auto;
         transform: none;
@@ -213,6 +217,17 @@
     }
     .languages.mobile .on {
         width: fit-content;
+        margin-right: 30px;
+    }
+    .languages.mobile .drop {
+        position: relative;
+        left: auto !important;
+        top: auto !important;
+        transform: none !important;
+        opacity: 0.2 !important;
+    }
+    .header .languages .on::after {
+        display: none;
     }
 }
 @media screen and (max-width: 600px) {
@@ -229,12 +244,16 @@
         width: 73px;
         top: 2px;
     }
-    .header .nav_link {
-        width: 212px;
-    }
     .header .languages .on::after {
         right: -11px;
         width: 10px;
         height: 10px;
+    }
+    .header .nav_link {
+        width: 280px;
+    }
+    .mobile_logo_img {
+        width: 74px;
+        margin-top: 20px;
     }
 }

@@ -34,7 +34,7 @@ const CardSlider = ({ cardData, category }) => {
                     700: {
                         slidesPerView: 3,
                     },
-                    250: {
+                    200: {
                         slidesPerView: 2,
                     },
                 }}
@@ -65,7 +65,14 @@ const CardSlider = ({ cardData, category }) => {
                             }}
                         >
                             {icon}
-                            <p className="cursive">{card.text}</p>
+                            <p
+                                className="cursive"
+                                style={{
+                                    color: card.color,
+                                }}
+                            >
+                                {card.text}
+                            </p>
                         </SwiperSlide>
                     );
                 })}

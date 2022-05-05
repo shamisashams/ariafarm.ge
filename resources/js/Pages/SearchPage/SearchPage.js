@@ -6,60 +6,67 @@ import SearchInput from "../../components/SmallComps/SearchInput";
 import { ProductBox } from "../../components/ProductBox/ProductBox";
 import "./SearchPage.css";
 import Layout from "../../Layouts/Layout";
-import {usePage} from "@inertiajs/inertia-react";
+import { usePage } from "@inertiajs/inertia-react";
 
-const SearchPage = ({seo}) => {
+const SearchPage = ({ seo }) => {
     const { products } = usePage().props;
     const sharedData = usePage().props.localizations;
-  const productsFound = [
-    {
-      link: "/single-product",
-      img: "/assets/images/products/1.png",
-      name: "ძროხის რძე",
-    },
-    {
-      link: "/single-product",
-      img: "/assets/images/products/2.png",
-      name: "ძროხის რძე",
-    },
-    {
-      link: "/single-product",
-      img: "/assets/images/products/3.png",
-      name: "ძროხის რძე",
-    },
-    {
-      link: "/single-product",
-      img: "/assets/images/products/2.png",
-      name: "ძროხის რძე",
-    },
-  ];
-  return (
-      <Layout seo={seo}>
-          <div className="search_page">
-              <SearchInput color="#ACD3C1" />
-              <div className="wrapper content">
-                  <div className="op05 bpg">"საძიებო სიტყვა" ნაპოვნია {products.length} შედეგი</div>
-                  <div className="wrapper2">
-                      {products.map((product, index) => {
-                          return (
-                              <ProductBox
-                                  key={index}
-                                  link={route('client.product.show',product.slug)}
-                                  productName={product.title}
-                                  imgSrc={product.latest_image != null
-                                      ? "/" +
-                                      product.latest_image.path +
-                                      "/" +
-                                      product.latest_image.title
-                                      : null}
-                              />
-                          );
-                      })}
-                  </div>
-              </div>
-          </div>
-      </Layout>
-  );
+    const productsFound = [
+        {
+            link: "/single-product",
+            img: "/assets/images/products/1.png",
+            name: "ძროხის რძე",
+        },
+        {
+            link: "/single-product",
+            img: "/assets/images/products/2.png",
+            name: "ძროხის რძე",
+        },
+        {
+            link: "/single-product",
+            img: "/assets/images/products/3.png",
+            name: "ძროხის რძე",
+        },
+        {
+            link: "/single-product",
+            img: "/assets/images/products/2.png",
+            name: "ძროხის რძე",
+        },
+    ];
+    return (
+        <Layout seo={seo}>
+            <div className="search_page">
+                <SearchInput color="#000" />
+                <div className="wrapper content">
+                    <div className="op05 bpg">
+                        "საძიებო სიტყვა" ნაპოვნია {products.length} შედეგი
+                    </div>
+                    <div className="wrapper2">
+                        {products.map((product, index) => {
+                            return (
+                                <ProductBox
+                                    key={index}
+                                    link={route(
+                                        "client.product.show",
+                                        product.slug
+                                    )}
+                                    productName={product.title}
+                                    imgSrc={
+                                        product.latest_image != null
+                                            ? "/" +
+                                              product.latest_image.path +
+                                              "/" +
+                                              product.latest_image.title
+                                            : null
+                                    }
+                                />
+                            );
+                        })}
+                    </div>
+                </div>
+            </div>
+        </Layout>
+    );
 };
 
 export default SearchPage;

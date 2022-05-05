@@ -3564,7 +3564,7 @@ var Blogs = function Blogs(_ref) {
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "blogsPage"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_SmallComps_SearchInput__WEBPACK_IMPORTED_MODULE_3__["default"], {
-    color: "#ACD3C1"
+    color: "#000"
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "wrapper"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_SmallComps_PagePath__WEBPACK_IMPORTED_MODULE_2__["default"], {
@@ -3783,7 +3783,7 @@ var Gallery = function Gallery(_ref) {
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "galleryPage"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_SmallComps_SearchInput__WEBPACK_IMPORTED_MODULE_1__["default"], {
-    color: "#ACD3C1"
+    color: "#000"
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "wrapper"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_SmallComps_PagePath__WEBPACK_IMPORTED_MODULE_2__["default"], {
@@ -4033,7 +4033,7 @@ var Home = function Home(_ref) {
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "homePage"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_SmallComps_SearchInput__WEBPACK_IMPORTED_MODULE_13__["default"], {
-    color: "#ACD3C1"
+    color: "#000"
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_HeroSection_HeroSection__WEBPACK_IMPORTED_MODULE_2__["default"], null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "why_our_product"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", {
@@ -4041,6 +4041,8 @@ var Home = function Home(_ref) {
     src: "/assets/images/home/2.png",
     alt: ""
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+    className: "cards_subscribe_sec"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "wrapper cards"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_HomeSliders_CardSlider__WEBPACK_IMPORTED_MODULE_4__["default"], {
     cardData: cards
@@ -4065,7 +4067,9 @@ var Home = function Home(_ref) {
   }, errors.email), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_Buttons_Buttons__WEBPACK_IMPORTED_MODULE_1__.MainButton, {
     text: __("client.subscribe_btn", sharedData),
     onClick: handleClick
-  }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+  }))))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+    className: "wrapper"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "social_media"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "title35"
@@ -4077,7 +4081,7 @@ var Home = function Home(_ref) {
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "content"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", null, __("client.home_section_special_header", sharedData)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
-    className: "title35 green"
+    className: "title35 "
   }, special.title), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", {
     className: "op05"
   }, special.short_description), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", {
@@ -4121,7 +4125,7 @@ var Home = function Home(_ref) {
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "flex"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
-    className: "title35 green"
+    className: "title35 "
   }, __("client.blog", sharedData)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_7__.Link, {
     href: route("client.blog.index")
   }, __("client.home_view_all", sharedData))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
@@ -4214,7 +4218,7 @@ var CardSlider = function CardSlider(_ref) {
       700: {
         slidesPerView: 3
       },
-      250: {
+      200: {
         slidesPerView: 2
       }
     }
@@ -4249,7 +4253,10 @@ var CardSlider = function CardSlider(_ref) {
         borderColor: card.color
       }
     }, icon, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", {
-      className: "cursive"
+      className: "cursive",
+      style: {
+        color: card.color
+      }
     }, card.text));
   })));
 };
@@ -4308,7 +4315,7 @@ var SocialSlider = function SocialSlider() {
   var navigationNextRef = {
     current: null
   };
-  var socialData = ['/assets/images/blogs/1.png', '/assets/images/blogs/2.png', '/assets/images/blogs/3.png', '/assets/images/blogs/4.png', '/assets/images/blogs/5.png', '/assets/images/blogs/6.png'];
+  var socialData = ["/assets/images/blogs/1.png", "/assets/images/blogs/2.png", "/assets/images/blogs/3.png", "/assets/images/blogs/4.png", "/assets/images/blogs/5.png", "/assets/images/blogs/6.png"];
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "wrapper"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
@@ -4344,14 +4351,16 @@ var SocialSlider = function SocialSlider() {
       1000: {
         slidesPerView: 4
       },
+      700: {
+        navigation: true,
+        slidesPerView: 3
+      },
       600: {
         slidesPerView: 3
       },
-      450: {
-        slidesPerView: 2
-      },
       200: {
-        slidesPerView: 1
+        navigation: false,
+        slidesPerView: 2
       }
     }
   }, social_slider.map(function (img, index) {
@@ -4359,7 +4368,7 @@ var SocialSlider = function SocialSlider() {
       key: index,
       className: "img"
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", {
-      src: '/' + img.path + '/' + img.title,
+      src: "/" + img.path + "/" + img.title,
       alt: ""
     }));
   }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
@@ -4443,7 +4452,7 @@ var Products = function Products(_ref) {
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "productsPage"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_SmallComps_SearchInput__WEBPACK_IMPORTED_MODULE_3__["default"], {
-    color: "#ACD3C1"
+    color: "#000"
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "wrapper"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_SmallComps_PagePath__WEBPACK_IMPORTED_MODULE_2__["default"], {
@@ -4758,7 +4767,7 @@ var SearchPage = function SearchPage(_ref) {
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "search_page"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_SmallComps_SearchInput__WEBPACK_IMPORTED_MODULE_1__["default"], {
-    color: "#ACD3C1"
+    color: "#000"
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "wrapper content"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
@@ -4768,7 +4777,7 @@ var SearchPage = function SearchPage(_ref) {
   }, products.map(function (product, index) {
     return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_ProductBox_ProductBox__WEBPACK_IMPORTED_MODULE_2__.ProductBox, {
       key: index,
-      link: route('client.product.show', product.slug),
+      link: route("client.product.show", product.slug),
       productName: product.title,
       imgSrc: product.latest_image != null ? "/" + product.latest_image.path + "/" + product.latest_image.title : null
     });
@@ -4912,7 +4921,7 @@ var SingleProduct = function SingleProduct(_ref) {
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "singleProduct"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_SmallComps_SearchInput__WEBPACK_IMPORTED_MODULE_2__["default"], {
-    color: "#ACD3C1"
+    color: "#000"
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "wrapper showcase"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__.Link, {
@@ -5104,18 +5113,18 @@ var SpecialOffers = function SpecialOffers(_ref) {
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "specialOffers"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_SmallComps_SearchInput__WEBPACK_IMPORTED_MODULE_2__["default"], {
-    color: "#ACD3C1"
+    color: "#000"
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "wrapper main"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_SmallComps_PagePath__WEBPACK_IMPORTED_MODULE_1__["default"], {
-    prev: __('client.nav_home', sharedData),
-    current: __('client.nav_special_offer', sharedData),
+    prev: __("client.nav_home", sharedData),
+    current: __("client.nav_special_offer", sharedData),
     color: "#949494"
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "texts"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "title35"
-  }, renderHTML(__('client.special_offer_title', sharedData).newLineToBr())), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", null, renderHTML(__('client.special_offer_text', sharedData).newLineToBr()))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+  }, renderHTML(__("client.special_offer_title", sharedData).newLineToBr())), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", null, renderHTML(__("client.special_offer_text", sharedData).newLineToBr()))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "special_slider"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(swiper_react__WEBPACK_IMPORTED_MODULE_13__.Swiper, {
     modules: [swiper__WEBPACK_IMPORTED_MODULE_10__["default"], swiper__WEBPACK_IMPORTED_MODULE_11__["default"], swiper__WEBPACK_IMPORTED_MODULE_12__["default"]],
@@ -5155,12 +5164,12 @@ var SpecialOffers = function SpecialOffers(_ref) {
       src: item.latest_image != null ? "/" + item.latest_image.path + "/" + item.latest_image.title : null,
       alt: ""
     })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_6__.Link, {
-      href: route('client.product.show', item.slug)
+      href: route("client.product.show", item.slug)
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("button", {
       style: {
         background: colors[i - 1]
       }
-    }, __('client.special_offer_price', sharedData), ": ", parseFloat(item.price).toFixed(2), " \u20BE"))));
+    }, __("client.special_offer_price", sharedData), ":", " ", parseFloat(item.price).toFixed(2), " ", "\u20BE"))));
   }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     ref: navigationPrevRef
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_Buttons_Buttons__WEBPACK_IMPORTED_MODULE_5__.ArrowLeft2, null)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
@@ -5647,7 +5656,7 @@ var Form = function Form() {
     className: "form",
     "data-aos": "fade-up"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
-    className: "title35 green"
+    className: "title35 "
   }, __("client.form_header", sharedData)), inputs.map(function (item, index) {
     return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("input", {
       key: index,
@@ -5767,12 +5776,17 @@ var Header = function Header() {
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__.Link, {
     className: "mobile_logo_text cursive",
     href: route("client.home.index")
-  }, __('client.logo_text', sharedData)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("button", {
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", {
+    src: "/assets/images/logo/3.png",
+    alt: ""
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("button", {
     onClick: function onClick() {
       return toggleMenu();
     },
     className: menu ? "menu_btn clicked" : "menu_btn"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+    className: "span"
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "span"
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "span"
@@ -6493,26 +6507,50 @@ var SocialLinks = function SocialLinks() {
   var info = (0,_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__.usePage)().props.info; //console.log(info)
 
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
-    className: "flex centered"
+    className: "flex centered sm"
   }, info.active.facebook === 1 ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__.Link, {
     href: info.facebook
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", {
-    src: "/assets/images/icons/sm/fb.svg",
-    alt: ""
-  })) : null, info.active.instagram === 1 ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__.Link, {
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("svg", {
+    xmlns: "http://www.w3.org/2000/svg",
+    width: "14.213",
+    height: "26.538",
+    viewBox: "0 0 14.213 26.538"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("path", {
+    id: "Icon_awesome-facebook-f",
+    "data-name": "Icon awesome-facebook-f",
+    d: "M14.891,14.927l.737-4.8H11.02V7.008a2.4,2.4,0,0,1,2.708-2.595h2.1V.324A25.548,25.548,0,0,0,12.1,0c-3.8,0-6.276,2.3-6.276,6.464v3.66H1.609v4.8H5.828v11.61H11.02V14.927Z",
+    transform: "translate(-1.609)",
+    fill: "#2a2a2a"
+  }))) : null, info.active.instagram === 1 ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__.Link, {
     href: info.instagram,
     style: {
       margin: "0 45px"
     }
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", {
-    src: "/assets/images/icons/sm/ig.svg",
-    alt: ""
-  })) : null, info.active.youtube === 1 ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__.Link, {
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("svg", {
+    xmlns: "http://www.w3.org/2000/svg",
+    width: "26.544",
+    height: "26.538",
+    viewBox: "0 0 26.544 26.538"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("path", {
+    id: "Icon_awesome-instagram",
+    "data-name": "Icon awesome-instagram",
+    d: "M13.27,8.7a6.8,6.8,0,1,0,6.8,6.8A6.793,6.793,0,0,0,13.27,8.7Zm0,11.227a4.423,4.423,0,1,1,4.423-4.423A4.431,4.431,0,0,1,13.27,19.93ZM21.939,8.424a1.587,1.587,0,1,1-1.587-1.587A1.583,1.583,0,0,1,21.939,8.424Zm4.506,1.611A7.854,7.854,0,0,0,24.3,4.475a7.905,7.905,0,0,0-5.56-2.144c-2.191-.124-8.758-.124-10.949,0a7.894,7.894,0,0,0-5.56,2.138,7.879,7.879,0,0,0-2.144,5.56c-.124,2.191-.124,8.758,0,10.949a7.854,7.854,0,0,0,2.144,5.56,7.915,7.915,0,0,0,5.56,2.144c2.191.124,8.758.124,10.949,0a7.854,7.854,0,0,0,5.56-2.144,7.905,7.905,0,0,0,2.144-5.56c.124-2.191.124-8.752,0-10.943ZM23.615,23.329a4.478,4.478,0,0,1-2.523,2.523c-1.747.693-5.892.533-7.822.533s-6.082.154-7.822-.533a4.478,4.478,0,0,1-2.523-2.523c-.693-1.747-.533-5.892-.533-7.822s-.154-6.082.533-7.822A4.478,4.478,0,0,1,5.447,5.161c1.747-.693,5.892-.533,7.822-.533s6.082-.154,7.822.533a4.478,4.478,0,0,1,2.523,2.523c.693,1.747.533,5.892.533,7.822S24.308,21.588,23.615,23.329Z",
+    transform: "translate(0.005 -2.238)",
+    fill: "#2a2a2a"
+  }))) : null, info.active.youtube === 1 ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__.Link, {
     href: info.youtube
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", {
-    src: "/assets/images/icons/sm/yt.svg",
-    alt: ""
-  })) : null);
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("svg", {
+    xmlns: "http://www.w3.org/2000/svg",
+    width: "32.34",
+    height: "22.739",
+    viewBox: "0 0 32.34 22.739"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("path", {
+    id: "Icon_awesome-youtube",
+    "data-name": "Icon awesome-youtube",
+    d: "M32.714,8.058A4.064,4.064,0,0,0,29.855,5.18C27.333,4.5,17.22,4.5,17.22,4.5s-10.113,0-12.635.68A4.064,4.064,0,0,0,1.726,8.058a42.628,42.628,0,0,0-.676,7.835,42.628,42.628,0,0,0,.676,7.835,4,4,0,0,0,2.859,2.832c2.522.68,12.635.68,12.635.68s10.113,0,12.635-.68a4,4,0,0,0,2.859-2.832,42.628,42.628,0,0,0,.676-7.835,42.628,42.628,0,0,0-.676-7.835ZM13.913,20.7V11.084l8.452,4.809L13.913,20.7Z",
+    transform: "translate(-1.05 -4.5)",
+    fill: "#2a2a2a"
+  }))) : null);
 };
 var SocialLinks2 = function SocialLinks2() {
   var sm = [{
@@ -6850,7 +6888,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "@font-face {\r\n    font-family: \"alk-mtav\";\r\n    src: url(/assets/fonts/alkroundedmtav-medium.ttf);\r\n}\r\n@font-face {\r\n    font-family: \"bpg-nino\";\r\n    src: url(/assets/fonts/bpg_nino_medium.ttf);\r\n}\r\n@font-face {\r\n    font-family: \"brushsci\";\r\n    src: url(/assets/fonts/BRUSHSCI.ttf);\r\n}\r\n@font-face {\r\n    font-family: \"dm-giorgi\";\r\n    src: url(/assets/fonts/dm-giorgi-khorguashvili.ttf);\r\n}\r\n*,\r\n*::after,\r\n*::before {\r\n    font-family: \"alk-mtav\";\r\n    margin: 0;\r\n    padding: 0;\r\n    box-sizing: border-box;\r\n    scroll-behavior: smooth;\r\n}\r\n*::after,\r\n*::before {\r\n    position: absolute;\r\n    content: \"\";\r\n}\r\n/* width */\r\n::-webkit-scrollbar {\r\n    width: 7px;\r\n}\r\n\r\n/* Track */\r\n::-webkit-scrollbar-track {\r\n    background: #c0d8cd;\r\n}\r\n\r\n/* Handle */\r\n::-webkit-scrollbar-thumb {\r\n    background: #8eafa0;\r\n}\r\n::-webkit-scrollbar-thumb:hover {\r\n    background: #b0ddc9;\r\n}\r\n\r\nhtml {\r\n    box-sizing: border-box;\r\n}\r\nbody {\r\n    font-family: \"alk-mtav\";\r\n    font-weight: 400;\r\n    line-height: 1.3;\r\n    color: #2f3e51;\r\n    background: #fff;\r\n    overflow-x: hidden;\r\n    scroll-behavior: smooth;\r\n    font-size: 16px;\r\n    padding-top: 90px;\r\n}\r\np {\r\n    font-weight: 100;\r\n    line-height: 1.5;\r\n    font-family: \"bpg-nino\";\r\n}\r\nh1 {\r\n    font-weight: 600;\r\n}\r\nul {\r\n    list-style: none;\r\n}\r\na {\r\n    text-decoration: none;\r\n    color: inherit;\r\n}\r\ninput,\r\ntextarea,\r\nbutton {\r\n    outline: none;\r\n    border: none;\r\n    background: none;\r\n}\r\nbutton {\r\n    cursor: pointer;\r\n    outline: none;\r\n}\r\nselect {\r\n    border: none;\r\n    outline: none;\r\n}\r\nimg {\r\n    height: auto;\r\n    max-width: 100%;\r\n}\r\n.img {\r\n    overflow: hidden;\r\n}\r\n.img img {\r\n    width: 100%;\r\n    height: 100%;\r\n    -o-object-fit: cover;\r\n       object-fit: cover;\r\n}\r\n.map iframe {\r\n    width: 100%;\r\n    height: 100%;\r\n}\r\n.wrapper {\r\n    width: 1360px;\r\n    height: 100%;\r\n    margin: auto;\r\n    position: relative;\r\n}\r\n.wrapper2 {\r\n    width: 1050px;\r\n    height: 100%;\r\n    margin: auto;\r\n    position: relative;\r\n}\r\n.flex {\r\n    display: flex;\r\n    align-items: center;\r\n    justify-content: space-between;\r\n}\r\n.flex.centered {\r\n    justify-content: center;\r\n}\r\n.slick-prev,\r\n.slick-next {\r\n    background: red !important;\r\n    width: 35px !important;\r\n    height: 35px !important;\r\n    z-index: 10;\r\n    opacity: 0;\r\n}\r\n.slick-prev {\r\n    left: 0 !important;\r\n}\r\n.slick-next {\r\n    right: 0 !important;\r\n}\r\n.bpg {\r\n    font-family: \"bpg-nino\";\r\n}\r\n.cursive {\r\n    font-family: \"dm-giorgi\";\r\n}\r\n.title35 {\r\n    font-size: 35px;\r\n}\r\n.title50 {\r\n    font-size: 50px;\r\n    width: -webkit-fit-content;\r\n    width: -moz-fit-content;\r\n    width: fit-content;\r\n    position: relative;\r\n    margin-bottom: 40px;\r\n}\r\n.title50::after {\r\n    width: 300px;\r\n    height: 3px;\r\n    left: 50%;\r\n    transform: translateX(-50%);\r\n    bottom: -10px;\r\n    background-color: #acd3c1;\r\n}\r\n.green {\r\n    color: #8eafa0;\r\n}\r\n.op05 {\r\n    opacity: 0.5;\r\n}\r\n.gradient-bg {\r\n    position: relative;\r\n}\r\n.gradient-bg::before {\r\n    width: 100%;\r\n    z-index: -1;\r\n    background: linear-gradient(to right, #acd3c1, transparent);\r\n    top: 50%;\r\n    left: -50%;\r\n    transform: translateY(-50%);\r\n}\r\n.gradient-bg.rtl::before {\r\n    width: 100vw;\r\n    background: linear-gradient(to left, #acd3c1, transparent);\r\n}\r\n.gradient-bg.h60::before {\r\n    height: 60px;\r\n}\r\n.gradient-bg.h100::before {\r\n    height: 100px;\r\n}\r\n\r\n@media screen and (max-width: 1420px) {\r\n    .wrapper {\r\n        width: 95%;\r\n    }\r\n    .title35 {\r\n        font-size: 30px;\r\n    }\r\n}\r\n@media screen and (max-width: 1200px) {\r\n    body {\r\n        font-size: 14px;\r\n    }\r\n    .title35 {\r\n        font-size: 25px;\r\n    }\r\n    .title50 {\r\n        font-size: 40px;\r\n    }\r\n    .title50::after {\r\n        width: 245px;\r\n        bottom: -3px;\r\n    }\r\n    .wrapper2 {\r\n        width: 95%;\r\n    }\r\n}\r\n@media screen and (max-width: 900px) {\r\n    .slick-prev,\r\n    .slick-next {\r\n        top: auto !important;\r\n        transform: none !important;\r\n        bottom: 45px !important;\r\n    }\r\n    body {\r\n        padding-top: 60px;\r\n    }\r\n}\r\n@media screen and (max-width: 600px) {\r\n    .title35 {\r\n        font-size: 20px;\r\n    }\r\n    .title50 {\r\n        font-size: 30px;\r\n        margin-bottom: 20px;\r\n    }\r\n    .title50::after {\r\n        width: 98px;\r\n        bottom: -3px;\r\n    }\r\n    .gradient-bg.h100::before {\r\n        height: 64px;\r\n    }\r\n    .gradient-bg.rtl::before {\r\n        left: 0;\r\n    }\r\n    .form input,\r\n    .form textarea {\r\n        margin-bottom: 7px;\r\n        padding-left: 20px;\r\n    }\r\n}\r\n@media screen and (max-width: 420px) {\r\n    .title35 {\r\n        font-size: 18px;\r\n    }\r\n}\r\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "@font-face {\r\n    font-family: \"alk-mtav\";\r\n    src: url(/assets/fonts/alkroundedmtav-medium.ttf);\r\n}\r\n@font-face {\r\n    font-family: \"bpg-nino\";\r\n    src: url(/assets/fonts/bpg_nino_medium.ttf);\r\n}\r\n@font-face {\r\n    font-family: \"brushsci\";\r\n    src: url(/assets/fonts/BRUSHSCI.ttf);\r\n}\r\n@font-face {\r\n    font-family: \"dm-giorgi\";\r\n    src: url(/assets/fonts/dm-giorgi-khorguashvili.ttf);\r\n}\r\n*,\r\n*::after,\r\n*::before {\r\n    font-family: \"alk-mtav\";\r\n    margin: 0;\r\n    padding: 0;\r\n    box-sizing: border-box;\r\n    scroll-behavior: smooth;\r\n}\r\n*::after,\r\n*::before {\r\n    position: absolute;\r\n    content: \"\";\r\n}\r\n/* width */\r\n::-webkit-scrollbar {\r\n    width: 7px;\r\n}\r\n\r\n/* Track */\r\n::-webkit-scrollbar-track {\r\n    background: #c0d8cd;\r\n}\r\n\r\n/* Handle */\r\n::-webkit-scrollbar-thumb {\r\n    background: #8eafa0;\r\n}\r\n::-webkit-scrollbar-thumb:hover {\r\n    background: #b0ddc9;\r\n}\r\n\r\nhtml {\r\n    box-sizing: border-box;\r\n}\r\nbody {\r\n    font-family: \"alk-mtav\";\r\n    font-weight: 400;\r\n    line-height: 1.3;\r\n    color: #2f3e51;\r\n    background: #fff;\r\n    overflow-x: hidden;\r\n    scroll-behavior: smooth;\r\n    font-size: 16px;\r\n    padding-top: 90px;\r\n}\r\np {\r\n    font-weight: 100;\r\n    line-height: 1.5;\r\n    font-family: \"bpg-nino\";\r\n    color: #4a2921;\r\n}\r\nh1 {\r\n    font-weight: 600;\r\n}\r\nul {\r\n    list-style: none;\r\n}\r\na {\r\n    text-decoration: none;\r\n    color: inherit;\r\n}\r\ninput,\r\ntextarea,\r\nbutton {\r\n    outline: none;\r\n    border: none;\r\n    background: none;\r\n}\r\nbutton {\r\n    cursor: pointer;\r\n    outline: none;\r\n}\r\nselect {\r\n    border: none;\r\n    outline: none;\r\n}\r\nimg {\r\n    height: auto;\r\n    max-width: 100%;\r\n}\r\n.img {\r\n    overflow: hidden;\r\n}\r\n.img img {\r\n    width: 100%;\r\n    height: 100%;\r\n    -o-object-fit: cover;\r\n       object-fit: cover;\r\n}\r\n.map iframe {\r\n    width: 100%;\r\n    height: 100%;\r\n}\r\n.wrapper {\r\n    width: 1360px;\r\n    height: 100%;\r\n    margin: auto;\r\n    position: relative;\r\n}\r\n.wrapper2 {\r\n    width: 1050px;\r\n    height: 100%;\r\n    margin: auto;\r\n    position: relative;\r\n}\r\n.flex {\r\n    display: flex;\r\n    align-items: center;\r\n    justify-content: space-between;\r\n}\r\n.flex.centered {\r\n    justify-content: center;\r\n}\r\n.slick-prev,\r\n.slick-next {\r\n    background: red !important;\r\n    width: 35px !important;\r\n    height: 35px !important;\r\n    z-index: 10;\r\n    opacity: 0;\r\n}\r\n.slick-prev {\r\n    left: 0 !important;\r\n}\r\n.slick-next {\r\n    right: 0 !important;\r\n}\r\n.bpg {\r\n    font-family: \"bpg-nino\";\r\n}\r\n.cursive {\r\n    font-family: \"dm-giorgi\";\r\n}\r\n.title35 {\r\n    font-size: 35px;\r\n}\r\n.title50 {\r\n    font-size: 50px;\r\n    width: -webkit-fit-content;\r\n    width: -moz-fit-content;\r\n    width: fit-content;\r\n    position: relative;\r\n    margin-bottom: 40px;\r\n}\r\n.title50::after {\r\n    width: 300px;\r\n    height: 3px;\r\n    left: 50%;\r\n    transform: translateX(-50%);\r\n    bottom: -10px;\r\n    background-color: #acd3c1;\r\n}\r\n.green {\r\n    color: #8eafa0;\r\n}\r\n.op05 {\r\n    opacity: 0.5;\r\n}\r\n.gradient-bg {\r\n    position: relative;\r\n}\r\n.gradient-bg::before {\r\n    width: 100%;\r\n    z-index: -1;\r\n    background: linear-gradient(to right, #acd3c1, transparent);\r\n    top: 50%;\r\n    left: -50%;\r\n    transform: translateY(-50%);\r\n}\r\n.gradient-bg.rtl::before {\r\n    width: 100vw;\r\n    background: linear-gradient(to left, #acd3c1, transparent);\r\n}\r\n.gradient-bg.h60::before {\r\n    height: 60px;\r\n}\r\n.gradient-bg.h100::before {\r\n    height: 100px;\r\n}\r\n\r\n@media screen and (max-width: 1420px) {\r\n    .wrapper {\r\n        width: 95%;\r\n    }\r\n    .title35 {\r\n        font-size: 30px;\r\n    }\r\n}\r\n@media screen and (max-width: 1200px) {\r\n    body {\r\n        font-size: 14px;\r\n    }\r\n    .title35 {\r\n        font-size: 25px;\r\n    }\r\n    .title50 {\r\n        font-size: 40px;\r\n    }\r\n    .title50::after {\r\n        width: 245px;\r\n        bottom: -3px;\r\n    }\r\n    .wrapper2 {\r\n        width: 95%;\r\n    }\r\n}\r\n@media screen and (max-width: 900px) {\r\n    .slick-prev,\r\n    .slick-next {\r\n        top: auto !important;\r\n        transform: none !important;\r\n        bottom: 45px !important;\r\n    }\r\n    body {\r\n        padding-top: 60px;\r\n    }\r\n}\r\n@media screen and (max-width: 600px) {\r\n    body {\r\n        padding-top: 50px;\r\n    }\r\n    .title35 {\r\n        font-size: 20px;\r\n    }\r\n    .title50 {\r\n        font-size: 30px;\r\n        margin-bottom: 20px;\r\n    }\r\n    .title50::after {\r\n        width: 98px;\r\n        bottom: -3px;\r\n    }\r\n    .gradient-bg.h100::before {\r\n        height: 64px;\r\n    }\r\n    .gradient-bg.rtl::before {\r\n        left: 0;\r\n    }\r\n    .form input,\r\n    .form textarea {\r\n        margin-bottom: 7px;\r\n        padding-left: 20px;\r\n    }\r\n}\r\n@media screen and (max-width: 420px) {\r\n    .title35 {\r\n        font-size: 18px;\r\n    }\r\n}\r\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -6970,7 +7008,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".hero_section .slide_img {\r\n    width: auto;\r\n    transition: 1s;\r\n    transition-delay: 0.2s;\r\n    transform: translateY(100%);\r\n}\r\n.hero_section .hero_slider {\r\n    padding-right: 35px;\r\n    text-align: center;\r\n}\r\n.hero_section .slick-active .slide_img {\r\n    transform: translateY(0);\r\n}\r\n.hero_section .hero_slider p {\r\n    transition: 1.2s;\r\n    margin: 20px 0;\r\n}\r\n.hero_section .hero_slider .content {\r\n    transition: 1.2s;\r\n    transform: translateY(-100%);\r\n    opacity: 0;\r\n}\r\n.hero_section .slick-active .content {\r\n    transform: translateY(0);\r\n    opacity: 1;\r\n}\r\n.hero_section .slick-active p {\r\n}\r\n.slick-slide.slick-active {\r\n    z-index: 999;\r\n}\r\n.hero_section .slide {\r\n    padding: 30px 0;\r\n}\r\n\r\n@media screen and (max-width: 1200px) {\r\n    .hero_section {\r\n        align-items: flex-end;\r\n    }\r\n    .hero_section .slide p {\r\n        margin: 14px 0;\r\n    }\r\n    .hero_section .slide {\r\n        align-items: flex-end;\r\n    }\r\n    .hero_section .content {\r\n        margin-bottom: 30px;\r\n    }\r\n}\r\n@media screen and (max-width: 1000px) {\r\n    .hero_section .slide {\r\n        flex-direction: column-reverse;\r\n        padding-top: 40px;\r\n    }\r\n    .hero_section .slide {\r\n        align-items: center;\r\n    }\r\n    .hero_section .hero_slider {\r\n        text-align: center;\r\n        padding-right: 0;\r\n    }\r\n    .hero_section .arrow_button {\r\n        top: auto;\r\n        transform: translateY(50%);\r\n        bottom: 50%;\r\n    }\r\n    .hero_section .arrow_button.arr_right {\r\n        right: -12px;\r\n    }\r\n    .hero_section .arrow_button.arr_left {\r\n        left: -12px;\r\n    }\r\n    .hero_section .slick-prev,\r\n    .hero_section .slick-next {\r\n        top: auto !important;\r\n        transform: translateY(50%) !important;\r\n        bottom: 50% !important;\r\n    }\r\n}\r\n\r\n@media screen and (max-width: 420px) {\r\n    .hero_section .slide {\r\n        padding-top: 53px;\r\n    }\r\n}\r\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, ".hero_section .slide_img {\r\n    width: auto;\r\n    transition: 1s;\r\n    transition-delay: 0.2s;\r\n    transform: translateY(100%);\r\n}\r\n.hero_section .hero_slider {\r\n    padding-right: 35px;\r\n    text-align: center;\r\n}\r\n.hero_section .slick-active .slide_img {\r\n    transform: translateY(0);\r\n}\r\n.hero_section .hero_slider p {\r\n    transition: 1.2s;\r\n    margin: 20px 0;\r\n}\r\n.hero_section .hero_slider .content {\r\n    transition: 1.2s;\r\n    transform: translateY(-100%);\r\n    opacity: 0;\r\n    max-width: 600px;\r\n    margin-left: 30px;\r\n}\r\n.hero_section .slick-active .content {\r\n    transform: translateY(0);\r\n    opacity: 1;\r\n}\r\n.hero_section .slick-active p {\r\n}\r\n.slick-slide.slick-active {\r\n    z-index: 999;\r\n}\r\n.hero_section .slide {\r\n    padding: 30px 0;\r\n    justify-content: center;\r\n}\r\n\r\n@media screen and (max-width: 1200px) {\r\n    .hero_section {\r\n        align-items: flex-end;\r\n    }\r\n    .hero_section .slide p {\r\n        margin: 14px 0;\r\n    }\r\n    .hero_section .slide {\r\n        align-items: flex-end;\r\n    }\r\n    .hero_section .content {\r\n        margin-bottom: 30px;\r\n    }\r\n}\r\n@media screen and (max-width: 1000px) {\r\n    .hero_section .slide {\r\n        flex-direction: column-reverse;\r\n        padding-top: 40px;\r\n    }\r\n    .hero_section .slide {\r\n        align-items: center;\r\n    }\r\n    .hero_section .hero_slider {\r\n        text-align: center;\r\n        padding-right: 0;\r\n    }\r\n    .hero_section .arrow_button {\r\n        top: auto;\r\n        transform: translateY(50%);\r\n        bottom: 50%;\r\n    }\r\n    .hero_section .arrow_button.arr_right {\r\n        right: -12px;\r\n    }\r\n    .hero_section .arrow_button.arr_left {\r\n        left: -12px;\r\n    }\r\n    .hero_section .slick-prev,\r\n    .hero_section .slick-next {\r\n        top: auto !important;\r\n        transform: translateY(50%) !important;\r\n        bottom: 50% !important;\r\n    }\r\n}\r\n\r\n@media screen and (max-width: 420px) {\r\n    .hero_section .slide {\r\n        padding-top: 53px;\r\n    }\r\n}\r\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -6994,7 +7032,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".why_our_product {\r\n    position: relative;\r\n    padding: 80px 0;\r\n}\r\n.why_our_product::before {\r\n    top: 0;\r\n    left: 0;\r\n    width: 100%;\r\n    height: 100%;\r\n    background-color: #fefbec;\r\n    z-index: -1;\r\n}\r\n.why_our_product .abs_img {\r\n    position: absolute;\r\n    top: -330px;\r\n    right: 0;\r\n    z-index: -1;\r\n}\r\n.why_our_product .left_content {\r\n    max-width: 450px;\r\n    margin-top: -400px;\r\n}\r\n.why_our_product .left_content .subscribe {\r\n    margin-top: 45px;\r\n}\r\n.why_our_product .left_content .subscribe input {\r\n    border: 2px solid #acd3c1;\r\n    border-radius: 15px;\r\n    background-color: #fff;\r\n    margin: 15px auto;\r\n    padding-left: 15px;\r\n    width: 352px;\r\n    height: 58px;\r\n    display: block;\r\n}\r\n\r\n.homePage .social_media {\r\n    margin-top: 200px;\r\n    text-align: center;\r\n}\r\n.homePage .social_media p {\r\n    margin-top: 18px;\r\n    margin-bottom: 40px;\r\n}\r\n\r\n.homePage .white {\r\n    padding: 50px 0;\r\n}\r\n.homePage .white .content {\r\n    max-width: 550px;\r\n    margin-left: 60px;\r\n}\r\n.homePage .content .title35 {\r\n    margin: 20px 0;\r\n}\r\n\r\n.homePage .our_products {\r\n    background-color: #fefbec;\r\n    padding: 85px 0;\r\n}\r\n.homePage .our_products .content {\r\n    max-width: 450px;\r\n}\r\n.homePage .our_products ul {\r\n    margin: 30px 0;\r\n}\r\n.homePage .our_products li {\r\n    margin-bottom: 20px;\r\n}\r\n.homePage .our_products li img {\r\n    margin-right: 15px;\r\n}\r\n.homePage .our_products .img {\r\n    border-radius: 15px;\r\n    height: 440px;\r\n    width: 50%;\r\n    overflow: hidden;\r\n}\r\n.homePage .blog_section {\r\n    padding-top: 22px;\r\n    padding-bottom: 100px;\r\n}\r\n.homePage .blog_section .grid {\r\n    display: grid;\r\n    grid-template-columns: repeat(4, 1fr);\r\n    grid-gap: 45px;\r\n    margin-top: 20px;\r\n}\r\n.homePage .faq {\r\n    text-align: center;\r\n    margin-bottom: 120px;\r\n}\r\n.homePage .form_section {\r\n    margin-bottom: 100px;\r\n    padding-top: 40px;\r\n}\r\n.homePage .form_section .form {\r\n    margin-left: 30px;\r\n}\r\n.homePage .form_section .img {\r\n    border-radius: 50%;\r\n    width: 549px;\r\n    height: 549px;\r\n    border: 5px solid #fff;\r\n    box-shadow: 0 10px 25px #19191d1f;\r\n}\r\n.homePage .form_section .img-holder {\r\n    position: relative;\r\n}\r\n.homePage .form_section .img-holder::before {\r\n    height: 100px;\r\n    width: 100%;\r\n    right: 50%;\r\n    top: 30%;\r\n    background: linear-gradient(to left, #5ec094, transparent);\r\n    z-index: -1;\r\n}\r\n.homePage .form_section .img-holder::after {\r\n    height: 100px;\r\n    width: 100%;\r\n    left: 50%;\r\n    bottom: 30%;\r\n    background: linear-gradient(to right, #5ec094, transparent);\r\n    z-index: -1;\r\n}\r\n\r\n@media screen and (max-width: 1330px) {\r\n    .why_our_product .left_content {\r\n        max-width: 390px;\r\n    }\r\n    .homePage .blog_section .grid {\r\n        grid-gap: 15px;\r\n    }\r\n}\r\n@media screen and (max-width: 1260px) {\r\n    .why_our_product .left_content {\r\n        margin-top: 0;\r\n        padding-bottom: 60px;\r\n        max-width: none;\r\n    }\r\n    .why_our_product .left_content .subscribe {\r\n        margin-top: 26px;\r\n    }\r\n    .homePage .white .content {\r\n        margin-left: 13px;\r\n    }\r\n    .why_our_product .left_content {\r\n        text-align: center;\r\n        transform: translateY(-725px);\r\n    }\r\n    .homePage .card_slider {\r\n        margin-top: 271px;\r\n    }\r\n    .homePage .social_media {\r\n        margin-top: -184px;\r\n    }\r\n}\r\n@media screen and (max-width: 1000px) {\r\n    .homePage .blog_section .grid {\r\n        grid-template-columns: repeat(2, 1fr);\r\n    }\r\n    .homePage .form_section .img {\r\n        width: 333px;\r\n        height: 333px;\r\n    }\r\n    .homePage .form_section {\r\n        align-items: flex-start;\r\n    }\r\n}\r\n@media screen and (max-width: 900px) {\r\n    .homePage .white {\r\n        padding: 50px 0;\r\n        flex-direction: column-reverse;\r\n    }\r\n    .homePage .white .content {\r\n        max-width: none;\r\n        margin-left: 0;\r\n        margin-bottom: 20px;\r\n    }\r\n    .homePage .our_products .wrapper {\r\n        flex-direction: column;\r\n    }\r\n    .homePage .our_products .content {\r\n        max-width: none;\r\n        margin-bottom: 30px;\r\n    }\r\n    .homePage .our_products .img {\r\n        height: auto;\r\n        width: auto;\r\n    }\r\n    .homePage .our_products {\r\n        padding: 40px 0;\r\n    }\r\n}\r\n@media screen and (max-width: 700px) {\r\n    .homePage .form_section {\r\n        align-items: center;\r\n        flex-direction: column-reverse;\r\n    }\r\n    .homePage .form_section .form {\r\n        margin-left: 0;\r\n        margin-bottom: 40px;\r\n    }\r\n}\r\n@media screen and (max-width: 500px) {\r\n    .homePage .blog_section .grid {\r\n        grid-template-columns: repeat(1, 1fr);\r\n    }\r\n    .homePage .blog_section,\r\n    .homePage .faq,\r\n    .special_products_sec {\r\n        display: none;\r\n    }\r\n    .why_our_product .left_content {\r\n        transform: translateY(-632px);\r\n    }\r\n    .homePage .social_media {\r\n        margin-top: -253px;\r\n    }\r\n}\r\n@media screen and (max-width: 400px) {\r\n    .why_our_product .left_content .subscribe input {\r\n        width: 100%;\r\n    }\r\n    .homePage .content .title35 {\r\n        margin: 10px 0;\r\n    }\r\n    .homePage .our_products li {\r\n        margin-bottom: 11px;\r\n    }\r\n    .homePage .our_products ul {\r\n        margin: 20px 0;\r\n    }\r\n    .homePage .form_section .img {\r\n        width: 293px;\r\n        height: 293px;\r\n    }\r\n}\r\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, ".why_our_product {\r\n    position: relative;\r\n    padding: 80px 0;\r\n}\r\n.why_our_product::before {\r\n    top: 0;\r\n    left: 0;\r\n    width: 100%;\r\n    height: 100%;\r\n    background-color: #fefbec;\r\n    z-index: -1;\r\n}\r\n.why_our_product .abs_img {\r\n    position: absolute;\r\n    top: -330px;\r\n    right: 0;\r\n    z-index: -1;\r\n}\r\n.why_our_product .left_content {\r\n    max-width: 450px;\r\n    margin-top: -400px;\r\n}\r\n.why_our_product .left_content .subscribe {\r\n    margin-top: 45px;\r\n}\r\n.why_our_product .left_content .subscribe input {\r\n    border: 2px solid #acd3c1;\r\n    border-radius: 15px;\r\n    background-color: #fff;\r\n    margin: 15px 0;\r\n    padding-left: 15px;\r\n    width: 352px;\r\n    height: 58px;\r\n    display: block;\r\n}\r\n.special_products_sec {\r\n    background-color: #acd3c1;\r\n}\r\n.homePage .social_media {\r\n    margin-top: 200px;\r\n    text-align: center;\r\n}\r\n.homePage .social_media p {\r\n    margin-top: 18px;\r\n    margin-bottom: 40px;\r\n}\r\n\r\n.homePage .white {\r\n    padding: 50px 0;\r\n}\r\n.homePage .white .content {\r\n    max-width: 550px;\r\n    margin-left: 60px;\r\n}\r\n.homePage .content .title35 {\r\n    margin: 20px 0;\r\n}\r\n\r\n.homePage .our_products {\r\n    background-color: #fefbec;\r\n    padding: 85px 0;\r\n}\r\n.homePage .our_products .content {\r\n    max-width: 450px;\r\n}\r\n.homePage .our_products ul {\r\n    margin: 30px 0;\r\n}\r\n.homePage .our_products li {\r\n    margin-bottom: 20px;\r\n}\r\n.homePage .our_products li img {\r\n    margin-right: 15px;\r\n}\r\n.homePage .our_products .img {\r\n    border-radius: 15px;\r\n    height: 440px;\r\n    width: 50%;\r\n    overflow: hidden;\r\n}\r\n.homePage .blog_section {\r\n    padding-top: 22px;\r\n    padding-bottom: 100px;\r\n}\r\n.homePage .blog_section .grid {\r\n    display: grid;\r\n    grid-template-columns: repeat(4, 1fr);\r\n    grid-gap: 45px;\r\n    margin-top: 20px;\r\n}\r\n.homePage .faq {\r\n    text-align: center;\r\n    margin-bottom: 120px;\r\n}\r\n.homePage .form_section {\r\n    margin-bottom: 100px;\r\n    padding-top: 40px;\r\n}\r\n.homePage .form_section .form {\r\n    margin-left: 30px;\r\n}\r\n.homePage .form_section .img {\r\n    border-radius: 50%;\r\n    width: 549px;\r\n    height: 549px;\r\n    border: 5px solid #fff;\r\n    box-shadow: 0 10px 25px #19191d1f;\r\n}\r\n.homePage .form_section .img-holder {\r\n    position: relative;\r\n}\r\n.homePage .form_section .img-holder::before {\r\n    height: 100px;\r\n    width: 100%;\r\n    right: 50%;\r\n    top: 30%;\r\n    background: linear-gradient(to left, #5ec094, transparent);\r\n    z-index: -1;\r\n}\r\n.homePage .form_section .img-holder::after {\r\n    height: 100px;\r\n    width: 100%;\r\n    left: 50%;\r\n    bottom: 30%;\r\n    background: linear-gradient(to right, #5ec094, transparent);\r\n    z-index: -1;\r\n}\r\n\r\n@media screen and (max-width: 1330px) {\r\n    .why_our_product .left_content {\r\n        max-width: 390px;\r\n    }\r\n    .homePage .blog_section .grid {\r\n        grid-gap: 15px;\r\n    }\r\n}\r\n@media screen and (max-width: 1260px) {\r\n    .why_our_product .left_content {\r\n        margin-top: 0;\r\n        padding-bottom: 60px;\r\n        max-width: none;\r\n    }\r\n    .why_our_product .left_content .subscribe {\r\n        margin-top: 26px;\r\n    }\r\n    .homePage .white .content {\r\n        margin-left: 13px;\r\n    }\r\n    .cards_subscribe_sec {\r\n        display: flex;\r\n        align-items: center;\r\n        justify-content: center;\r\n        flex-direction: column-reverse;\r\n    }\r\n}\r\n@media screen and (max-width: 1000px) {\r\n    .homePage .blog_section .grid {\r\n        grid-template-columns: repeat(2, 1fr);\r\n    }\r\n    .homePage .form_section .img {\r\n        width: 333px;\r\n        height: 333px;\r\n    }\r\n    .homePage .form_section {\r\n        align-items: flex-start;\r\n    }\r\n}\r\n@media screen and (max-width: 900px) {\r\n    .homePage .white {\r\n        padding: 50px 0;\r\n        flex-direction: column-reverse;\r\n    }\r\n    .homePage .white .content {\r\n        max-width: none;\r\n        margin-left: 0;\r\n        margin-bottom: 20px;\r\n    }\r\n    .homePage .our_products .wrapper {\r\n        flex-direction: column;\r\n    }\r\n    .homePage .our_products .content {\r\n        max-width: none;\r\n        margin-bottom: 30px;\r\n    }\r\n    .homePage .our_products .img {\r\n        height: auto;\r\n        width: auto;\r\n    }\r\n    .homePage .our_products {\r\n        padding: 40px 0;\r\n    }\r\n}\r\n@media screen and (max-width: 860px) {\r\n    .why_our_product {\r\n        padding-bottom: 0;\r\n    }\r\n    .social_media .arrow_button {\r\n        display: none;\r\n    }\r\n}\r\n@media screen and (max-width: 700px) {\r\n    .homePage .form_section {\r\n        align-items: center;\r\n        flex-direction: column-reverse;\r\n    }\r\n    .homePage .form_section .form {\r\n        margin-left: 0;\r\n        margin-bottom: 40px;\r\n    }\r\n    .homePage .social_media {\r\n        margin-top: 115px;\r\n    }\r\n    .homePage .social_media .sm {\r\n        border-top: #bf7e2f 3px solid;\r\n        border-bottom: #bf7e2f 3px solid;\r\n        padding: 12px 20px;\r\n        width: -webkit-fit-content;\r\n        width: -moz-fit-content;\r\n        width: fit-content;\r\n        margin: auto;\r\n    }\r\n    .homePage .social_media .sm path {\r\n        fill: #bf7e2f !important;\r\n    }\r\n    .homePage .social_media .sm a:nth-child(2) {\r\n        margin: 0 30px !important;\r\n    }\r\n}\r\n\r\n@media screen and (max-width: 500px) {\r\n    .homePage .blog_section .grid {\r\n        grid-template-columns: repeat(1, 1fr);\r\n    }\r\n}\r\n@media screen and (max-width: 400px) {\r\n    .why_our_product .left_content .subscribe input {\r\n        width: 100%;\r\n    }\r\n    .homePage .content .title35 {\r\n        margin: 10px 0;\r\n    }\r\n    .homePage .our_products li {\r\n        margin-bottom: 11px;\r\n    }\r\n    .homePage .our_products ul {\r\n        margin: 20px 0;\r\n    }\r\n    .homePage .form_section .img {\r\n        width: 293px;\r\n        height: 293px;\r\n    }\r\n    .why_our_product .left_content .subscribe {\r\n        text-align: center;\r\n    }\r\n    .why_our_product .left_content .subscribe div {\r\n        text-align: left;\r\n    }\r\n}\r\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -7018,7 +7056,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".card_slider {\r\n    max-width: 800px;\r\n    margin: auto;\r\n    margin-right: 0;\r\n}\r\n.card_slider .card {\r\n    background-color: #fff;\r\n    border-radius: 15px;\r\n    padding: 25px 18px;\r\n    text-align: center;\r\n    border: 1px solid;\r\n    overflow: hidden;\r\n    transition: all 0.3s;\r\n    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);\r\n}\r\n.card_slider .card svg {\r\n    height: 56px;\r\n    width: auto;\r\n}\r\n.card_slider .card p {\r\n    text-align: left;\r\n    line-height: 1.9;\r\n}\r\n.card_slider .swiper-slide-active {\r\n    border: 5px solid;\r\n}\r\n.card_slider .swiper-slide-prev,\r\n.card_slider .swiper-slide-next {\r\n    border: 3px solid;\r\n}\r\n\r\n.social_slider {\r\n    width: 1100px;\r\n    margin: 60px auto;\r\n    position: relative;\r\n}\r\n.social_slider .img {\r\n    width: 220px;\r\n    height: 220px;\r\n}\r\n\r\n@media screen and (max-width: 1360px) {\r\n    .social_slider {\r\n        width: 80%;\r\n    }\r\n}\r\n@media screen and (max-width: 1260px) {\r\n    .card_slider {\r\n        margin-right: auto;\r\n    }\r\n}\r\n@media screen and (max-width: 860px) {\r\n    .card_slider {\r\n        max-width: none;\r\n        width: 100%;\r\n    }\r\n    .social_media .arrow_button {\r\n        bottom: -92px;\r\n    }\r\n    .social_slider {\r\n        width: 100%;\r\n    }\r\n}\r\n@media screen and (max-width: 500px) {\r\n    .card_slider .swiper-container {\r\n        height: 250px !important;\r\n    }\r\n}\r\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, ".card_slider {\r\n    max-width: 800px;\r\n    margin: auto;\r\n    margin-right: 0;\r\n}\r\n.card_slider .card {\r\n    background-color: #fff;\r\n    border-radius: 15px;\r\n    padding: 25px 18px;\r\n    text-align: center;\r\n    border: 1px solid;\r\n    overflow: hidden;\r\n    transition: all 0.3s;\r\n    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);\r\n}\r\n.card_slider .card svg {\r\n    height: 56px;\r\n    width: auto;\r\n}\r\n.card_slider .card p {\r\n    text-align: left;\r\n    line-height: 1.9;\r\n}\r\n.card_slider .swiper-slide-active {\r\n    border: 5px solid;\r\n}\r\n.card_slider .swiper-slide-prev,\r\n.card_slider .swiper-slide-next {\r\n    border: 3px solid;\r\n}\r\n\r\n.social_slider {\r\n    width: 1100px;\r\n    margin: 60px auto;\r\n    position: relative;\r\n}\r\n.social_slider .img {\r\n    width: 220px;\r\n    height: 220px;\r\n}\r\n\r\n@media screen and (max-width: 1360px) {\r\n    .social_slider {\r\n        width: 80%;\r\n    }\r\n}\r\n@media screen and (max-width: 1260px) {\r\n    .card_slider {\r\n        margin-right: auto;\r\n    }\r\n}\r\n@media screen and (max-width: 860px) {\r\n    .card_slider {\r\n        max-width: none;\r\n        width: 100%;\r\n    }\r\n    .social_media .arrow_button {\r\n        bottom: -92px;\r\n    }\r\n    .social_slider {\r\n        width: 100%;\r\n    }\r\n    .social_slider {\r\n        width: 120%;\r\n        margin-left: -10%;\r\n        margin-bottom: 0;\r\n    }\r\n}\r\n@media screen and (max-width: 500px) {\r\n    .card_slider .card {\r\n        width: 90% !important;\r\n    }\r\n}\r\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -7162,7 +7200,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".main_button {\r\n    color: #fff;\r\n    background-color: #acd3c1;\r\n    border-radius: 26px;\r\n    height: 52px;\r\n    padding: 0 30px;\r\n    min-width: 170px;\r\n    font-size: 20px;\r\n    position: relative;\r\n    z-index: 1000;\r\n    transition: 0.3s;\r\n}\r\n.main_button:hover {\r\n    background-color: #99c5b1;\r\n\r\n    transform: scale(0.95);\r\n}\r\n.arrow_button {\r\n    width: -webkit-fit-content;\r\n    width: -moz-fit-content;\r\n    width: fit-content;\r\n    border-radius: 50%;\r\n    position: absolute;\r\n    top: 50%;\r\n    transform: translateY(-50%);\r\n    transition: 0.2s;\r\n    cursor: default;\r\n    cursor: pointer;\r\n}\r\n.arrow_button.arr_left {\r\n    left: -22px;\r\n}\r\n.arrow_button.arr_right {\r\n    right: -22px;\r\n}\r\n\r\n@media screen and (max-width: 900px) {\r\n    .arrow_button {\r\n        top: auto;\r\n        transform: none;\r\n        bottom: 20px;\r\n    }\r\n    .arrow_button.arr_left {\r\n        left: 0;\r\n    }\r\n    .arrow_button.arr_right {\r\n        right: 0;\r\n    }\r\n}\r\n@media screen and (max-width: 600px) {\r\n    .main_button {\r\n        height: 45px;\r\n        padding: 0 25px;\r\n        min-width: 140px;\r\n        font-size: 16px;\r\n    }\r\n}\r\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, ".main_button {\r\n    color: #fff;\r\n    background-color: #bf7e2f;\r\n    border-radius: 26px;\r\n    height: 52px;\r\n    padding: 0 30px;\r\n    min-width: 170px;\r\n    font-size: 20px;\r\n    position: relative;\r\n    z-index: 1000;\r\n    transition: 0.3s;\r\n}\r\n.main_button:hover {\r\n    background-color: #b6772b;\r\n\r\n    transform: scale(0.95);\r\n}\r\n.arrow_button {\r\n    width: -webkit-fit-content;\r\n    width: -moz-fit-content;\r\n    width: fit-content;\r\n    border-radius: 50%;\r\n    position: absolute;\r\n    top: 50%;\r\n    transform: translateY(-50%);\r\n    transition: 0.2s;\r\n    cursor: default;\r\n    cursor: pointer;\r\n}\r\n.arrow_button.arr_left {\r\n    left: -22px;\r\n}\r\n.arrow_button.arr_right {\r\n    right: -22px;\r\n}\r\n\r\n@media screen and (max-width: 900px) {\r\n    .arrow_button {\r\n        top: auto;\r\n        transform: none;\r\n        bottom: 20px;\r\n    }\r\n    .arrow_button.arr_left {\r\n        left: 0;\r\n    }\r\n    .arrow_button.arr_right {\r\n        right: 0;\r\n    }\r\n}\r\n@media screen and (max-width: 600px) {\r\n    .main_button {\r\n        height: 45px;\r\n        padding: 0 25px;\r\n        min-width: 140px;\r\n        font-size: 16px;\r\n    }\r\n}\r\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -7234,7 +7272,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".form {\r\n  width: 622px;\r\n  text-align: center;\r\n}\r\n.form .title35 {\r\n  margin-bottom: 30px;\r\n}\r\n.form input,\r\n.form textarea {\r\n  border-radius: 10px;\r\n  background-color: #fefbec;\r\n  width: 100%;\r\n  height: 50px;\r\n  margin-bottom: 20px;\r\n  padding-left: 20px;\r\n}\r\n.form input::-moz-placeholder, .form textarea::-moz-placeholder {\r\n  color: #8eafa0;\r\n}\r\n.form input:-ms-input-placeholder, .form textarea:-ms-input-placeholder {\r\n  color: #8eafa0;\r\n}\r\n.form input::placeholder,\r\n.form textarea::placeholder {\r\n  color: #8eafa0;\r\n}\r\n.form textarea {\r\n  height: 100px;\r\n  margin-bottom: 30px;\r\n  padding-top: 10px;\r\n}\r\n\r\n@media screen and (max-width: 700px) {\r\n  .form {\r\n    width: 100%;\r\n  }\r\n}\r\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, ".form {\r\n    width: 622px;\r\n    text-align: center;\r\n}\r\n.form .title35 {\r\n    margin-bottom: 30px;\r\n}\r\n.form input,\r\n.form textarea {\r\n    border-radius: 10px;\r\n    background-color: #f5f5f5;\r\n    width: 100%;\r\n    height: 50px;\r\n    margin-bottom: 20px;\r\n    padding-left: 20px;\r\n}\r\n.form input::-moz-placeholder, .form textarea::-moz-placeholder {\r\n    color: #8eafa0;\r\n}\r\n.form input:-ms-input-placeholder, .form textarea:-ms-input-placeholder {\r\n    color: #8eafa0;\r\n}\r\n.form input::placeholder,\r\n.form textarea::placeholder {\r\n    color: #8eafa0;\r\n}\r\n.form textarea {\r\n    height: 100px;\r\n    margin-bottom: 30px;\r\n    padding-top: 10px;\r\n}\r\n\r\n@media screen and (max-width: 700px) {\r\n    .form {\r\n        width: 100%;\r\n    }\r\n}\r\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -7258,7 +7296,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".header {\r\n    background-color: #acd3c1;\r\n    color: #fff;\r\n    position: fixed;\r\n    width: 100%;\r\n    height: 90px;\r\n    top: 0;\r\n    left: 0;\r\n    z-index: 2000;\r\n}\r\n.header .wrapper {\r\n    position: relative;\r\n}\r\n.languages.mobile {\r\n    display: none;\r\n}\r\n.mobile_logo_text {\r\n    position: absolute;\r\n    left: 0;\r\n    top: 50%;\r\n    transform: translateY(-50%);\r\n    font-size: 20px;\r\n    display: none;\r\n}\r\n.mobile_logo_img {\r\n    display: none;\r\n}\r\n.menu_btn {\r\n    display: none;\r\n}\r\n.header .logo {\r\n    position: absolute;\r\n    left: 50%;\r\n    transform: translateX(-50%);\r\n    top: 15px;\r\n    width: auto;\r\n    height: auto;\r\n}\r\n.header .languages {\r\n    position: absolute;\r\n    top: 50%;\r\n    transform: translateY(-50%);\r\n    right: 0;\r\n    cursor: default;\r\n    text-transform: uppercase;\r\n}\r\n.header .languages .drop {\r\n    position: absolute;\r\n    left: 0;\r\n    top: 100%;\r\n    transform: translateY(-100%);\r\n    opacity: 0;\r\n    transition: 0.2s;\r\n}\r\n.header .languages:hover .drop {\r\n    transform: translateY(0);\r\n    opacity: 1;\r\n}\r\n.header .languages .on {\r\n    position: relative;\r\n}\r\n.header .languages .on::after {\r\n    right: -14px;\r\n    top: 0;\r\n    width: 13px;\r\n    height: 13px;\r\n    background: url(/assets/images/icons/triangle.svg) no-repeat;\r\n    background-position: center;\r\n    background-size: contain;\r\n    transition: 0.2s;\r\n}\r\n.header .languages:hover .on::after {\r\n    transform: rotate(180deg);\r\n}\r\n.header .navbar {\r\n    margin-left: -153px;\r\n}\r\n.header .nav_link {\r\n    margin: 0 35px;\r\n    position: relative;\r\n}\r\n.header .navbar .nav_link:nth-child(5) {\r\n    margin-right: 200px;\r\n}\r\n\r\n.header .nav_link::after {\r\n    left: 50%;\r\n    bottom: -10px;\r\n    width: 16px;\r\n    height: 5px;\r\n    border-radius: 3px;\r\n    background-color: #fff;\r\n    transition: 0.2s;\r\n    transform: translateX(-50%) scaleX(0);\r\n    transform-origin: center;\r\n}\r\n.header .nav_link:hover::after,\r\n.header .nav_link.active::after {\r\n    transform: translateX(-50%) scaleX(1);\r\n}\r\n\r\n@media screen and (max-width: 1260px) {\r\n    .header {\r\n        height: 80px;\r\n    }\r\n    .header .nav_link {\r\n        margin: 0 17px;\r\n    }\r\n    .header .navbar .nav_link:nth-child(5) {\r\n        margin-right: 153px;\r\n    }\r\n    .header .logo {\r\n        top: 5px;\r\n    }\r\n    .header .navbar {\r\n        margin-left: -112px;\r\n    }\r\n}\r\n@media screen and (max-width: 1200px) {\r\n    .header .navbar {\r\n        margin-left: -102px;\r\n    }\r\n}\r\n\r\n@media screen and (max-width: 900px) {\r\n    .header {\r\n        height: 60px;\r\n    }\r\n\r\n    .header .logo {\r\n        display: none;\r\n    }\r\n    .mobile_logo_text {\r\n        display: block;\r\n    }\r\n    .mobile_logo_img {\r\n        display: block;\r\n        width: 122px;\r\n        margin: 10px 0;\r\n        margin-left: 50px;\r\n    }\r\n    .header .navbar {\r\n        position: absolute;\r\n        left: 54px;\r\n        top: 100%;\r\n        height: 100vh;\r\n        background-color: #acd3c1;\r\n        color: #fff;\r\n        display: flex;\r\n        flex-direction: column;\r\n        transform: translateX(-100%);\r\n        transition: 0.2s;\r\n        z-index: 1000;\r\n    }\r\n    .header .navbar.open {\r\n        transform: translateX(0);\r\n    }\r\n    .header .nav_link {\r\n        margin: 0px;\r\n        padding: 16px 10px;\r\n        padding-left: 50px;\r\n        width: 250px;\r\n        transition: 0.2s;\r\n    }\r\n    .header .nav_link::after {\r\n        display: none;\r\n    }\r\n    .header .nav_link:hover,\r\n    .header .nav_link.active {\r\n        background-color: #fefbec;\r\n        color: #acd3c1;\r\n    }\r\n    .header .navbar .nav_link:nth-child(5) {\r\n        margin: 0;\r\n    }\r\n    .header .wrapper {\r\n        justify-content: flex-start;\r\n        flex-direction: row-reverse;\r\n    }\r\n    .menu_btn {\r\n        display: inline-block;\r\n    }\r\n    .menu_btn .span {\r\n        height: 3px;\r\n        width: 30px;\r\n        background-color: #fff;\r\n        margin: 4px 0;\r\n        transition: 0.2s;\r\n    }\r\n    .menu_btn .span:first-child {\r\n        width: 24px;\r\n    }\r\n    .menu_btn.clicked .span:first-child {\r\n        transform: rotate(45deg);\r\n        margin: -3px 0;\r\n        width: 30px;\r\n    }\r\n    .menu_btn.clicked .span:last-child {\r\n        transform: rotate(-45deg);\r\n        margin: -3px 0;\r\n    }\r\n    .header .languages {\r\n        display: none;\r\n    }\r\n    .languages.mobile {\r\n        display: block;\r\n        position: relative;\r\n        top: auto;\r\n        transform: none;\r\n        right: auto;\r\n        margin-left: 50px;\r\n        padding-top: 20px;\r\n    }\r\n    .languages.mobile .on {\r\n        width: -webkit-fit-content;\r\n        width: -moz-fit-content;\r\n        width: fit-content;\r\n    }\r\n}\r\n@media screen and (max-width: 600px) {\r\n    .header {\r\n        font-size: 14px;\r\n        height: 52px;\r\n    }\r\n    .header .logo {\r\n        width: 100px;\r\n    }\r\n}\r\n@media screen and (max-width: 420px) {\r\n    .header .logo {\r\n        width: 73px;\r\n        top: 2px;\r\n    }\r\n    .header .nav_link {\r\n        width: 212px;\r\n    }\r\n    .header .languages .on::after {\r\n        right: -11px;\r\n        width: 10px;\r\n        height: 10px;\r\n    }\r\n}\r\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, ".header {\r\n    background-color: #7cbc9f;\r\n    color: #fff;\r\n    position: fixed;\r\n    width: 100%;\r\n    height: 90px;\r\n    top: 0;\r\n    left: 0;\r\n    z-index: 2200;\r\n}\r\n.header .wrapper {\r\n    position: relative;\r\n}\r\n.languages.mobile {\r\n    display: none;\r\n}\r\n.mobile_logo_text {\r\n    position: absolute;\r\n    left: 0;\r\n    top: 50%;\r\n    transform: translateY(-50%);\r\n    font-size: 20px;\r\n    display: none;\r\n}\r\n.mobile_logo_img {\r\n    display: none;\r\n}\r\n.menu_btn {\r\n    display: none;\r\n}\r\n.header .logo {\r\n    position: absolute;\r\n    left: 50%;\r\n    transform: translateX(-50%);\r\n    top: 15px;\r\n    width: auto;\r\n    height: auto;\r\n}\r\n.header .languages {\r\n    position: absolute;\r\n    top: 50%;\r\n    transform: translateY(-50%);\r\n    right: 0;\r\n    cursor: default;\r\n    text-transform: uppercase;\r\n}\r\n.header .languages .drop {\r\n    position: absolute;\r\n    left: 0;\r\n    top: 100%;\r\n    transform: translateY(-100%);\r\n    opacity: 0;\r\n    transition: 0.2s;\r\n}\r\n.header .languages:hover .drop {\r\n    transform: translateY(0);\r\n    opacity: 1;\r\n}\r\n.header .languages .on {\r\n    position: relative;\r\n}\r\n.header .languages .on::after {\r\n    right: -14px;\r\n    top: 0;\r\n    width: 13px;\r\n    height: 13px;\r\n    background: url(/assets/images/icons/triangle.svg) no-repeat;\r\n    background-position: center;\r\n    background-size: contain;\r\n    transition: 0.2s;\r\n}\r\n.header .languages:hover .on::after {\r\n    transform: rotate(180deg);\r\n}\r\n.header .navbar {\r\n    margin-left: -153px;\r\n}\r\n.header .nav_link {\r\n    margin: 0 35px;\r\n    position: relative;\r\n}\r\n.header .navbar .nav_link:nth-child(5) {\r\n    margin-right: 200px;\r\n}\r\n\r\n.header .nav_link::after {\r\n    left: 50%;\r\n    bottom: -10px;\r\n    width: 16px;\r\n    height: 5px;\r\n    border-radius: 3px;\r\n    background-color: #fff;\r\n    transition: 0.2s;\r\n    transform: translateX(-50%) scaleX(0);\r\n    transform-origin: center;\r\n}\r\n.header .nav_link:hover::after,\r\n.header .nav_link.active::after {\r\n    transform: translateX(-50%) scaleX(1);\r\n}\r\n\r\n@media screen and (max-width: 1260px) {\r\n    .header {\r\n        height: 80px;\r\n    }\r\n    .header .nav_link {\r\n        margin: 0 17px;\r\n    }\r\n    .header .navbar .nav_link:nth-child(5) {\r\n        margin-right: 153px;\r\n    }\r\n    .header .logo {\r\n        top: 5px;\r\n    }\r\n    .header .navbar {\r\n        margin-left: -112px;\r\n    }\r\n}\r\n@media screen and (max-width: 1200px) {\r\n    .header .navbar {\r\n        margin-left: -102px;\r\n    }\r\n}\r\n\r\n@media screen and (max-width: 900px) {\r\n    .header {\r\n        height: 60px;\r\n        box-shadow: 0 5px 15px #0c1b2e21;\r\n    }\r\n\r\n    .header .logo {\r\n        display: none;\r\n    }\r\n    .mobile_logo_text {\r\n        display: block;\r\n    }\r\n    .mobile_logo_img {\r\n        display: block;\r\n        width: 122px;\r\n        margin: 10px 0;\r\n        margin-left: 50px;\r\n    }\r\n    .header .navbar {\r\n        position: absolute;\r\n        left: 54px;\r\n        top: 0;\r\n        height: 100vh;\r\n        background-color: #444444;\r\n        color: #fff;\r\n        display: flex;\r\n        flex-direction: column;\r\n        transform: translateX(-100%);\r\n        transition: 0.2s;\r\n        z-index: 1000;\r\n    }\r\n    .header .navbar.open {\r\n        transform: translateX(0);\r\n    }\r\n    .header .nav_link {\r\n        margin: 0px;\r\n        padding: 16px 10px;\r\n        padding-left: 50px;\r\n        width: 330px;\r\n        transition: 0.2s;\r\n    }\r\n    .header .nav_link::after {\r\n        display: none;\r\n    }\r\n    .header .nav_link:hover,\r\n    .header .nav_link.active {\r\n        background-color: #bf7e2f;\r\n    }\r\n    .header .navbar .nav_link:nth-child(5) {\r\n        margin: 0;\r\n    }\r\n    .header .wrapper {\r\n        justify-content: flex-start;\r\n        flex-direction: row-reverse;\r\n    }\r\n    .menu_btn {\r\n        display: inline-block;\r\n    }\r\n    .menu_btn .span {\r\n        height: 2px;\r\n        width: 30px;\r\n        background-color: #fff;\r\n        margin: 4px 0;\r\n        transition: 0.2s;\r\n    }\r\n    .menu_btn.clicked .span:nth-child(1) {\r\n        transform: rotate(45deg);\r\n        margin: -6px 0;\r\n        width: 30px;\r\n    }\r\n    .menu_btn.clicked .span:nth-child(2) {\r\n        transform: scale(0);\r\n    }\r\n    .menu_btn.clicked .span:nth-child(3) {\r\n        transform: rotate(-45deg);\r\n        margin: -6px 0;\r\n    }\r\n    .menu_btn.clicked {\r\n        margin-bottom: -9px;\r\n    }\r\n    .header .languages {\r\n        display: none;\r\n    }\r\n    .languages.mobile {\r\n        display: flex;\r\n        justify-content: flex-start;\r\n        position: relative;\r\n        top: auto;\r\n        transform: none;\r\n        right: auto;\r\n        margin-left: 50px;\r\n        padding-top: 20px;\r\n    }\r\n    .languages.mobile .on {\r\n        width: -webkit-fit-content;\r\n        width: -moz-fit-content;\r\n        width: fit-content;\r\n        margin-right: 30px;\r\n    }\r\n    .languages.mobile .drop {\r\n        position: relative;\r\n        left: auto !important;\r\n        top: auto !important;\r\n        transform: none !important;\r\n        opacity: 0.2 !important;\r\n    }\r\n    .header .languages .on::after {\r\n        display: none;\r\n    }\r\n}\r\n@media screen and (max-width: 600px) {\r\n    .header {\r\n        font-size: 14px;\r\n        height: 52px;\r\n    }\r\n    .header .logo {\r\n        width: 100px;\r\n    }\r\n}\r\n@media screen and (max-width: 420px) {\r\n    .header .logo {\r\n        width: 73px;\r\n        top: 2px;\r\n    }\r\n    .header .languages .on::after {\r\n        right: -11px;\r\n        width: 10px;\r\n        height: 10px;\r\n    }\r\n    .header .nav_link {\r\n        width: 280px;\r\n    }\r\n    .mobile_logo_img {\r\n        width: 74px;\r\n        margin-top: 20px;\r\n    }\r\n}\r\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 

@@ -27,13 +27,15 @@
     border: 2px solid #acd3c1;
     border-radius: 15px;
     background-color: #fff;
-    margin: 15px auto;
+    margin: 15px 0;
     padding-left: 15px;
     width: 352px;
     height: 58px;
     display: block;
 }
-
+.special_products_sec {
+    background-color: #acd3c1;
+}
 .homePage .social_media {
     margin-top: 200px;
     text-align: center;
@@ -144,15 +146,11 @@
     .homePage .white .content {
         margin-left: 13px;
     }
-    .why_our_product .left_content {
-        text-align: center;
-        transform: translateY(-725px);
-    }
-    .homePage .card_slider {
-        margin-top: 271px;
-    }
-    .homePage .social_media {
-        margin-top: -184px;
+    .cards_subscribe_sec {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column-reverse;
     }
 }
 @media screen and (max-width: 1000px) {
@@ -192,6 +190,14 @@
         padding: 40px 0;
     }
 }
+@media screen and (max-width: 860px) {
+    .why_our_product {
+        padding-bottom: 0;
+    }
+    .social_media .arrow_button {
+        display: none;
+    }
+}
 @media screen and (max-width: 700px) {
     .homePage .form_section {
         align-items: center;
@@ -201,21 +207,27 @@
         margin-left: 0;
         margin-bottom: 40px;
     }
+    .homePage .social_media {
+        margin-top: 115px;
+    }
+    .homePage .social_media .sm {
+        border-top: #bf7e2f 3px solid;
+        border-bottom: #bf7e2f 3px solid;
+        padding: 12px 20px;
+        width: fit-content;
+        margin: auto;
+    }
+    .homePage .social_media .sm path {
+        fill: #bf7e2f !important;
+    }
+    .homePage .social_media .sm a:nth-child(2) {
+        margin: 0 30px !important;
+    }
 }
+
 @media screen and (max-width: 500px) {
     .homePage .blog_section .grid {
         grid-template-columns: repeat(1, 1fr);
-    }
-    .homePage .blog_section,
-    .homePage .faq,
-    .special_products_sec {
-        display: none;
-    }
-    .why_our_product .left_content {
-        transform: translateY(-632px);
-    }
-    .homePage .social_media {
-        margin-top: -253px;
     }
 }
 @media screen and (max-width: 400px) {
@@ -234,5 +246,11 @@
     .homePage .form_section .img {
         width: 293px;
         height: 293px;
+    }
+    .why_our_product .left_content .subscribe {
+        text-align: center;
+    }
+    .why_our_product .left_content .subscribe div {
+        text-align: left;
     }
 }

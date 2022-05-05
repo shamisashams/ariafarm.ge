@@ -75,12 +75,13 @@ const Header = () => {
                     className="mobile_logo_text cursive"
                     href={route("client.home.index")}
                 >
-                    {__('client.logo_text',sharedData)}
+                    <img src="/assets/images/logo/3.png" alt="" />
                 </Link>
                 <button
                     onClick={() => toggleMenu()}
                     className={menu ? "menu_btn clicked" : "menu_btn"}
                 >
+                    <div className="span"></div>
                     <div className="span"></div>
                     <div className="span"></div>
                 </button>

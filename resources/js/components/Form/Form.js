@@ -60,7 +60,7 @@ export const Form = () => {
     ];
     return (
         <div className="form" data-aos="fade-up">
-            <div className="title35 green">
+            <div className="title35 ">
                 {__("client.form_header", sharedData)}
             </div>
             {inputs.map((item, index) => {

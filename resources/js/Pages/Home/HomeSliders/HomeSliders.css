@@ -60,9 +60,14 @@
     .social_slider {
         width: 100%;
     }
+    .social_slider {
+        width: 120%;
+        margin-left: -10%;
+        margin-bottom: 0;
+    }
 }
 @media screen and (max-width: 500px) {
-    .card_slider .swiper-container {
-        height: 250px !important;
+    .card_slider .card {
+        width: 90% !important;
     }
 }
