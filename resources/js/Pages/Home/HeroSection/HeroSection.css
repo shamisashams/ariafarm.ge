@@ -79,6 +79,9 @@
         transform: translateY(50%) !important;
         bottom: 50% !important;
     }
+    .hero_section .hero_slider .content {
+        margin-left: 0;
+    }
 }
 
 @media screen and (max-width: 420px) {

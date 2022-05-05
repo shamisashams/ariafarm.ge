@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef, useEffect } from "react";
 //import { Link, useLocation } from "react-router-dom";
 import { Link } from "@inertiajs/inertia-react";
 //import Logo from "../../assets/images/logo/1.png";
@@ -25,6 +25,27 @@ function validURL(str) {
 }
 
 const Header = () => {
+    function useOutsideAlerter(ref) {
+        useEffect(() => {
+            /**
+             * Alert if clicked on outside of element
+             */
+            function handleClickOutside(event) {
+                if (ref.current && !ref.current.contains(event.target)) {
+                    setMenu(false);
+                }
+            }
+            // Bind the event listener
+            document.addEventListener("mousedown", handleClickOutside);
+            return () => {
+                // Unbind the event listener on clean up
+                document.removeEventListener("mousedown", handleClickOutside);
+            };
+        }, [ref]);
+    }
+    const wrapperRef = useRef(null);
+    useOutsideAlerter(wrapperRef);
+
     //const { pathname } = useLocation();
 
     const sharedData = usePage().props.localizations;
@@ -88,7 +109,10 @@ const Header = () => {
                 <Link className="logo" href={route("client.home.index")}>
                     <img src="/assets/images/logo/1.png" alt="" />
                 </Link>
-                <div className={menu ? "navbar open" : "navbar"}>
+                <div
+                    ref={wrapperRef}
+                    className={menu ? "navbar open" : "navbar"}
+                >
                     <img
                         className="mobile_logo_img"
                         src="/assets/images/logo/1.png"
