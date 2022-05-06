@@ -5254,8 +5254,7 @@ __webpack_require__.r(__webpack_exports__);
 var BlogBoxSmall = function BlogBoxSmall(props) {
   var sharedData = (0,_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__.usePage)().props.localizations;
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
-    className: "blogbox blogbox_small",
-    "data-aos": "flip-right"
+    className: "blogbox blogbox_small"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "img"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", {
