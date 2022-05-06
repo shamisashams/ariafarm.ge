@@ -5,6 +5,7 @@ import { Link } from "@inertiajs/inertia-react";
 import "./Header.css";
 
 import { usePage } from "@inertiajs/inertia-react";
+import { SocialLinks } from "../SmallComps/SocialLinks";
 
 const getPathFromUrl = (url) => {
     let url_ = new URL(url);
@@ -160,6 +161,7 @@ const Header = () => {
                             })}
                         </div>
                     </div>
+                    <SocialLinks />
                 </div>
                 <div className="languages">
                     {Object.keys(locales).map((name, index) => {

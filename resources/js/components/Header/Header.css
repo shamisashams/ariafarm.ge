@@ -8,6 +8,9 @@
     left: 0;
     z-index: 2200;
 }
+.navbar .sm {
+    display: none;
+}
 .header .wrapper {
     position: relative;
 }
@@ -153,6 +156,18 @@
         transition: 0.2s;
         z-index: 1000;
     }
+    .navbar .sm {
+        display: flex;
+        justify-content: flex-start;
+        margin-left: 50px;
+        margin-top: 50px;
+    }
+    .navbar .sm a:nth-child(2) {
+        margin: 0 27px !important;
+    }
+    .navbar .sm path {
+        fill: #fff;
+    }
     .header .navbar.open {
         transform: translateX(0);
     }
@@ -255,5 +270,13 @@
     .mobile_logo_img {
         width: 74px;
         margin-top: 20px;
+    }
+}
+@media screen and (max-height: 600px) {
+    .header .nav_link {
+        padding: 11px 10px;
+    }
+    .navbar .sm {
+        margin-top: 36px;
     }
 }

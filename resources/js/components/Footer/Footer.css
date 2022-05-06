@@ -94,4 +94,7 @@
     .footer .bottom .flex {
         margin-top: 20px;
     }
+    .footer {
+        border-top: none;
+    }
 }

@@ -171,12 +171,12 @@
 @media screen and (max-width: 900px) {
     .homePage .white {
         padding: 50px 0;
-        flex-direction: column-reverse;
+        flex-direction: column;
     }
     .homePage .white .content {
         max-width: none;
         margin-left: 0;
-        margin-bottom: 20px;
+        margin-top: 20px;
     }
     .homePage .our_products .wrapper {
         flex-direction: column;
@@ -204,11 +204,11 @@
 @media screen and (max-width: 700px) {
     .homePage .form_section {
         align-items: center;
-        flex-direction: column-reverse;
+        flex-direction: column;
     }
     .homePage .form_section .form {
         margin-left: 0;
-        margin-bottom: 40px;
+        margin-top: 55px;
     }
     .homePage .social_media {
         margin-top: 115px;

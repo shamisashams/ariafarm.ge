@@ -34,7 +34,7 @@ export const SocialLinks = () => {
                 </Link>
             ) : null}
             {info.active.instagram === 1 ? (
-                <Link href={info.instagram} style={{ margin: "0 45px" }}>
+                <Link href={info.instagram} style={{ margin: "0 37px" }}>
                     <svg
                         xmlns="http://www.w3.org/2000/svg"
                         width="26.544"
