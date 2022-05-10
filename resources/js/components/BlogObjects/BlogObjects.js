@@ -15,7 +15,7 @@ import { SocialLinks2 } from "../SmallComps/SocialLinks";
 export const BlogBoxSmall = (props) => {
     const sharedData = usePage().props.localizations;
     return (
-        <div className="blogbox blogbox_small" data-aos="flip-right">
+        <div className="blogbox blogbox_small">
             <div className="img">
                 <img src={props.img} alt="" />
             </div>

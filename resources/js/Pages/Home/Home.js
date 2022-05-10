@@ -82,7 +82,7 @@ const Home = ({ seo, page }) => {
     return (
         <Layout seo={seo}>
             <div className="homePage">
-                <SearchInput color="#ACD3C1" />
+                <SearchInput color="#000" />
                 <HeroSection />
                 <div className="why_our_product">
                     <img
@@ -90,43 +90,58 @@ const Home = ({ seo, page }) => {
                         src="/assets/images/home/2.png"
                         alt=""
                     />
-                    <div className="wrapper cards">
-                        <CardSlider cardData={cards} />
-                    </div>
-                    <div className="wrapper">
-                        <div className="left_content">
-                            <div className="title35">
-                                {__("client.home_section1_header", sharedData)}
-                            </div>
-                            <p className="op05">
-                                {__("client.home_section1_text", sharedData)}
-                            </p>
-                            <div className="subscribe">
-                                <div>
-                                    {__("client.section1_header2", sharedData)}
+                    <div className="cards_subscribe_sec">
+                        <div className="wrapper cards">
+                            <CardSlider cardData={cards} />
+                        </div>
+                        <div className="wrapper">
+                            <div className="left_content">
+                                <div className="title35">
+                                    {__(
+                                        "client.home_section1_header",
+                                        sharedData
+                                    )}
                                 </div>
-                                <input
-                                    name="email"
-                                    id="s_email"
-                                    className="bpg"
-                                    type="text"
-                                    placeholder={__(
-                                        "client.home_enter_email_placeholder",
+                                <p className="op05">
+                                    {__(
+                                        "client.home_section1_text",
                                         sharedData
                                     )}
-                                />
-                                {errors.email && (
-                                    <div className="error">{errors.email}</div>
-                                )}
-                                <MainButton
-                                    text={__(
-                                        "client.subscribe_btn",
-                                        sharedData
+                                </p>
+                                <div className="subscribe">
+                                    <div>
+                                        {__(
+                                            "client.section1_header2",
+                                            sharedData
+                                        )}
+                                    </div>
+                                    <input
+                                        name="email"
+                                        id="s_email"
+                                        className="bpg"
+                                        type="text"
+                                        placeholder={__(
+                                            "client.home_enter_email_placeholder",
+                                            sharedData
+                                        )}
+                                    />
+                                    {errors.email && (
+                                        <div className="error">
+                                            {errors.email}
+                                        </div>
                                     )}
-                                    onClick={handleClick}
-                                />
+                                    <MainButton
+                                        text={__(
+                                            "client.subscribe_btn",
+                                            sharedData
+                                        )}
+                                        onClick={handleClick}
+                                    />
+                                </div>
                             </div>
                         </div>
+                    </div>
+                    <div className="wrapper">
                         <div className="social_media">
                             <div className="title35">
                                 {__(
@@ -142,48 +157,54 @@ const Home = ({ seo, page }) => {
                         </div>
                     </div>
                 </div>
-                {/* {special ? (
-                    <div className="white wrapper flex centered">
-                        <img
-                            src={
-                                special.latest_image != null
-                                    ? "/" +
-                                      special.latest_image.path +
-                                      "/" +
-                                      special.latest_image.title
-                                    : null
-                            }
-                            alt=""
-                        />
-                        <div className="content">
-                            <span>
-                                {__(
-                                    "client.home_section_special_header",
-                                    sharedData
-                                )}
-                            </span>
-                            <div className="title35 green">{special.title}</div>
-                            <p className="op05">{special.short_description}</p>
-                            <span
-                                style={{
-                                    textDecoration: "line-through",
-                                    margin: "18px 0",
-                                    display: "block",
-                                }}
-                            >
-                                {parseFloat(special.price).toFixed(2)}₾
-                            </span>
-                            <Link href={route("client.special-offer.index")}>
-                                <MainButton
-                                    text={__(
-                                        "client.home_btn_special_txt",
+                <div className="special_products_sec">
+                    {special ? (
+                        <div className="white wrapper flex centered ">
+                            <img
+                                src={
+                                    special.latest_image != null
+                                        ? "/" +
+                                          special.latest_image.path +
+                                          "/" +
+                                          special.latest_image.title
+                                        : null
+                                }
+                                alt=""
+                            />
+                            <div className="content">
+                                <span>
+                                    {__(
+                                        "client.home_section_special_header",
                                         sharedData
                                     )}
-                                />
-                            </Link>
+                                </span>
+                                <div className="title35 ">{special.title}</div>
+                                <p className="op05">
+                                    {special.short_description}
+                                </p>
+                                <span
+                                    style={{
+                                        textDecoration: "line-through",
+                                        margin: "18px 0",
+                                        display: "block",
+                                    }}
+                                >
+                                    {parseFloat(special.price).toFixed(2)}₾
+                                </span>
+                                <Link
+                                    href={route("client.special-offer.index")}
+                                >
+                                    <MainButton
+                                        text={__(
+                                            "client.home_btn_special_txt",
+                                            sharedData
+                                        )}
+                                    />
+                                </Link>
+                            </div>
                         </div>
-                    </div>
-                ) : null} */}
+                    ) : null}
+                </div>
                 <div className="our_products">
                     <div className="wrapper flex">
                         <div className="content">
@@ -233,35 +254,43 @@ const Home = ({ seo, page }) => {
                         </div>
                     </div>
                 </div>
-                {/* <div className="blog_section wrapper">
-            <div className="flex">
-              <div className="title35 green">{__('client.blog',sharedData)}</div>
-              <Link href={route('client.blog.index')}>{__('client.home_view_all',sharedData)}</Link>
-            </div>
-            <div className="grid boxes">
-              {blogs.map((data, index) => {
-                return (
-                  <BlogBoxSmall
-                    key={index}
-                    link={route('client.blog.show',data.slug)}
-                    img={data.latest_image != null
-                        ? "/" +
-                        data.latest_image.path +
-                        "/" +
-                        data.latest_image.title
-                        : null}
-                    title={data.title}
-                    date={data.created_at}
-                    paragraph={data.short_description}
-                  />
-                );
-              })}
-            </div>
-          </div> */}
-                {/* <div className="faq wrapper">
-            <div className="title35">{__('client.home_faq',sharedData)}</div>
-            <Questions />
-          </div> */}
+                <div className="blog_section wrapper">
+                    <div className="flex">
+                        <div className="title35 ">
+                            {__("client.blog", sharedData)}
+                        </div>
+                        <Link href={route("client.blog.index")}>
+                            {__("client.home_view_all", sharedData)}
+                        </Link>
+                    </div>
+                    <div className="grid boxes">
+                        {blogs.map((data, index) => {
+                            return (
+                                <BlogBoxSmall
+                                    key={index}
+                                    link={route("client.blog.show", data.slug)}
+                                    img={
+                                        data.latest_image != null
+                                            ? "/" +
+                                              data.latest_image.path +
+                                              "/" +
+                                              data.latest_image.title
+                                            : null
+                                    }
+                                    title={data.title}
+                                    date={data.created_at}
+                                    paragraph={data.short_description}
+                                />
+                            );
+                        })}
+                    </div>
+                </div>
+                <div className="faq wrapper">
+                    <div className="title35">
+                        {__("client.home_faq", sharedData)}
+                    </div>
+                    <Questions />
+                </div>
                 <div className="lastsec form_section wrapper flex">
                     <div className="img-holder">
                         <div className="img">

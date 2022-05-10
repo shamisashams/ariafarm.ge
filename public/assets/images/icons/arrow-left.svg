@@ -9,7 +9,7 @@
     </filter>
   </defs>
   <g id="Group_441" data-name="Group 441" transform="translate(-303.5 -324.188)">
-    <circle id="Ellipse_11" data-name="Ellipse 11" cx="12" cy="12" r="12" transform="translate(332 350)" fill="#acd3c1"/>
+    <circle id="Ellipse_11" data-name="Ellipse 11" cx="12" cy="12" r="12" transform="translate(332 350)" fill="#bf7e2f"/>
     <g transform="matrix(1, 0, 0, 1, 303.5, 324.19)" filter="url(#Icon_awesome-arrow-alt-circle-left)">
       <path id="Icon_awesome-arrow-alt-circle-left-2" data-name="Icon awesome-arrow-alt-circle-left" d="M18,35.438A17.438,17.438,0,1,1,35.438,18,17.434,17.434,0,0,1,18,35.438Zm8.156-20.531H18V9.921a.844.844,0,0,0-1.441-.6L8.522,17.4a.836.836,0,0,0,0,1.188l8.037,8.079a.844.844,0,0,0,1.441-.6V21.094h8.156A.846.846,0,0,0,27,20.25v-4.5A.846.846,0,0,0,26.156,14.906Z" transform="translate(21.94 18.94)" fill="#fff"/>
     </g>

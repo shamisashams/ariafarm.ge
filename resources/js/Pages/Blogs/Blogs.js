@@ -55,7 +55,7 @@ const Blogs = ({ seo }) => {
     return (
         <Layout seo={seo}>
             <div className="blogsPage">
-                <SearchInput color="#ACD3C1" />
+                <SearchInput color="#000" />
                 <div className="wrapper">
                     <PagePath
                         prev={__("client.nav_home", sharedData)}
