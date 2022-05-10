@@ -16,7 +16,7 @@ export const SocialLinks = () => {
     return (
         <div className="flex centered sm">
             {info.active.facebook === 1 ? (
-                <Link href={info.facebook}>
+                <a target="_blank" href={info.facebook}>
                     <svg
                         xmlns="http://www.w3.org/2000/svg"
                         width="14.213"
@@ -31,10 +31,10 @@ export const SocialLinks = () => {
                             fill="#2a2a2a"
                         />
                     </svg>
-                </Link>
+                </a>
             ) : null}
             {info.active.instagram === 1 ? (
-                <Link href={info.instagram} style={{ margin: "0 37px" }}>
+                <a target="_blank" href={info.instagram} style={{ margin: "0 37px" }}>
                     <svg
                         xmlns="http://www.w3.org/2000/svg"
                         width="26.544"
@@ -49,10 +49,10 @@ export const SocialLinks = () => {
                             fill="#2a2a2a"
                         />
                     </svg>
-                </Link>
+                </a>
             ) : null}
             {info.active.youtube === 1 ? (
-                <Link href={info.youtube}>
+                <a target="_blank" href={info.youtube}>
                     <svg
                         xmlns="http://www.w3.org/2000/svg"
                         width="32.34"
@@ -67,7 +67,7 @@ export const SocialLinks = () => {
                             fill="#2a2a2a"
                         />
                     </svg>
-                </Link>
+                </a>
             ) : null}
         </div>
     );
