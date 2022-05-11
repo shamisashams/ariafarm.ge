@@ -216,7 +216,8 @@ const SingleProduct = ({ seo, page }) => {
                         <CardSlider cardData={cards} category={category_path} />
                     </div>
                 </div>
-                <div className="recipe wrapper2 flex">
+                {product.bunker ?
+                    <div className="recipe wrapper2 flex">
                     <div className="img" data-aos="zoom-in">
                         <img src={"/" + product.recipe_img} alt="" />
                     </div>
@@ -252,6 +253,7 @@ const SingleProduct = ({ seo, page }) => {
                         </Link>
                     </div>
                 </div>
+                    : null}
                 <FermaSection
                     imgSrc={
                         page.sections[0].file !== null

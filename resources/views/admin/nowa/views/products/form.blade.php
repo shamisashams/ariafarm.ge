@@ -366,13 +366,7 @@ $traverse = function ($categories, $prefix = '-') use (&$traverse,$ids) {
                         </label>
                     </div>
 
-                    <div class="form-group">
-                        <label class="ckbox">
-                            <input type="checkbox" name="bunker"
-                                   value="true" {{$product->bunker ? 'checked' : ''}}>
-                            <span>{{__('admin.bunker')}}</span>
-                        </label>
-                    </div>
+                    
 
                     <div class="form-group">
                         <label class="ckbox">
@@ -395,6 +389,14 @@ $traverse = function ($categories, $prefix = '-') use (&$traverse,$ids) {
                             <input type="checkbox" name="special_price_tag"
                                    value="true" {{$product->special_price_tag ? 'checked' : ''}}>
                             <span>{{__('admin.special_price_tag')}}</span>
+                        </label>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="ckbox">
+                            <input type="checkbox" name="bunker"
+                                   value="true" {{$product->bunker ? 'checked' : ''}}>
+                            <span>{{__('admin.show_recipe')}}</span>
                         </label>
                     </div>
 
