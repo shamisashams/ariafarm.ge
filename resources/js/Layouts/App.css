@@ -176,16 +176,17 @@ img {
     position: relative;
 }
 .gradient-bg::before {
-    width: 100%;
+    width: 100vw;
     z-index: -1;
-    background: linear-gradient(to right, #acd3c1, transparent);
+    background: #e6faf1;
     top: 50%;
-    left: -50%;
-    transform: translateY(-50%);
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 .gradient-bg.rtl::before {
     width: 100vw;
-    background: linear-gradient(to left, #acd3c1, transparent);
+    background: #e6faf1;
+    opacity: 0.5;
 }
 .gradient-bg.h60::before {
     height: 60px;
