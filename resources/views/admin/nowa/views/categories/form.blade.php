@@ -313,7 +313,7 @@ $traverse = function ($categories, $prefix = false) use (&$traverse,$category) {
                         data: Order,
                         success: function (data){
                             console.log(data)
-                            location.reload();
+                            //location.reload();
                         },
                         error: function (data){
                             console.log(data)
