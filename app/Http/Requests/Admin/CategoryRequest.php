@@ -44,6 +44,7 @@ class CategoryRequest extends FormRequest
         return [
             config('translatable.fallback_locale') . '.title' => 'required',
             'slug' => ['required', 'alpha_dash', Rule::unique('categories', 'slug')->ignore($this->category)],
+            'parent_id' => ['required']
         ];
 
     }

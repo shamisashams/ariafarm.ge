@@ -9,9 +9,12 @@ $traverse = function ($categories, $prefix = '-') use (&$traverse,$category) {
     $html = '<ul style="margin: initial !important;padding: initial !important;">';
 
     foreach ($categories as $_category) {
+
+        if($_category->isRoot()) $disabled = '';
+        else $disabled = 'disabled';
         $checked = ($category and $_category->id == $category->parent_id) ? 'checked':'';
         $html .= '<li style="margin-bottom: 5px"><label class="rdiobox">
-                        <input type="radio" name="parent_id" data-checkboxes="mygroup" class="custom-control-input" '. $checked .' id="'.$_category->id.'" value="'.$_category->id.'">
+                        <input ' . $disabled . ' type="radio" name="parent_id" data-checkboxes="mygroup" class="custom-control-input" '. $checked .' id="'.$_category->id.'" value="'.$_category->id.'">
                         <span style="margin-left: 15px">'.$_category->title.'</span>
 
                         </label></li>';
@@ -80,11 +83,11 @@ $traverse = function ($categories, $prefix = '-') use (&$traverse,$category) {
                         <p class="mg-b-10">@lang('admin.catparent')</p>
 
                         <ul>
-                            <li style="margin-bottom: 5px"><label class="rdiobox">
+                            {{--<li style="margin-bottom: 5px"><label class="rdiobox">
                                     <input type="radio" name="parent_id" data-checkboxes="mygroup" class="custom-control-input" <?=$_checked;?> value="0">
                                     <span style="margin-left: 15px">-none-</span>
 
-                                </label></li>
+                                </label></li>--}}
                             <li>
                                 <ul>
                                     <li>
@@ -96,6 +99,13 @@ $traverse = function ($categories, $prefix = '-') use (&$traverse,$category) {
                         </ul>
 
                     </div>
+                    @error('parent_id')
+                    <small class="text-danger">
+                        <div class="error">
+                            {{$message}}
+                        </div>
+                    </small>
+                    @enderror
                     <div class="mb-4">
                         <p class="mg-b-10">@lang('admin.title')</p>
                         <div class="panel panel-primary tabs-style-2">
