@@ -90,6 +90,9 @@ $traverse = function ($categories, $prefix = false) use (&$traverse,$category) {
                                     <span style="margin-left: 15px">-none-</span>
 
                                 </label></li>--}}
+                            @if($category->created_at && $category->isRoot())
+                                <input type="hidden" name="parent_id" value="0">
+                            @endif
                             <li>
                                 <ul>
                                     <li>
