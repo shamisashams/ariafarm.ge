@@ -17,7 +17,7 @@ $traverse = function ($categories, $prefix = false) use (&$traverse,$category) {
         $checked = ($category and $_category->id == $category->parent_id) ? 'checked':'';
         $html .= '<li id="item-'.$_category->id.'" style="margin-bottom: 5px"><label class="rdiobox">
                         <input ' . $disabled . ' type="radio" name="parent_id" data-checkboxes="mygroup" class="custom-control-input" '. $checked .' id="'.$_category->id.'" value="'.$_category->id.'">
-                        <span style="margin-left: 15px">'.$_category->title.'</span>
+                        <span style="margin-left: 15px"><a href="'.locale_route('category.edit',$_category->id).'" >'.$_category->title.'</a></span>
 
                         </label></li>';
 

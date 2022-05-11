@@ -37,8 +37,8 @@ class CategoryRepository extends BaseRepository implements CategoryRepositoryInt
     public function getCategoryTree($id = null)
     {
         return $id
-            ? $this->model::orderBy('position', 'ASC')->where('id', '!=', $id)->get()->toTree()
-            : $this->model::orderBy('position', 'ASC')->get()->toTree();
+            ? $this->model::query()->orderBy('position', 'ASC')->where('id', '!=', $id)->get()->toTree()
+            : $this->model::query()->orderBy('position', 'ASC')->get()->toTree();
     }
 
     /**
@@ -50,8 +50,8 @@ class CategoryRepository extends BaseRepository implements CategoryRepositoryInt
     public function getCategoryTreeWithoutDescendant($id = null)
     {
         return $id
-            ? $this->model::orderBy('position', 'ASC')->where('id', '!=', $id)->whereNotDescendantOf($id)->get()->toTree()
-            : $this->model::orderBy('position', 'ASC')->get()->toTree();
+            ? $this->model::query()->orderBy('position', 'ASC')->where('id', '!=', $id)->whereNotDescendantOf($id)->get()->toTree()
+            : $this->model::query()->orderBy('position', 'ASC')->get()->toTree();
     }
 
     /**
@@ -72,7 +72,7 @@ class CategoryRepository extends BaseRepository implements CategoryRepositoryInt
             ? $this->model::orderBy('position', 'ASC')->where('status', 1)->descendantsAndSelf($id)->toTree($id)
             : $this->model::orderBy('position', 'ASC')->where('status', 1)->get()->toTree();*/
 
-        return $this->model::orderBy('position', 'ASC')->where('status', 1)->get()->toTree();
+        return $this->model::query()->orderBy('position', 'ASC')->where('status', 1)->get()->toTree();
     }
 
 }
