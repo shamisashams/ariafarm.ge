@@ -297,7 +297,7 @@ $traverse = function ($categories, $prefix = false) use (&$traverse,$category) {
     </script>
 
     <script>
-        /*$( function() {
+        $( function() {
             $( ".sortable" ).sortable({
                 axis: 'y',
                 stop: function (event, ui) {
@@ -322,7 +322,7 @@ $traverse = function ($categories, $prefix = false) use (&$traverse,$category) {
 
                 }
             });
-        } );*/
+        } );
     </script>
 
 @endsection
