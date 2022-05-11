@@ -1,19 +1,21 @@
 <?php
 $_checked = ($category and $category->parent_id == null) ? ' checked':'';
 
-$traverse = function ($categories, $prefix = '-') use (&$traverse,$category) {
+$traverse = function ($categories, $prefix = false) use (&$traverse,$category) {
 
         //dd($categories);
+    if($prefix) $sortable = 'class="sortable"';
+    else $sortable = '';
 
 
-    $html = '<ul style="margin: initial !important;padding: initial !important;">';
+    $html = '<ul '. $sortable .' style="margin: initial !important;padding: initial !important;">';
 
     foreach ($categories as $_category) {
 
         if($_category->isRoot()) $disabled = '';
         else $disabled = 'disabled';
         $checked = ($category and $_category->id == $category->parent_id) ? 'checked':'';
-        $html .= '<li style="margin-bottom: 5px"><label class="rdiobox">
+        $html .= '<li id="item-'.$_category->id.'" style="margin-bottom: 5px"><label class="rdiobox">
                         <input ' . $disabled . ' type="radio" name="parent_id" data-checkboxes="mygroup" class="custom-control-input" '. $checked .' id="'.$_category->id.'" value="'.$_category->id.'">
                         <span style="margin-left: 15px">'.$_category->title.'</span>
 
@@ -22,7 +24,7 @@ $traverse = function ($categories, $prefix = '-') use (&$traverse,$category) {
 
         if(count($_category->children)){
             $html .= '<li style="padding-left: 20px">';
-            $html .= $traverse($_category->children, $prefix.'-');
+            $html .= $traverse($_category->children, true);
             $html .= '</li>';
         }
 
@@ -106,6 +108,20 @@ $traverse = function ($categories, $prefix = '-') use (&$traverse,$category) {
                         </div>
                     </small>
                     @enderror
+
+                    <div class="form-group">
+                        <label class="form-label">@lang('admin.position')</label>
+                        <input type="number" name="position" class="form-control" placeholder="@lang('admin.position')" value="{{$category->position ?? ''}}">
+
+                    </div>
+                    @error('position')
+                    <small class="text-danger">
+                        <div class="error">
+                            {{$message}}
+                        </div>
+                    </small>
+                    @enderror
+
                     <div class="mb-4">
                         <p class="mg-b-10">@lang('admin.title')</p>
                         <div class="panel panel-primary tabs-style-2">
@@ -246,6 +262,7 @@ $traverse = function ($categories, $prefix = '-') use (&$traverse,$category) {
     <script src="{{asset('assets/plugins/telephoneinput/inttelephoneinput.js')}}"></script>
 
     <script src="{{asset('uploader/image-uploader.js')}}"></script>
+    <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.js"></script>
 
     <script>
         let oldImages = $('#old_images').val();
@@ -274,6 +291,35 @@ $traverse = function ($categories, $prefix = '-') use (&$traverse,$category) {
         } else {
             $('.input-images').imageUploader();
         }
+    </script>
+
+    <script>
+        $( function() {
+            $( ".sortable" ).sortable({
+                axis: 'y',
+                stop: function (event, ui) {
+
+                    var Order = $(this).sortable('serialize').toString();
+
+                    console.log(Order)
+                    Order = Order + '&_token={{csrf_token()}}'
+
+                    $.ajax({
+                        url: '{{route('category.sortSub')}}',
+                        type: 'post',
+                        data: Order,
+                        success: function (data){
+                            console.log(data)
+                            location.reload();
+                        },
+                        error: function (data){
+                            console.log(data)
+                        }
+                    })
+
+                }
+            });
+        } );
     </script>
 
 @endsection

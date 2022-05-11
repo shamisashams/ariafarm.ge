@@ -89,6 +89,7 @@ Route::prefix('{locale?}')
                 Route::get('attribute/{attribute}/destroy', [\App\Http\Controllers\Admin\AttributeController::class, 'destroy'])->name('attribute.destroy');
 
 
+                Route::post('category/sort-sub',[\App\Http\Controllers\Admin\CategoryController::class,'sortSub'])->name('category.sortSub');
 
             });
         });

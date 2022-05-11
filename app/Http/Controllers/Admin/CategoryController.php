@@ -223,4 +223,14 @@ class CategoryController extends Controller
         header('Content-Type: application/json');
         echo json_encode($json);
     }
+
+
+    public function sortSub(Request $request){
+        $n = 1;
+
+        foreach ($request->post('item') as $item){
+            Category::query()->where('id',$item)->update(['position' => $n]);
+            $n++;
+        }
+    }
 }
