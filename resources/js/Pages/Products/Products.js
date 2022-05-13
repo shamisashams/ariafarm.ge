@@ -64,13 +64,13 @@ const Products = ({ seo }) => {
                             let img;
                             switch (data.slug) {
                                 case "cow":
-                                    img = <Cow color="#8EAFA0" />;
+                                    img = <Cow color="#BF7E2F" />;
                                     break;
                                 case "goat":
-                                    img = <Goat color="#8EAFA0" />;
+                                    img = <Goat color="#BF7E2F" />;
                                     break;
                                 case "buffalo":
-                                    img = <Buffalo color="#8EAFA0" />;
+                                    img = <Buffalo color="#BF7E2F" />;
                                     break;
                             }
                             return (
