@@ -240,7 +240,7 @@ const Home = ({ seo, page }) => {
                             </Link>
                         </div>
                         <div className="img">
-                            <img
+                            {/* <img
                                 src={
                                     page.sections[0].file !== null
                                         ? "/" +
@@ -250,7 +250,7 @@ const Home = ({ seo, page }) => {
                                         : null
                                 }
                                 alt=""
-                            />
+                            /> */}
                         </div>
                     </div>
                 </div>
@@ -294,7 +294,7 @@ const Home = ({ seo, page }) => {
                 <div className="lastsec form_section wrapper flex">
                     <div className="img-holder">
                         <div className="img">
-                            <img
+                            {/* <img
                                 src={
                                     page.sections[1].file !== null
                                         ? "/" +
@@ -304,7 +304,7 @@ const Home = ({ seo, page }) => {
                                         : null
                                 }
                                 alt=""
-                            />
+                            /> */}
                         </div>
                     </div>
                     <Form />

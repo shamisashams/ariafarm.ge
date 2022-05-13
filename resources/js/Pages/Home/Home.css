@@ -167,6 +167,9 @@
     .homePage .form_section {
         align-items: flex-start;
     }
+    .why_our_product .abs_img {
+        display: none;
+    }
 }
 @media screen and (max-width: 900px) {
     .homePage .white {
