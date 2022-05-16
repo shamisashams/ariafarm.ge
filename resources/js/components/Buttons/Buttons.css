@@ -1,3 +1,10 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.4.12,
+* Autoprefixer: v10.4.4
+* Browsers: last 4 version
+*/
+
 .main_button {
     color: #fff;
     background-color: #bf7e2f;
@@ -8,22 +15,34 @@
     font-size: 20px;
     position: relative;
     z-index: 1000;
+    -webkit-transition: 0.3s;
+    -o-transition: 0.3s;
     transition: 0.3s;
 }
 .main_button:hover {
     background-color: #b6772b;
 
+    -webkit-transform: scale(0.95);
+
+    -ms-transform: scale(0.95);
+
     transform: scale(0.95);
 }
 .arrow_button {
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
     width: fit-content;
     border-radius: 50%;
     position: absolute;
     top: 50%;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
     transform: translateY(-50%);
+    -webkit-transition: 0.2s;
+    -o-transition: 0.2s;
     transition: 0.2s;
-    cursor: default;
     cursor: pointer;
+    z-index: 100;
 }
 .arrow_button.arr_left {
     left: -22px;
@@ -35,6 +54,8 @@
 @media screen and (max-width: 900px) {
     .arrow_button {
         top: auto;
+        -webkit-transform: none;
+        -ms-transform: none;
         transform: none;
         bottom: 20px;
     }

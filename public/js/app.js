@@ -4036,11 +4036,7 @@ var Home = function Home(_ref) {
     color: "#000"
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_HeroSection_HeroSection__WEBPACK_IMPORTED_MODULE_2__["default"], null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "why_our_product"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", {
-    className: "abs_img",
-    src: "/assets/images/home/2.png",
-    alt: ""
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "cards_subscribe_sec"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "wrapper cards"
@@ -7229,7 +7225,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".main_button {\r\n    color: #fff;\r\n    background-color: #bf7e2f;\r\n    border-radius: 26px;\r\n    height: 52px;\r\n    padding: 0 30px;\r\n    min-width: 170px;\r\n    font-size: 20px;\r\n    position: relative;\r\n    z-index: 1000;\r\n    transition: 0.3s;\r\n}\r\n.main_button:hover {\r\n    background-color: #b6772b;\r\n\r\n    transform: scale(0.95);\r\n}\r\n.arrow_button {\r\n    width: -webkit-fit-content;\r\n    width: -moz-fit-content;\r\n    width: fit-content;\r\n    border-radius: 50%;\r\n    position: absolute;\r\n    top: 50%;\r\n    transform: translateY(-50%);\r\n    transition: 0.2s;\r\n    cursor: default;\r\n    cursor: pointer;\r\n}\r\n.arrow_button.arr_left {\r\n    left: -22px;\r\n}\r\n.arrow_button.arr_right {\r\n    right: -22px;\r\n}\r\n\r\n@media screen and (max-width: 900px) {\r\n    .arrow_button {\r\n        top: auto;\r\n        transform: none;\r\n        bottom: 20px;\r\n    }\r\n    .arrow_button.arr_left {\r\n        left: 0;\r\n    }\r\n    .arrow_button.arr_right {\r\n        right: 0;\r\n    }\r\n}\r\n@media screen and (max-width: 600px) {\r\n    .main_button {\r\n        height: 45px;\r\n        padding: 0 25px;\r\n        min-width: 140px;\r\n        font-size: 16px;\r\n    }\r\n}\r\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "/*\r\n* Prefixed by https://autoprefixer.github.io\r\n* PostCSS: v8.4.12,\r\n* Autoprefixer: v10.4.4\r\n* Browsers: last 4 version\r\n*/\r\n\r\n.main_button {\r\n    color: #fff;\r\n    background-color: #bf7e2f;\r\n    border-radius: 26px;\r\n    height: 52px;\r\n    padding: 0 30px;\r\n    min-width: 170px;\r\n    font-size: 20px;\r\n    position: relative;\r\n    z-index: 1000;\r\n    transition: 0.3s;\r\n}\r\n.main_button:hover {\r\n    background-color: #b6772b;\r\n\r\n    transform: scale(0.95);\r\n}\r\n.arrow_button {\r\n    width: -webkit-fit-content;\r\n    width: -moz-fit-content;\r\n    width: fit-content;\r\n    border-radius: 50%;\r\n    position: absolute;\r\n    top: 50%;\r\n    transform: translateY(-50%);\r\n    transition: 0.2s;\r\n    cursor: pointer;\r\n    z-index: 100;\r\n}\r\n.arrow_button.arr_left {\r\n    left: -22px;\r\n}\r\n.arrow_button.arr_right {\r\n    right: -22px;\r\n}\r\n\r\n@media screen and (max-width: 900px) {\r\n    .arrow_button {\r\n        top: auto;\r\n        transform: none;\r\n        bottom: 20px;\r\n    }\r\n    .arrow_button.arr_left {\r\n        left: 0;\r\n    }\r\n    .arrow_button.arr_right {\r\n        right: 0;\r\n    }\r\n}\r\n@media screen and (max-width: 600px) {\r\n    .main_button {\r\n        height: 45px;\r\n        padding: 0 25px;\r\n        min-width: 140px;\r\n        font-size: 16px;\r\n    }\r\n}\r\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 

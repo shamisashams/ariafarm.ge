@@ -85,11 +85,11 @@ const Home = ({ seo, page }) => {
                 <SearchInput color="#000" />
                 <HeroSection />
                 <div className="why_our_product">
-                    <img
+                    {/* <img
                         className="abs_img"
                         src="/assets/images/home/2.png"
                         alt=""
-                    />
+                    /> */}
                     <div className="cards_subscribe_sec">
                         <div className="wrapper cards">
                             <CardSlider cardData={cards} />
