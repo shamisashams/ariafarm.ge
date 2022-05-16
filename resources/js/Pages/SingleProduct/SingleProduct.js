@@ -137,7 +137,7 @@ const SingleProduct = ({ seo, page }) => {
                                     return (
                                         <div
                                             key={index}
-                                            className="img"
+                                            className="img small"
                                             onClick={() => setShowImg(index)}
                                         >
                                             <img
@@ -216,44 +216,44 @@ const SingleProduct = ({ seo, page }) => {
                         <CardSlider cardData={cards} category={category_path} />
                     </div>
                 </div>
-                {product.bunker ?
+                {product.bunker ? (
                     <div className="recipe wrapper2 flex">
-                    <div className="img" data-aos="zoom-in">
-                        <img src={"/" + product.recipe_img} alt="" />
-                    </div>
-                    <div className="context">
-                        <div className="title50 gradient-bg rtl h100">
-                            {__("client.product_recipe", sharedData)}
+                        <div className="img" data-aos="zoom-in">
+                            <img src={"/" + product.recipe_img} alt="" />
                         </div>
-                        <p className="op05">
-                            {renderHTML(
-                                product.recipe
-                                    ? product.recipe.newLineToBr()
-                                    : null
-                            )}
-                        </p>
-                        <Link to="/" className="fb flex ">
-                            <svg
-                                xmlns="http://www.w3.org/2000/svg"
-                                width="10.176"
-                                height="19"
-                                viewBox="0 0 10.176 19"
-                            >
-                                <path
-                                    id="Icon_awesome-facebook-f"
-                                    data-name="Icon awesome-facebook-f"
-                                    d="M11.119,10.688l.528-3.439h-3.3V5.018A1.719,1.719,0,0,1,10.286,3.16h1.5V.232A18.292,18.292,0,0,0,9.123,0C6.406,0,4.63,1.647,4.63,4.628V7.249H1.609v3.439H4.63V19H8.347V10.688Z"
-                                    transform="translate(-1.609)"
-                                    fill="#1e69ff"
-                                />
-                            </svg>
-                            <span>
-                                {__("client.product_share", sharedData)}
-                            </span>
-                        </Link>
+                        <div className="context">
+                            <div className="title50 gradient-bg rtl h100">
+                                {__("client.product_recipe", sharedData)}
+                            </div>
+                            <p className="op05">
+                                {renderHTML(
+                                    product.recipe
+                                        ? product.recipe.newLineToBr()
+                                        : null
+                                )}
+                            </p>
+                            <Link to="/" className="fb flex ">
+                                <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    width="10.176"
+                                    height="19"
+                                    viewBox="0 0 10.176 19"
+                                >
+                                    <path
+                                        id="Icon_awesome-facebook-f"
+                                        data-name="Icon awesome-facebook-f"
+                                        d="M11.119,10.688l.528-3.439h-3.3V5.018A1.719,1.719,0,0,1,10.286,3.16h1.5V.232A18.292,18.292,0,0,0,9.123,0C6.406,0,4.63,1.647,4.63,4.628V7.249H1.609v3.439H4.63V19H8.347V10.688Z"
+                                        transform="translate(-1.609)"
+                                        fill="#1e69ff"
+                                    />
+                                </svg>
+                                <span>
+                                    {__("client.product_share", sharedData)}
+                                </span>
+                            </Link>
+                        </div>
                     </div>
-                </div>
-                    : null}
+                ) : null}
                 <FermaSection
                     imgSrc={
                         page.sections[0].file !== null
