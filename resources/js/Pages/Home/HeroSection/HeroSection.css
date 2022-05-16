@@ -16,6 +16,7 @@
     -webkit-transform: translateY(100%);
     -ms-transform: translateY(100%);
     transform: translateY(100%);
+    max-height: 320px;
 }
 .hero_section .hero_slider {
     padding-right: 35px;
@@ -86,6 +87,9 @@
         -ms-flex-direction: column-reverse;
         flex-direction: column-reverse;
         padding-top: 40px;
+    }
+    .hero_section .slide_img {
+        max-height: none;
     }
     .hero_section .slide {
         -webkit-box-align: center;
