@@ -1,7 +1,20 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.4.12,
+* Autoprefixer: v10.4.4
+* Browsers: last 4 version
+*/
+
 .hero_section .slide_img {
     width: auto;
+    -webkit-transition: 1s;
+    -o-transition: 1s;
     transition: 1s;
+    -webkit-transition-delay: 0.2s;
+    -o-transition-delay: 0.2s;
     transition-delay: 0.2s;
+    -webkit-transform: translateY(100%);
+    -ms-transform: translateY(100%);
     transform: translateY(100%);
 }
 .hero_section .hero_slider {
@@ -9,20 +22,30 @@
     text-align: center;
 }
 .hero_section .slick-active .slide_img {
+    -webkit-transform: translateY(0);
+    -ms-transform: translateY(0);
     transform: translateY(0);
 }
 .hero_section .hero_slider p {
+    -webkit-transition: 1.2s;
+    -o-transition: 1.2s;
     transition: 1.2s;
     margin: 20px 0;
 }
 .hero_section .hero_slider .content {
+    -webkit-transition: 1.2s;
+    -o-transition: 1.2s;
     transition: 1.2s;
+    -webkit-transform: translateY(-100%);
+    -ms-transform: translateY(-100%);
     transform: translateY(-100%);
     opacity: 0;
     max-width: 600px;
     margin-left: 30px;
 }
 .hero_section .slick-active .content {
+    -webkit-transform: translateY(0);
+    -ms-transform: translateY(0);
     transform: translateY(0);
     opacity: 1;
 }
@@ -33,17 +56,23 @@
 }
 .hero_section .slide {
     padding: 30px 0;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
     justify-content: center;
 }
 
 @media screen and (max-width: 1200px) {
     .hero_section {
+        -webkit-box-align: end;
+        -ms-flex-align: end;
         align-items: flex-end;
     }
     .hero_section .slide p {
         margin: 14px 0;
     }
     .hero_section .slide {
+        -webkit-box-align: end;
+        -ms-flex-align: end;
         align-items: flex-end;
     }
     .hero_section .content {
@@ -52,10 +81,15 @@
 }
 @media screen and (max-width: 1000px) {
     .hero_section .slide {
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: reverse;
+        -ms-flex-direction: column-reverse;
         flex-direction: column-reverse;
         padding-top: 40px;
     }
     .hero_section .slide {
+        -webkit-box-align: center;
+        -ms-flex-align: center;
         align-items: center;
     }
     .hero_section .hero_slider {
@@ -64,6 +98,8 @@
     }
     .hero_section .arrow_button {
         top: auto;
+        -webkit-transform: translateY(50%);
+        -ms-transform: translateY(50%);
         transform: translateY(50%);
         bottom: 50%;
     }
@@ -76,6 +112,8 @@
     .hero_section .slick-prev,
     .hero_section .slick-next {
         top: auto !important;
+        -webkit-transform: translateY(50%) !important;
+        -ms-transform: translateY(50%) !important;
         transform: translateY(50%) !important;
         bottom: 50% !important;
     }

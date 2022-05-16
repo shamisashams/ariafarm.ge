@@ -1,3 +1,10 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.4.12,
+* Autoprefixer: v10.4.4
+* Browsers: last 4 version
+*/
+
 .productsPage {
 }
 .product_showcase {
@@ -6,6 +13,8 @@
 }
 .product_showcase .title50::after {
     left: 0;
+    -webkit-transform: none;
+    -ms-transform: none;
     transform: none;
 }
 .product_showcase p {
@@ -26,6 +35,8 @@
     margin-bottom: 15px;
     font-size: 20px;
     z-index: 1000;
+    -webkit-transition: 0.3s;
+    -o-transition: 0.3s;
     transition: 0.3s;
 }
 .product_showcase .tab_btn.active {
@@ -38,6 +49,8 @@
     top: 25px;
     opacity: 0;
     visibility: hidden;
+    -webkit-transition: 0.5s;
+    -o-transition: 0.5s;
     transition: 0.5s;
 }
 .product_showcase .showcase_icon .bg_text {
@@ -51,6 +64,8 @@
     position: absolute;
     bottom: 0;
     right: 0;
+    -webkit-transition: 0.6s;
+    -o-transition: 0.6s;
     transition: 0.6s;
 }
 .product_showcase .showcase_icon.shown {
@@ -80,6 +95,13 @@
     width: 100%;
     top: 0;
     left: 0;
+    background-image: -o-repeating-linear-gradient(
+        left,
+        #acd3c1,
+        #acd3c1 8px,
+        transparent 5px,
+        transparent 25px
+    );
     background-image: repeating-linear-gradient(
         90deg,
         #acd3c1,

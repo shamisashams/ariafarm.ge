@@ -1,3 +1,10 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.4.12,
+* Autoprefixer: v10.4.4
+* Browsers: last 4 version
+*/
+
 .header {
     background-color: #acd3c1;
     color: #fff;
@@ -21,6 +28,8 @@
     position: absolute;
     left: 0;
     top: 50%;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
     transform: translateY(-50%);
     font-size: 20px;
     display: none;
@@ -34,6 +43,8 @@
 .header .logo {
     position: absolute;
     left: 50%;
+    -webkit-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
     transform: translateX(-50%);
     top: 29px;
     width: auto;
@@ -42,6 +53,8 @@
 .header .languages {
     position: absolute;
     top: 50%;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
     transform: translateY(-50%);
     right: 0;
     cursor: default;
@@ -51,11 +64,17 @@
     position: absolute;
     left: 0;
     top: 100%;
+    -webkit-transform: translateY(-100%);
+    -ms-transform: translateY(-100%);
     transform: translateY(-100%);
     opacity: 0;
+    -webkit-transition: 0.2s;
+    -o-transition: 0.2s;
     transition: 0.2s;
 }
 .header .languages:hover .drop {
+    -webkit-transform: translateY(0);
+    -ms-transform: translateY(0);
     transform: translateY(0);
     opacity: 1;
 }
@@ -70,9 +89,13 @@
     background: url(/assets/images/icons/triangle.svg) no-repeat;
     background-position: center;
     background-size: contain;
+    -webkit-transition: 0.2s;
+    -o-transition: 0.2s;
     transition: 0.2s;
 }
 .header .languages:hover .on::after {
+    -webkit-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
     transform: rotate(180deg);
 }
 .header .navbar {
@@ -93,12 +116,20 @@
     height: 5px;
     border-radius: 3px;
     background-color: #fff;
+    -webkit-transition: 0.2s;
+    -o-transition: 0.2s;
     transition: 0.2s;
+    -webkit-transform: translateX(-50%) scaleX(0);
+    -ms-transform: translateX(-50%) scaleX(0);
     transform: translateX(-50%) scaleX(0);
+    -webkit-transform-origin: center;
+    -ms-transform-origin: center;
     transform-origin: center;
 }
 .header .nav_link:hover::after,
 .header .nav_link.active::after {
+    -webkit-transform: translateX(-50%) scaleX(1);
+    -ms-transform: translateX(-50%) scaleX(1);
     transform: translateX(-50%) scaleX(1);
 }
 
@@ -128,6 +159,7 @@
 @media screen and (max-width: 900px) {
     .header {
         height: 60px;
+        -webkit-box-shadow: 0 5px 15px #0c1b2e21;
         box-shadow: 0 5px 15px #0c1b2e21;
     }
 
@@ -150,14 +182,27 @@
         height: 100vh;
         background-color: #444444;
         color: #fff;
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
         flex-direction: column;
+        -webkit-transform: translateX(-100%);
+        -ms-transform: translateX(-100%);
         transform: translateX(-100%);
+        -webkit-transition: 0.2s;
+        -o-transition: 0.2s;
         transition: 0.2s;
         z-index: 1000;
     }
     .navbar .sm {
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
+        -webkit-box-pack: start;
+        -ms-flex-pack: start;
         justify-content: flex-start;
         margin-left: 50px;
         margin-top: 50px;
@@ -169,6 +214,8 @@
         fill: #fff;
     }
     .header .navbar.open {
+        -webkit-transform: translateX(0);
+        -ms-transform: translateX(0);
         transform: translateX(0);
     }
     .header .nav_link {
@@ -176,6 +223,8 @@
         padding: 16px 10px;
         padding-left: 50px;
         width: 330px;
+        -webkit-transition: 0.2s;
+        -o-transition: 0.2s;
         transition: 0.2s;
     }
     .header .nav_link::after {
@@ -189,7 +238,12 @@
         margin: 0;
     }
     .header .wrapper {
+        -webkit-box-pack: start;
+        -ms-flex-pack: start;
         justify-content: flex-start;
+        -webkit-box-orient: horizontal;
+        -webkit-box-direction: reverse;
+        -ms-flex-direction: row-reverse;
         flex-direction: row-reverse;
     }
     .menu_btn {
@@ -200,17 +254,25 @@
         width: 30px;
         background-color: #fff;
         margin: 4px 0;
+        -webkit-transition: 0.2s;
+        -o-transition: 0.2s;
         transition: 0.2s;
     }
     .menu_btn.clicked .span:nth-child(1) {
+        -webkit-transform: rotate(45deg);
+        -ms-transform: rotate(45deg);
         transform: rotate(45deg);
         margin: -6px 0;
         width: 30px;
     }
     .menu_btn.clicked .span:nth-child(2) {
+        -webkit-transform: scale(0);
+        -ms-transform: scale(0);
         transform: scale(0);
     }
     .menu_btn.clicked .span:nth-child(3) {
+        -webkit-transform: rotate(-45deg);
+        -ms-transform: rotate(-45deg);
         transform: rotate(-45deg);
         margin: -6px 0;
     }
@@ -221,16 +283,24 @@
         display: none;
     }
     .languages.mobile {
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
+        -webkit-box-pack: start;
+        -ms-flex-pack: start;
         justify-content: flex-start;
         position: relative;
         top: auto;
+        -webkit-transform: none;
+        -ms-transform: none;
         transform: none;
         right: auto;
         margin-left: 50px;
         padding-top: 20px;
     }
     .languages.mobile .on {
+        width: -webkit-fit-content;
+        width: -moz-fit-content;
         width: fit-content;
         margin-right: 30px;
     }
@@ -238,6 +308,8 @@
         position: relative;
         left: auto !important;
         top: auto !important;
+        -webkit-transform: none !important;
+        -ms-transform: none !important;
         transform: none !important;
         opacity: 0.2 !important;
     }

@@ -1,3 +1,10 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.4.12,
+* Autoprefixer: v10.4.4
+* Browsers: last 4 version
+*/
+
 .homePage {
     overflow-x: hidden;
 }
@@ -86,7 +93,9 @@
     padding-bottom: 100px;
 }
 .homePage .blog_section .grid {
+    display: -ms-grid;
     display: grid;
+    -ms-grid-columns: 1fr 45px 1fr 45px 1fr 45px 1fr;
     grid-template-columns: repeat(4, 1fr);
     grid-gap: 45px;
     margin-top: 20px;
@@ -107,6 +116,7 @@
     width: 549px;
     height: 549px;
     border: 5px solid #fff;
+    -webkit-box-shadow: 0 10px 25px #19191d1f;
     box-shadow: 0 10px 25px #19191d1f;
 }
 .homePage .form_section .img-holder {
@@ -117,6 +127,14 @@
     width: 100%;
     right: 50%;
     top: 30%;
+    background: -webkit-gradient(
+        linear,
+        right top,
+        left top,
+        from(#5ec094),
+        to(transparent)
+    );
+    background: -o-linear-gradient(right, #5ec094, transparent);
     background: linear-gradient(to left, #5ec094, transparent);
     z-index: -1;
 }
@@ -125,8 +143,19 @@
     width: 100%;
     left: 50%;
     bottom: 30%;
+    background: -webkit-gradient(
+        linear,
+        left top,
+        right top,
+        from(#5ec094),
+        to(transparent)
+    );
+    background: -o-linear-gradient(left, #5ec094, transparent);
     background: linear-gradient(to right, #5ec094, transparent);
     z-index: -1;
+}
+.special_products_sec img {
+    width: 36%;
 }
 
 @media screen and (max-width: 1330px) {
@@ -150,14 +179,24 @@
         margin-left: 13px;
     }
     .cards_subscribe_sec {
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
         align-items: center;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
         justify-content: center;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: reverse;
+        -ms-flex-direction: column-reverse;
         flex-direction: column-reverse;
     }
 }
 @media screen and (max-width: 1000px) {
     .homePage .blog_section .grid {
+        -ms-grid-columns: 1fr 15px 1fr;
         grid-template-columns: repeat(2, 1fr);
     }
     .homePage .form_section .img {
@@ -165,6 +204,8 @@
         height: 333px;
     }
     .homePage .form_section {
+        -webkit-box-align: start;
+        -ms-flex-align: start;
         align-items: flex-start;
     }
     .why_our_product .abs_img {
@@ -172,8 +213,14 @@
     }
 }
 @media screen and (max-width: 900px) {
+    .special_products_sec img {
+        width: auto;
+    }
     .homePage .white {
         padding: 50px 0;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
         flex-direction: column;
     }
     .homePage .white .content {
@@ -182,6 +229,9 @@
         margin-top: 20px;
     }
     .homePage .our_products .wrapper {
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
         flex-direction: column;
     }
     .homePage .our_products .content {
@@ -206,7 +256,12 @@
 }
 @media screen and (max-width: 700px) {
     .homePage .form_section {
+        -webkit-box-align: center;
+        -ms-flex-align: center;
         align-items: center;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
         flex-direction: column;
     }
     .homePage .form_section .form {
@@ -220,6 +275,8 @@
         border-top: #bf7e2f 3px solid;
         border-bottom: #bf7e2f 3px solid;
         padding: 12px 20px;
+        width: -webkit-fit-content;
+        width: -moz-fit-content;
         width: fit-content;
         margin: auto;
     }
@@ -233,6 +290,7 @@
 
 @media screen and (max-width: 500px) {
     .homePage .blog_section .grid {
+        -ms-grid-columns: 1fr;
         grid-template-columns: repeat(1, 1fr);
     }
 }

@@ -1,152 +1,182 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.4.12,
+* Autoprefixer: v10.4.4
+* Browsers: last 4 version
+*/
+
 .singleProduct {
-  overflow: hidden;
+    overflow: hidden;
 }
 .singleProduct .showcase {
-  padding-top: 47px;
+    padding-top: 47px;
 }
 .singleProduct .showcase .img.large {
-  display: none;
+    display: none;
 }
 .singleProduct .showcase .large.show {
-  display: block;
+    display: block;
 }
 .singleProduct .showcase .img img {
-  object-fit: contain;
+    -o-object-fit: contain;
+    object-fit: contain;
 }
 .singleProduct .showcase .main {
-  width: 1044px;
-  margin: 90px auto;
-  align-items: flex-end;
+    width: 1044px;
+    margin: 90px auto;
+    -webkit-box-align: end;
+    -ms-flex-align: end;
+    align-items: flex-end;
 }
 .singleProduct .showcase .main .details {
-  width: 60%;
-  margin-left: 50px;
+    width: 60%;
+    margin-left: 50px;
 }
 .singleProduct .title50::after {
-  display: none;
+    display: none;
 }
 .singleProduct .showcase .main .details .green {
-  font-size: 20px;
-  margin-bottom: 15px;
+    font-size: 20px;
+    margin-bottom: 15px;
 }
 .singleProduct .showcase .main .details p {
-  margin-bottom: 30px;
+    margin-bottom: 30px;
 }
 .singleProduct .showcase .main .images {
-  width: 40%;
+    width: 40%;
 }
 .singleProduct .cards_sec {
-  background-color: #fefbec;
+    background-color: #fefbec;
 }
 .singleProduct .cards_sec .wrapper {
-  padding: 40px 0;
+    padding: 40px 0;
 }
 .singleProduct .cards_sec .text {
-  position: absolute;
-  left: 0;
-  top: 50%;
-  transform: translateY(-50%);
-  max-width: 374px;
+    position: absolute;
+    left: 0;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+    max-width: 374px;
 }
 .singleProduct .recipe {
-  align-items: flex-start;
-  margin: 100px auto;
+    -webkit-box-align: start;
+    -ms-flex-align: start;
+    align-items: flex-start;
+    margin: 100px auto;
 }
 .singleProduct .recipe .img {
-  width: 361px;
-  height: 420px;
-  margin-right: 30px;
-  border-radius: 15px;
+    width: 361px;
+    height: 420px;
+    margin-right: 30px;
+    border-radius: 15px;
 }
 .singleProduct .recipe .context {
-  width: 60%;
+    width: 60%;
 }
 .singleProduct .recipe .fb {
-  color: #1e69ff;
-  padding: 18px 27px;
-  border: 2px solid #1e69ff;
-  border-radius: 50px;
-  justify-content: flex-end;
-  width: fit-content;
-  margin: auto;
-  margin-top: 30px;
-  margin-right: 0;
+    color: #1e69ff;
+    padding: 18px 27px;
+    border: 2px solid #1e69ff;
+    border-radius: 50px;
+    -webkit-box-pack: end;
+    -ms-flex-pack: end;
+    justify-content: flex-end;
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+    margin: auto;
+    margin-top: 30px;
+    margin-right: 0;
 }
 .singleProduct .recipe .fb svg {
-  margin-right: 10px;
+    margin-right: 10px;
 }
 
 @media screen and (max-width: 1260px) {
-  .singleProduct .cards_sec .wrapper {
-    padding-top: 200px;
-  }
-  .singleProduct .cards_sec .text {
-    top: 0;
-    transform: none;
-  }
-  .singleProduct .cards_sec .text {
-    top: 39px;
-    max-width: none;
-  }
+    .singleProduct .cards_sec .wrapper {
+        padding-top: 200px;
+    }
+    .singleProduct .cards_sec .text {
+        top: 0;
+        -webkit-transform: none;
+        -ms-transform: none;
+        transform: none;
+    }
+    .singleProduct .cards_sec .text {
+        top: 39px;
+        max-width: none;
+    }
 }
 @media screen and (max-width: 1200px) {
-  .singleProduct .showcase .main {
-    width: 80%;
-    align-items: flex-start;
-  }
-  .singleProduct .showcase .main .images {
-    width: 44%;
-    margin-top: 50px;
-  }
+    .singleProduct .showcase .main {
+        width: 80%;
+        -webkit-box-align: start;
+        -ms-flex-align: start;
+        align-items: flex-start;
+    }
+    .singleProduct .showcase .main .images {
+        width: 44%;
+        margin-top: 50px;
+    }
 }
 @media screen and (max-width: 1000px) {
-  .singleProduct .showcase .main {
-    flex-direction: column-reverse;
-    align-items: center;
-  }
-  .singleProduct .showcase .main .images {
-    width: 70%;
-    margin-top: 0;
-  }
-  .singleProduct .showcase .main .details {
-    width: 100%;
-    margin-left: 0;
-  }
-  .singleProduct .arrow_button {
-    bottom: auto;
-    top: 322px;
-  }
+    .singleProduct .showcase .main {
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: reverse;
+        -ms-flex-direction: column-reverse;
+        flex-direction: column-reverse;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+    }
+    .singleProduct .showcase .main .images {
+        width: 70%;
+        margin-top: 0;
+    }
+    .singleProduct .showcase .main .details {
+        width: 100%;
+        margin-left: 0;
+    }
+    .singleProduct .arrow_button {
+        bottom: auto;
+        top: 322px;
+    }
 }
 @media screen and (max-width: 800px) {
-  .singleProduct .showcase .main {
-    margin: 46px auto;
-  }
-  .singleProduct .arrow_button {
-    top: 196px;
-  }
-  .singleProduct .recipe {
-    flex-direction: column;
-    margin: 34px auto;
-  }
-  .singleProduct .recipe .img {
-    width: 100%;
-    height: 232px;
-    margin-right: 0;
-    border-radius: 15px;
-  }
-  .singleProduct .recipe .context {
-    width: 100%;
-    margin-top: 40px;
-  }
+    .singleProduct .showcase .main {
+        margin: 46px auto;
+    }
+    .singleProduct .arrow_button {
+        top: 196px;
+    }
+    .singleProduct .recipe {
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+        flex-direction: column;
+        margin: 34px auto;
+    }
+    .singleProduct .recipe .img {
+        width: 100%;
+        height: 232px;
+        margin-right: 0;
+        border-radius: 15px;
+    }
+    .singleProduct .recipe .context {
+        width: 100%;
+        margin-top: 40px;
+    }
 }
 @media screen and (max-width: 600px) {
-  .singleProduct .arrow_button {
-    top: 88px;
-  }
-  .singleProduct .showcase .main {
-    width: 100%;
-  }
-  .singleProduct .showcase .main {
-    margin-top: 100px;
-  }
+    .singleProduct .arrow_button {
+        top: 88px;
+    }
+    .singleProduct .showcase .main {
+        width: 100%;
+    }
+    .singleProduct .showcase .main {
+        margin-top: 100px;
+    }
 }

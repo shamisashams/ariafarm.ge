@@ -1,83 +1,98 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.4.12,
+* Autoprefixer: v10.4.4
+* Browsers: last 4 version
+*/
+
 .articlePages {
-  background-color: #f6f6f6;
-  padding-bottom: 60px;
-  position: relative;
+    background-color: #f6f6f6;
+    padding-bottom: 60px;
+    position: relative;
 }
 .articlePages .search_input input {
-  background-color: transparent;
-  color: #fff;
+    background-color: transparent;
+    color: #fff;
 }
 .articlePages .article_showcase {
-  height: 538px;
-  background-position: center !important;
-  background-size: cover !important;
-  position: relative;
+    height: 538px;
+    background-position: center !important;
+    background-size: cover !important;
+    position: relative;
 }
 .articlePages .article_showcase::after {
-  width: 100%;
-  height: 100%;
-  left: 0;
-  top: 0;
-  background: linear-gradient(to bottom, #060e2363, #03091c46);
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    background: -webkit-gradient(
+        linear,
+        left top,
+        left bottom,
+        from(#060e2363),
+        to(#03091c46)
+    );
+    background: -o-linear-gradient(top, #060e2363, #03091c46);
+    background: linear-gradient(to bottom, #060e2363, #03091c46);
 }
 .articlePages p {
-  margin-bottom: 30px;
-  text-align: justify;
+    margin-bottom: 30px;
+    text-align: justify;
 }
 .articlePages .date {
-  margin: 20px 0;
+    margin: 20px 0;
 }
 .articlePages .art_img {
-  width: 100%;
-  height: auto;
-  margin-bottom: 30px;
+    width: 100%;
+    height: auto;
+    margin-bottom: 30px;
 }
 .articlePages .subject {
-  font-size: 20px;
+    font-size: 20px;
 }
 .articlePages .title50 {
-  color: #fff;
-  margin-top: -80px;
+    color: #fff;
+    margin-top: -80px;
 }
 .articlePages .title50::after {
-  display: none;
+    display: none;
 }
 .articlePages .abs_img {
-  position: absolute;
-  opacity: 0.3;
+    position: absolute;
+    opacity: 0.3;
 }
 .articlePages .abs_img.abs_1 {
-  left: 0;
-  top: 20%;
+    left: 0;
+    top: 20%;
 }
 .articlePages .abs_img.abs_2 {
-  right: 0;
-  bottom: 30%;
+    right: 0;
+    bottom: 30%;
 }
 
 @media screen and (max-width: 1200px) {
-  .articlePages .article_showcase {
-    height: 310px;
-  }
-  .articlePages .title50 {
-    margin-top: -64px;
-  }
-  .articlePages .abs_img.abs_1 {
-    left: 0;
-    top: 13%;
-  }
+    .articlePages .article_showcase {
+        height: 310px;
+    }
+    .articlePages .title50 {
+        margin-top: -64px;
+    }
+    .articlePages .abs_img.abs_1 {
+        left: 0;
+        top: 13%;
+    }
 }
 @media screen and (max-width: 600px) {
-  .articlePages .title50 {
-    margin-top: -46px;
-  }
-  .articlePages .article_showcase {
-    height: 221px;
-  }
-  .articlePages .abs_img {
-    width: 50%;
-  }
-  .articlePages .search_input {
-    top: 65px;
-  }
+    .articlePages .title50 {
+        margin-top: -46px;
+    }
+    .articlePages .article_showcase {
+        height: 221px;
+    }
+    .articlePages .abs_img {
+        width: 50%;
+    }
+    .articlePages .search_input {
+        top: 65px;
+    }
 }

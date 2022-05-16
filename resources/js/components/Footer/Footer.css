@@ -1,10 +1,19 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.4.12,
+* Autoprefixer: v10.4.4
+* Browsers: last 4 version
+*/
+
 .footer {
     border-top: 2px solid #acd3c1;
     font-size: 18px;
     padding: 40px 0;
 }
 .footer .grid {
+    display: -ms-grid;
     display: grid;
+    -ms-grid-columns: 1fr 87px 1fr;
     grid-template-columns: repeat(2, 1fr);
     grid-gap: 15px 87px;
 }
@@ -19,6 +28,8 @@
 }
 .footer .main {
     margin-bottom: 43px;
+    -webkit-box-align: start;
+    -ms-flex-align: start;
     align-items: flex-start;
 }
 .footer .bottom {
@@ -39,7 +50,9 @@
 }
 @media screen and (max-width: 900px) {
     .footer .main {
+        display: -ms-grid;
         display: grid;
+        -ms-grid-columns: 1fr 10px 1fr;
         grid-template-columns: repeat(2, 1fr);
         grid-gap: 20px 10px;
     }
@@ -48,6 +61,7 @@
         height: 160px;
     }
     .footer .main div:last-child {
+        -ms-grid-column-span: 2;
         grid-column: span 2;
     }
     .footer .grid a {
@@ -56,9 +70,11 @@
 }
 @media screen and (max-width: 600px) {
     .footer .main {
+        -ms-grid-columns: 1fr;
         grid-template-columns: 1fr;
     }
     .footer .main div:last-child {
+        -ms-grid-column-span: 1;
         grid-column: span 1;
     }
 
@@ -89,6 +105,9 @@
         white-space: normal;
     }
     .footer .bottom {
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
         flex-direction: column;
     }
     .footer .bottom .flex {
