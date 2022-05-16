@@ -10,7 +10,7 @@
     color: #fff;
     position: fixed;
     width: 100%;
-    height: 90px;
+    height: 66px;
     top: 0;
     left: 0;
     z-index: 2200;
@@ -46,7 +46,7 @@
     -webkit-transform: translateX(-50%);
     -ms-transform: translateX(-50%);
     transform: translateX(-50%);
-    top: 29px;
+    top: 5px;
     width: auto;
     height: auto;
 }
@@ -134,17 +134,11 @@
 }
 
 @media screen and (max-width: 1260px) {
-    .header {
-        height: 80px;
-    }
     .header .nav_link {
         margin: 0 17px;
     }
     .header .navbar .nav_link:nth-child(5) {
         margin-right: 153px;
-    }
-    .header .logo {
-        top: 18px;
     }
     .header .navbar {
         margin-left: -112px;
@@ -158,7 +152,7 @@
 
 @media screen and (max-width: 900px) {
     .header {
-        height: 60px;
+        height: 50px;
         -webkit-box-shadow: 0 5px 15px #0c1b2e21;
         box-shadow: 0 5px 15px #0c1b2e21;
     }

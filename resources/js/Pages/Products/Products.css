@@ -82,9 +82,6 @@
 .product_tabs .content_tab.active {
     display: block;
 }
-.product_tabs .content_tab .title35::before {
-    left: -50%;
-}
 .product_tabs .content_tab .products_in_cat {
     position: relative;
     padding-top: 45px;
