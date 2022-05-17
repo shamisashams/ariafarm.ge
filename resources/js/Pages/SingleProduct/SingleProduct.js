@@ -132,7 +132,7 @@ const SingleProduct = ({ seo, page }) => {
                                     </div>
                                 );
                             })}
-                            <div className="flex centered">
+                            {product_images.length > 1 ? <div className="flex centered">
                                 {product_images.map((img, index) => {
                                     return (
                                         <div
@@ -152,7 +152,7 @@ const SingleProduct = ({ seo, page }) => {
                                         </div>
                                     );
                                 })}
-                            </div>
+                            </div> : null}
                         </div>
                         <div className="details" data-aos="fade-up">
                             <div className="title50 gradient-bg rtl h100">
