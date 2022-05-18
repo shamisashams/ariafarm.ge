@@ -15,6 +15,11 @@ import "./HeroSection.css";
 const HeroSection = () => {
     const { sliders } = usePage().props;
     const sharedData = usePage().props.localizations;
+
+    const renderHTML = (rawHTML) =>
+        React.createElement("div", {
+            dangerouslySetInnerHTML: { __html: rawHTML },
+        });
     //console.log(sliders)
   var settings = {
     dots: false,
@@ -53,7 +58,7 @@ const HeroSection = () => {
                 <img className="slide_img" src={"/" + data.file.path + "/" + data.file.title} alt="" />
                 <div className="content">
                   <div className="title35">{data.title}</div>
-                  <p>{data.description}</p>
+                  {renderHTML(data.description)}
                   <Link href={data.youtube_url}>
                     <MainButton text={__('client.slider_btn',sharedData)} />
                   </Link>
