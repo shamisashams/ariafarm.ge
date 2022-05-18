@@ -100,6 +100,7 @@
 }
 .header .navbar {
     margin-left: -153px;
+    display: flex;
 }
 .header .nav_link {
     margin: 0 35px;
