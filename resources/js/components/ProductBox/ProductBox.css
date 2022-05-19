@@ -17,16 +17,8 @@
 }
 
 @media screen and (max-width: 900px) {
-    .product_box img {
-        height: 190px;
-        margin-bottom: 13px;
-    }
 }
 @media screen and (max-width: 500px) {
-    .product_box img {
-        height: 142px;
-        margin-bottom: 10px;
-    }
     .product_box p {
         font-size: 17px;
     }

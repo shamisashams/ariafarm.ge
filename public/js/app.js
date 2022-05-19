@@ -4901,8 +4901,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var aos__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! aos */ "./node_modules/aos/dist/aos.js");
 /* harmony import */ var aos__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(aos__WEBPACK_IMPORTED_MODULE_6__);
 /* harmony import */ var _inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @inertiajs/inertia-react */ "./node_modules/@inertiajs/inertia-react/dist/index.js");
-/* harmony import */ var react_spinners_PropagateLoader__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! react-spinners/PropagateLoader */ "./node_modules/react-spinners/PropagateLoader.js");
-/* harmony import */ var react_spinners_PropagateLoader__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(react_spinners_PropagateLoader__WEBPACK_IMPORTED_MODULE_8__);
+/* harmony import */ var react_spinners_PropagateLoader__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! react-spinners/PropagateLoader */ "./node_modules/react-spinners/PropagateLoader.js");
+/* harmony import */ var react_spinners_PropagateLoader__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(react_spinners_PropagateLoader__WEBPACK_IMPORTED_MODULE_9__);
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_8__);
 function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
 
 function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
@@ -4926,13 +4928,14 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
 
+
 function Layout(_ref) {
   var children = _ref.children,
       _ref$seo = _ref.seo,
       seo = _ref$seo === void 0 ? null : _ref$seo;
 
   // preloader
-  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(),
+  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(false),
       _useState2 = _slicedToArray(_useState, 2),
       loading = _useState2[0],
       setLoading = _useState2[1];
@@ -4965,7 +4968,7 @@ function Layout(_ref) {
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", {
     src: "/assets/images/logo/3.png",
     alt: ""
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement((react_spinners_PropagateLoader__WEBPACK_IMPORTED_MODULE_8___default()), {
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement((react_spinners_PropagateLoader__WEBPACK_IMPORTED_MODULE_9___default()), {
     color: "#fff",
     loading: loading,
     size: 25
@@ -9252,7 +9255,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".product_box {\r\n    text-align: center;\r\n    display: inline-block;\r\n    width: -webkit-fit-content;\r\n    width: -moz-fit-content;\r\n    width: fit-content;\r\n    margin-right: 30px;\r\n    margin-bottom: 45px;\r\n    vertical-align: top;\r\n}\r\n.product_box .img {\r\n    width: 300px;\r\n    height: 270px;\r\n    margin-bottom: 20px;\r\n}\r\n.product_box p {\r\n    font-size: 20px;\r\n    margin: auto;\r\n}\r\n\r\n@media screen and (max-width: 900px) {\r\n    .product_box img {\r\n        height: 190px;\r\n        margin-bottom: 13px;\r\n    }\r\n}\r\n@media screen and (max-width: 500px) {\r\n    .product_box img {\r\n        height: 142px;\r\n        margin-bottom: 10px;\r\n    }\r\n    .product_box p {\r\n        font-size: 17px;\r\n    }\r\n    .product_box {\r\n        margin-right: 15px;\r\n        margin-bottom: 38px;\r\n    }\r\n}\r\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, ".product_box {\r\n    text-align: center;\r\n    display: inline-block;\r\n    width: -webkit-fit-content;\r\n    width: -moz-fit-content;\r\n    width: fit-content;\r\n    margin-right: 30px;\r\n    margin-bottom: 45px;\r\n    vertical-align: top;\r\n}\r\n.product_box .img {\r\n    width: 300px;\r\n    height: 270px;\r\n    margin-bottom: 20px;\r\n}\r\n.product_box p {\r\n    font-size: 20px;\r\n    margin: auto;\r\n}\r\n\r\n@media screen and (max-width: 900px) {\r\n}\r\n@media screen and (max-width: 500px) {\r\n    .product_box p {\r\n        font-size: 17px;\r\n    }\r\n    .product_box {\r\n        margin-right: 15px;\r\n        margin-bottom: 38px;\r\n    }\r\n}\r\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 

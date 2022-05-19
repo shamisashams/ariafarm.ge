@@ -13,10 +13,11 @@ import Aos from "aos";
 import { usePage } from "@inertiajs/inertia-react";
 
 import PropagateLoader from "react-spinners/PropagateLoader";
+import axios from "axios";
 
 export default function Layout({ children, seo = null }) {
     // preloader
-    const [loading, setLoading] = useState();
+    const [loading, setLoading] = useState(false);
 
     useEffect(() => {
         setLoading(true);
