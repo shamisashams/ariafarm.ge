@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import SwiperCore, { EffectCoverflow } from "swiper";
 import "swiper/swiper-bundle.min.css";
@@ -9,7 +9,6 @@ import { Cow, Goat, Buffalo } from "../../../components/SmallComps/Icons";
 SwiperCore.use([EffectCoverflow]);
 
 const CardSlider = ({ cardData, category }) => {
-    //console.log(category)
     return (
         <div className="card_slider">
             <Swiper

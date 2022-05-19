@@ -304,7 +304,7 @@ $traverse = function ($categories, $prefix = false) use (&$traverse,$category) {
 
                     var Order = $(this).sortable('serialize').toString();
 
-                    console.log(Order)
+                    // console.log(Order)
                     Order = Order + '&_token={{csrf_token()}}'
 
                     $.ajax({

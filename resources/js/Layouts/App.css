@@ -1,6 +1,6 @@
 @font-face {
     font-family: "alk-mtav";
-    src: url('/assets/fonts/alk-sanet.ttf');
+    src: url("/assets/fonts/alk-sanet.ttf");
 }
 @font-face {
     font-family: "bpg-nino";
@@ -129,6 +129,19 @@ img {
 .flex.centered {
     justify-content: center;
 }
+.preloader {
+    width: 100vw;
+    height: 100vh;
+    background-color: #8eafa0;
+    flex-direction: column;
+    margin-top: -66px;
+}
+.preloader img {
+    margin-bottom: 30px;
+}
+.css-10p2e9r {
+    transform: translateX(-14px) !important;
+}
 .slick-prev,
 .slick-next {
     background: red !important;
@@ -230,6 +243,9 @@ img {
     }
     body {
         padding-top: 50px;
+    }
+    .preloader {
+        margin-top: -50px;
     }
 }
 @media screen and (max-width: 600px) {

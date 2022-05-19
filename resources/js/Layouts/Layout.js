@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import "./App.css";
 
 import "aos/dist/aos.css";
@@ -12,7 +12,19 @@ import setSeoData from "./SetSeoData";
 import Aos from "aos";
 import { usePage } from "@inertiajs/inertia-react";
 
+import PropagateLoader from "react-spinners/PropagateLoader";
+
 export default function Layout({ children, seo = null }) {
+    // preloader
+    const [loading, setLoading] = useState();
+
+    useEffect(() => {
+        setLoading(true);
+        setTimeout(() => {
+            setLoading(false);
+        }, 7000);
+    }, []);
+
     if (seo) {
         setSeoData(seo);
     }
@@ -23,19 +35,28 @@ export default function Layout({ children, seo = null }) {
     console.log(usePage().props);
     const { currentLocale } = usePage().props;
 
-     if (currentLocale == "en") {
-         import("./AppEng.css");
-     }
+    if (currentLocale == "en") {
+        import("./AppEng.css");
+    }
 
     return (
         <>
-            {/*<Router>*/}
-            {/*<Fragment>*/}
-            <Header />
-            {children}
-            <Footer />
-            {/*</Fragment>*/}
-            {/*</Router>*/}
+            {loading ? (
+                <div className="preloader flex centered">
+                    <img src="/assets/images/logo/3.png" alt="" />
+                    <PropagateLoader color="#fff" loading={loading} size={25} />
+                </div>
+            ) : (
+                <>
+                    {/*<Router>*/}
+                    {/*<Fragment>*/}
+                    <Header />
+                    {children}
+                    <Footer />
+                    {/*</Fragment>*/}
+                    {/*</Router>*/}
+                </>
+            )}
         </>
     );
 }
