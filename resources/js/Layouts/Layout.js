@@ -19,12 +19,31 @@ export default function Layout({ children, seo = null }) {
     // preloader
     const [loading, setLoading] = useState(false);
 
+    // useEffect(() => {
+    //     setLoading(true);
+    //     setTimeout(() => {
+    //         setLoading(false);
+    //     }, 7000);
+    // }, []);
+
+    const loadData = async () => {
+        try {
+            const data = await axios({
+                method: "get",
+                url: "http://bit.ly/2mTM3nY",
+                responseType: "stream",
+            }).then(function (response) {
+                response.data.pipe(fs.createWriteStream("ada_lovelace.jpg"));
+                setLoading(true);
+            });
+        } catch {
+            console.log(e);
+        }
+    };
+
     useEffect(() => {
-        setLoading(true);
-        setTimeout(() => {
-            setLoading(false);
-        }, 7000);
-    }, []);
+        loadData();
+    });
 
     if (seo) {
         setSeoData(seo);

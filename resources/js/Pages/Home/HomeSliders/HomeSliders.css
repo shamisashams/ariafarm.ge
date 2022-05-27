@@ -2,6 +2,11 @@
     max-width: 800px;
     margin: auto;
     margin-right: 0;
+    display: none;
+    position: relative;
+}
+.card_slider.show {
+    display: flex;
 }
 .card_slider .card {
     background-color: #fff;
@@ -12,6 +17,7 @@
     overflow: hidden;
     transition: all 0.3s;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+    width: 280px;
 }
 .card_slider .card svg {
     height: 56px;

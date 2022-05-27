@@ -9,8 +9,12 @@ import { Cow, Goat, Buffalo } from "../../../components/SmallComps/Icons";
 SwiperCore.use([EffectCoverflow]);
 
 const CardSlider = ({ cardData, category }) => {
+    const [showSlider, setShowSlider] = useState(false);
+    useEffect(() => {
+        setShowSlider(true);
+    }, [2000]);
     return (
-        <div className="card_slider">
+        <div className={showSlider ? "card_slider show" : "card_slider"}>
             <Swiper
                 grabCursor
                 centeredSlides
@@ -27,16 +31,16 @@ const CardSlider = ({ cardData, category }) => {
                     slideShadows: false,
                 }}
                 loop
-                slidesPerView={3}
+                slidesPerView="auto"
                 style={{ height: "400px" }}
-                breakpoints={{
-                    700: {
-                        slidesPerView: 3,
-                    },
-                    200: {
-                        slidesPerView: 2,
-                    },
-                }}
+                // breakpoints={{
+                //     700: {
+                //         slidesPerView: 3,
+                //     },
+                //     200: {
+                //         slidesPerView: 2,
+                //     },
+                // }}
             >
                 {cardData.map((card, index) => {
                     let icon;
