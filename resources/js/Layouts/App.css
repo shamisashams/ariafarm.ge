@@ -4,15 +4,15 @@
 }
 @font-face {
     font-family: "bpg-nino";
-    src: url(/assets/fonts/bpg_nino_medium.ttf);
+    src: url("/assets/fonts/bpg_nino_medium.ttf");
 }
 @font-face {
     font-family: "brushsci";
-    src: url(/assets/fonts/BRUSHSCI.ttf);
+    src: url("/assets/fonts/BRUSHSCI.ttf");
 }
 @font-face {
     font-family: "dm-giorgi";
-    src: url(/assets/fonts/patara_nino.ttf);
+    src: url("/assets/fonts/patara_nino.ttf");
 }
 *,
 *::after,

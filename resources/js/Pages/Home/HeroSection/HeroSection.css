@@ -99,11 +99,9 @@
         padding-right: 0;
     }
     .hero_section .arrow_button {
-        top: auto;
-        -webkit-transform: translateY(50%);
-        -ms-transform: translateY(50%);
-        transform: translateY(50%);
-        bottom: 50%;
+        top: 130px;
+        transform: none;
+        bottom: auto;
     }
     .hero_section .arrow_button.arr_right {
         right: -12px;
