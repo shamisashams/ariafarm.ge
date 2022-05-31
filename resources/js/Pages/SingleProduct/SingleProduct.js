@@ -93,6 +93,9 @@ const SingleProduct = ({ seo, page }) => {
                         />{" "}
                         {__("client.product_back", sharedData)}
                     </Link>
+                    <div className="title50 gradient-bg rtl h100 on_mobile">
+                        {product.title}
+                    </div>
                     <div className="flex main">
                         {/* this goes to the previous product page */}
                         <Link
@@ -132,27 +135,31 @@ const SingleProduct = ({ seo, page }) => {
                                     </div>
                                 );
                             })}
-                            {product_images.length > 1 ? <div className="flex centered">
-                                {product_images.map((img, index) => {
-                                    return (
-                                        <div
-                                            key={index}
-                                            className="img small"
-                                            onClick={() => setShowImg(index)}
-                                        >
-                                            <img
-                                                src={
-                                                    "/" +
-                                                    img.path +
-                                                    "/" +
-                                                    img.title
+                            {product_images.length > 1 ? (
+                                <div className="flex centered">
+                                    {product_images.map((img, index) => {
+                                        return (
+                                            <div
+                                                key={index}
+                                                className="img small"
+                                                onClick={() =>
+                                                    setShowImg(index)
                                                 }
-                                                alt=""
-                                            />
-                                        </div>
-                                    );
-                                })}
-                            </div> : null}
+                                            >
+                                                <img
+                                                    src={
+                                                        "/" +
+                                                        img.path +
+                                                        "/" +
+                                                        img.title
+                                                    }
+                                                    alt=""
+                                                />
+                                            </div>
+                                        );
+                                    })}
+                                </div>
+                            ) : null}
                         </div>
                         <div className="details" data-aos="fade-up">
                             <div className="title50 gradient-bg rtl h100">

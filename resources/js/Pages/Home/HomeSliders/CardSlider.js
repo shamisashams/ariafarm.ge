@@ -30,7 +30,7 @@ const CardSlider = ({ cardData, category }) => {
                     modifier: 2,
                     slideShadows: false,
                 }}
-                loop
+                initialSlide={1}
                 slidesPerView="auto"
                 style={{ height: "400px" }}
                 // breakpoints={{

@@ -149,9 +149,9 @@ const Home = ({ seo, page }) => {
                                     sharedData
                                 )}
                             </div>
-                            <p>
+                            {/* <p>
                                 {__("client.section_social_text", sharedData)}
-                            </p>
+                            </p> */}
                             <SocialLinks />
                             <SocialSlider />
                         </div>

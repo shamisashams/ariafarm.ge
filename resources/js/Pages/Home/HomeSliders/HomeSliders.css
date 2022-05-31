@@ -18,6 +18,7 @@
     transition: all 0.3s;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
     width: 280px;
+    opacity: 0;
 }
 .card_slider .card svg {
     height: 56px;
@@ -28,11 +29,13 @@
     line-height: 1.9;
 }
 .card_slider .swiper-slide-active {
-    border: 5px solid;
+    border: 2px solid;
+    opacity: 1;
 }
 .card_slider .swiper-slide-prev,
 .card_slider .swiper-slide-next {
-    border: 3px solid;
+    border: 2px solid;
+    opacity: 1;
 }
 
 .social_slider {
@@ -40,6 +43,7 @@
     margin: 60px auto;
     position: relative;
 }
+
 .social_slider .img {
     width: 220px;
     height: 220px;

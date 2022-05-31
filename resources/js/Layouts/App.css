@@ -12,7 +12,7 @@
 }
 @font-face {
     font-family: "dm-giorgi";
-    src: url(/assets/fonts/dm-giorgi-khorguashvili.ttf);
+    src: url(/assets/fonts/patara_nino.ttf);
 }
 *,
 *::after,
@@ -163,7 +163,7 @@ img {
     font-family: "dm-giorgi";
 }
 .title35 {
-    font-size: 35px;
+    font-size: 30px;
 }
 .title50 {
     font-size: 50px;

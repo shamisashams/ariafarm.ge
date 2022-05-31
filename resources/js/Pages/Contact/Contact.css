@@ -89,6 +89,7 @@
 @media screen and (max-width: 900px) {
     .contactPage .contact_showcase {
         height: 318px;
+        background-attachment: unset !important;
     }
 }
 @media screen and (max-width: 600px) {

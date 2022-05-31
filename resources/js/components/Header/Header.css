@@ -225,9 +225,11 @@
     .header .nav_link::after {
         display: none;
     }
-    .header .nav_link:hover,
-    .header .nav_link.active {
+    .header .nav_link:hover {
         background-color: #bf7e2f;
+    }
+    .header .nav_link.active {
+        color: #bf7e2f;
     }
     .header .navbar .nav_link:nth-child(5) {
         margin: 0;

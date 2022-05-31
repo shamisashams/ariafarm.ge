@@ -50,6 +50,9 @@
     margin-top: 200px;
     text-align: center;
 }
+.homePage .social_media .title35 {
+    margin-bottom: 20px;
+}
 .homePage .social_media p {
     margin-top: 18px;
     margin-bottom: 40px;
@@ -122,38 +125,7 @@
 .homePage .form_section .img-holder {
     position: relative;
 }
-.homePage .form_section .img-holder::before {
-    height: 100px;
-    width: 100%;
-    right: 50%;
-    top: 30%;
-    background: -webkit-gradient(
-        linear,
-        right top,
-        left top,
-        from(#5ec094),
-        to(transparent)
-    );
-    background: -o-linear-gradient(right, #5ec094, transparent);
-    background: linear-gradient(to left, #5ec094, transparent);
-    z-index: -1;
-}
-.homePage .form_section .img-holder::after {
-    height: 100px;
-    width: 100%;
-    left: 50%;
-    bottom: 30%;
-    background: -webkit-gradient(
-        linear,
-        left top,
-        right top,
-        from(#5ec094),
-        to(transparent)
-    );
-    background: -o-linear-gradient(left, #5ec094, transparent);
-    background: linear-gradient(to right, #5ec094, transparent);
-    z-index: -1;
-}
+
 .special_products_sec img {
     width: 36%;
 }

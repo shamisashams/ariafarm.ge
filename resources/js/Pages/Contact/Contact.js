@@ -40,8 +40,8 @@ const Contact = ({ seo, page, info }) => {
                         <div className="title35">
                             {__("client.contact", sharedData)}
                         </div>
-                        <Link
-                            href="/"
+                        <a
+                            href="+995 591 23 20 20"
                             className="flex centered info"
                             data-aos="fade-up"
                         >
@@ -50,9 +50,20 @@ const Contact = ({ seo, page, info }) => {
                                 alt=""
                             />
                             <span>{info.phone}</span>
-                        </Link>
-                        <Link
-                            href="/"
+                        </a>
+                        <a
+                            href="+995 591 23 20 20"
+                            className="flex centered info"
+                            data-aos="fade-up"
+                        >
+                            <img
+                                src="/assets/images/icons/contact/tel.svg"
+                                alt=""
+                            />
+                            <span>{info.phone2}</span>
+                        </a>
+                        <a
+                            href="#"
                             className="flex centered info"
                             data-aos="fade-up"
                         >
@@ -61,9 +72,9 @@ const Contact = ({ seo, page, info }) => {
                                 alt=""
                             />
                             <span>{info.email}</span>
-                        </Link>
-                        <Link
-                            href="/"
+                        </a>
+                        <a
+                            href="#"
                             className="flex centered info"
                             data-aos="fade-up"
                         >
@@ -72,7 +83,18 @@ const Contact = ({ seo, page, info }) => {
                                 alt=""
                             />
                             <span>{info.address}</span>
-                        </Link>
+                        </a>
+                        <a
+                            href="#"
+                            className="flex centered info"
+                            data-aos="fade-up"
+                        >
+                            <img
+                                src="/assets/images/icons/contact/pin.svg"
+                                alt=""
+                            />
+                            <span>{info.address2}</span>
+                        </a>
                         <br />
                         <SocialLinks />
                     </div>

@@ -71,11 +71,10 @@ const Footer = () => {
                     <div style={{ textAlign: "right" }}>
                         <div className="map">
                             <iframe
-                                title="iframe_aria"
-                                src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d23822.04694302264!2d44.7838177!3d41.725786600000006!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sge!4v1649316675399!5m2!1sen!2sge"
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2978.5773521556353!2d44.75723681567781!3d41.70805888401663!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40447335d6708c39%3A0x6c04da1db81c719a!2s56%20Irakli%20Abashidze%20Street%2C%20T&#39;bilisi!5e0!3m2!1sen!2sge!4v1653988543192!5m2!1sen!2sge"
                                 width="600"
                                 height="450"
-                                style={{ border: "0" }}
+                                style={{ border: "none" }}
                                 allowFullScreen=""
                                 loading="lazy"
                                 referrerPolicy="no-referrer-when-downgrade"
