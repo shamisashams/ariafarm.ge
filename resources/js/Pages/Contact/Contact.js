@@ -41,7 +41,7 @@ const Contact = ({ seo, page, info }) => {
                             {__("client.contact", sharedData)}
                         </div>
                         <a
-                            href="+995 591 23 20 20"
+                            href={`tel:${info.phone}`}
                             className="flex centered info"
                             data-aos="fade-up"
                         >
@@ -52,7 +52,7 @@ const Contact = ({ seo, page, info }) => {
                             <span>{info.phone}</span>
                         </a>
                         <a
-                            href="+995 591 23 20 20"
+                            href={`tel:${info.phone2}`}
                             className="flex centered info"
                             data-aos="fade-up"
                         >
@@ -63,7 +63,7 @@ const Contact = ({ seo, page, info }) => {
                             <span>{info.phone2}</span>
                         </a>
                         <a
-                            href="#"
+                            href={`mailto:${info.email}`}
                             className="flex centered info"
                             data-aos="fade-up"
                         >
@@ -74,7 +74,8 @@ const Contact = ({ seo, page, info }) => {
                             <span>{info.email}</span>
                         </a>
                         <a
-                            href="#"
+                            target={"_blank"}
+                            href="https://www.google.com/maps/place/56+Irakli+Abashidze+Street,+T'bilisi/@41.7080589,44.7572368,17z/data=!3m1!4b1!4m5!3m4!1s0x40447335d6708c39:0x6c04da1db81c719a!8m2!3d41.7080549!4d44.7594255"
                             className="flex centered info"
                             data-aos="fade-up"
                         >
@@ -85,6 +86,7 @@ const Contact = ({ seo, page, info }) => {
                             <span>{info.address}</span>
                         </a>
                         <a
+                            target={"_blank"}
                             href="#"
                             className="flex centered info"
                             data-aos="fade-up"

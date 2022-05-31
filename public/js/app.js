@@ -5610,34 +5610,36 @@ var Contact = function Contact(_ref) {
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "title35"
   }, __("client.contact", sharedData)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("a", {
-    href: "+995 591 23 20 20",
+    href: "tel:".concat(info.phone),
     className: "flex centered info",
     "data-aos": "fade-up"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", {
     src: "/assets/images/icons/contact/tel.svg",
     alt: ""
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", null, info.phone)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("a", {
-    href: "+995 591 23 20 20",
+    href: "tel:".concat(info.phone2),
     className: "flex centered info",
     "data-aos": "fade-up"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", {
     src: "/assets/images/icons/contact/tel.svg",
     alt: ""
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", null, info.phone2)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("a", {
-    href: "#",
+    href: "mailto:".concat(info.email),
     className: "flex centered info",
     "data-aos": "fade-up"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", {
     src: "/assets/images/icons/contact/mail.svg",
     alt: ""
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", null, info.email)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("a", {
-    href: "#",
+    target: "_blank",
+    href: "https://www.google.com/maps/place/56+Irakli+Abashidze+Street,+T'bilisi/@41.7080589,44.7572368,17z/data=!3m1!4b1!4m5!3m4!1s0x40447335d6708c39:0x6c04da1db81c719a!8m2!3d41.7080549!4d44.7594255",
     className: "flex centered info",
     "data-aos": "fade-up"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", {
     src: "/assets/images/icons/contact/pin.svg",
     alt: ""
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", null, info.address)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("a", {
+    target: "_blank",
     href: "#",
     className: "flex centered info",
     "data-aos": "fade-up"
