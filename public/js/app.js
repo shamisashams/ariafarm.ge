@@ -5527,7 +5527,7 @@ var Blogs = function Blogs(_ref) {
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "blogsPage"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_SmallComps_SearchInput__WEBPACK_IMPORTED_MODULE_3__["default"], {
-    color: "#000"
+    color: "#4a2921"
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "wrapper"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_SmallComps_PagePath__WEBPACK_IMPORTED_MODULE_2__["default"], {
@@ -5762,7 +5762,7 @@ var Gallery = function Gallery(_ref) {
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "galleryPage"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_SmallComps_SearchInput__WEBPACK_IMPORTED_MODULE_1__["default"], {
-    color: "#000"
+    color: "#4a2921"
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "wrapper"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_SmallComps_PagePath__WEBPACK_IMPORTED_MODULE_2__["default"], {
@@ -6021,7 +6021,7 @@ var Home = function Home(_ref) {
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "homePage"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_SmallComps_SearchInput__WEBPACK_IMPORTED_MODULE_13__["default"], {
-    color: "#000"
+    color: "#4a2921"
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_HeroSection_HeroSection__WEBPACK_IMPORTED_MODULE_2__["default"], null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "why_our_product"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
@@ -6458,7 +6458,7 @@ var Products = function Products(_ref) {
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "productsPage"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_SmallComps_SearchInput__WEBPACK_IMPORTED_MODULE_3__["default"], {
-    color: "#000"
+    color: "#4a2921"
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "wrapper"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_SmallComps_PagePath__WEBPACK_IMPORTED_MODULE_2__["default"], {
@@ -6773,7 +6773,7 @@ var SearchPage = function SearchPage(_ref) {
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "search_page"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_SmallComps_SearchInput__WEBPACK_IMPORTED_MODULE_1__["default"], {
-    color: "#000"
+    color: "#4a2921"
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "wrapper content"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
@@ -6927,7 +6927,7 @@ var SingleProduct = function SingleProduct(_ref) {
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "singleProduct"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_SmallComps_SearchInput__WEBPACK_IMPORTED_MODULE_2__["default"], {
-    color: "#000"
+    color: "#4a2921"
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "wrapper showcase"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__.Link, {
@@ -7121,7 +7121,7 @@ var SpecialOffers = function SpecialOffers(_ref) {
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "specialOffers"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_SmallComps_SearchInput__WEBPACK_IMPORTED_MODULE_2__["default"], {
-    color: "#000"
+    color: "#4a2921"
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "wrapper main"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_SmallComps_PagePath__WEBPACK_IMPORTED_MODULE_1__["default"], {
@@ -9044,7 +9044,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "/*\r\n* Prefixed by https://autoprefixer.github.io\r\n* PostCSS: v8.4.12,\r\n* Autoprefixer: v10.4.4\r\n* Browsers: last 4 version\r\n*/\r\n\r\n.hero_section .slide_img {\r\n    width: auto;\r\n    transition: 1s;\r\n    transition-delay: 0.2s;\r\n    transform: translateY(100%);\r\n    max-height: 320px;\r\n}\r\n.hero_section .hero_slider {\r\n    padding-right: 35px;\r\n    text-align: center;\r\n}\r\n.hero_section .slick-active .slide_img {\r\n    transform: translateY(0);\r\n}\r\n.hero_section .hero_slider p {\r\n    transition: 1.2s;\r\n    margin: 20px 0;\r\n}\r\n.hero_section .hero_slider .content {\r\n    transition: 1.2s;\r\n    transform: translateY(-100%);\r\n    opacity: 0;\r\n    max-width: 600px;\r\n    margin-left: 30px;\r\n}\r\n.hero_section .slick-active .content {\r\n    transform: translateY(0);\r\n    opacity: 1;\r\n}\r\n.hero_section .slick-active p {\r\n}\r\n.slick-slide.slick-active {\r\n    z-index: 999;\r\n}\r\n.hero_section .slide {\r\n    padding: 45px 0;\r\n    justify-content: center;\r\n}\r\n\r\n@media screen and (max-width: 1200px) {\r\n    .hero_section {\r\n        align-items: flex-end;\r\n    }\r\n    .hero_section .slide p {\r\n        margin: 14px 0;\r\n    }\r\n    .hero_section .slide {\r\n        align-items: flex-end;\r\n    }\r\n    .hero_section .content {\r\n        margin-bottom: 30px;\r\n    }\r\n}\r\n@media screen and (max-width: 1000px) {\r\n    .hero_section .slide {\r\n        flex-direction: column;\r\n        padding-top: 40px;\r\n    }\r\n    .hero_section .slide_img {\r\n        max-height: none;\r\n    }\r\n    .hero_section .slide {\r\n        align-items: center;\r\n    }\r\n    .hero_section .hero_slider {\r\n        text-align: center;\r\n        padding-right: 0;\r\n    }\r\n    .hero_section .arrow_button {\r\n        top: 130px;\r\n        transform: none;\r\n        bottom: auto;\r\n    }\r\n    .hero_section .arrow_button.arr_right {\r\n        right: -12px;\r\n    }\r\n    .hero_section .arrow_button.arr_left {\r\n        left: -12px;\r\n    }\r\n    .hero_section .slick-prev,\r\n    .hero_section .slick-next {\r\n        top: auto !important;\r\n        transform: translateY(50%) !important;\r\n        bottom: 50% !important;\r\n    }\r\n    .hero_section .hero_slider .content {\r\n        margin-left: 0;\r\n    }\r\n}\r\n\r\n@media screen and (max-width: 420px) {\r\n    .hero_section .slide {\r\n        padding-top: 53px;\r\n    }\r\n}\r\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "/*\r\n* Prefixed by https://autoprefixer.github.io\r\n* PostCSS: v8.4.12,\r\n* Autoprefixer: v10.4.4\r\n* Browsers: last 4 version\r\n*/\r\n\r\n.hero_section .slide_img {\r\n    width: auto;\r\n    transition: 1s;\r\n    transition-delay: 0.2s;\r\n    transform: translateY(100%);\r\n    max-height: 320px;\r\n}\r\n.hero_section .hero_slider {\r\n    padding-right: 35px;\r\n    text-align: center;\r\n}\r\n.hero_section .slick-active .slide_img {\r\n    transform: translateY(0);\r\n}\r\n.hero_section .hero_slider p {\r\n    transition: 1.2s;\r\n    margin: 20px 0;\r\n}\r\n.hero_section .hero_slider .content {\r\n    transition: 1.2s;\r\n    transform: translateY(-100%);\r\n    opacity: 0;\r\n    max-width: 600px;\r\n    margin-left: 30px;\r\n}\r\n.hero_section .slick-active .content {\r\n    transform: translateY(0);\r\n    opacity: 1;\r\n}\r\n.hero_section .slick-active p {\r\n}\r\n.slick-slide.slick-active {\r\n    z-index: 999;\r\n}\r\n.hero_section .slide {\r\n    padding: 45px 0;\r\n    justify-content: center;\r\n}\r\n\r\n@media screen and (max-width: 1200px) {\r\n    .hero_section {\r\n        align-items: flex-end;\r\n    }\r\n    .hero_section .slide p {\r\n        margin: 14px 0;\r\n    }\r\n    .hero_section .slide {\r\n        align-items: flex-end;\r\n    }\r\n    .hero_section .content {\r\n        margin-bottom: 30px;\r\n    }\r\n}\r\n@media screen and (max-width: 1000px) {\r\n    .hero_section .slide {\r\n        flex-direction: column;\r\n        padding-top: 70px;\r\n    }\r\n    .hero_section .slide_img {\r\n        max-height: none;\r\n    }\r\n    .hero_section .slide {\r\n        align-items: center;\r\n    }\r\n    .hero_section .hero_slider {\r\n        text-align: center;\r\n        padding-right: 0;\r\n    }\r\n    .hero_section .arrow_button {\r\n        top: 130px;\r\n        transform: none;\r\n        bottom: auto;\r\n    }\r\n    .hero_section .arrow_button.arr_right {\r\n        right: -12px;\r\n    }\r\n    .hero_section .arrow_button.arr_left {\r\n        left: -12px;\r\n    }\r\n    .hero_section .slick-prev,\r\n    .hero_section .slick-next {\r\n        top: 149px !important;\r\n        transform: none !important;\r\n        bottom: auto !important;\r\n    }\r\n    .hero_section .hero_slider .content {\r\n        margin-left: 0;\r\n    }\r\n}\r\n\r\n@media screen and (max-width: 420px) {\r\n    .hero_section .slide {\r\n        padding-top: 60px;\r\n    }\r\n}\r\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -9404,7 +9404,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".search_input {\r\n  position: absolute;\r\n  top: 27px;\r\n  right: 0;\r\n  width: 137px;\r\n  height: 58px;\r\n  transition: 0.3s;\r\n  z-index: 2001;\r\n}\r\n.search_input input {\r\n  width: 100%;\r\n  height: 100%;\r\n  border-radius: 15px;\r\n  opacity: 0;\r\n  transition: 0.3s;\r\n  padding-left: 15px;\r\n  background-color: #fff;\r\n}\r\n.search_input svg {\r\n  position: absolute;\r\n  top: 50%;\r\n  right: 13px;\r\n  transform: translateY(-50%);\r\n}\r\n.search_input.open {\r\n  width: 300px;\r\n}\r\n.search_input.open input {\r\n  opacity: 1;\r\n}\r\n.search_input:hover {\r\n  width: 300px;\r\n}\r\n.search_input:hover input {\r\n  opacity: 1;\r\n}\r\n\r\n.pagepath {\r\n  color: #949494;\r\n  display: flex;\r\n  align-items: center;\r\n  justify-content: flex-start;\r\n  padding-top: 43px;\r\n}\r\n.pagepath svg {\r\n  margin: 0 10px;\r\n}\r\n\r\n.social_links2 {\r\n  justify-content: flex-start;\r\n}\r\n.social_links2 a {\r\n  margin-left: 13px;\r\n  opacity: 0.3;\r\n  transition: 0.3s;\r\n}\r\n.social_links2 a:hover {\r\n  opacity: 1;\r\n}\r\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, ".search_input {\r\n    position: absolute;\r\n    top: 27px;\r\n    right: 0;\r\n    width: 137px;\r\n    height: 58px;\r\n    transition: 0.3s;\r\n    z-index: 2001;\r\n}\r\n.search_input input {\r\n    width: 100%;\r\n    height: 100%;\r\n    border-radius: 15px;\r\n    opacity: 0;\r\n    transition: 0.3s;\r\n    padding-left: 15px;\r\n    background-color: #fff;\r\n}\r\n.search_input svg {\r\n    position: absolute;\r\n    top: 50%;\r\n    right: 13px;\r\n    transform: translateY(-50%);\r\n}\r\n.search_input.open {\r\n    width: 300px;\r\n}\r\n.search_input.open input {\r\n    opacity: 1;\r\n}\r\n.search_input:hover {\r\n    width: 300px;\r\n}\r\n.search_input:hover input {\r\n    opacity: 1;\r\n}\r\n\r\n.pagepath {\r\n    color: #949494;\r\n    display: flex;\r\n    align-items: center;\r\n    justify-content: flex-start;\r\n    padding-top: 43px;\r\n}\r\n.pagepath svg {\r\n    margin: 0 10px;\r\n}\r\n\r\n.social_links2 {\r\n    justify-content: flex-start;\r\n}\r\n.social_links2 a {\r\n    margin-left: 13px;\r\n    opacity: 0.3;\r\n    transition: 0.3s;\r\n}\r\n.social_links2 a:hover {\r\n    opacity: 1;\r\n}\r\n\r\n@media screen and (max-width: 1000px) {\r\n    .search_input input {\r\n        border-radius: 9px;\r\n        padding-left: 10px;\r\n    }\r\n    .search_input {\r\n        top: 11px;\r\n        width: 131px;\r\n        height: 45px;\r\n        border-width: 1px !important;\r\n    }\r\n}\r\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
