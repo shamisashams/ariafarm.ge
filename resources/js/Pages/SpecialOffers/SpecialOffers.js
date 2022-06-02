@@ -54,7 +54,7 @@ const SpecialOffers = ({ seo }) => {
     return (
         <Layout seo={seo}>
             <div className="specialOffers">
-                <SearchInput color="#000" />
+                <SearchInput color="#4a2921" />
                 <div className="wrapper main">
                     <PagePath
                         prev={__("client.nav_home", sharedData)}

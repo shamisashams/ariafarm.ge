@@ -84,7 +84,7 @@
     .hero_section .slide {
         -webkit-box-orient: vertical;
         flex-direction: column;
-        padding-top: 40px;
+        padding-top: 70px;
     }
     .hero_section .slide_img {
         max-height: none;
@@ -111,11 +111,9 @@
     }
     .hero_section .slick-prev,
     .hero_section .slick-next {
-        top: auto !important;
-        -webkit-transform: translateY(50%) !important;
-        -ms-transform: translateY(50%) !important;
-        transform: translateY(50%) !important;
-        bottom: 50% !important;
+        top: 149px !important;
+        transform: none !important;
+        bottom: auto !important;
     }
     .hero_section .hero_slider .content {
         margin-left: 0;
@@ -124,6 +122,6 @@
 
 @media screen and (max-width: 420px) {
     .hero_section .slide {
-        padding-top: 53px;
+        padding-top: 60px;
     }
 }

@@ -82,7 +82,7 @@ const Home = ({ seo, page }) => {
     return (
         <Layout seo={seo}>
             <div className="homePage">
-                <SearchInput color="#000" />
+                <SearchInput color="#4a2921" />
                 <HeroSection />
                 <div className="why_our_product">
                     {/* <img

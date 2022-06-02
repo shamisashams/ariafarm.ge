@@ -80,7 +80,7 @@ const SingleProduct = ({ seo, page }) => {
     return (
         <Layout seo={seo}>
             <div className="singleProduct">
-                <SearchInput color="#000" />
+                <SearchInput color="#4a2921" />
                 <div className="wrapper showcase">
                     <Link
                         href={route("client.product.index")}

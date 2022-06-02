@@ -87,7 +87,7 @@ const Gallery = ({ seo }) => {
     return (
         <Layout seo={seo}>
             <div className="galleryPage">
-                <SearchInput color="#000" />
+                <SearchInput color="#4a2921" />
                 <div className="wrapper">
                     <PagePath
                         prev={__("client.nav_home", sharedData)}

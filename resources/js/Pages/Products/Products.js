@@ -24,7 +24,7 @@ const Products = ({ seo }) => {
     return (
         <Layout seo={seo}>
             <div className="productsPage">
-                <SearchInput color="#000" />
+                <SearchInput color="#4a2921" />
                 <div className="wrapper">
                     <PagePath
                         prev={__("client.nav_home", sharedData)}
