@@ -5854,9 +5854,9 @@ var HeroSection = function HeroSection() {
         __html: rawHTML
       }
     });
-  }; //console.log(sliders)
+  };
 
-
+  console.log(sliders);
   var settings = {
     dots: false,
     infinite: true,
@@ -5888,7 +5888,7 @@ var HeroSection = function HeroSection() {
       key: index
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
       className: "slide flex"
-    }, data.file ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", {
+    }, data.file !== null ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", {
       className: "slide_img",
       src: "/" + data.file.path + "/" + data.file.title,
       alt: ""
