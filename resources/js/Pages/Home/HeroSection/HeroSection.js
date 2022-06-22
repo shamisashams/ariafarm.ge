@@ -20,7 +20,7 @@ const HeroSection = () => {
         React.createElement("div", {
             dangerouslySetInnerHTML: { __html: rawHTML },
         });
-    //console.log(sliders)
+    console.log(sliders)
     var settings = {
         dots: false,
         infinite: true,
@@ -55,7 +55,7 @@ const HeroSection = () => {
                     return (
                         <div key={index}>
                             <div className="slide flex">
-                                <img
+                                {data.file !== null ? <img
                                     className="slide_img"
                                     src={
                                         "/" +
@@ -64,7 +64,7 @@ const HeroSection = () => {
                                         data.file.title
                                     }
                                     alt=""
-                                />
+                                /> : null}
                                 <div className="content">
                                     <div className="title35">{data.title}</div>
                                     {renderHTML(data.description)}
