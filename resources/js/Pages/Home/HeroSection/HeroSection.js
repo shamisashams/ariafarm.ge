@@ -68,14 +68,14 @@ const HeroSection = () => {
                                 <div className="content">
                                     <div className="title35">{data.title}</div>
                                     {renderHTML(data.description)}
-                                    <Link href={data.youtube_url}>
+                                    <a href={data.youtube_url}>
                                         <MainButton
                                             text={__(
                                                 "client.slider_btn",
                                                 sharedData
                                             )}
                                         />
-                                    </Link>
+                                    </a>
                                 </div>
                             </div>
                         </div>
