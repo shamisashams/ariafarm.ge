@@ -33,7 +33,7 @@ const SearchInput = ({ color }) => {
                             setOpenSearch(true);
                             handleChange(e);
                         }}
-                        style={{ border: `${color} 2px solid` }}
+                        style={{ border: `${color} 1px solid` }}
                         type="text"
                         placeholder={__(
                             "client.search_placeholder",

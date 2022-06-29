@@ -43,7 +43,6 @@ const Contact = ({ seo, page, info }) => {
                         <a
                             href={`tel:${info.phone}`}
                             className="flex centered info"
-                            data-aos="fade-up"
                         >
                             <img
                                 src="/assets/images/icons/contact/tel.svg"
@@ -54,7 +53,6 @@ const Contact = ({ seo, page, info }) => {
                         <a
                             href={`tel:${info.phone2}`}
                             className="flex centered info"
-                            data-aos="fade-up"
                         >
                             <img
                                 src="/assets/images/icons/contact/tel.svg"
@@ -65,7 +63,6 @@ const Contact = ({ seo, page, info }) => {
                         <a
                             href={`mailto:${info.email}`}
                             className="flex centered info"
-                            data-aos="fade-up"
                         >
                             <img
                                 src="/assets/images/icons/contact/mail.svg"
@@ -77,7 +74,6 @@ const Contact = ({ seo, page, info }) => {
                             target={"_blank"}
                             href="https://www.google.com/maps/place/56+Irakli+Abashidze+Street,+T'bilisi/@41.7080589,44.7572368,17z/data=!3m1!4b1!4m5!3m4!1s0x40447335d6708c39:0x6c04da1db81c719a!8m2!3d41.7080549!4d44.7594255"
                             className="flex centered info"
-                            data-aos="fade-up"
                         >
                             <img
                                 src="/assets/images/icons/contact/pin.svg"
@@ -89,7 +85,6 @@ const Contact = ({ seo, page, info }) => {
                             target={"_blank"}
                             href="#"
                             className="flex centered info"
-                            data-aos="fade-up"
                         >
                             <img
                                 src="/assets/images/icons/contact/pin.svg"
@@ -98,7 +93,7 @@ const Contact = ({ seo, page, info }) => {
                             <span>{info.address2}</span>
                         </a>
                         <br />
-                        <SocialLinks />
+                        {/* <SocialLinks /> */}
                     </div>
 
                     <Form />

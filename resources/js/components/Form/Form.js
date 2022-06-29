@@ -59,7 +59,7 @@ export const Form = () => {
         },
     ];
     return (
-        <div className="form" data-aos="fade-up">
+        <div className="form">
             <div className="title35 ">
                 {__("client.form_header", sharedData)}
             </div>

@@ -114,11 +114,14 @@ const Header = () => {
                     ref={wrapperRef}
                     className={menu ? "navbar open" : "navbar"}
                 >
-                    <img
-                        className="mobile_logo_img"
-                        src="/assets/images/logo/1.png"
-                        alt=""
-                    />
+                    <Link href={route("client.home.index")}>
+                        <img
+                            className="mobile_logo_img"
+                            src="/assets/images/logo/1.png"
+                            alt=""
+                        />
+                    </Link>
+
                     {navbar.map((nav, index) => {
                         return (
                             <Link

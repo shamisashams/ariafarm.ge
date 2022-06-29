@@ -36,7 +36,7 @@ const SearchPage = ({ seo }) => {
     return (
         <Layout seo={seo}>
             <div className="search_page">
-                <SearchInput color="#4a2921" />
+                <SearchInput color="#bf7e2f" />
                 <div className="wrapper content">
                     <div className="op05 bpg">
                         "საძიებო სიტყვა" ნაპოვნია {products.length} შედეგი

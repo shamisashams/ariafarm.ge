@@ -80,7 +80,7 @@ const SingleProduct = ({ seo, page }) => {
     return (
         <Layout seo={seo}>
             <div className="singleProduct">
-                <SearchInput color="#4a2921" />
+                <SearchInput color="#bf7e2f" />
                 <div className="wrapper showcase">
                     <Link
                         href={route("client.product.index")}
@@ -161,7 +161,7 @@ const SingleProduct = ({ seo, page }) => {
                                 </div>
                             ) : null}
                         </div>
-                        <div className="details" data-aos="fade-up">
+                        <div className="details">
                             <div className="title50 gradient-bg rtl h100">
                                 {product.title}
                             </div>
@@ -225,7 +225,7 @@ const SingleProduct = ({ seo, page }) => {
                 </div>
                 {product.bunker ? (
                     <div className="recipe wrapper2 flex">
-                        <div className="img" data-aos="zoom-in">
+                        <div className="img">
                             <img src={"/" + product.recipe_img} alt="" />
                         </div>
                         <div className="context">

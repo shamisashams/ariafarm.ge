@@ -25,7 +25,7 @@
     display: inline-block;
     color: #bf7e2f;
     background-color: transparent;
-    border: 2px solid #bf7e2f;
+    border: 1px solid #bf7e2f;
     border-radius: 26px;
     height: 52px;
     padding: 0 55px;
@@ -88,24 +88,11 @@
     margin-top: 30px;
 }
 .product_tabs .content_tab .products_in_cat::before {
-    height: 3px;
+    height: 1px;
     width: 100%;
     top: 0;
     left: 0;
-    background-image: -o-repeating-linear-gradient(
-        left,
-        #acd3c1,
-        #acd3c1 8px,
-        transparent 5px,
-        transparent 25px
-    );
-    background-image: repeating-linear-gradient(
-        90deg,
-        #acd3c1,
-        #acd3c1 8px,
-        transparent 5px,
-        transparent 25px
-    );
+    background: #acd3c1;
 }
 
 @media screen and (max-width: 1200px) {
@@ -150,6 +137,13 @@
     }
 }
 @media screen and (max-width: 550px) {
+    .product_showcase .tab_btn {
+        padding: 0 25px;
+        margin-right: 8px;
+        border-radius: 15px;
+        height: 40px;
+        font-size: 13px;
+    }
     .product_showcase .showcase_icon .bg_text {
         font-size: 70px;
     }

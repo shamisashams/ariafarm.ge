@@ -17,7 +17,6 @@ const Gallery = ({ seo }) => {
     const [showModal, setShowModal] = useState(0);
     const { gallery } = usePage().props;
     const sharedData = usePage().props.localizations;
-    console.log(gallery);
     const galleryImgs = [
         {
             img: "/assets/images/blogs/1.png",
@@ -87,7 +86,7 @@ const Gallery = ({ seo }) => {
     return (
         <Layout seo={seo}>
             <div className="galleryPage">
-                <SearchInput color="#4a2921" />
+                <SearchInput color="#bf7e2f" />
                 <div className="wrapper">
                     <PagePath
                         prev={__("client.nav_home", sharedData)}
@@ -113,7 +112,6 @@ const Gallery = ({ seo }) => {
                                         onClick={() => setShowModal(index + 1)}
                                         key={index}
                                         className="img"
-                                        data-aos="flip-left"
                                     >
                                         <img src={"/" + img.img} alt="" />
                                     </div>

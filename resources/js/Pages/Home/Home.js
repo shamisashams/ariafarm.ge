@@ -82,7 +82,7 @@ const Home = ({ seo, page }) => {
     return (
         <Layout seo={seo}>
             <div className="homePage">
-                <SearchInput color="#4a2921" />
+                <SearchInput color="#bf7e2f" />
                 <HeroSection />
                 <div className="why_our_product">
                     {/* <img
@@ -143,16 +143,9 @@ const Home = ({ seo, page }) => {
                     </div>
                     <div className="wrapper">
                         <div className="social_media">
-                            <div className="title35">
-                                {__(
-                                    "client.home_section_social_header",
-                                    sharedData
-                                )}
-                            </div>
                             {/* <p>
                                 {__("client.section_social_text", sharedData)}
                             </p> */}
-                            <SocialLinks />
                             <SocialSlider />
                         </div>
                     </div>

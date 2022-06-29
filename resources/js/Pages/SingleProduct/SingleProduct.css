@@ -193,7 +193,7 @@
 }
 @media screen and (max-width: 600px) {
     .singleProduct .arrow_button {
-        top: 100px;
+        top: 253px;
     }
     .singleProduct .gradient-bg.rtl::before {
         left: -25px;
@@ -206,7 +206,7 @@
         width: 80px;
     }
     .singleProduct .title50.on_mobile {
-        margin-top: 138px;
+        margin-top: 39px;
     }
     .singleProduct .showcase .main .images {
         margin-bottom: 30px;
