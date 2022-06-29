@@ -247,7 +247,7 @@ const Home = ({ seo, page }) => {
                         </div>
                     </div>
                 </div>
-                <div className="blog_section wrapper">
+                {/* <div className="blog_section wrapper">
                     <div className="flex">
                         <div className="title35 ">
                             {__("client.blog", sharedData)}
@@ -277,7 +277,7 @@ const Home = ({ seo, page }) => {
                             );
                         })}
                     </div>
-                </div>
+                </div> */}
                 <div className="faq wrapper">
                     <div className="title35">
                         {__("client.home_faq", sharedData)}

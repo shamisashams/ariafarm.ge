@@ -45,10 +45,6 @@ const SingleBlog = ({ seo }) => {
                 <div className="wrapper2 content">
                     <div className="title50">{blog.title}</div>
                     <div className="subject bpg green ">{blog.subject}</div>
-                    <div className="date">
-                        <img src="/assets/images/icons/calendar.svg" alt="" />
-                        {blog.created_at}
-                    </div>
 
                     {renderHTML(
                         blog.text_top !== null
@@ -96,6 +92,10 @@ const SingleBlog = ({ seo }) => {
                             ? blog.text_bottom.newLineToBr()
                             : null
                     )}
+                    <div className="date">
+                        <img src="/assets/images/icons/calendar.svg" alt="" />
+                        {blog.created_at}
+                    </div>
                 </div>
             </div>
         </Layout>
