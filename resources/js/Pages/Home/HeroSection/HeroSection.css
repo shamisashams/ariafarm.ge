@@ -76,6 +76,7 @@
     }
     .hero_section .slide_img {
         max-height: none;
+        margin-bottom: 20px;
     }
     .hero_section .slide {
         -webkit-box-align: center;
@@ -97,9 +98,15 @@
     .hero_section .arrow_button.arr_left {
         left: -12px;
     }
+    .hero_section .slick-prev {
+        left: -8px;
+    }
+    .hero_section .slick-next {
+        right: -8px;
+    }
     .hero_section .slick-prev,
     .hero_section .slick-next {
-        top: 149px !important;
+        top: 134px !important;
         transform: none !important;
         bottom: auto !important;
     }

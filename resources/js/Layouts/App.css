@@ -150,12 +150,7 @@ img {
     z-index: 200;
     opacity: 0;
 }
-.slick-prev {
-    left: 0 !important;
-}
-.slick-next {
-    right: 0 !important;
-}
+
 .bpg {
     font-family: "bpg-nino";
 }
