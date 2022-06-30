@@ -13,6 +13,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\Admin\ProductRequest;
 use App\Models\Attribute;
 use App\Models\Category;
+use App\Models\File;
 use App\Models\Product;
 use App\Models\ProductAttributeValue;
 use App\Repositories\CategoryRepositoryInterface;
@@ -22,11 +23,14 @@ use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\View\View;
 use Illuminate\Http\RedirectResponse;
+use Illuminate\Http\Request;
 use Illuminate\Routing\Redirector;
 use Illuminate\Support\Arr;
+use Illuminate\Support\Facades\Storage;
 use ReflectionException;
 use App\Repositories\Eloquent\AttributeRepository;
 use function Symfony\Component\Translation\t;
+use ReflectionClass;
 
 class ProductController extends Controller
 {
@@ -344,5 +348,35 @@ class ProductController extends Controller
             return redirect(locale_route('product.show', $product->id))->with('danger', __('admin.not_delete_message'));
         }
         return redirect(locale_route('product.index'))->with('success', __('admin.delete_message'));
+    }
+
+    public function uploadCropped(Request $request, $locale, Product $product){
+       // dd($product->id);
+
+        $data = explode(',', $request->post('base64_img'));
+// Decode the base64 data
+        $data = base64_decode($data[1]);
+
+
+
+        if ($request->has('base64_img')) {
+            // Get Name Of model
+            $reflection = new ReflectionClass(get_class($product));
+            $modelName = $reflection->getShortName();
+
+
+                $imagename = date('Ymdhis') .'crop.png';
+                $destination = base_path() . '/storage/app/public/' . $modelName . '/' . $product->id;
+
+                Storage::put('public/product/' . $product->id . '/' . $imagename,$data);
+                $product->files()->create([
+                    'title' => $imagename,
+                    'path' => 'storage/' . $modelName . '/' . $product->id,
+                    'format' => 'png',
+                    'type' => File::FILE_DEFAULT,
+                    'youtube' =>  null
+                ]);
+
+        }
     }
 }
