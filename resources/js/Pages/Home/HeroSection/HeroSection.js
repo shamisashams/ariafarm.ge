@@ -79,12 +79,7 @@ const HeroSection = () => {
                                         }}
                                     >
                                         <MainButton
-                                            text={__(
-                                                !readMoreShown
-                                                    ? "client.slider_btn"
-                                                    : "client.slider_btn_show_less",
-                                                sharedData
-                                            )}
+                                            text={!readMoreShown ? __("client.slider_btn", sharedData) : __("client.slider_btn_show_less", sharedData)}
                                         />
                                     </a>
                                 </div>
