@@ -6457,7 +6457,8 @@ var Products = function Products(_ref) {
           key: index,
           link: route("client.product.show", product.slug),
           productName: product.title,
-          imgSrc: product.latest_image != null ? "/" + product.latest_image.path + "/" + product.latest_image.title : null
+          imgSrc: product.latest_image != null ? "/" + product.latest_image.path + "/" + product.latest_image.title : null,
+          productCaption: product.short_description
         });
       }) : null));
     }));
@@ -7827,7 +7828,9 @@ var ProductBox = function ProductBox(_ref) {
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", {
     src: imgSrc,
     alt: ""
-  })));
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+    className: "caption"
+  }, productCaption));
 };
 
 /***/ }),
