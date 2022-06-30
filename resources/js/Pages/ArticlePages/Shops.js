@@ -49,7 +49,7 @@ const Shops = ({ seo, page }) => {
                             ? page.text_top.newLineToBr()
                             : null
                     )}
-                    <div className="art_img img">
+                    {/*<div className="art_img img">
                         <img
                             src={
                                 page.sections[1].file !== null
@@ -61,12 +61,12 @@ const Shops = ({ seo, page }) => {
                             }
                             alt=""
                         />
-                    </div>
-                    {renderHTML(
+                    </div>*/}
+                    {/*{renderHTML(
                         page.text_medium !== null
                             ? page.text_medium.newLineToBr()
                             : null
-                    )}
+                    )}*/}
                 </div>
                 <FermaSection
                     imgSrc={
@@ -82,7 +82,7 @@ const Shops = ({ seo, page }) => {
                     paragraph={__("client.shop_section_text", sharedData)}
                 />
                 <div className="wrapper2">
-                    <div className="art_img  img">
+                    {/*<div className="art_img  img">
                         <img
                             src={
                                 page.sections[3].file !== null
@@ -94,7 +94,7 @@ const Shops = ({ seo, page }) => {
                             }
                             alt=""
                         />
-                    </div>
+                    </div>*/}
                     {renderHTML(
                         page.text_bottom !== null
                             ? page.text_bottom.newLineToBr()

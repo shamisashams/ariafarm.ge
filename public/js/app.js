@@ -5160,24 +5160,14 @@ var Enterprise = function Enterprise(_ref) {
     className: "wrapper2 content"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "title50"
-  }, page.title), renderHTML(page.text_top !== null ? page.text_top.newLineToBr() : null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
-    className: "art_img img"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", {
-    src: page.sections[1].file !== null ? "/" + page.sections[1].file.path + "/" + page.sections[1].file.title : null,
-    alt: ""
-  })), renderHTML(page.text_medium !== null ? page.text_medium.newLineToBr() : null)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_FermaSection_FermaSection__WEBPACK_IMPORTED_MODULE_5__["default"], {
+  }, page.title), renderHTML(page.text_top !== null ? page.text_top.newLineToBr() : null)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_FermaSection_FermaSection__WEBPACK_IMPORTED_MODULE_5__["default"], {
     imgSrc: page.sections[2].file !== null ? "/" + page.sections[2].file.path + "/" + page.sections[2].file.title : null,
     link: route("client.shop.index"),
     title: __("client.enterprise_section_title", sharedData),
     paragraph: __("client.enterprise_section_text", sharedData)
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "wrapper2"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
-    className: "art_img  img"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", {
-    src: page.sections[3].file !== null ? "/" + page.sections[3].file.path + "/" + page.sections[3].file.title : null,
-    alt: ""
-  })), renderHTML(page.text_bottom !== null ? page.text_bottom.newLineToBr() : null))));
+  }, renderHTML(page.text_bottom !== null ? page.text_bottom.newLineToBr() : null))));
 };
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Enterprise);
@@ -5250,24 +5240,14 @@ var Farm = function Farm(_ref) {
     className: "wrapper2 content"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "title50"
-  }, page.title), renderHTML(page.text_top !== null ? page.text_top.newLineToBr() : null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
-    className: "art_img img"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", {
-    src: page.sections[1].file !== null ? "/" + page.sections[1].file.path + "/" + page.sections[1].file.title : null,
-    alt: ""
-  })), renderHTML(page.text_medium !== null ? page.text_medium.newLineToBr() : null)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_FermaSection_FermaSection__WEBPACK_IMPORTED_MODULE_5__["default"], {
+  }, page.title), renderHTML(page.text_top !== null ? page.text_top.newLineToBr() : null)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_FermaSection_FermaSection__WEBPACK_IMPORTED_MODULE_5__["default"], {
     imgSrc: page.sections[2].file !== null ? "/" + page.sections[2].file.path + "/" + page.sections[2].file.title : null,
     link: route("client.enterprise.index"),
     title: __("client.farm_section_title", sharedData),
     paragraph: __("client.farm_section_text", sharedData)
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "wrapper2"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
-    className: "art_img img"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", {
-    src: page.sections[3].file !== null ? "/" + page.sections[3].file.path + "/" + page.sections[3].file.title : null,
-    alt: ""
-  })), renderHTML(page.text_bottom !== null ? page.text_bottom.newLineToBr() : null))));
+  }, renderHTML(page.text_bottom !== null ? page.text_bottom.newLineToBr() : null))));
 };
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Farm);
@@ -5339,24 +5319,14 @@ var Shops = function Shops(_ref) {
     className: "wrapper2 content"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "title50"
-  }, page.title), renderHTML(page.text_top !== null ? page.text_top.newLineToBr() : null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
-    className: "art_img img"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", {
-    src: page.sections[1].file !== null ? "/" + page.sections[1].file.path + "/" + page.sections[1].file.title : null,
-    alt: ""
-  })), renderHTML(page.text_medium !== null ? page.text_medium.newLineToBr() : null)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_FermaSection_FermaSection__WEBPACK_IMPORTED_MODULE_5__["default"], {
+  }, page.title), renderHTML(page.text_top !== null ? page.text_top.newLineToBr() : null)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_FermaSection_FermaSection__WEBPACK_IMPORTED_MODULE_5__["default"], {
     imgSrc: page.sections[2].file !== null ? "/" + page.sections[2].file.path + "/" + page.sections[2].file.title : null,
     link: route("client.farm.index"),
     title: __("client.shop_section_title", sharedData),
     paragraph: __("client.shop_section_text", sharedData)
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "wrapper2"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
-    className: "art_img  img"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", {
-    src: page.sections[3].file !== null ? "/" + page.sections[3].file.path + "/" + page.sections[3].file.title : null,
-    alt: ""
-  })), renderHTML(page.text_bottom !== null ? page.text_bottom.newLineToBr() : null))));
+  }, renderHTML(page.text_bottom !== null ? page.text_bottom.newLineToBr() : null))));
 };
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Shops);
