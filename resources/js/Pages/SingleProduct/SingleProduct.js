@@ -195,7 +195,7 @@ const SingleProduct = ({ seo, page }) => {
                         </div>
                     </div>
                 </div>
-                <div className="cards_sec">
+                {product.new ? <div className="cards_sec">
                     <div className="wrapper">
                         <div className="text">
                             <div className="title35">
@@ -217,7 +217,7 @@ const SingleProduct = ({ seo, page }) => {
                         </div>
                         <CardSlider cardData={cards} category={category_path} />
                     </div>
-                </div>
+                </div>: null}
                 {product.bunker ? (
                     <div className="recipe wrapper2 flex">
                         <div className="img">
