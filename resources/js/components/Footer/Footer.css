@@ -7,7 +7,7 @@
 
 .footer {
     border-top: 2px solid #acd3c1;
-    font-size: 18px;
+    font-size: 14px;
     padding: 40px 0;
 }
 .footer .grid {
@@ -96,7 +96,7 @@
         padding: 19px 0;
     }
 }
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 500px) {
     .footer .grid {
         grid-gap: 10px 6px;
         font-size: 13px;
@@ -105,13 +105,15 @@
         white-space: normal;
     }
     .footer .bottom {
-        -webkit-box-orient: vertical;
-        -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-        flex-direction: column;
+        flex-direction: column-reverse;
+        font-size: 12px;
+    }
+    .footer .bottom img {
+        width: 53px;
+        margin-bottom: -3px;
     }
     .footer .bottom .flex {
-        margin-top: 20px;
+        margin-bottom: 20px;
     }
     .footer {
         border-top: none;

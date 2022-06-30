@@ -67,6 +67,7 @@
 }
 .homePage .content .title35 {
     margin: 20px 0;
+    font-weight: bold;
 }
 
 .homePage .our_products {
@@ -106,6 +107,7 @@
 .homePage .faq {
     text-align: center;
     margin-bottom: 120px;
+    margin-top: 50px;
 }
 .homePage .form_section {
     margin-bottom: 100px;
@@ -115,7 +117,7 @@
     margin-left: 30px;
 }
 .homePage .form_section .img {
-    border-radius: 50%;
+    border-radius: 10px;
     width: 549px;
     height: 549px;
     border: 5px solid #fff;

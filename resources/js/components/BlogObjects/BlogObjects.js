@@ -35,7 +35,7 @@ export const BlogBoxSmall = (props) => {
 export const BlogBoxLarge = (props) => {
     const sharedData = usePage().props.localizations;
     return (
-        <div className="blogbox blogbox_large" data-aos="fade-up">
+        <div className="blogbox blogbox_large">
             <div className="img">
                 <img src={props.img} alt="" />
             </div>

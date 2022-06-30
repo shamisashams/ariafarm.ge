@@ -20,7 +20,7 @@ const HeroSection = () => {
         React.createElement("div", {
             dangerouslySetInnerHTML: { __html: rawHTML },
         });
-    console.log(sliders)
+    console.log(sliders);
     var settings = {
         dots: false,
         infinite: true,
@@ -55,27 +55,29 @@ const HeroSection = () => {
                     return (
                         <div key={index}>
                             <div className="slide flex">
-                                {data.file !== null ? <img
-                                    className="slide_img"
-                                    src={
-                                        "/" +
-                                        data.file.path +
-                                        "/" +
-                                        data.file.title
-                                    }
-                                    alt=""
-                                /> : null}
+                                {data.file !== null ? (
+                                    <img
+                                        className="slide_img"
+                                        src={
+                                            "/" +
+                                            data.file.path +
+                                            "/" +
+                                            data.file.title
+                                        }
+                                        alt=""
+                                    />
+                                ) : null}
                                 <div className="content">
                                     <div className="title35">{data.title}</div>
                                     {renderHTML(data.description)}
-                                    <Link href={data.youtube_url}>
+                                    <a target="_blank" href={data.youtube_url}>
                                         <MainButton
                                             text={__(
                                                 "client.slider_btn",
                                                 sharedData
                                             )}
                                         />
-                                    </Link>
+                                    </a>
                                 </div>
                             </div>
                         </div>

@@ -29,9 +29,7 @@
     transform: scale(0.95);
 }
 .arrow_button {
-    width: -webkit-fit-content;
-    width: -moz-fit-content;
-    width: fit-content;
+    width: 44px;
     border-radius: 50%;
     position: absolute;
     top: 50%;

@@ -55,7 +55,7 @@ const Blogs = ({ seo }) => {
     return (
         <Layout seo={seo}>
             <div className="blogsPage">
-                <SearchInput color="#4a2921" />
+                <SearchInput color="#bf7e2f" />
                 <div className="wrapper">
                     <PagePath
                         prev={__("client.nav_home", sharedData)}
@@ -63,7 +63,7 @@ const Blogs = ({ seo }) => {
                         color="#949494"
                     />
                     <div className="main">
-                        <div className="title50" data-aos="fade-right">
+                        <div className="title50">
                             {__("client.blog", sharedData)}
                         </div>
                         {blogs.map((blog, index) => {

@@ -7,9 +7,9 @@ import "./FermaSection.css";
 const FermaSection = (props) => {
     const sharedData = usePage().props.localizations;
     return (
-        <div className="ferma_section" data-aos="fade-up">
+        <div className="ferma_section">
             <div className="wrapper2 flex">
-                <div className="left" data-aos="fade-right">
+                <div className="left">
                     <div className="title35">{props.title}</div>
                     <p>{props.paragraph}</p>
                     <Link href={props.link}>
