@@ -40,7 +40,7 @@
     <!-- row -->
     {!! Form::model($page,['url' => $url, 'method' => $method,'files' => true]) !!}
     <div class="row">
-        <div class="col-lg-6 col-md-12">
+        <div class="col-lg-12 col-md-12">
             <div class="card">
                 <div class="card-body">
                     <div>
