@@ -142,6 +142,7 @@ const Products = ({ seo }) => {
                                                                                         .title
                                                                                   : null
                                                                           }
+                                                                          productCaption={product.short_description}
                                                                       />
                                                                   );
                                                               }

@@ -11,7 +11,7 @@ CKEDITOR.editorConfig = function( config ) {
     config.extraPlugins = 'youtube,simage,lineheight,layoutmanager,basewidget,sourcearea';
 
 
-    config.imageUploadURL = '/admin/upload_editor/ck_upload_image';
+    config.imageUploadURL = '/ckeditor/image_upload';
     config.dataParser = function(data){
         return data.url;
     };

@@ -10,7 +10,7 @@ export const ProductBox = ({ imgSrc, productName, link, productCaption }) => {
             <div className="img">
                 <img src={imgSrc} alt="" />
             </div>
-            {/* <div className="caption">{productCaption}</div> */}
+             <div className="caption">{productCaption}</div>
         </Link>
     );
 };

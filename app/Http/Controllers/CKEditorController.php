@@ -24,21 +24,32 @@ class CKEditorController extends Controller
      */
     public function upload(Request $request)
     {
-        if($request->hasFile('upload')) {
-            $originName = $request->file('upload')->getClientOriginalName();
+        //dd($request->all());
+        if($request->hasFile('file')) {
+            $originName = $request->file('file')->getClientOriginalName();
             $fileName = pathinfo($originName, PATHINFO_FILENAME);
-            $extension = $request->file('upload')->getClientOriginalExtension();
+            $extension = $request->file('file')->getClientOriginalExtension();
             $fileName = $fileName.'_'.time().'.'.$extension;
 
-            $request->file('upload')->move(public_path('images'), $fileName);
+            $request->file('file')->move(public_path('ckeditor-images'), $fileName);
 
-            $CKEditorFuncNum = $request->input('CKEditorFuncNum');
-            $url = asset('images/'.$fileName);
-            $msg = 'Image uploaded successfully';
-            $response = "<script>window.parent.CKEDITOR.tools.callFunction($CKEditorFuncNum, '$url', '$msg')</script>";
 
-            @header('Content-type: text/html; charset=utf-8');
-            echo $response;
+            $url = asset('ckeditor-images/'.$fileName);
+
+
+
+
+            $object = new \stdClass();
+
+
+                $object->url = $url;
+
+
+
+
+            header('Content-Type: application/json');
+            echo json_encode($object);
+
         }
     }
 }

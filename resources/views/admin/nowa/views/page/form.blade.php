@@ -40,7 +40,7 @@
     <!-- row -->
     {!! Form::model($page,['url' => $url, 'method' => $method,'files' => true]) !!}
     <div class="row">
-        <div class="col-lg-6 col-md-12">
+        <div class="col-lg-12 col-md-12">
             <div class="card">
                 <div class="card-body">
                     <div>
@@ -148,9 +148,9 @@
                                                     @enderror
                                                 </div>
 
-                                                <div class="form-group">
+                                                {{--<div class="form-group">
                                                     <label class="form-label" for="text_medium">@lang('admin.text_medium')</label>
-                                                    <textarea class="form-control" id="text_top-{{$locale}}"
+                                                    <textarea class="form-control" id="text_medium-{{$locale}}"
                                                               name="{{$locale}}[text_medium]'">{!! $page->translate($locale)->text_medium ?? '' !!}</textarea>
                                                     @error($locale.'.text_medium')
                                                     <small class="text-danger">
@@ -159,13 +159,13 @@
                                                         </div>
                                                     </small>
                                                     @enderror
-                                                </div>
+                                                </div>--}}
 
                                                 <div class="form-group">
                                                     <label class="form-label" for="text_bottom">@lang('admin.text_bottom')</label>
                                                     <textarea class="form-control" id="text_bottom-{{$locale}}"
                                                               name="{{$locale}}[text_bottom]'">{!! $page->translate($locale)->text_bottom ?? '' !!}</textarea>
-                                                    @error($locale.'.text_top')
+                                                    @error($locale.'.text_bottom')
                                                     <small class="text-danger">
                                                         <div class="error">
                                                             {{$message}}
@@ -507,14 +507,12 @@
             $('.input-images').imageUploader();
         }
     </script>
-
-    <script src="{{ asset('ckeditor/ckeditor.js') }}"></script>
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+    <script src="{{ asset('admin/ckeditor/ckeditor.js') }}"></script>
     <script>
         @foreach(config('translatable.locales') as $locale)
-        CKEDITOR.replace('description-{{$locale}}', {
-            filebrowserUploadUrl: "{{route('upload', ['_token' => csrf_token() ])}}",
-            filebrowserUploadMethod: 'form'
-        });
+        CKEDITOR.replace('text_top-{{$locale}}');
+        CKEDITOR.replace('text_bottom-{{$locale}}');
         @endforeach
     </script>
     <script>
