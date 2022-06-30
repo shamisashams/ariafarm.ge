@@ -45,6 +45,32 @@ const Farm = ({ seo, page }) => {
                 </div>
                 <div className="wrapper2 content">
                     <div className="title50">{page.title}</div>
+
+                    {/* embedded video */}
+
+                    {/* <iframe
+                        src="https://www.youtube.com/embed/1a7f9wzOfWk"
+                        title="YouTube video player"
+                        frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen
+                    ></iframe> */}
+
+                    {/* <section className="articleSections">
+                        <div className="sectionTitle">Title</div>
+                        <p></p>
+                        <p></p>
+                        <p></p>
+                        <div className="sectionImages">
+                            <img src="" alt="" />
+                            <img src="" alt="" />
+                            <img src="" alt="" />
+                            <img src="" alt="" />
+                        </div>
+                        <p></p>
+                        <p></p>
+                    </section> */}
+
                     {renderHTML(
                         page.text_top !== null
                             ? page.text_top.newLineToBr()

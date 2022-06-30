@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useRef } from "react";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick/lib/slider";
@@ -32,22 +32,7 @@ const HeroSection = () => {
         autoplay: true,
         autoplaySpeed: 12000,
     };
-    const slidesData = [
-        {
-            img: "assets/images/home/1.png",
-            title: "თანამედროვე ტექნოლოგიებით აღჭურვილი ქართული საწარმო",
-            paragraph:
-                "არია ქართული ბრენდია. აღნიშნული საწარმო სამეგრელოში, სენაკის რაიონის სოფელ მენჯში 60 ჰა მიწის ფართობზეაგანლაგებული. ფერმა ",
-            btnLink: "/",
-        },
-        {
-            img: "assets/images/home/1.png",
-            title: "თანამედროვე ტექნოლოგიწარმო ნოლოგიებისა",
-            paragraph:
-                "არია ქართული ბრენდია. აღნიშნული საწარმო სამეთ აღჭუებისარვილი ქართული გრელოში, სენაკის რაიონის სოფელ მენჯშაიონის სოფელ მენჯში 60 ჰა მიწის ფართობზეაგანლაგებული. ფერმა",
-            btnLink: "/",
-        },
-    ];
+
     return (
         <div className="hero_section wrapper">
             <Slider {...settings} className="hero_slider">
