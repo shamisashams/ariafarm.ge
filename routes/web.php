@@ -20,7 +20,7 @@ use App\Http\Controllers\Client\ContactController;
 use App\Http\Controllers\Client\AboutUsController;
 use Illuminate\Support\Facades\Route;
 
-Route::post('ckeditor/image_upload', [CKEditorController::class, 'upload'])->name('upload');
+Route::post('ckeditor/image_upload', [CKEditorController::class, 'upload'])->withoutMiddleware('web')->name('upload');
 
 Route::redirect('', config('translatable.fallback_locale'));
 Route::prefix('{locale?}')
