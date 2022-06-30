@@ -6910,18 +6910,9 @@ var SingleProduct = function SingleProduct(_ref) {
     })
   }];
   var prod_link = [];
-
-  if (similar_products.length > 0 && similar_products.length < 2) {
-    prod_link[0] = similar_products[0];
-    prod_link[1] = similar_products[0];
-  } else if (similar_products.length > 1) {
-    prod_link[0] = similar_products[0];
-    prod_link[1] = similar_products[1];
-  } else {
-    prod_link[0] = product;
-    prod_link[1] = product;
-  }
-
+  console.log(similar_products);
+  prod_link[0] = similar_products['prev'];
+  prod_link[1] = similar_products['next'];
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_Layouts_Layout__WEBPACK_IMPORTED_MODULE_8__["default"], {
     seo: seo
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
@@ -6943,11 +6934,11 @@ var SingleProduct = function SingleProduct(_ref) {
     className: "title50 gradient-bg rtl h100 on_mobile"
   }, product.title), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "flex main"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__.Link, {
-    href: route("client.product.show", prod_link[0].slug)
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_Buttons_Buttons__WEBPACK_IMPORTED_MODULE_4__.ArrowLeft, null)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__.Link, {
-    href: route("client.product.show", prod_link[1].slug)
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_Buttons_Buttons__WEBPACK_IMPORTED_MODULE_4__.ArrowRight, null)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+  }, prod_link[0] ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__.Link, {
+    href: route("client.product.show", prod_link[0])
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_Buttons_Buttons__WEBPACK_IMPORTED_MODULE_4__.ArrowLeft, null)) : null, prod_link[1] ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__.Link, {
+    href: route("client.product.show", prod_link[1])
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_Buttons_Buttons__WEBPACK_IMPORTED_MODULE_4__.ArrowRight, null)) : null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "images"
   }, product_images.map(function (img, index) {
     return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
