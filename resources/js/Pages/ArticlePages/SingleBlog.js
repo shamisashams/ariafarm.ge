@@ -46,6 +46,16 @@ const SingleBlog = ({ seo }) => {
                     <div className="title50">{blog.title}</div>
                     <div className="subject bpg green ">{blog.subject}</div>
 
+                    {/* embedded video */}
+
+                    {/* <iframe
+                        src="https://www.youtube.com/embed/1a7f9wzOfWk"
+                        title="YouTube video player"
+                        frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen
+                    ></iframe> */}
+
                     {renderHTML(
                         blog.text_top !== null
                             ? blog.text_top.newLineToBr()

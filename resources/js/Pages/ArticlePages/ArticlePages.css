@@ -10,6 +10,10 @@
     padding-bottom: 60px;
     position: relative;
 }
+.articlePages iframe {
+    width: 100%;
+    height: 500px;
+}
 .articlePages .search_input input {
     background-color: transparent;
     color: #fff;
@@ -88,6 +92,9 @@
     .articlePages .pagepath {
         padding-top: 25px;
     }
+    .articlePages iframe {
+        height: 400px;
+    }
 }
 @media screen and (max-width: 600px) {
     .articlePages .title50 {
@@ -101,5 +108,13 @@
     }
     .articlePages .search_input:hover {
         width: 199px;
+    }
+    .articlePages iframe {
+        height: 250px;
+    }
+}
+@media screen and (max-width: 400px) {
+    .articlePages iframe {
+        height: 200px;
     }
 }
