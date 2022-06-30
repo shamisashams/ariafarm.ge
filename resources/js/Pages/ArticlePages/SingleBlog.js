@@ -14,7 +14,6 @@ import { usePage } from "@inertiajs/inertia-react";
 const SingleBlog = ({ seo }) => {
     const { blog } = usePage().props;
     const sharedData = usePage().props.localizations;
-    //console.log(blog)
     const renderHTML = (rawHTML) =>
         React.createElement("p", {
             dangerouslySetInnerHTML: { __html: rawHTML },

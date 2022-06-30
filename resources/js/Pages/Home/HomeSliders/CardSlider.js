@@ -44,7 +44,6 @@ const CardSlider = ({ cardData, category }) => {
             >
                 {cardData.map((card, index) => {
                     let icon;
-                    //console.log(card.icon !== undefined ? card.icon : category)
                     switch (
                         card.icon !== undefined ? card.icon : category[0].slug
                     ) {

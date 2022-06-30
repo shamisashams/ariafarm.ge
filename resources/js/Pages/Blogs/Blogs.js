@@ -13,7 +13,6 @@ import { usePage } from "@inertiajs/inertia-react";
 const Blogs = ({ seo }) => {
     const { blogs } = usePage().props;
     const sharedData = usePage().props.localizations;
-    console.log(blogs);
     const blogsList = [
         {
             link: "/single-blog",

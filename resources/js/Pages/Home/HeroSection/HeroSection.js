@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+import React, { useState } from "react";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick/lib/slider";
@@ -15,6 +15,7 @@ import "./HeroSection.css";
 const HeroSection = () => {
     const { sliders } = usePage().props;
     const sharedData = usePage().props.localizations;
+    const [readMoreShown, setReadMoreShown] = useState(false);
 
     const renderHTML = (rawHTML) =>
         React.createElement("div", {
@@ -31,6 +32,14 @@ const HeroSection = () => {
         fade: true,
         autoplay: true,
         autoplaySpeed: 12000,
+        afterChange: () => setReadMoreShown(false),
+    };
+
+    console.log(readMoreShown);
+
+    const toggleBtn = (e) => {
+        e.preventDefault();
+        setReadMoreShown((prevState) => !prevState);
     };
 
     return (
@@ -54,11 +63,26 @@ const HeroSection = () => {
                                 ) : null}
                                 <div className="content">
                                     <div className="title35">{data.title}</div>
-                                    {renderHTML(data.description)}
-                                    <a target="_blank" href={data.youtube_url}>
+                                    {readMoreShown
+                                        ? renderHTML(data.description)
+                                        : renderHTML(
+                                              data.description.substr(0, 300)
+                                          )}
+                                    {/* <a target="_blank" href={data.youtube_url}> */}
+                                    <a
+                                        onClick={toggleBtn}
+                                        style={{
+                                            display:
+                                                data.description.length < 300
+                                                    ? "none"
+                                                    : "block",
+                                        }}
+                                    >
                                         <MainButton
                                             text={__(
-                                                "client.slider_btn",
+                                                !readMoreShown
+                                                    ? "client.slider_btn"
+                                                    : "client.slider_btn_show_less",
                                                 sharedData
                                             )}
                                         />

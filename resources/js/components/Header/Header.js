@@ -54,7 +54,6 @@ const Header = () => {
     const { pathname, locales, currentLocale, locale_urls } = usePage().props;
     //console.log(usePage().props);
     let pathname_ = getPathFromUrl(pathname);
-    console.log(pathname_);
 
     const [menu, setMenu] = useState(false);
     const toggleMenu = () => {

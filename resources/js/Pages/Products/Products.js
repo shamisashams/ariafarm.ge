@@ -13,9 +13,6 @@ const Products = ({ seo }) => {
     const { categories, products } = usePage().props;
     const sharedData = usePage().props.localizations;
 
-    console.log(categories);
-    console.log(products);
-
     const renderHTML = (rawHTML) =>
         React.createElement("div", {
             dangerouslySetInnerHTML: { __html: rawHTML },

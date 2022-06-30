@@ -31,7 +31,6 @@ export const Form = () => {
     }
 
     function handleClick(e) {
-        console.log(values);
         e.preventDefault();
         Inertia.post(route("client.contact.mail"), values);
     }

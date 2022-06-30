@@ -11,7 +11,6 @@ import Layout from "../../Layouts/Layout";
 import { usePage } from "@inertiajs/inertia-react";
 
 const Farm = ({ seo, page }) => {
-    //console.log(page)
     const renderHTML = (rawHTML) =>
         React.createElement("p", {
             dangerouslySetInnerHTML: { __html: rawHTML },

@@ -35,7 +35,6 @@ const Home = ({ seo, page }) => {
         __("client.section2_check2", sharedData),
         __("client.section2_check3", sharedData),
     ];
-    console.log(page.sections);
     const cardData = [
         {
             text: "არია ქართული ბრენდია. აღნიშნული საწარმო სამეგრელოში, სენაკის რაიონის სოფელ მენჯში 60 ჰა მიწის ფართობზეა განლაგებული. ფერმა ყველა საერთაშორისო სტანდარტის დაცვით აშენდა.",
@@ -76,8 +75,6 @@ const Home = ({ seo, page }) => {
     }
 
     const { errors } = usePage().props;
-
-    console.log(errors);
 
     return (
         <Layout seo={seo}>

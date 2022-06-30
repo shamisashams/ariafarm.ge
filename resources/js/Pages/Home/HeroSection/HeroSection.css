@@ -51,19 +51,10 @@
 }
 
 @media screen and (max-width: 1200px) {
-    .hero_section {
-        -webkit-box-align: end;
-        -ms-flex-align: end;
-        align-items: flex-end;
-    }
     .hero_section .slide p {
         margin: 14px 0;
     }
-    .hero_section .slide {
-        -webkit-box-align: end;
-        -ms-flex-align: end;
-        align-items: flex-end;
-    }
+
     .hero_section .content {
         margin-bottom: 30px;
     }

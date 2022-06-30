@@ -12,7 +12,6 @@ import Layout from "../../Layouts/Layout";
 
 const Contact = ({ seo, page, info }) => {
     const sharedData = usePage().props.localizations;
-    //console.log(info)
     return (
         <Layout seo={seo}>
             <div className="contactPage">

@@ -17,7 +17,6 @@ import { Cow, Goat } from "../../components/SmallComps/Icons";
 import Layout from "../../Layouts/Layout";
 
 const SingleProduct = ({ seo, page }) => {
-    console.log(page);
     const { product, product_images, similar_products, cards, category_path } =
         usePage().props;
     const sharedData = usePage().props.localizations;
@@ -67,10 +66,9 @@ const SingleProduct = ({ seo, page }) => {
         },
     ];
     let prod_link = [];
-    console.log(similar_products);
 
-        prod_link[0] = similar_products['prev'];
-        prod_link[1] = similar_products['next'];
+    prod_link[0] = similar_products["prev"];
+    prod_link[1] = similar_products["next"];
 
     return (
         <Layout seo={seo}>
@@ -93,23 +91,27 @@ const SingleProduct = ({ seo, page }) => {
                     </div>
                     <div className="flex main">
                         {/* this goes to the previous product page */}
-                        {prod_link[0] ? <Link
-                            href={route(
-                                "client.product.show",
-                                prod_link[0]
-                            )}
-                        >
-                            <ArrowLeft />
-                        </Link>: null}
+                        {prod_link[0] ? (
+                            <Link
+                                href={route(
+                                    "client.product.show",
+                                    prod_link[0]
+                                )}
+                            >
+                                <ArrowLeft />
+                            </Link>
+                        ) : null}
                         {/* this goes to the next product page */}
-                        {prod_link[1]?<Link
-                            href={route(
-                                "client.product.show",
-                                prod_link[1]
-                            )}
-                        >
-                            <ArrowRight />
-                        </Link> : null}
+                        {prod_link[1] ? (
+                            <Link
+                                href={route(
+                                    "client.product.show",
+                                    prod_link[1]
+                                )}
+                            >
+                                <ArrowRight />
+                            </Link>
+                        ) : null}
                         <div className="images">
                             {product_images.map((img, index) => {
                                 return (
@@ -195,29 +197,34 @@ const SingleProduct = ({ seo, page }) => {
                         </div>
                     </div>
                 </div>
-                {product.new ? <div className="cards_sec">
-                    <div className="wrapper">
-                        <div className="text">
-                            <div className="title35">
-                                {renderHTML(
-                                    __(
-                                        "client.product_cards_head",
-                                        sharedData
-                                    ).newLineToBr()
-                                )}
+                {product.new ? (
+                    <div className="cards_sec">
+                        <div className="wrapper">
+                            <div className="text">
+                                <div className="title35">
+                                    {renderHTML(
+                                        __(
+                                            "client.product_cards_head",
+                                            sharedData
+                                        ).newLineToBr()
+                                    )}
+                                </div>
+                                <p>
+                                    {renderHTML(
+                                        __(
+                                            "client.product_cards_text",
+                                            sharedData
+                                        ).newLineToBr()
+                                    )}
+                                </p>
                             </div>
-                            <p>
-                                {renderHTML(
-                                    __(
-                                        "client.product_cards_text",
-                                        sharedData
-                                    ).newLineToBr()
-                                )}
-                            </p>
+                            <CardSlider
+                                cardData={cards}
+                                category={category_path}
+                            />
                         </div>
-                        <CardSlider cardData={cards} category={category_path} />
                     </div>
-                </div>: null}
+                ) : null}
                 {product.bunker ? (
                     <div className="recipe wrapper2 flex">
                         <div className="img">
