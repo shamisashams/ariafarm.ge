@@ -67,16 +67,11 @@ const SingleProduct = ({ seo, page }) => {
         },
     ];
     let prod_link = [];
-    if (similar_products.length > 0 && similar_products.length < 2) {
-        prod_link[0] = similar_products[0];
-        prod_link[1] = similar_products[0];
-    } else if (similar_products.length > 1) {
-        prod_link[0] = similar_products[0];
-        prod_link[1] = similar_products[1];
-    } else {
-        prod_link[0] = product;
-        prod_link[1] = product;
-    }
+    console.log(similar_products);
+
+        prod_link[0] = similar_products['prev'];
+        prod_link[1] = similar_products['next'];
+
     return (
         <Layout seo={seo}>
             <div className="singleProduct">
@@ -98,23 +93,23 @@ const SingleProduct = ({ seo, page }) => {
                     </div>
                     <div className="flex main">
                         {/* this goes to the previous product page */}
-                        <Link
+                        {prod_link[0] ? <Link
                             href={route(
                                 "client.product.show",
-                                prod_link[0].slug
+                                prod_link[0]
                             )}
                         >
                             <ArrowLeft />
-                        </Link>
+                        </Link>: null}
                         {/* this goes to the next product page */}
-                        <Link
+                        {prod_link[1]?<Link
                             href={route(
                                 "client.product.show",
-                                prod_link[1].slug
+                                prod_link[1]
                             )}
                         >
                             <ArrowRight />
-                        </Link>
+                        </Link> : null}
                         <div className="images">
                             {product_images.map((img, index) => {
                                 return (
@@ -200,7 +195,7 @@ const SingleProduct = ({ seo, page }) => {
                         </div>
                     </div>
                 </div>
-                <div className="cards_sec">
+                {product.new ? <div className="cards_sec">
                     <div className="wrapper">
                         <div className="text">
                             <div className="title35">
@@ -222,7 +217,7 @@ const SingleProduct = ({ seo, page }) => {
                         </div>
                         <CardSlider cardData={cards} category={category_path} />
                     </div>
-                </div>
+                </div>: null}
                 {product.bunker ? (
                     <div className="recipe wrapper2 flex">
                         <div className="img">

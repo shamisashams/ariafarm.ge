@@ -215,21 +215,33 @@ class ProductController extends Controller
         //dd($path);
 
 
-        $similar_products = Product::select('products.id','products.slug')->where(['status' => 1, 'product_categories.category_id' => end($path)['id']])
+        $similar_products = [];
+        $similar_products_1 = Product::select('products.id','products.slug')->where(['status' => 1, 'product_categories.category_id' => end($path)['id']])
             ->where('products.id','!=',$product->id)
-            ->where(function ($query)use ($product){
-                $query->where('products.id','>',$product->id)
-                    ->orWhere('products.id','<',$product->id);
-            })
+            ->where('products.id','<',$product->id)
+
+            ->leftJoin('product_categories', 'product_categories.product_id', '=', 'products.id')
+            ->orderBy('products.id','desc')
+            ->first();
+
+        $similar_products_2 = Product::select('products.id','products.slug')->where(['status' => 1, 'product_categories.category_id' => end($path)['id']])
+            ->where('products.id','!=',$product->id)
+            ->where('products.id','>',$product->id)
 
             ->leftJoin('product_categories', 'product_categories.product_id', '=', 'products.id')
             ->orderBy('products.id')
-            ->limit(2)
-            ->get();
+            ->first();
 
+        $similar_products['prev'] = null;
+        $similar_products['next'] = null;
+
+        if($similar_products_1)
+        $similar_products['prev'] = $similar_products_1->slug;
+        if($similar_products_2)
+        $similar_products['next'] = $similar_products_2->slug;
         //dd($similar_products);
 
-        foreach ($similar_products as $_product){
+        /*foreach ($similar_products as $_product){
             $product_attributes = $_product->attribute_values;
 
             $_result = [];
@@ -249,7 +261,7 @@ class ProductController extends Controller
             }
             $_product['attributes'] = $_result;
 
-        }
+        }*/
         //dd($category);
         //$result = [];
         //$result['id'] = $category[0]['id'];
