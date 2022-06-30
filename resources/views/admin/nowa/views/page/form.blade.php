@@ -148,7 +148,7 @@
                                                     @enderror
                                                 </div>
 
-                                                <div class="form-group">
+                                                {{--<div class="form-group">
                                                     <label class="form-label" for="text_medium">@lang('admin.text_medium')</label>
                                                     <textarea class="form-control" id="text_medium-{{$locale}}"
                                                               name="{{$locale}}[text_medium]'">{!! $page->translate($locale)->text_medium ?? '' !!}</textarea>
@@ -159,7 +159,7 @@
                                                         </div>
                                                     </small>
                                                     @enderror
-                                                </div>
+                                                </div>--}}
 
                                                 <div class="form-group">
                                                     <label class="form-label" for="text_bottom">@lang('admin.text_bottom')</label>
@@ -512,6 +512,7 @@
     <script>
         @foreach(config('translatable.locales') as $locale)
         CKEDITOR.replace('text_top-{{$locale}}');
+        CKEDITOR.replace('text_bottom-{{$locale}}');
         @endforeach
     </script>
     <script>
