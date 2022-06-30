@@ -66,14 +66,14 @@ const HeroSection = () => {
                                     {readMoreShown
                                         ? renderHTML(data.description)
                                         : renderHTML(
-                                              data.description.substr(0, 300)
+                                              data.description.substr(0, 400)
                                           )}
                                     {/* <a target="_blank" href={data.youtube_url}> */}
                                     <a
                                         onClick={toggleBtn}
                                         style={{
                                             display:
-                                                data.description.length < 350
+                                                data.description.length < 400
                                                     ? "none"
                                                     : "block",
                                         }}

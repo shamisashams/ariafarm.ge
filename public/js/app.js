@@ -5867,10 +5867,10 @@ var HeroSection = function HeroSection() {
       className: "content"
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
       className: "title35"
-    }, data.title), readMoreShown ? renderHTML(data.description) : renderHTML(data.description.substr(0, 300)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("a", {
+    }, data.title), readMoreShown ? renderHTML(data.description) : renderHTML(data.description.substr(0, 400)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("a", {
       onClick: toggleBtn,
       style: {
-        display: data.description.length < 350 ? "none" : "block"
+        display: data.description.length < 400 ? "none" : "block"
       }
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_Buttons_Buttons__WEBPACK_IMPORTED_MODULE_5__.MainButton, {
       text: __(!readMoreShown ? "client.slider_btn" : "client.slider_btn_show_less", sharedData)
