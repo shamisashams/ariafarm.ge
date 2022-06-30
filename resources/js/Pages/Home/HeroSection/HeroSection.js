@@ -73,7 +73,7 @@ const HeroSection = () => {
                                         onClick={toggleBtn}
                                         style={{
                                             display:
-                                                data.description.length < 300
+                                                data.description.length < 350
                                                     ? "none"
                                                     : "block",
                                         }}
