@@ -102,10 +102,7 @@ const Products = ({ seo }) => {
                                                 key={index}
                                                 className="category"
                                             >
-                                                <div
-                                                    className="title35 gradient-bg h60"
-                                                    data-aos="fade-right"
-                                                >
+                                                <div className="title35 gradient-bg h60">
                                                     {tab.title}
                                                 </div>
                                                 <div className="products_in_cat">
@@ -142,7 +139,9 @@ const Products = ({ seo }) => {
                                                                                         .title
                                                                                   : null
                                                                           }
-                                                                          productCaption={product.short_description}
+                                                                          productCaption={
+                                                                              product.short_description
+                                                                          }
                                                                       />
                                                                   );
                                                               }
