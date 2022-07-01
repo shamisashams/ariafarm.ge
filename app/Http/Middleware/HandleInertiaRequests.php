@@ -2,6 +2,7 @@
 
 namespace App\Http\Middleware;
 
+use App\Models\Faq;
 use App\Models\Setting;
 use App\Repositories\Eloquent\CategoryRepository;
 use Illuminate\Http\Request;
@@ -57,6 +58,8 @@ class HandleInertiaRequests extends Middleware
 
         $info = Setting::with(['translation'])->get();
 
+        $faqs = Faq::query()->with('translation')->get();
+
         //dd($info);
         $_result = [];
         foreach ($info as $item){
@@ -77,7 +80,8 @@ class HandleInertiaRequests extends Middleware
             "locale_urls" => $locale_urls,
             'urlPrev'	=> $urlPrev,
             'categories' => $categories,
-            'info' => $_result
+            'info' => $_result,
+            'faqs' => $faqs
         ]);
     }
 

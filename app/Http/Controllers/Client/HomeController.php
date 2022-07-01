@@ -84,7 +84,7 @@ class HomeController extends Controller
 
         $blogs = Blog::query()->orderBy('created_at','desc')->limit(4)->with(['translation','latestImage'])->get();
 
-        $faqs = Faq::query()->with('translation')->get();
+        //$faqs = Faq::query()->with('translation')->get();
 
         $special = Product::query()->where('special_price_tag',1)->inRandomOrder()->with(['translation','latestImage'])->first();
         //dd($special);
@@ -95,7 +95,7 @@ class HomeController extends Controller
             'cards' => $cards,
             'social_slider' => $files,
             'blogs' => $blogs,
-            'faqs' => $faqs,
+            //'faqs' => $faqs,
             'special' => $special,
             "seo" => [
             "title"=>$page->meta_title,
