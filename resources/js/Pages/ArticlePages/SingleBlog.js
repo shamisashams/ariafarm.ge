@@ -61,7 +61,7 @@ const SingleBlog = ({ seo }) => {
                             : null
                     )}
 
-                    <div className="art_img img">
+                    {/*<div className="art_img img">
                         {blog.files[1] !== undefined ? (
                             <img
                                 src={
@@ -75,13 +75,13 @@ const SingleBlog = ({ seo }) => {
                                 alt=""
                             />
                         ) : null}
-                    </div>
-                    {renderHTML(
+                    </div>*/}
+                    {/*{renderHTML(
                         blog.text_medium !== null
                             ? blog.text_medium.newLineToBr()
                             : null
-                    )}
-                    <div className="art_img img">
+                    )}*/}
+                    {/*<div className="art_img img">
                         {blog.files[2] !== undefined ? (
                             <img
                                 src={
@@ -95,12 +95,12 @@ const SingleBlog = ({ seo }) => {
                                 alt=""
                             />
                         ) : null}
-                    </div>
-                    {renderHTML(
+                    </div>*/}
+                    {/*{renderHTML(
                         blog.text_bottom !== null
                             ? blog.text_bottom.newLineToBr()
                             : null
-                    )}
+                    )}*/}
                     <div className="date">
                         <img src="/assets/images/icons/calendar.svg" alt="" />
                         {blog.created_at}
