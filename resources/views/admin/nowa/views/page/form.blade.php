@@ -21,6 +21,7 @@
     <link rel="stylesheet" href="{{asset('uploader/image-uploader.css')}}">
 
     <script src="{{asset('admin/assets/jscolor/jscolor.js')}}"></script>
+    <link rel="stylesheet" href="{{asset('admin/croppie/croppie.css')}}" />
 
 @endsection
 
@@ -364,6 +365,7 @@
                 </div>
             </div>
         </div>
+
 
 
         <div class="row">

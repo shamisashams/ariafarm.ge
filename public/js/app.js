@@ -5400,16 +5400,6 @@ var SingleBlog = function SingleBlog(_ref) {
   }, blog.title), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "subject bpg green "
   }, blog.subject), renderHTML(blog.text_top !== null ? blog.text_top.newLineToBr() : null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
-    className: "art_img img"
-  }, blog.files[1] !== undefined ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", {
-    src: "/" + (blog.files[1] !== undefined ? blog.files[1].path + "/" + blog.files[1].title : null),
-    alt: ""
-  }) : null), renderHTML(blog.text_medium !== null ? blog.text_medium.newLineToBr() : null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
-    className: "art_img img"
-  }, blog.files[2] !== undefined ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", {
-    src: "/" + (blog.files[2] !== undefined ? blog.files[2].path + "/" + blog.files[2].title : null),
-    alt: ""
-  }) : null), renderHTML(blog.text_bottom !== null ? blog.text_bottom.newLineToBr() : null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "date"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", {
     src: "/assets/images/icons/calendar.svg",
@@ -5872,10 +5862,8 @@ var HeroSection = function HeroSection() {
       style: {
         display: data.description.length < 400 ? "none" : "block"
       }
-    }, !readMoreShown ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_Buttons_Buttons__WEBPACK_IMPORTED_MODULE_5__.MainButton, {
-      text: __("client.slider_btn", sharedData)
-    }) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_Buttons_Buttons__WEBPACK_IMPORTED_MODULE_5__.MainButton, {
-      text: __("client.slider_btn_show_less", sharedData)
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_Buttons_Buttons__WEBPACK_IMPORTED_MODULE_5__.MainButton, {
+      text: !readMoreShown ? __("client.slider_btn", sharedData) : __("client.slider_btn_show_less", sharedData)
     })))));
   })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_Buttons_Buttons__WEBPACK_IMPORTED_MODULE_5__.ArrowLeft, null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_Buttons_Buttons__WEBPACK_IMPORTED_MODULE_5__.ArrowRight, null));
 };

@@ -37,7 +37,7 @@
     <!-- row -->
     {!! Form::model($blog,['url' => $url, 'method' => $method,'files' => true]) !!}
     <div class="row">
-        <div class="col-lg-6 col-md-12">
+        <div class="col-lg-12 col-md-12">
             <div class="card">
                 <div class="card-body">
 
@@ -112,7 +112,7 @@
 
                                             <div class="form-group">
                                                 <label class="form-label" >@lang('admin.text_top')</label>
-                                                <textarea class="form-control"
+                                                <textarea id="text_top-{{$locale}}" class="form-control"
                                                           name="{{$locale}}[text_top]">{!! $blog->translate($locale)->text_top ?? '' !!}</textarea>
                                                 @error($locale.'.text_top')
                                                 <small class="text-danger">
@@ -123,7 +123,7 @@
                                                 @enderror
                                             </div>
 
-                                            <div class="form-group">
+                                            {{--<div class="form-group">
                                                 <label class="form-label" >@lang('admin.text_medium')</label>
                                                 <textarea class="form-control"
                                                           name="{{$locale}}[text_medium]">{!! $blog->translate($locale)->text_medium ?? '' !!}</textarea>
@@ -134,9 +134,9 @@
                                                     </div>
                                                 </small>
                                                 @enderror
-                                            </div>
+                                            </div>--}}
 
-                                            <div class="form-group">
+                                            {{--<div class="form-group">
                                                 <label class="form-label" >@lang('admin.text_bottom')</label>
                                                 <textarea class="form-control"
                                                           name="{{$locale}}[text_bottom]">{!! $blog->translate($locale)->text_bottom ?? '' !!}</textarea>
@@ -147,7 +147,7 @@
                                                     </div>
                                                 </small>
                                                 @enderror
-                                            </div>
+                                            </div>--}}
 
 
 
@@ -357,13 +357,12 @@
         }
     </script>
 
-    <script src="{{ asset('ckeditor/ckeditor.js') }}"></script>
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+    <script src="{{ asset('admin/ckeditor/ckeditor.js') }}"></script>
     <script>
         @foreach(config('translatable.locales') as $locale)
-        CKEDITOR.replace('description-{{$locale}}', {
-            filebrowserUploadUrl: "{{route('upload', ['_token' => csrf_token() ])}}",
-            filebrowserUploadMethod: 'form'
-        });
+        CKEDITOR.replace('text_top-{{$locale}}');
+
         @endforeach
     </script>
 

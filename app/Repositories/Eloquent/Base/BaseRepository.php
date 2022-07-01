@@ -11,6 +11,7 @@ namespace App\Repositories\Eloquent\Base;
 
 use App\Models\File;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\Storage;
 use ReflectionClass;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 
@@ -103,8 +104,19 @@ class BaseRepository implements EloquentRepositoryInterface
     public function delete(int $id)
     {
         $this->model = $this->findOrFail($id);
+        $reflection = new ReflectionClass(get_class($this->model));
+        $modelName = $reflection->getShortName();
         try {
-            $this->model->delete($id);
+
+            foreach ($this->model->files as $file){
+
+                if (Storage::exists('public/' . $modelName . '/' . $this->model->id . '/' . $file->name)) {
+                    Storage::delete('public/' . $modelName . '/' . $this->model->id . '/' . $file->name);
+                }
+                $file->delete();
+            }
+            $this->model->delete();
+
             return $this->findTrash($id);
         } catch (\Exception $exception) {
             return $exception->getMessage();
@@ -160,14 +172,23 @@ class BaseRepository implements EloquentRepositoryInterface
     public function saveFiles(int $id, $request): Model
     {
         $this->model = $this->findOrFail($id);
+
+        $reflection = new ReflectionClass(get_class($this->model));
+        $modelName = $reflection->getShortName();
         // Delete old files if exist
         if (count($this->model->files)) {
             foreach ($this->model->files as $key => $file) {
                 if (!$request->old_images) {
+                    if (Storage::exists('public/' . $modelName . '/' . $this->model->id . '/' . $file->name)) {
+                        Storage::delete('public/' . $modelName . '/' . $this->model->id . '/' . $file->name);
+                    }
                     $file->delete();
                     continue;
                 }
                 if (!in_array((string)$file->id, $request->old_images, true)) {
+                    if (Storage::exists('public/' . $modelName . '/' . $this->model->id . '/' . $file->name)) {
+                        Storage::delete('public/' . $modelName . '/' . $this->model->id . '/' . $file->name);
+                    }
                     $file->delete();
                 }
                 $file->update(['youtube' => isset($request->post('youtube')[$key]) ? $request->post('youtube')[$key] : null]);
@@ -177,8 +198,7 @@ class BaseRepository implements EloquentRepositoryInterface
 
         if ($request->hasFile('images')) {
             // Get Name Of model
-            $reflection = new ReflectionClass(get_class($this->model));
-            $modelName = $reflection->getShortName();
+
 
             foreach ($request->file('images') as $key => $file) {
                 $imagename = date('Ymhs') . str_replace(' ', '', $file->getClientOriginalName());
@@ -194,6 +214,37 @@ class BaseRepository implements EloquentRepositoryInterface
             }
         }
 
+        return $this->model;
+    }
+
+    public function uploadCropped($request, $id){
+        //dd($product);
+        $this->model = $this->findOrFail($id);
+        $data = explode(',', $request->post('base64_img'));
+// Decode the base64 data
+        $data = base64_decode($data[1]);
+
+
+
+        if ($request->has('base64_img')) {
+            // Get Name Of model
+            $reflection = new ReflectionClass(get_class($this->model));
+            $modelName = $reflection->getShortName();
+
+
+            $imagename = date('Ymdhis') .'crop.png';
+            $destination = base_path() . '/storage/app/public/' . $modelName . '/' . $this->model->id;
+
+            Storage::put('public/Product/' . $this->model->id . '/' . $imagename,$data);
+            $this->model->files()->create([
+                'title' => $imagename,
+                'path' => 'storage/' . $modelName . '/' . $this->model->id,
+                'format' => 'png',
+                'type' => File::FILE_DEFAULT,
+                'youtube' =>  null
+            ]);
+
+        }
         return $this->model;
     }
 }

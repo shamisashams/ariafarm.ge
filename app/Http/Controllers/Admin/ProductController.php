@@ -13,6 +13,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\Admin\ProductRequest;
 use App\Models\Attribute;
 use App\Models\Category;
+use App\Models\File;
 use App\Models\Product;
 use App\Models\ProductAttributeValue;
 use App\Repositories\CategoryRepositoryInterface;
@@ -22,11 +23,14 @@ use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\View\View;
 use Illuminate\Http\RedirectResponse;
+use Illuminate\Http\Request;
 use Illuminate\Routing\Redirector;
 use Illuminate\Support\Arr;
+use Illuminate\Support\Facades\Storage;
 use ReflectionException;
 use App\Repositories\Eloquent\AttributeRepository;
 use function Symfony\Component\Translation\t;
+use ReflectionClass;
 
 class ProductController extends Controller
 {
@@ -345,4 +349,9 @@ class ProductController extends Controller
         }
         return redirect(locale_route('product.index'))->with('success', __('admin.delete_message'));
     }
+
+    public function uploadCropped(Request $request, $locale, Product $product){
+        $this->productRepository->uploadCropped($request, $product->id);
+    }
+
 }
