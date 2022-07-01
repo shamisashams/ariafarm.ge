@@ -526,6 +526,7 @@ $traverse = function ($categories, $prefix = '-') use (&$traverse,$ids) {
 
 
 
+    @if($product->created_at)
     <!-- /row -->
     <div class="row">
         <div class="col-lg-12 col-md-12">
@@ -548,7 +549,7 @@ $traverse = function ($categories, $prefix = '-') use (&$traverse,$ids) {
         </div>
     </div>
     <!-- row -->
-
+    @endif
     <!-- /row -->
     <div class="row">
         <div class="col-lg-12 col-md-12">
@@ -836,6 +837,7 @@ $traverse = function ($categories, $prefix = '-') use (&$traverse,$ids) {
                 actions.style.display = '';
             }
         })
+
 
         cropBtn.addEventListener('click', () => {
             // Get the cropped image result from croppie

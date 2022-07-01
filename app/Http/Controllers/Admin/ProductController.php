@@ -351,8 +351,8 @@ class ProductController extends Controller
     }
 
     public function uploadCropped(Request $request, $locale, Product $product){
-       // dd($product->id);
-
+       //dd($product);
+        if(!$product) return redirect()->back()->with('danger', __('admin.no_product'));
         $data = explode(',', $request->post('base64_img'));
 // Decode the base64 data
         $data = base64_decode($data[1]);
