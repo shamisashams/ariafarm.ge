@@ -351,32 +351,7 @@ class ProductController extends Controller
     }
 
     public function uploadCropped(Request $request, $locale, Product $product){
-       //dd($product);
-        if(!$product) return redirect()->back()->with('danger', __('admin.no_product'));
-        $data = explode(',', $request->post('base64_img'));
-// Decode the base64 data
-        $data = base64_decode($data[1]);
-
-
-
-        if ($request->has('base64_img')) {
-            // Get Name Of model
-            $reflection = new ReflectionClass(get_class($product));
-            $modelName = $reflection->getShortName();
-
-
-                $imagename = date('Ymdhis') .'crop.png';
-                $destination = base_path() . '/storage/app/public/' . $modelName . '/' . $product->id;
-
-                Storage::put('public/Product/' . $product->id . '/' . $imagename,$data);
-                $product->files()->create([
-                    'title' => $imagename,
-                    'path' => 'storage/' . $modelName . '/' . $product->id,
-                    'format' => 'png',
-                    'type' => File::FILE_DEFAULT,
-                    'youtube' =>  null
-                ]);
-
-        }
+        $this->productRepository->uploadCropped($request, $product->id);
     }
+
 }
