@@ -368,7 +368,7 @@ class ProductController extends Controller
                 $imagename = date('Ymdhis') .'crop.png';
                 $destination = base_path() . '/storage/app/public/' . $modelName . '/' . $product->id;
 
-                Storage::put('public/product/' . $product->id . '/' . $imagename,$data);
+                Storage::put('public/Product/' . $product->id . '/' . $imagename,$data);
                 $product->files()->create([
                     'title' => $imagename,
                     'path' => 'storage/' . $modelName . '/' . $product->id,
