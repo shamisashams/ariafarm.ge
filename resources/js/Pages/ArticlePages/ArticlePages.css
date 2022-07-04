@@ -50,7 +50,13 @@
 .articlePages .art_img {
     width: 100%;
     height: auto;
+    overflow: hidden;
     margin-bottom: 30px;
+}
+.articlePages .art_img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 .articlePages .subject {
     font-size: 20px;
@@ -96,6 +102,11 @@
         height: 400px;
     }
 }
+@media screen and (max-width: 800px) {
+    .articlePages .art_img {
+        height: 400px;
+    }
+}
 @media screen and (max-width: 600px) {
     .articlePages .title50 {
         margin-top: -46px;
@@ -113,8 +124,13 @@
         height: 250px;
     }
 }
+@media screen and (max-width: 500px) {
+    .articlePages .art_img {
+        height: 240px;
+    }
+}
 @media screen and (max-width: 400px) {
     .articlePages iframe {
-        height: 200px;
+        height: 240px;
     }
 }
