@@ -23,6 +23,7 @@ const HeroSection = () => {
         });
     console.log(sliders);
     var settings = {
+        afterChange: () => setReadMoreShown(false),
         dots: false,
         infinite: true,
         arrows: true,
@@ -32,7 +33,7 @@ const HeroSection = () => {
         fade: true,
         autoplay: true,
         autoplaySpeed: 12000,
-        afterChange: () => setReadMoreShown(false),
+        adaptiveHeight: true,
     };
 
     console.log(readMoreShown);

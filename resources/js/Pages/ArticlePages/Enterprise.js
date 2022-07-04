@@ -20,7 +20,7 @@ const Enterprise = ({ seo, page }) => {
     return (
         <Layout seo={seo}>
             <div className="articlePages blogbox">
-                <SearchInput color="#fff" />
+                <SearchInput color="#bf7e2f" />
                 <div
                     className="article_showcase"
                     style={{

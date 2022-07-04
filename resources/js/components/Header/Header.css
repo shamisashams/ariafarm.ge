@@ -238,6 +238,9 @@
     .header .nav_link.active {
         color: #bf7e2f;
     }
+    .header .nav_link.active:hover {
+        background-color: transparent;
+    }
     .header .navbar .nav_link:nth-child(5) {
         margin: 0;
     }

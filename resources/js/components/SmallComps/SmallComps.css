@@ -1,6 +1,6 @@
 .search_input {
     position: absolute;
-    top: 27px;
+    top: 11px;
     right: 0;
     width: 137px;
     height: 44px;
@@ -40,7 +40,7 @@
     display: flex;
     align-items: center;
     justify-content: flex-start;
-    padding-top: 43px;
+    padding-top: 25px;
 }
 .pagepath svg {
     margin: 0 10px;
@@ -75,6 +75,7 @@
     width: auto;
     margin-right: 5px;
     margin-left: 15px;
+    fill: #bf7e2f;
 }
 .socialLinks a:first-child svg {
     margin-left: 0;
@@ -93,6 +94,14 @@
     }
 }
 
+@media screen and (max-width: 600px) {
+    .search_input.open {
+        width: 199px;
+    }
+    .search_input:hover {
+        width: 199px;
+    }
+}
 @media screen and (max-width: 500px) {
     .socialLinks {
         padding: 10px 20px;
