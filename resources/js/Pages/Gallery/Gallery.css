@@ -26,7 +26,7 @@
     position: relative;
     cursor: pointer;
 }
-.galleryPage .grid_item:nth-child(2) {
+/* .galleryPage .grid_item:nth-child(2) {
     -ms-grid-column-span: 2;
     grid-column: span 2;
     -ms-grid-row-span: 2;
@@ -45,7 +45,7 @@
     grid-column: span 2;
     -ms-grid-row-span: 2;
     grid-row: span 2;
-}
+} */
 .galleryPage .image .img::before {
     top: 50%;
     left: 50%;

@@ -67,6 +67,7 @@ p {
     line-height: 1.5;
     font-family: "bpg-nino";
     color: #4a2921;
+    text-align: justify;
 }
 h1 {
     font-weight: 600;

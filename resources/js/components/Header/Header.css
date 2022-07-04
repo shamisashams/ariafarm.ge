@@ -238,6 +238,9 @@
     .header .nav_link.active {
         color: #bf7e2f;
     }
+    .header .nav_link.active:hover {
+        background-color: transparent;
+    }
     .header .navbar .nav_link:nth-child(5) {
         margin: 0;
     }
@@ -329,6 +332,13 @@
         margin-left: 18px;
         padding: 10px 12px;
     }
+    .navbar .sm {
+        margin-top: 36px;
+        justify-content: center;
+    }
+    .navbar .sm a:nth-child(2) {
+        margin: 0 10px !important;
+    }
 }
 @media screen and (max-width: 600px) {
     .header {
@@ -360,8 +370,6 @@
 @media screen and (max-height: 600px) {
     .header .nav_link {
         padding: 11px 10px;
-    }
-    .navbar .sm {
-        margin-top: 36px;
+        padding-left: 50px;
     }
 }
