@@ -5167,7 +5167,7 @@ var Enterprise = function Enterprise(_ref) {
     paragraph: __("client.enterprise_section_text", sharedData)
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "wrapper2"
-  }, renderHTML(page.text_bottom !== null ? page.text_bottom.newLineToBr() : null))));
+  })));
 };
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Enterprise);
@@ -5246,7 +5246,7 @@ var Farm = function Farm(_ref) {
     paragraph: __("client.farm_section_text", sharedData)
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "wrapper2"
-  }, renderHTML(page.text_bottom !== null ? page.text_bottom.newLineToBr() : null))));
+  })));
 };
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Farm);
@@ -5325,7 +5325,7 @@ var Shops = function Shops(_ref) {
     paragraph: __("client.shop_section_text", sharedData)
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "wrapper2"
-  }, renderHTML(page.text_bottom !== null ? page.text_bottom.newLineToBr() : null))));
+  })));
 };
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Shops);

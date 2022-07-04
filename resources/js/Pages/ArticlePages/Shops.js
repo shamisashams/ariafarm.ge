@@ -95,11 +95,11 @@ const Shops = ({ seo, page }) => {
                             alt=""
                         />
                     </div>*/}
-                    {renderHTML(
+                    {/*{renderHTML(
                         page.text_bottom !== null
                             ? page.text_bottom.newLineToBr()
                             : null
-                    )}
+                    )}*/}
                 </div>
             </div>
         </Layout>
