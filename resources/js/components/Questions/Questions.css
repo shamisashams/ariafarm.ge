@@ -39,6 +39,13 @@
 @media screen and (max-width: 700px) {
     .question {
         width: 100%;
-        padding-right: 35px;
+    }
+    .question .q {
+        padding-right: 19px;
+    }
+    .question .q::after {
+        width: 13px;
+        height: 16px;
+        right: 0px;
     }
 }
