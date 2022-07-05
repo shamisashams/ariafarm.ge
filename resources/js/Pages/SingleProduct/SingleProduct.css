@@ -8,6 +8,9 @@
 .singleProduct {
     overflow: hidden;
 }
+.singleProduct .ferma_section .img {
+    display: none;
+}
 .singleProduct .showcase {
     padding-top: 25px;
 }
@@ -193,6 +196,9 @@
     .singleProduct .recipe .context {
         width: 100%;
         margin-top: 40px;
+    }
+    .singleProduct .ferma_section {
+        padding-top: 20px;
     }
 }
 @media screen and (max-width: 600px) {
