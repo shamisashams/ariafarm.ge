@@ -43,6 +43,9 @@
     margin-bottom: 30px;
     text-align: justify;
 }
+.articlePages .faq p {
+    margin-bottom: 0;
+}
 .articlePages .date {
     margin: 20px auto;
     text-align: right;

@@ -5167,7 +5167,14 @@ var Enterprise = function Enterprise(_ref) {
     paragraph: __("client.enterprise_section_text", sharedData)
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "wrapper2"
-  })));
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+    className: "faq wrapper"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+    className: "title35",
+    style: {
+      textAlign: "center"
+    }
+  }, __("client.home_faq", sharedData)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_Questions_Questions__WEBPACK_IMPORTED_MODULE_8__.Questions, null))));
 };
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Enterprise);
@@ -5193,11 +5200,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_FermaSection_FermaSection__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../components/FermaSection/FermaSection */ "./resources/js/components/FermaSection/FermaSection.js");
 /* harmony import */ var _Layouts_Layout__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../Layouts/Layout */ "./resources/js/Layouts/Layout.js");
 /* harmony import */ var _inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @inertiajs/inertia-react */ "./node_modules/@inertiajs/inertia-react/dist/index.js");
+/* harmony import */ var _components_Questions_Questions__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../../components/Questions/Questions */ "./resources/js/components/Questions/Questions.js");
 
 
  //import Img1 from "../../assets/images/articles/1.png";
 //import Img2 from "../../assets/images/articles/2.png";
 //import Img3 from "../../assets/images/blogs/9.png";
+
 
 
 
@@ -5246,7 +5255,14 @@ var Farm = function Farm(_ref) {
     paragraph: __("client.farm_section_text", sharedData)
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "wrapper2"
-  })));
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+    className: "faq wrapper"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+    className: "title35",
+    style: {
+      textAlign: "center"
+    }
+  }, __("client.home_faq", sharedData)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_Questions_Questions__WEBPACK_IMPORTED_MODULE_8__.Questions, null))));
 };
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Farm);
@@ -5272,11 +5288,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_FermaSection_FermaSection__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../components/FermaSection/FermaSection */ "./resources/js/components/FermaSection/FermaSection.js");
 /* harmony import */ var _Layouts_Layout__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../Layouts/Layout */ "./resources/js/Layouts/Layout.js");
 /* harmony import */ var _inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @inertiajs/inertia-react */ "./node_modules/@inertiajs/inertia-react/dist/index.js");
+/* harmony import */ var _components_Questions_Questions__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../../components/Questions/Questions */ "./resources/js/components/Questions/Questions.js");
 
 
  //import Img1 from "../../assets/images/articles/3.png";
 //import Img2 from "../../assets/images/articles/1.png";
 //import Img3 from "../../assets/images/blogs/6.png";
+
 
 
 
@@ -5325,7 +5343,14 @@ var Shops = function Shops(_ref) {
     paragraph: __("client.shop_section_text", sharedData)
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "wrapper2"
-  })));
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+    className: "faq wrapper"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+    className: "title35",
+    style: {
+      textAlign: "center"
+    }
+  }, __("client.home_faq", sharedData)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_Questions_Questions__WEBPACK_IMPORTED_MODULE_8__.Questions, null))));
 };
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Shops);
@@ -5350,6 +5375,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_SmallComps_SocialLinks__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../components/SmallComps/SocialLinks */ "./resources/js/components/SmallComps/SocialLinks.js");
 /* harmony import */ var _Layouts_Layout__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../Layouts/Layout */ "./resources/js/Layouts/Layout.js");
 /* harmony import */ var _inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @inertiajs/inertia-react */ "./node_modules/@inertiajs/inertia-react/dist/index.js");
+/* harmony import */ var _components_Questions_Questions__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../../components/Questions/Questions */ "./resources/js/components/Questions/Questions.js");
 
 
  //import Calendar from "../../assets/images/icons/calendar.svg";
@@ -5357,6 +5383,7 @@ __webpack_require__.r(__webpack_exports__);
 //import Img2 from "../../assets/images/blogs/10.png";
 //import Abs1 from "../../assets/images/blogs/bg1.png";
 //import Abs2 from "../../assets/images/blogs/bg2.png";
+
 
 
 
@@ -5404,7 +5431,14 @@ var SingleBlog = function SingleBlog(_ref) {
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", {
     src: "/assets/images/icons/calendar.svg",
     alt: ""
-  }), blog.created_at))));
+  }), blog.created_at)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+    className: "faq wrapper"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+    className: "title35",
+    style: {
+      textAlign: "center"
+    }
+  }, __("client.home_faq", sharedData)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_Questions_Questions__WEBPACK_IMPORTED_MODULE_7__.Questions, null))));
 };
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (SingleBlog);
@@ -5429,6 +5463,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Blogs_css__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./Blogs.css */ "./resources/js/Pages/Blogs/Blogs.css");
 /* harmony import */ var _Layouts_Layout__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../Layouts/Layout */ "./resources/js/Layouts/Layout.js");
 /* harmony import */ var _inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @inertiajs/inertia-react */ "./node_modules/@inertiajs/inertia-react/dist/index.js");
+/* harmony import */ var _components_Questions_Questions__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../../components/Questions/Questions */ "./resources/js/components/Questions/Questions.js");
 
 
 
@@ -5436,6 +5471,7 @@ __webpack_require__.r(__webpack_exports__);
 //import Img2 from "../../assets/images/blogs/10.png";
 //import Img3 from "../../assets/images/blogs/11.png";
 //import Img4 from "../../assets/images/blogs/12.png";
+
 
 
 
@@ -5500,7 +5536,14 @@ var Blogs = function Blogs(_ref) {
       link: route("client.blog.show", blog.slug),
       date: blog.created_at
     });
-  })))));
+  }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+    className: "faq wrapper"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+    className: "title35",
+    style: {
+      textAlign: "center"
+    }
+  }, __("client.home_faq", sharedData)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_Questions_Questions__WEBPACK_IMPORTED_MODULE_7__.Questions, null))));
 };
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Blogs);
@@ -5615,6 +5658,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Gallery_css__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./Gallery.css */ "./resources/js/Pages/Gallery/Gallery.css");
 /* harmony import */ var _Layouts_Layout__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../Layouts/Layout */ "./resources/js/Layouts/Layout.js");
 /* harmony import */ var _inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @inertiajs/inertia-react */ "./node_modules/@inertiajs/inertia-react/dist/index.js");
+/* harmony import */ var _components_Questions_Questions__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../components/Questions/Questions */ "./resources/js/components/Questions/Questions.js");
 function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
 
 function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
@@ -5638,6 +5682,7 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 //import Img6 from "../../assets/images/blogs/10.png";
 //import Img7 from "../../assets/images/blogs/11.png";
 //import Img8 from "../../assets/images/blogs/12.png";
+
 
 
 
@@ -5750,7 +5795,14 @@ var Gallery = function Gallery(_ref) {
       return setShowModal(0);
     },
     className: showModal === 0 ? "modal_bg " : "modal_bg show"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", null, "\xD7")))));
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", null, "\xD7"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+    className: "faq wrapper"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+    className: "title35",
+    style: {
+      textAlign: "center"
+    }
+  }, __("client.home_faq", sharedData)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_Questions_Questions__WEBPACK_IMPORTED_MODULE_6__.Questions, null))));
 };
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Gallery);
@@ -6349,6 +6401,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Layouts_Layout__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../Layouts/Layout */ "./resources/js/Layouts/Layout.js");
 /* harmony import */ var _inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @inertiajs/inertia-react */ "./node_modules/@inertiajs/inertia-react/dist/index.js");
 /* harmony import */ var _components_SmallComps_Icons__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../../components/SmallComps/Icons */ "./resources/js/components/SmallComps/Icons.js");
+/* harmony import */ var _components_Questions_Questions__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../../components/Questions/Questions */ "./resources/js/components/Questions/Questions.js");
 function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
 
 function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
@@ -6360,6 +6413,7 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
 function _iterableToArrayLimit(arr, i) { var _i = arr == null ? null : typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"]; if (_i == null) return; var _arr = []; var _n = true; var _d = false; var _s, _e; try { for (_i = _i.call(arr); !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
 
 function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
 
 
 
@@ -6475,7 +6529,14 @@ var Products = function Products(_ref) {
         });
       }) : null));
     }));
-  })))));
+  }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+    className: "faq wrapper"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+    className: "title35",
+    style: {
+      textAlign: "center"
+    }
+  }, __("client.home_faq", sharedData)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_Questions_Questions__WEBPACK_IMPORTED_MODULE_9__.Questions, null))));
 };
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Products);
@@ -6752,7 +6813,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Home_HomeSliders_CardSlider__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../Home/HomeSliders/CardSlider */ "./resources/js/Pages/Home/HomeSliders/CardSlider.js");
 /* harmony import */ var _components_FermaSection_FermaSection__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../components/FermaSection/FermaSection */ "./resources/js/components/FermaSection/FermaSection.js");
 /* harmony import */ var _components_SmallComps_Icons__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../../components/SmallComps/Icons */ "./resources/js/components/SmallComps/Icons.js");
-/* harmony import */ var _Layouts_Layout__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../../Layouts/Layout */ "./resources/js/Layouts/Layout.js");
+/* harmony import */ var _components_Questions_Questions__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../../components/Questions/Questions */ "./resources/js/components/Questions/Questions.js");
+/* harmony import */ var _Layouts_Layout__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../../Layouts/Layout */ "./resources/js/Layouts/Layout.js");
 function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
 
 function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
@@ -6774,6 +6836,7 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 //import Img3 from "../../assets/images/products/3.png";
 //import Img4 from "../../assets/images/home/5.png";
 //import Img5 from "../../assets/images/other/1.png";
+
 
 
 
@@ -6850,7 +6913,7 @@ var SingleProduct = function SingleProduct(_ref) {
   var prod_link = [];
   prod_link[0] = similar_products["prev"];
   prod_link[1] = similar_products["next"];
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_Layouts_Layout__WEBPACK_IMPORTED_MODULE_8__["default"], {
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_Layouts_Layout__WEBPACK_IMPORTED_MODULE_9__["default"], {
     seo: seo
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "singleProduct"
@@ -6957,7 +7020,14 @@ var SingleProduct = function SingleProduct(_ref) {
     link: route("client.farm.index"),
     title: __("client.product_section_title", sharedData),
     paragraph: __("client.product_section_text", sharedData)
-  })));
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+    className: "faq wrapper"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+    className: "title35",
+    style: {
+      textAlign: "center"
+    }
+  }, __("client.home_faq", sharedData)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_Questions_Questions__WEBPACK_IMPORTED_MODULE_8__.Questions, null))));
 };
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (SingleProduct);
@@ -8912,7 +8982,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "/*\r\n* Prefixed by https://autoprefixer.github.io\r\n* PostCSS: v8.4.12,\r\n* Autoprefixer: v10.4.4\r\n* Browsers: last 4 version\r\n*/\r\n\r\n.articlePages {\r\n    background-color: #f6f6f6;\r\n    padding-bottom: 60px;\r\n    position: relative;\r\n}\r\n.articlePages iframe {\r\n    width: 100%;\r\n    height: 500px;\r\n}\r\n.articlePages .search_input input {\r\n    background-color: transparent;\r\n    color: #fff;\r\n}\r\n.articlePages .article_showcase {\r\n    height: 538px;\r\n    background-position: center !important;\r\n    background-size: cover !important;\r\n    position: relative;\r\n}\r\n.articlePages .article_showcase::after {\r\n    width: 100%;\r\n    height: 100%;\r\n    left: 0;\r\n    top: 0;\r\n    background: linear-gradient(to bottom, #060e2363, #03091c46);\r\n}\r\n.articlePages p {\r\n    margin-bottom: 30px;\r\n    text-align: justify;\r\n}\r\n.articlePages .date {\r\n    margin: 20px auto;\r\n    text-align: right;\r\n}\r\n.articlePages .art_img {\r\n    width: 100%;\r\n    height: auto;\r\n    overflow: hidden;\r\n    margin-bottom: 30px;\r\n}\r\n.articlePages .art_img img {\r\n    width: 100%;\r\n    height: 100%;\r\n    -o-object-fit: cover;\r\n       object-fit: cover;\r\n}\r\n.articlePages .subject {\r\n    font-size: 20px;\r\n    font-weight: bold;\r\n}\r\n.articlePages .title50 {\r\n    color: #fff;\r\n    margin-top: -80px;\r\n}\r\n.articlePages .title50::after {\r\n    display: none;\r\n}\r\n.articlePages .abs_img {\r\n    position: absolute;\r\n    opacity: 0.3;\r\n}\r\n.articlePages .abs_img.abs_1 {\r\n    left: 0;\r\n    top: 20%;\r\n}\r\n.articlePages .abs_img.abs_2 {\r\n    right: 0;\r\n    bottom: 30%;\r\n}\r\n\r\n@media screen and (max-width: 1200px) {\r\n    .articlePages .article_showcase {\r\n        height: 310px;\r\n    }\r\n    .articlePages .title50 {\r\n        margin-top: -64px;\r\n    }\r\n    .articlePages .abs_img.abs_1 {\r\n        left: 0;\r\n        top: 13%;\r\n    }\r\n}\r\n@media screen and (max-width: 900px) {\r\n    .articlePages .pagepath {\r\n        padding-top: 25px;\r\n    }\r\n    .articlePages iframe {\r\n        height: 400px;\r\n    }\r\n}\r\n@media screen and (max-width: 800px) {\r\n    .articlePages .art_img {\r\n        height: 400px;\r\n    }\r\n}\r\n@media screen and (max-width: 600px) {\r\n    .articlePages .title50 {\r\n        margin-top: -46px;\r\n    }\r\n    .articlePages .article_showcase {\r\n        height: 221px;\r\n    }\r\n    .articlePages .abs_img {\r\n        width: 50%;\r\n    }\r\n    .articlePages .search_input:hover {\r\n        width: 199px;\r\n    }\r\n    .articlePages iframe {\r\n        height: 250px;\r\n    }\r\n}\r\n@media screen and (max-width: 500px) {\r\n    .articlePages .art_img {\r\n        height: 240px;\r\n    }\r\n}\r\n@media screen and (max-width: 400px) {\r\n    .articlePages iframe {\r\n        height: 240px;\r\n    }\r\n}\r\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "/*\r\n* Prefixed by https://autoprefixer.github.io\r\n* PostCSS: v8.4.12,\r\n* Autoprefixer: v10.4.4\r\n* Browsers: last 4 version\r\n*/\r\n\r\n.articlePages {\r\n    background-color: #f6f6f6;\r\n    padding-bottom: 60px;\r\n    position: relative;\r\n}\r\n.articlePages iframe {\r\n    width: 100%;\r\n    height: 500px;\r\n}\r\n.articlePages .search_input input {\r\n    background-color: transparent;\r\n    color: #fff;\r\n}\r\n.articlePages .article_showcase {\r\n    height: 538px;\r\n    background-position: center !important;\r\n    background-size: cover !important;\r\n    position: relative;\r\n}\r\n.articlePages .article_showcase::after {\r\n    width: 100%;\r\n    height: 100%;\r\n    left: 0;\r\n    top: 0;\r\n    background: linear-gradient(to bottom, #060e2363, #03091c46);\r\n}\r\n.articlePages p {\r\n    margin-bottom: 30px;\r\n    text-align: justify;\r\n}\r\n.articlePages .faq p {\r\n    margin-bottom: 0;\r\n}\r\n.articlePages .date {\r\n    margin: 20px auto;\r\n    text-align: right;\r\n}\r\n.articlePages .art_img {\r\n    width: 100%;\r\n    height: auto;\r\n    overflow: hidden;\r\n    margin-bottom: 30px;\r\n}\r\n.articlePages .art_img img {\r\n    width: 100%;\r\n    height: 100%;\r\n    -o-object-fit: cover;\r\n       object-fit: cover;\r\n}\r\n.articlePages .subject {\r\n    font-size: 20px;\r\n    font-weight: bold;\r\n}\r\n.articlePages .title50 {\r\n    color: #fff;\r\n    margin-top: -80px;\r\n}\r\n.articlePages .title50::after {\r\n    display: none;\r\n}\r\n.articlePages .abs_img {\r\n    position: absolute;\r\n    opacity: 0.3;\r\n}\r\n.articlePages .abs_img.abs_1 {\r\n    left: 0;\r\n    top: 20%;\r\n}\r\n.articlePages .abs_img.abs_2 {\r\n    right: 0;\r\n    bottom: 30%;\r\n}\r\n\r\n@media screen and (max-width: 1200px) {\r\n    .articlePages .article_showcase {\r\n        height: 310px;\r\n    }\r\n    .articlePages .title50 {\r\n        margin-top: -64px;\r\n    }\r\n    .articlePages .abs_img.abs_1 {\r\n        left: 0;\r\n        top: 13%;\r\n    }\r\n}\r\n@media screen and (max-width: 900px) {\r\n    .articlePages .pagepath {\r\n        padding-top: 25px;\r\n    }\r\n    .articlePages iframe {\r\n        height: 400px;\r\n    }\r\n}\r\n@media screen and (max-width: 800px) {\r\n    .articlePages .art_img {\r\n        height: 400px;\r\n    }\r\n}\r\n@media screen and (max-width: 600px) {\r\n    .articlePages .title50 {\r\n        margin-top: -46px;\r\n    }\r\n    .articlePages .article_showcase {\r\n        height: 221px;\r\n    }\r\n    .articlePages .abs_img {\r\n        width: 50%;\r\n    }\r\n    .articlePages .search_input:hover {\r\n        width: 199px;\r\n    }\r\n    .articlePages iframe {\r\n        height: 250px;\r\n    }\r\n}\r\n@media screen and (max-width: 500px) {\r\n    .articlePages .art_img {\r\n        height: 240px;\r\n    }\r\n}\r\n@media screen and (max-width: 400px) {\r\n    .articlePages iframe {\r\n        height: 240px;\r\n    }\r\n}\r\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -9032,7 +9102,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "/*\r\n* Prefixed by https://autoprefixer.github.io\r\n* PostCSS: v8.4.12,\r\n* Autoprefixer: v10.4.4\r\n* Browsers: last 4 version\r\n*/\r\n\r\n.homePage {\r\n    overflow-x: hidden;\r\n}\r\n.why_our_product {\r\n    position: relative;\r\n    padding: 80px 0;\r\n}\r\n.why_our_product::before {\r\n    top: 0;\r\n    left: 0;\r\n    width: 100%;\r\n    height: 100%;\r\n    background-color: #fefbec;\r\n    z-index: -1;\r\n}\r\n.why_our_product .abs_img {\r\n    position: absolute;\r\n    top: -330px;\r\n    right: 0;\r\n    z-index: -1;\r\n}\r\n.why_our_product .left_content {\r\n    max-width: 450px;\r\n    margin-top: -400px;\r\n}\r\n.why_our_product .left_content .subscribe {\r\n    margin-top: 45px;\r\n}\r\n.why_our_product .left_content .subscribe input {\r\n    border: 2px solid #bf7e2f;\r\n    border-radius: 15px;\r\n    background-color: #fff;\r\n    margin: 15px 0;\r\n    padding-left: 15px;\r\n    width: 352px;\r\n    height: 58px;\r\n    display: block;\r\n}\r\n.special_products_sec {\r\n    background-color: #acd3c1;\r\n}\r\n.homePage .social_media {\r\n    margin-top: 200px;\r\n    text-align: center;\r\n}\r\n.homePage .social_media .title35 {\r\n    margin-bottom: 20px;\r\n}\r\n.homePage .social_media p {\r\n    margin-top: 18px;\r\n    margin-bottom: 40px;\r\n}\r\n\r\n.homePage .white {\r\n    padding: 50px 0;\r\n}\r\n.homePage .white .content {\r\n    max-width: 550px;\r\n    margin-left: 60px;\r\n}\r\n.homePage .content .title35 {\r\n    margin: 20px 0;\r\n    font-weight: bold;\r\n}\r\n\r\n.homePage .our_products {\r\n    background-color: #fefbec;\r\n    padding: 85px 0;\r\n}\r\n.homePage .our_products .content {\r\n    max-width: 450px;\r\n}\r\n.homePage .our_products ul {\r\n    margin: 30px 0;\r\n}\r\n.homePage .our_products li {\r\n    margin-bottom: 20px;\r\n}\r\n.homePage .our_products li img {\r\n    margin-right: 15px;\r\n}\r\n.homePage .our_products .img {\r\n    border-radius: 15px;\r\n    height: 440px;\r\n    width: 50%;\r\n    overflow: hidden;\r\n}\r\n.homePage .blog_section {\r\n    padding-top: 22px;\r\n    padding-bottom: 100px;\r\n}\r\n.homePage .blog_section .grid {\r\n    display: -ms-grid;\r\n    display: grid;\r\n    -ms-grid-columns: 1fr 45px 1fr 45px 1fr 45px 1fr;\r\n    grid-template-columns: repeat(4, 1fr);\r\n    grid-gap: 45px;\r\n    margin-top: 20px;\r\n}\r\n.homePage .faq {\r\n    text-align: center;\r\n    margin-bottom: 120px;\r\n    margin-top: 50px;\r\n}\r\n.homePage .form_section {\r\n    margin-bottom: 100px;\r\n    padding-top: 40px;\r\n}\r\n.homePage .form_section .form {\r\n    margin-left: 30px;\r\n}\r\n.homePage .form_section .img {\r\n    border-radius: 10px;\r\n    width: 549px;\r\n    height: 549px;\r\n    border: 5px solid #fff;\r\n    box-shadow: 0 10px 25px #19191d1f;\r\n}\r\n.homePage .form_section .img-holder {\r\n    position: relative;\r\n}\r\n\r\n.special_products_sec img {\r\n    width: 36%;\r\n}\r\n\r\n@media screen and (max-width: 1330px) {\r\n    .why_our_product .left_content {\r\n        max-width: 390px;\r\n    }\r\n    .homePage .blog_section .grid {\r\n        grid-gap: 15px;\r\n    }\r\n}\r\n@media screen and (max-width: 1260px) {\r\n    .why_our_product .left_content {\r\n        margin-top: 0;\r\n        padding-bottom: 60px;\r\n        max-width: none;\r\n    }\r\n    .why_our_product .left_content .subscribe {\r\n        margin-top: 26px;\r\n    }\r\n    .homePage .white .content {\r\n        margin-left: 13px;\r\n    }\r\n    .cards_subscribe_sec {\r\n        display: flex;\r\n        align-items: center;\r\n        justify-content: center;\r\n        flex-direction: column-reverse;\r\n    }\r\n}\r\n@media screen and (max-width: 1000px) {\r\n    .homePage .blog_section .grid {\r\n        -ms-grid-columns: 1fr 15px 1fr;\r\n        grid-template-columns: repeat(2, 1fr);\r\n    }\r\n    .homePage .form_section .img {\r\n        width: 333px;\r\n        height: 333px;\r\n    }\r\n    .homePage .form_section {\r\n        align-items: flex-start;\r\n    }\r\n    .why_our_product .abs_img {\r\n        display: none;\r\n    }\r\n}\r\n@media screen and (max-width: 900px) {\r\n    .special_products_sec img {\r\n        width: auto;\r\n    }\r\n    .homePage .white {\r\n        padding: 50px 0;\r\n        flex-direction: column;\r\n    }\r\n    .homePage .white .content {\r\n        max-width: none;\r\n        margin-left: 0;\r\n        margin-top: 20px;\r\n    }\r\n    .homePage .our_products .wrapper {\r\n        flex-direction: column;\r\n    }\r\n    .homePage .our_products .content {\r\n        max-width: none;\r\n        margin-bottom: 30px;\r\n    }\r\n    .homePage .our_products .img {\r\n        height: auto;\r\n        width: auto;\r\n    }\r\n    .homePage .our_products {\r\n        padding: 40px 0;\r\n    }\r\n}\r\n@media screen and (max-width: 860px) {\r\n    .why_our_product {\r\n        padding-bottom: 0;\r\n    }\r\n    .social_media .arrow_button {\r\n        display: none;\r\n    }\r\n}\r\n@media screen and (max-width: 700px) {\r\n    .homePage .form_section {\r\n        align-items: center;\r\n        flex-direction: column;\r\n    }\r\n    .homePage .form_section .form {\r\n        margin-left: 0;\r\n        margin-top: 55px;\r\n    }\r\n    .homePage .social_media {\r\n        margin-top: 115px;\r\n    }\r\n    .homePage .social_media .sm {\r\n        border-top: #bf7e2f 3px solid;\r\n        border-bottom: #bf7e2f 3px solid;\r\n        padding: 12px 20px;\r\n        width: -webkit-fit-content;\r\n        width: -moz-fit-content;\r\n        width: fit-content;\r\n        margin: auto;\r\n    }\r\n    .homePage .social_media .sm path {\r\n        fill: #bf7e2f !important;\r\n    }\r\n    .homePage .social_media .sm a:nth-child(2) {\r\n        margin: 0 30px !important;\r\n    }\r\n}\r\n\r\n@media screen and (max-width: 500px) {\r\n    .homePage .blog_section .grid {\r\n        -ms-grid-columns: 1fr;\r\n        grid-template-columns: repeat(1, 1fr);\r\n    }\r\n}\r\n@media screen and (max-width: 400px) {\r\n    .why_our_product .left_content .subscribe input {\r\n        width: 100%;\r\n    }\r\n    .homePage .content .title35 {\r\n        margin: 10px 0;\r\n    }\r\n    .homePage .our_products li {\r\n        margin-bottom: 11px;\r\n    }\r\n    .homePage .our_products ul {\r\n        margin: 20px 0;\r\n    }\r\n    .homePage .form_section .img {\r\n        width: 293px;\r\n        height: 293px;\r\n    }\r\n    .why_our_product .left_content .subscribe {\r\n        text-align: center;\r\n    }\r\n    .why_our_product .left_content .subscribe div {\r\n        text-align: left;\r\n    }\r\n}\r\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "/*\r\n* Prefixed by https://autoprefixer.github.io\r\n* PostCSS: v8.4.12,\r\n* Autoprefixer: v10.4.4\r\n* Browsers: last 4 version\r\n*/\r\n\r\n.homePage {\r\n    overflow-x: hidden;\r\n}\r\n.why_our_product {\r\n    position: relative;\r\n    padding: 80px 0;\r\n}\r\n.why_our_product::before {\r\n    top: 0;\r\n    left: 0;\r\n    width: 100%;\r\n    height: 100%;\r\n    background-color: #fefbec;\r\n    z-index: -1;\r\n}\r\n.why_our_product .abs_img {\r\n    position: absolute;\r\n    top: -330px;\r\n    right: 0;\r\n    z-index: -1;\r\n}\r\n.why_our_product .left_content {\r\n    max-width: 450px;\r\n    margin-top: -400px;\r\n}\r\n.why_our_product .left_content .subscribe {\r\n    margin-top: 45px;\r\n}\r\n.why_our_product .left_content .subscribe input {\r\n    border: 2px solid #bf7e2f;\r\n    border-radius: 15px;\r\n    background-color: #fff;\r\n    margin: 15px 0;\r\n    padding-left: 15px;\r\n    width: 352px;\r\n    height: 58px;\r\n    display: block;\r\n}\r\n.special_products_sec {\r\n    background-color: #acd3c1;\r\n}\r\n.homePage .social_media {\r\n    margin-top: 200px;\r\n    text-align: center;\r\n}\r\n.homePage .social_media .title35 {\r\n    margin-bottom: 20px;\r\n}\r\n.homePage .social_media p {\r\n    margin-top: 18px;\r\n    margin-bottom: 40px;\r\n}\r\n\r\n.homePage .white {\r\n    padding: 50px 0;\r\n}\r\n.homePage .white .content {\r\n    max-width: 550px;\r\n    margin-left: 60px;\r\n}\r\n.homePage .content .title35 {\r\n    margin: 20px 0;\r\n    font-weight: bold;\r\n}\r\n\r\n.homePage .our_products {\r\n    background-color: #fefbec;\r\n    padding: 85px 0;\r\n}\r\n.homePage .our_products .content {\r\n    max-width: 450px;\r\n}\r\n.homePage .our_products ul {\r\n    margin: 30px 0;\r\n}\r\n.homePage .our_products li {\r\n    margin-bottom: 20px;\r\n}\r\n.homePage .our_products li img {\r\n    margin-right: 15px;\r\n}\r\n.homePage .our_products .img {\r\n    border-radius: 15px;\r\n    height: 440px;\r\n    width: 50%;\r\n    overflow: hidden;\r\n}\r\n.homePage .blog_section {\r\n    padding-top: 22px;\r\n    padding-bottom: 100px;\r\n}\r\n.homePage .blog_section .grid {\r\n    display: -ms-grid;\r\n    display: grid;\r\n    -ms-grid-columns: 1fr 45px 1fr 45px 1fr 45px 1fr;\r\n    grid-template-columns: repeat(4, 1fr);\r\n    grid-gap: 45px;\r\n    margin-top: 20px;\r\n}\r\n.faq.wrapper {\r\n    text-align: center;\r\n    margin-bottom: 120px;\r\n    margin-top: 50px;\r\n}\r\n.homePage .form_section {\r\n    margin-bottom: 100px;\r\n    padding-top: 40px;\r\n}\r\n.homePage .form_section .form {\r\n    margin-left: 30px;\r\n}\r\n.homePage .form_section .img {\r\n    border-radius: 10px;\r\n    width: 549px;\r\n    height: 549px;\r\n    border: 5px solid #fff;\r\n    box-shadow: 0 10px 25px #19191d1f;\r\n}\r\n.homePage .form_section .img-holder {\r\n    position: relative;\r\n}\r\n\r\n.special_products_sec img {\r\n    width: 36%;\r\n}\r\n\r\n@media screen and (max-width: 1330px) {\r\n    .why_our_product .left_content {\r\n        max-width: 390px;\r\n    }\r\n    .homePage .blog_section .grid {\r\n        grid-gap: 15px;\r\n    }\r\n}\r\n@media screen and (max-width: 1260px) {\r\n    .why_our_product .left_content {\r\n        margin-top: 0;\r\n        padding-bottom: 60px;\r\n        max-width: none;\r\n    }\r\n    .why_our_product .left_content .subscribe {\r\n        margin-top: 26px;\r\n    }\r\n    .homePage .white .content {\r\n        margin-left: 13px;\r\n    }\r\n    .cards_subscribe_sec {\r\n        display: flex;\r\n        align-items: center;\r\n        justify-content: center;\r\n        flex-direction: column-reverse;\r\n    }\r\n}\r\n@media screen and (max-width: 1000px) {\r\n    .homePage .blog_section .grid {\r\n        -ms-grid-columns: 1fr 15px 1fr;\r\n        grid-template-columns: repeat(2, 1fr);\r\n    }\r\n    .homePage .form_section .img {\r\n        width: 333px;\r\n        height: 333px;\r\n    }\r\n    .homePage .form_section {\r\n        align-items: flex-start;\r\n    }\r\n    .why_our_product .abs_img {\r\n        display: none;\r\n    }\r\n}\r\n@media screen and (max-width: 900px) {\r\n    .special_products_sec img {\r\n        width: auto;\r\n    }\r\n    .homePage .white {\r\n        padding: 50px 0;\r\n        flex-direction: column;\r\n    }\r\n    .homePage .white .content {\r\n        max-width: none;\r\n        margin-left: 0;\r\n        margin-top: 20px;\r\n    }\r\n    .homePage .our_products .wrapper {\r\n        flex-direction: column;\r\n    }\r\n    .homePage .our_products .content {\r\n        max-width: none;\r\n        margin-bottom: 30px;\r\n    }\r\n    .homePage .our_products .img {\r\n        height: auto;\r\n        width: auto;\r\n    }\r\n    .homePage .our_products {\r\n        padding: 40px 0;\r\n    }\r\n}\r\n@media screen and (max-width: 860px) {\r\n    .why_our_product {\r\n        padding-bottom: 0;\r\n    }\r\n    .social_media .arrow_button {\r\n        display: none;\r\n    }\r\n}\r\n@media screen and (max-width: 700px) {\r\n    .homePage .form_section {\r\n        align-items: center;\r\n        flex-direction: column;\r\n    }\r\n    .homePage .form_section .form {\r\n        margin-left: 0;\r\n        margin-top: 55px;\r\n    }\r\n    .homePage .social_media {\r\n        margin-top: 115px;\r\n    }\r\n    .homePage .social_media .sm {\r\n        border-top: #bf7e2f 3px solid;\r\n        border-bottom: #bf7e2f 3px solid;\r\n        padding: 12px 20px;\r\n        width: -webkit-fit-content;\r\n        width: -moz-fit-content;\r\n        width: fit-content;\r\n        margin: auto;\r\n    }\r\n    .homePage .social_media .sm path {\r\n        fill: #bf7e2f !important;\r\n    }\r\n    .homePage .social_media .sm a:nth-child(2) {\r\n        margin: 0 30px !important;\r\n    }\r\n}\r\n\r\n@media screen and (max-width: 500px) {\r\n    .homePage .blog_section .grid {\r\n        -ms-grid-columns: 1fr;\r\n        grid-template-columns: repeat(1, 1fr);\r\n    }\r\n}\r\n@media screen and (max-width: 400px) {\r\n    .why_our_product .left_content .subscribe input {\r\n        width: 100%;\r\n    }\r\n    .homePage .content .title35 {\r\n        margin: 10px 0;\r\n    }\r\n    .homePage .our_products li {\r\n        margin-bottom: 11px;\r\n    }\r\n    .homePage .our_products ul {\r\n        margin: 20px 0;\r\n    }\r\n    .homePage .form_section .img {\r\n        width: 293px;\r\n        height: 293px;\r\n    }\r\n    .why_our_product .left_content .subscribe {\r\n        text-align: center;\r\n    }\r\n    .why_our_product .left_content .subscribe div {\r\n        text-align: left;\r\n    }\r\n}\r\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -9224,7 +9294,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".ferma_section {\r\n    background: url(/assets/images/other/bg1.png) no-repeat;\r\n    background-position: center;\r\n    background-size: cover;\r\n    height: 328px;\r\n    margin: 60px 0;\r\n}\r\n.ferma_section .left {\r\n    max-width: 55%;\r\n}\r\n.ferma_section p {\r\n    margin: 15px 0;\r\n    margin-right: 30pxS;\r\n}\r\n.ferma_section .img {\r\n    height: 100%;\r\n    width: 450px;\r\n    margin-top: -40px;\r\n    overflow: hidden;\r\n}\r\n.ferma_section .img img {\r\n    width: 100%;\r\n    height: 100%;\r\n    -o-object-fit: cover;\r\n       object-fit: cover;\r\n}\r\n\r\n@media screen and (max-width: 800px) {\r\n    .ferma_section {\r\n        margin-top: 80px;\r\n        height: auto;\r\n        padding-bottom: 30px;\r\n    }\r\n    .ferma_section .flex {\r\n        flex-direction: column-reverse;\r\n    }\r\n    .ferma_section .img {\r\n        height: 400px;\r\n        width: 100%;\r\n\r\n        margin-top: -19px;\r\n        margin-bottom: 20px;\r\n    }\r\n    .ferma_section .left {\r\n        max-width: none;\r\n    }\r\n}\r\n@media screen and (max-width: 500px) {\r\n    .ferma_section .img {\r\n        height: 240px;\r\n    }\r\n}\r\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, ".ferma_section {\r\n    background: url(/assets/images/other/bg1.png) no-repeat;\r\n    background-position: center;\r\n    background-size: cover;\r\n    height: 328px;\r\n    margin: 60px 0;\r\n}\r\n.ferma_section .left {\r\n    max-width: 55%;\r\n}\r\n.ferma_section p {\r\n    margin: 15px 0;\r\n    margin-right: 30pxS;\r\n}\r\n.ferma_section .img {\r\n    height: 100%;\r\n    width: 450px;\r\n    margin-top: -40px;\r\n    overflow: hidden;\r\n}\r\n.ferma_section .img img {\r\n    width: 100%;\r\n    height: 100%;\r\n    -o-object-fit: cover;\r\n       object-fit: cover;\r\n}\r\n\r\n@media screen and (max-width: 800px) {\r\n    .ferma_section {\r\n        margin-top: 80px;\r\n        height: auto;\r\n        padding-bottom: 30px;\r\n    }\r\n    .ferma_section .flex {\r\n        flex-direction: column-reverse;\r\n    }\r\n    .ferma_section .img {\r\n        height: 400px;\r\n        width: 100%;\r\n        margin-top: -19px;\r\n        margin-bottom: 20px;\r\n    }\r\n    .ferma_section .left {\r\n        max-width: none;\r\n    }\r\n}\r\n@media screen and (max-width: 500px) {\r\n    .ferma_section .img {\r\n        height: 240px;\r\n    }\r\n}\r\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 

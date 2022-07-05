@@ -12,6 +12,7 @@ import "./Gallery.css";
 //import Img8 from "../../assets/images/blogs/12.png";
 import Layout from "../../Layouts/Layout";
 import { usePage } from "@inertiajs/inertia-react";
+import { Questions } from "../../components/Questions/Questions";
 
 const Gallery = ({ seo }) => {
     const [showModal, setShowModal] = useState(0);
@@ -145,6 +146,12 @@ const Gallery = ({ seo }) => {
                     >
                         <span>×</span>
                     </div>
+                </div>
+                <div className="faq wrapper">
+                    <div className="title35" style={{ textAlign: "center" }}>
+                        {__("client.home_faq", sharedData)}
+                    </div>
+                    <Questions />
                 </div>
             </div>
         </Layout>

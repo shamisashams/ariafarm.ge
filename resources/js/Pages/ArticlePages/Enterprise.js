@@ -102,6 +102,12 @@ const Enterprise = ({ seo, page }) => {
                             : null
                     )}*/}
                 </div>
+                <div className="faq wrapper">
+                    <div className="title35" style={{ textAlign: "center" }}>
+                        {__("client.home_faq", sharedData)}
+                    </div>
+                    <Questions />
+                </div>
             </div>
         </Layout>
     );

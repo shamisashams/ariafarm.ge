@@ -9,6 +9,7 @@ import SearchInput from "../../components/SmallComps/SearchInput";
 import "./Blogs.css";
 import Layout from "../../Layouts/Layout";
 import { usePage } from "@inertiajs/inertia-react";
+import { Questions } from "../../components/Questions/Questions";
 
 const Blogs = ({ seo }) => {
     const { blogs } = usePage().props;
@@ -86,6 +87,12 @@ const Blogs = ({ seo }) => {
                             );
                         })}
                     </div>
+                </div>
+                <div className="faq wrapper">
+                    <div className="title35" style={{ textAlign: "center" }}>
+                        {__("client.home_faq", sharedData)}
+                    </div>
+                    <Questions />
                 </div>
             </div>
         </Layout>

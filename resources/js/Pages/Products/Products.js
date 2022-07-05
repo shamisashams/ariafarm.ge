@@ -7,6 +7,7 @@ import { showcaseData, tabsData } from "./ProductsData";
 import Layout from "../../Layouts/Layout";
 import { usePage } from "@inertiajs/inertia-react";
 import { Buffalo, Cow, Goat } from "../../components/SmallComps/Icons";
+import { Questions } from "../../components/Questions/Questions";
 
 const Products = ({ seo }) => {
     const [productTab, setProductTab] = useState(0);
@@ -155,6 +156,12 @@ const Products = ({ seo }) => {
                             );
                         })}
                     </div>
+                </div>
+                <div className="faq wrapper">
+                    <div className="title35" style={{ textAlign: "center" }}>
+                        {__("client.home_faq", sharedData)}
+                    </div>
+                    <Questions />
                 </div>
             </div>
         </Layout>
