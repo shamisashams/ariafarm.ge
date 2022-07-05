@@ -46,7 +46,7 @@ const Shops = ({ seo, page }) => {
                     <div className="title50">{page.title}</div>
                     {renderHTML(
                         page.text_top !== null
-                            ? page.text_top.newLineToBr()
+                            ? page.text_top
                             : null
                     )}
                     {/*<div className="art_img img">

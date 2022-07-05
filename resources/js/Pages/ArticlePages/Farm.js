@@ -72,7 +72,7 @@ const Farm = ({ seo, page }) => {
 
                     {renderHTML(
                         page.text_top !== null
-                            ? page.text_top.newLineToBr()
+                            ? page.text_top
                             : null
                     )}
                     {/*<div className="art_img img">

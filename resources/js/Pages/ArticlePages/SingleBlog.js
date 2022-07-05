@@ -57,7 +57,7 @@ const SingleBlog = ({ seo }) => {
 
                     {renderHTML(
                         blog.text_top !== null
-                            ? blog.text_top.newLineToBr()
+                            ? blog.text_top
                             : null
                     )}
 
