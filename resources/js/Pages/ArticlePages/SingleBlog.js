@@ -10,6 +10,7 @@ import "./ArticlePages.css";
 import { SocialLinks2 } from "../../components/SmallComps/SocialLinks";
 import Layout from "../../Layouts/Layout";
 import { usePage } from "@inertiajs/inertia-react";
+import { Questions } from "../../components/Questions/Questions";
 
 const SingleBlog = ({ seo }) => {
     const { blog } = usePage().props;
@@ -105,6 +106,12 @@ const SingleBlog = ({ seo }) => {
                         <img src="/assets/images/icons/calendar.svg" alt="" />
                         {blog.created_at}
                     </div>
+                </div>
+                <div className="faq wrapper">
+                    <div className="title35" style={{ textAlign: "center" }}>
+                        {__("client.home_faq", sharedData)}
+                    </div>
+                    <Questions />
                 </div>
             </div>
         </Layout>

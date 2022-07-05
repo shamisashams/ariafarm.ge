@@ -34,12 +34,17 @@
         flex-direction: column-reverse;
     }
     .ferma_section .img {
-        height: auto;
-        width: 80%;
+        height: 400px;
+        width: 100%;
         margin-top: -19px;
         margin-bottom: 20px;
     }
     .ferma_section .left {
         max-width: none;
+    }
+}
+@media screen and (max-width: 500px) {
+    .ferma_section .img {
+        height: 240px;
     }
 }

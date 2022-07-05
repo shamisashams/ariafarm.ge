@@ -9,6 +9,7 @@ import { SocialLinks2 } from "../../components/SmallComps/SocialLinks";
 import FermaSection from "../../components/FermaSection/FermaSection";
 import Layout from "../../Layouts/Layout";
 import { usePage } from "@inertiajs/inertia-react";
+import { Questions } from "../../components/Questions/Questions";
 
 const Shops = ({ seo, page }) => {
     const renderHTML = (rawHTML) =>
@@ -100,6 +101,12 @@ const Shops = ({ seo, page }) => {
                             ? page.text_bottom.newLineToBr()
                             : null
                     )}*/}
+                </div>
+                <div className="faq wrapper">
+                    <div className="title35" style={{ textAlign: "center" }}>
+                        {__("client.home_faq", sharedData)}
+                    </div>
+                    <Questions />
                 </div>
             </div>
         </Layout>

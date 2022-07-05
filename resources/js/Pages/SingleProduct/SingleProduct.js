@@ -13,6 +13,7 @@ import { ArrowLeft, ArrowRight } from "../../components/Buttons/Buttons";
 import CardSlider from "../Home/HomeSliders/CardSlider";
 import FermaSection from "../../components/FermaSection/FermaSection";
 import { Cow, Goat } from "../../components/SmallComps/Icons";
+import { Questions } from "../../components/Questions/Questions";
 
 import Layout from "../../Layouts/Layout";
 
@@ -276,6 +277,12 @@ const SingleProduct = ({ seo, page }) => {
                     title={__("client.product_section_title", sharedData)}
                     paragraph={__("client.product_section_text", sharedData)}
                 />
+                <div className="faq wrapper">
+                    <div className="title35" style={{ textAlign: "center" }}>
+                        {__("client.home_faq", sharedData)}
+                    </div>
+                    <Questions />
+                </div>
             </div>
         </Layout>
     );
