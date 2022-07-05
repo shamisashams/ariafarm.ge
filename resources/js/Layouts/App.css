@@ -140,6 +140,11 @@ img {
 .preloader img {
     margin-bottom: 30px;
 }
+.faq.wrapper {
+    text-align: center;
+    margin-bottom: 120px;
+    margin-top: 50px;
+}
 .css-10p2e9r {
     transform: translateX(-14px) !important;
 }
