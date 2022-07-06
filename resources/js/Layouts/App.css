@@ -268,11 +268,6 @@ img {
     .gradient-bg.rtl::before {
         left: 0;
     }
-    .form input,
-    .form textarea {
-        margin-bottom: 7px;
-        padding-left: 20px;
-    }
 }
 @media screen and (max-width: 420px) {
     .title35 {
