@@ -58,6 +58,9 @@
 .contactPage .information {
     margin-bottom: 70px;
 }
+.contactPage .form {
+    margin: auto;
+}
 
 @media screen and (max-width: 1400px) {
     .contactPage .contact_showcase {
