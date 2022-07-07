@@ -116,6 +116,7 @@
     border-radius: 10px;
     width: 549px;
     height: 549px;
+    border-radius: 50%;
     border: 5px solid #fff;
     -webkit-box-shadow: 0 10px 25px #19191d1f;
     box-shadow: 0 10px 25px #19191d1f;
