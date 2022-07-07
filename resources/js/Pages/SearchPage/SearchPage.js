@@ -9,7 +9,7 @@ import Layout from "../../Layouts/Layout";
 import { usePage } from "@inertiajs/inertia-react";
 
 const SearchPage = ({ seo }) => {
-    const { products } = usePage().props;
+    const { products, term } = usePage().props;
     const sharedData = usePage().props.localizations;
     const productsFound = [
         {
@@ -39,7 +39,7 @@ const SearchPage = ({ seo }) => {
                 <SearchInput color="#bf7e2f" />
                 <div className="wrapper content">
                     <div className="op05 bpg">
-                        "საძიებო სიტყვა" ნაპოვნია {products.length} შედეგი
+                        "{term}" ნაპოვნია {products.length} შედეგი
                     </div>
                     <div className="wrapper2">
                         {products.map((product, index) => {

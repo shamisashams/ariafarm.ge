@@ -81,7 +81,8 @@ class HandleInertiaRequests extends Middleware
             'urlPrev'	=> $urlPrev,
             'categories' => $categories,
             'info' => $_result,
-            'faqs' => $faqs
+            'faqs' => $faqs,
+            'term' => $request->get('term')
         ]);
     }
 

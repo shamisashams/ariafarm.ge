@@ -6749,7 +6749,9 @@ __webpack_require__.r(__webpack_exports__);
 
 var SearchPage = function SearchPage(_ref) {
   var seo = _ref.seo;
-  var products = (0,_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_5__.usePage)().props.products;
+  var _usePage$props = (0,_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_5__.usePage)().props,
+      products = _usePage$props.products,
+      term = _usePage$props.term;
   var sharedData = (0,_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_5__.usePage)().props.localizations;
   var productsFound = [{
     link: "/single-product",
@@ -6778,7 +6780,7 @@ var SearchPage = function SearchPage(_ref) {
     className: "wrapper content"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "op05 bpg"
-  }, "\"\u10E1\u10D0\u10EB\u10D8\u10D4\u10D1\u10DD \u10E1\u10D8\u10E2\u10E7\u10D5\u10D0\" \u10DC\u10D0\u10DE\u10DD\u10D5\u10DC\u10D8\u10D0 ", products.length, " \u10E8\u10D4\u10D3\u10D4\u10D2\u10D8"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+  }, "\"", term, "\" \u10DC\u10D0\u10DE\u10DD\u10D5\u10DC\u10D8\u10D0 ", products.length, " \u10E8\u10D4\u10D3\u10D4\u10D2\u10D8"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "wrapper2"
   }, products.map(function (product, index) {
     return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_ProductBox_ProductBox__WEBPACK_IMPORTED_MODULE_2__.ProductBox, {
@@ -8493,9 +8495,10 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 var SearchInput = function SearchInput(_ref) {
   var color = _ref.color;
   var sharedData = (0,_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_4__.usePage)().props.localizations;
+  var term = (0,_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_4__.usePage)().props.term;
 
   var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)({
-    term: ""
+    term: term
   }),
       _useState2 = _slicedToArray(_useState, 2),
       values = _useState2[0],
@@ -8542,7 +8545,8 @@ var SearchInput = function SearchInput(_ref) {
     type: "text",
     placeholder: __("client.search_placeholder", sharedData),
     name: "term",
-    id: "term"
+    id: "term",
+    value: values.term
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_Icons__WEBPACK_IMPORTED_MODULE_1__.Magnifier, {
     color: color
   }))));

@@ -6,8 +6,9 @@ import { usePage } from "@inertiajs/inertia-react";
 
 const SearchInput = ({ color }) => {
     const sharedData = usePage().props.localizations;
+    const { term } = usePage().props;
     const [values, setValues] = useState({
-        term: "",
+        term: term,
     });
     function handleSubmit(e) {
         e.preventDefault();
@@ -41,6 +42,7 @@ const SearchInput = ({ color }) => {
                         )}
                         name="term"
                         id="term"
+                        value={values.term}
                     />
                     <Magnifier color={color} />
                 </form>
