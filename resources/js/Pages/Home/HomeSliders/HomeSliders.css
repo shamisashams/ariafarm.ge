@@ -29,12 +29,12 @@
     line-height: 1.9;
 }
 .card_slider .swiper-slide-active {
-    border: 2px solid;
+    border: 1px solid;
     opacity: 1;
 }
 .card_slider .swiper-slide-prev,
 .card_slider .swiper-slide-next {
-    border: 2px solid;
+    border: 1px solid;
     opacity: 1;
 }
 

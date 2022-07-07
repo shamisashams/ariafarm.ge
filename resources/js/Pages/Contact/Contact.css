@@ -61,22 +61,6 @@
 .contactPage .form {
     margin: auto;
 }
-.contactPage .form input,
-.contactPage .form textarea {
-    border-radius: 5px;
-    background-color: transparent;
-    border: 1px solid #4a2921;
-    width: 343px;
-    margin: auto;
-    height: 34px;
-    margin-bottom: 14px;
-    padding-left: 14px;
-    display: block;
-}
-.contactPage .form textarea {
-    margin-bottom: 20px;
-    height: 70px;
-}
 
 @media screen and (max-width: 1400px) {
     .contactPage .contact_showcase {

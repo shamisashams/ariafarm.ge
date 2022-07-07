@@ -140,6 +140,11 @@ img {
 .preloader img {
     margin-bottom: 30px;
 }
+.faq.wrapper {
+    text-align: center;
+    margin-bottom: 120px;
+    margin-top: 50px;
+}
 .css-10p2e9r {
     transform: translateX(-14px) !important;
 }
@@ -262,11 +267,6 @@ img {
     }
     .gradient-bg.rtl::before {
         left: 0;
-    }
-    .form input,
-    .form textarea {
-        margin-bottom: 7px;
-        padding-left: 20px;
     }
 }
 @media screen and (max-width: 420px) {

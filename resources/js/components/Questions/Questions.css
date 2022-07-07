@@ -2,13 +2,13 @@
     width: 590px;
     margin: auto;
     border-bottom: 1px solid #70707080;
-    text-align: justify;
 }
 .question .q {
     padding: 20px 0;
     text-transform: uppercase;
     position: relative;
     cursor: pointer;
+    text-align: left;
 }
 .question .q::after {
     width: 20px;
