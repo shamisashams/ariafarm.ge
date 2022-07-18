@@ -108,17 +108,21 @@ class BaseRepository implements EloquentRepositoryInterface
         $modelName = $reflection->getShortName();
         try {
 
-            foreach ($this->model->files as $file){
+            if($this->model->files){
+                foreach ($this->model->files as $file){
 
-                if (Storage::exists('public/' . $modelName . '/' . $this->model->id . '/' . $file->name)) {
-                    Storage::delete('public/' . $modelName . '/' . $this->model->id . '/' . $file->name);
+                    if (Storage::exists('public/' . $modelName . '/' . $this->model->id . '/' . $file->name)) {
+                        Storage::delete('public/' . $modelName . '/' . $this->model->id . '/' . $file->name);
+                    }
+                    $file->delete();
                 }
-                $file->delete();
             }
-            $this->model->delete();
 
-            return $this->findTrash($id);
+            return $this->model->delete();
+
+
         } catch (\Exception $exception) {
+            dd($exception->getMessage());
             return $exception->getMessage();
         }
     }
