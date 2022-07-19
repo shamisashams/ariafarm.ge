@@ -49,7 +49,8 @@ class ContactController extends Controller
     public function mail(Request $request)
     {
 
-        if ($request->method() == 'POST') {
+        //dd($request->all());
+
 
             //dd($request->all());
             $request->validate([
@@ -75,9 +76,11 @@ class ContactController extends Controller
                 Mail::to($mailTo->value)->send(new ContactEmail($data));
             }
 
+            return redirect()->back()->with('success',__('client.success'));
+
         }
 
 
-        //return Inertia::render('Contact/Contact');
-    }
+
+
 }
