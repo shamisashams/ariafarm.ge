@@ -5975,7 +5975,8 @@ __webpack_require__.r(__webpack_exports__);
 
 var Home = function Home(_ref) {
   var seo = _ref.seo,
-      page = _ref.page;
+      page = _ref.page,
+      social_slider = _ref.social_slider;
   var _usePage$props = (0,_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_7__.usePage)().props,
       cards = _usePage$props.cards,
       blogs = _usePage$props.blogs,
@@ -6070,7 +6071,7 @@ var Home = function Home(_ref) {
     className: "wrapper"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "social_media"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_HomeSliders_SocialSlider__WEBPACK_IMPORTED_MODULE_6__["default"], null)))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+  }, social_slider.length > 0 ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_HomeSliders_SocialSlider__WEBPACK_IMPORTED_MODULE_6__["default"], null) : null))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "special_products_sec"
   }, special ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "white wrapper flex centered "

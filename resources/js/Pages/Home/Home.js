@@ -25,7 +25,7 @@ import { Form } from "../../components/Form/Form";
 import SearchInput from "../../components/SmallComps/SearchInput";
 import { Cow, Goat } from "../../components/SmallComps/Icons";
 
-const Home = ({ seo, page }) => {
+const Home = ({ seo, page, social_slider }) => {
     const { cards, blogs, special } = usePage().props;
     const sharedData = usePage().props.localizations;
     let green = "#86AAA8";
@@ -143,7 +143,7 @@ const Home = ({ seo, page }) => {
                             {/* <p>
                                 {__("client.section_social_text", sharedData)}
                             </p> */}
-                            <SocialSlider />
+                            {social_slider.length > 0 ? <SocialSlider />:null}
                         </div>
                     </div>
                 </div>
