@@ -10,12 +10,12 @@
 }
 .ferma_section p {
     margin: 15px 0;
-    margin-right: 30pxS;
+    margin-right: 30px;
 }
 .ferma_section .img {
-    height: 100%;
+    height: 90%;
     width: 450px;
-    margin-top: -40px;
+    margin-top: 0;
     overflow: hidden;
 }
 .ferma_section .img img {
@@ -27,6 +27,7 @@
 @media screen and (max-width: 800px) {
     .ferma_section {
         margin-top: 80px;
+        padding-top: 20px;
         height: auto;
         padding-bottom: 30px;
     }
@@ -36,7 +37,6 @@
     .ferma_section .img {
         height: 400px;
         width: 100%;
-        margin-top: -19px;
         margin-bottom: 20px;
     }
     .ferma_section .left {
