@@ -1,7 +1,7 @@
 @font-face {
-    font-family: "brushsci";
-    src: url(/assets/fonts/BRUSHSCI.ttf);
+    font-family: "waffle";
+    src: url("/assets/fonts/WaffleStory.ttf");
 }
 .cursive {
-    font-family: "brushsci"!important;
+    font-family: "waffle" !important;
 }

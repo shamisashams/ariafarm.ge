@@ -6258,7 +6258,7 @@ var CardSlider = function CardSlider(_ref) {
       style: {
         color: card.color
       }
-    }, card.text));
+    }, card.text, "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nemo, impedit. Cum asperiores dolor nostrum. Illo nesciunt cumque, saepe similique enim quibusdam quasi. Culpa nemo at, recusandae autem accusamus consequatur distinctio?"));
   })));
 };
 
